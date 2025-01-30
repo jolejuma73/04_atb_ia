@@ -7,29 +7,25 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>Listado de Antibióticos</header>
-    <div class="container">
-        <div class="sidebar">
-            <h3>Lista de Antibióticos</h3>
-            <ul id="antibioticos-list"></ul>
+    <header>
+        <h1>Listado de Antibióticos</h1>
+    </header>
+    <main>
+        <div class="container">
+            <aside class="sidebar">
+                <input type="text" id="search-bar" placeholder="Buscar antibiótico...">
+                <ul id="alphabet-list">
+                    <!-- Generar dinámicamente desde script.js -->
+                </ul>
+            </aside>
+            <section class="details">
+                <div id="antibiotic-info">
+                    <h2>Información del Antibiótico</h2>
+                    <p>Seleccione un antibiótico para ver los detalles.</p>
+                </div>
+            </section>
         </div>
-        <div class="content">
-            <h3>Buscar Antibiótico</h3>
-            <input type="text" id="search" placeholder="Escribe el nombre...">
-            <button onclick="buscarAntibiotico()">Buscar</button>
-            
-            <div class="qr-section">
-                <h3>Código QR</h3>
-                <div id="qr-code"></div>
-            </div>
-            
-            <div class="info-section">
-                <h3>Información del Antibiótico</h3>
-                <p id="info"></p>
-            </div>
-        </div>
-    </div>
-    
+    </main>
     <script src="script.js"></script>
 </body>
 </html>
