@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 appearance: "Solución clara",
                 administrationTime: "Administrar durante 30 minutos",
                 storage: "Conservar a temperatura ambiente",
-                technicalSheet: "https://cima.aemps.es/cima/pdfs/es/ft/57013/FT_57013.pdf"
+                technicalSheet: "https://cima.aemps.es/cima/pdfs/es/ft/65131/FichaTecnica_65131.html.pdf"
             },
             {
                 name: "Amoxicilina 2 g / Ac. clavulánico 200 mg",
@@ -54,7 +54,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 appearance: "Solución clara.",
                 administrationTime: "Administrar en bolo lento o perfusión durante 30 minutos.",
                 storage: "Conservar a temperatura ambiente. Usar dentro de las 24 horas tras la reconstitución.",
-                technicalSheet: "https://cima.aemps.es/cima/pdfs/es/ft/64567/FT_64567.pdf"
+                technicalSheet: "https://cima.aemps.es/cima/pdfs/es/p/89095/P_89095.html.pdf"
             },              
             {
                 name: "Anfotericina B 50 mg (Ambisome) Polvo para dispersión para perfusión",
@@ -65,7 +65,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 appearance: "Suspensión amarillenta.",
                 administrationTime: "Infusión de 2 horas.",
                 storage: "Una vez reconstituido, conservar en refrigeración (2-8°C).",
-                technicalSheet: "https://cima.aemps.es/cima/pdfs/es/ft/56789/FT_56789.pdf"
+                technicalSheet: "https://cima.aemps.es/cima/pdfs/es/ft/61117/FichaTecnica_61117.html.pdf"
             },
             {
                 name: "Anidulafungina 100 mg Polvo para concentrado para solución para perfusión",
@@ -76,7 +76,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 appearance: "Solución clara e incolora.",
                 administrationTime: "Administrar en 90 minutos.",
                 storage: "Conservar entre 2-8°C.",
-                technicalSheet: "https://cima.aemps.es/cima/pdfs/es/ft/67890/FT_67890.pdf"
+                technicalSheet: "https://cima.aemps.es/cima/pdfs/es/ft/83018/83018_ft.pdf"
             },
             {
                 name: "Azitromicina 500 mg Polvo para solución para perfusión",
@@ -87,7 +87,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 appearance: "Solución clara.",
                 administrationTime: "Administrar en 1-3 horas.",
                 storage: "Conservar a temperatura ambiente.",
-                technicalSheet: "https://cima.aemps.es/cima/pdfs/es/ft/54321/FT_54321.pdf"
+                technicalSheet: "https://cima.aemps.es/cima/pdfs/es/ft/73962/73962_ft.pdf"
             }
         ],
         C: [
@@ -199,7 +199,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 appearance: "Amarillo pálido",
                 administrationTime: "120 minutos",
                 storage: "El producto reconstituido debe diluirse inmediatamente. Una vez diluido, si la concentración es de 8mg/ml, permanece estable 12 horas en nevera y, 4 horas a menos de 25º. Para concentraciones entre 8mg/ml y 40mg/ml, el producto permanece estable 4 horas a temperatura ambiente.",
-                technicalSheet: "https://cima.aemps.es/cima/pdfs/es/ft/1161109001/ft_1161109001.html.pdf"
+                technicalSheet: "https://www.ema.europa.eu/es/documents/overview/zavicefta-epar-medicine-overview_es.pdf"
             },
             {
                 name: "Ceftolozano 1gr / Tazobactam 0,5gr Polvo para concentrado para solución para perfusión",
@@ -210,7 +210,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 appearance: "Transparente e incolora a ligeramente amarilla",
                 administrationTime: "60 minutos",
                 storage: "Los viales se conservan en nevera. La solución preparada, permanece estable 24 horas a temperatura ambiente y 4 días en nevera. El medicamento es fotosensible.",
-                technicalSheet: "https://cima.aemps.es/cima/pdfs/es/ft/1151032001/FT_1151032001.html.pdf"
+                technicalSheet: "https://www.ema.europa.eu/es/documents/product-information/zerbaxa-epar-product-information_es.pdf"
             },
             {
                 name: "Ceftriaxona 1 gr Polvo para solución inyectable intravenosa",
@@ -221,7 +221,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 appearance: "Solución amarillenta",
                 administrationTime: "Administrar en bolo lento o en perfusión durante 30 minutos.",
                 storage: "Una vez diluido, usar en un plazo máximo de 6 horas a temperatura ambiente.",
-                technicalSheet: "https://cima.aemps.es/cima/pdfs/es/ft/66435/FT_66435.pdf"
+                technicalSheet: "https://cima.aemps.es/cima/pdfs/es/ft/64538/FT_64538.html.pdf"
             },
             {
                 name: "Ceftriaxona 2 gr Polvo para solución para perfusión",
@@ -311,7 +311,7 @@ document.addEventListener("DOMContentLoaded", function() {
             appearance: "Solución clara a ligeramente amarilla.",
             administrationTime: "30 minutos",
             storage: "Conservar en refrigeración (2°C - 8°C). Una vez reconstituido, usar dentro de las 48 horas.",
-            technicalSheet: "https://cima.aemps.es/cima/pdfs/es/ft/67485/FT_67485.pdf"
+            technicalSheet: "https://cima.aemps.es/cima/pdfs/es/ft/83057/FT_83057.html.pdf"
         },
         {
             name: "Doxiciclina 100 mg Solución inyectable y para perfusión",
@@ -322,7 +322,7 @@ document.addEventListener("DOMContentLoaded", function() {
             appearance: "Solución amarillenta.",
             administrationTime: "1-2 horas",
             storage: "Conservar a temperatura inferior a 25°C. Una vez reconstituido, usar dentro de las 24 horas.",
-            technicalSheet: "https://cima.aemps.es/cima/pdfs/es/ft/67534/FT_67534.pdf"
+            technicalSheet: "https://cima.aemps.es/cima/pdfs/es/ft/50521/FichaTecnica_50521.html.pdf"
         }, 
         ],
     E: [
@@ -335,7 +335,7 @@ document.addEventListener("DOMContentLoaded", function() {
             appearance: "Solución clara e incolora.",
             administrationTime: "30-60 minutos",
             storage: "Conservar a temperatura ambiente. Una vez reconstituido, usar dentro de las 24 horas.",
-            technicalSheet: "https://cima.aemps.es/cima/pdfs/es/ft/64302/FT_64302.pdf"
+            technicalSheet: "https://cima.aemps.es/cima/pdfs/es/ft/55771/FT_55771.html.pdf"
         },
         {
             name: "Ertapenem 1 g Polvo para solución inyectable",
@@ -346,7 +346,7 @@ document.addEventListener("DOMContentLoaded", function() {
             appearance: "Solución clara.",
             administrationTime: "Administrar durante 30 minutos.",
             storage: "Conservar entre 2°C y 8°C una vez reconstituido.",
-            technicalSheet: "https://cima.aemps.es/cima/pdfs/es/ft/66745/FT_66745.pdf"
+            technicalSheet: "https://www.ema.europa.eu/es/documents/product-information/invanz-epar-product-information_es.pdf"
         },
         ],
     F:[
@@ -359,7 +359,7 @@ document.addEventListener("DOMContentLoaded", function() {
             appearance: "Solución clara e incolora.",
             administrationTime: "1-2 horas",
             storage: "Conservar a temperatura ambiente (15-30°C). Proteger de la luz.",
-            technicalSheet: "https://cima.aemps.es/cima/pdfs/es/ft/65890/FT_65890.pdf"
+            technicalSheet: "https://cima.aemps.es/cima/pdfs/es/ft/71461/71461_ft.pdf"
         },
         {
             name: "Fosfomicina 1 gr Polvo y diluyente para solución para perfusión",
@@ -370,7 +370,7 @@ document.addEventListener("DOMContentLoaded", function() {
             appearance: "Solución clara e incolora.",
             administrationTime: "30-60 minutos",
             storage: "Conservar a temperatura ambiente. Una vez reconstituido, usar dentro de las 24 horas.",
-            technicalSheet: "https://cima.aemps.es/cima/pdfs/es/ft/123456/FT_123456.pdf"
+            technicalSheet: "https://cima.aemps.es/cima/pdfs/es/ft/50878/FT_50878.pdf"
         },
         {
             name: "Fosfomicina 4 gr Polvo para solución para perfusión",
@@ -381,7 +381,7 @@ document.addEventListener("DOMContentLoaded", function() {
             appearance: "Solución clara e incolora.",
             administrationTime: "1-2 horas",
             storage: "Conservar a temperatura ambiente. Una vez reconstituido, usar dentro de las 24 horas.",
-            technicalSheet: "https://cima.aemps.es/cima/pdfs/es/ft/654321/FT_654321.pdf"
+            technicalSheet: "https://cima.aemps.es/cima/pdfs/es/ft/50878/FT_50878.pdf"
         },
         
         ] ,
@@ -395,7 +395,7 @@ document.addEventListener("DOMContentLoaded", function() {
             appearance: "Solución clara e incolora.",
             administrationTime: "1 hora",
             storage: "Conservar en nevera (2-8°C). Una vez reconstituido, usar dentro de las 24 horas.",
-            technicalSheet: "https://cima.aemps.es/cima/pdfs/es/ft/70123/FT_70123.pdf"
+            technicalSheet: "https://cima.aemps.es/cima/pdfs/es/ft/84368/FT_84368.html.pdf"
         },
         {
             name: "Gentamicina 40 mg Solución inyectable y para perfusión",
@@ -406,7 +406,7 @@ document.addEventListener("DOMContentLoaded", function() {
             appearance: "Solución clara e incolora.",
             administrationTime: "30-60 minutos",
             storage: "Conservar a temperatura ambiente. Proteger de la luz.",
-            technicalSheet: "https://cima.aemps.es/cima/pdfs/es/ft/12345/FT_12345.pdf"
+            technicalSheet: "https://cima.aemps.es/cima/pdfs/es/ft/51885/FT_51885.html.pdf"
         },
         {
             name: "Gentamicina 80 mg Solución inyectable y para perfusión",
@@ -417,7 +417,7 @@ document.addEventListener("DOMContentLoaded", function() {
             appearance: "Solución clara e incolora.",
             administrationTime: "30-60 minutos",
             storage: "Conservar a temperatura ambiente. Proteger de la luz.",
-            technicalSheet: "https://cima.aemps.es/cima/pdfs/es/ft/67890/FT_67890.pdf"
+            technicalSheet: "https://cima.aemps.es/cima/pdfs/es/ft/51885/FT_51885.html.pdf"
         },        
         ], 
     I:[
@@ -430,7 +430,7 @@ document.addEventListener("DOMContentLoaded", function() {
             appearance: "Solución clara a ligeramente amarilla.",
             administrationTime: "20-30 minutos",
             storage: "Conservar en nevera (2-8°C). Una vez reconstituido, usar dentro de las 4 horas a temperatura ambiente.",
-            technicalSheet: "https://cima.aemps.es/cima/pdfs/es/ft/72045/FT_72045.pdf"
+            technicalSheet: "https://cima.aemps.es/cima/pdfs/es/ft/71285/FichaTecnica_71285.html.pdf"
         },        
         ],
 
@@ -444,7 +444,7 @@ document.addEventListener("DOMContentLoaded", function() {
             appearance: "Solución clara e incolora.",
             administrationTime: "30-60 minutos",
             storage: "Conservar a temperatura inferior a 25°C. Proteger de la luz.",
-            technicalSheet: "https://cima.aemps.es/cima/pdfs/es/ft/76012/FT_76012.pdf"
+            technicalSheet: "https://cima.aemps.es/cima/pdfs/es/ft/72160/FichaTecnica_72160.html.pdf"
         },
         {
             name: "Linezolid 600 mg Solución para perfusión",
@@ -455,7 +455,7 @@ document.addEventListener("DOMContentLoaded", function() {
             appearance: "Solución clara e incolora.",
             administrationTime: "30-120 minutos",
             storage: "Conservar entre 15-25°C. Proteger de la luz. No refrigerar.",
-            technicalSheet: "https://cima.aemps.es/cima/pdfs/es/ft/81034/FT_81034.pdf"
+            technicalSheet: "https://cima.aemps.es/cima/pdfs/es/ft/79295/79295_ft.pdf"
         },
         ],
     M: [
@@ -468,7 +468,7 @@ document.addEventListener("DOMContentLoaded", function() {
             appearance: "Solución clara a ligeramente amarilla.",
             administrationTime: "15-30 minutos",
             storage: "Conservar en nevera (2-8°C). Una vez reconstituido, usar dentro de 6 horas a temperatura ambiente o 24 horas en refrigeración.",
-            technicalSheet: "https://cima.aemps.es/cima/pdfs/es/ft/70156/FT_70156.pdf"
+            technicalSheet: "https://cima.aemps.es/cima/pdfs/es/ft/81049/FT_81049.html.pdf"
         },
         {
             name: "Metronidazol 500mg Solución para perfusión",
@@ -479,7 +479,7 @@ document.addEventListener("DOMContentLoaded", function() {
             appearance: "Solución clara e incolora.",
             administrationTime: "30-60 minutos",
             storage: "Conservar a temperatura inferior a 25°C.",
-            technicalSheet: "https://cima.aemps.es/cima/pdfs/es/ft/67022/FT_67022.pdf"
+            technicalSheet: "https://cima.aemps.es/cima/pdfs/es/ft/59662/FichaTecnica_59662.ht.pdf"
         },
         {
             name: "Micafungina 50 mg Polvo para concentrado para solución para perfusión",
@@ -490,7 +490,7 @@ document.addEventListener("DOMContentLoaded", function() {
             appearance: "Solución clara e incolora.",
             administrationTime: "1 hora",
             storage: "Conservar en nevera (2-8°C). Una vez reconstituido, usar dentro de 24 horas.",
-            technicalSheet: "https://cima.aemps.es/cima/pdfs/es/ft/83056/FT_83056.pdf"
+            technicalSheet: "https://cima.aemps.es/cima/pdfs/es/ft/86144/86144_ft.pdf"
         },    
     ],
     O:[
@@ -516,7 +516,7 @@ document.addEventListener("DOMContentLoaded", function() {
             appearance: "Solución clara a ligeramente amarilla.",
             administrationTime: "30 minutos",
             storage: "Conservar a temperatura ambiente. Una vez reconstituido, usar dentro de las 24 horas.",
-            technicalSheet: "https://cima.aemps.es/cima/pdfs/es/ft/76023/FT_76023.pdf"
+            technicalSheet: "https://cima.aemps.es/cima/pdfs/es/ft/71601/FichaTecnica_71601.html.pdf"
         },
     ],
     R:[        
@@ -529,7 +529,7 @@ document.addEventListener("DOMContentLoaded", function() {
             appearance: "Solución clara e incolora.",
             administrationTime: "30-120 minutos",
             storage: "Conservar en nevera (2-8°C). Una vez reconstituido, usar dentro de las 24 horas.",
-            technicalSheet: "https://cima.aemps.es/cima/pdfs/es/ft/81089/FT_81089.pdf"
+            technicalSheet: "https://cima.aemps.es/cima/dochtml/ft/1201459002/FT_1201459002.html"
         },
         {
             name: "Rifampicina 600 mg Polvo y disolvente para solución para perfusión",
@@ -540,7 +540,7 @@ document.addEventListener("DOMContentLoaded", function() {
             appearance: "Solución clara a ligeramente amarilla.",
             administrationTime: "2-3 horas",
             storage: "Conservar en nevera (2-8°C). Una vez reconstituido, usar dentro de 6 horas a temperatura ambiente.",
-            technicalSheet: "https://cima.aemps.es/cima/pdfs/es/ft/77034/FT_77034.pdf"
+            technicalSheet: "https://cima.aemps.es/cima/pdfs/es/ft/56487/FichaTecnica_56487.html.pdf"
         },    
         ],
     S:[
@@ -553,7 +553,7 @@ document.addEventListener("DOMContentLoaded", function() {
             appearance: "Solución clara a ligeramente opalescente.",
             administrationTime: "30 minutos",
             storage: "Conservar en nevera (2-8°C). Proteger de la luz.",
-            technicalSheet: "https://cima.aemps.es/cima/pdfs/es/ft/85023/FT_85023.pdf"
+            technicalSheet: "https://cima.aemps.es/cima/pdfs/es/ft/54920/FichaTecnica_54920.html.pdf"
         },
         {
             name: "Sulfametoxazol 800mg/Trimetoprima 160mg Polvo y solución para solución inyectable",
@@ -564,7 +564,7 @@ document.addEventListener("DOMContentLoaded", function() {
             appearance: "Solución clara a ligeramente amarilla.",
             administrationTime: "60-90 minutos",
             storage: "Conservar a temperatura ambiente. Usar inmediatamente tras la reconstitución.",
-            technicalSheet: "https://cima.aemps.es/cima/pdfs/es/ft/88012/FT_88012.pdf"
+            technicalSheet: "https://cima.aemps.es/cima/pdfs/es/ft/54920/FichaTecnica_54920.html.pdf"
         }
     ],
     T:[
@@ -577,7 +577,7 @@ document.addEventListener("DOMContentLoaded", function() {
             appearance: "Solución clara e incolora.",
             administrationTime: "30 minutos",
             storage: "Conservar en nevera (2-8°C). Una vez reconstituido, usar dentro de las 24 horas.",
-            technicalSheet: "https://cima.aemps.es/cima/pdfs/es/ft/88045/FT_88045.pdf"
+            technicalSheet: "https://cima.aemps.es/cima/pdfs/es/ft/78751/FichaTecnica_78751.html.pdf"
         },
         {
             name: "Tigeciclina 50 mg Polvo para solución para perfusión",
@@ -588,7 +588,7 @@ document.addEventListener("DOMContentLoaded", function() {
             appearance: "Solución amarilla a naranja.",
             administrationTime: "30-60 minutos",
             storage: "Conservar en nevera (2-8°C). Una vez reconstituido, usar dentro de las 24 horas.",
-            technicalSheet: "https://cima.aemps.es/cima/pdfs/es/ft/91034/FT_91034.pdf"
+            technicalSheet: "https://cima.aemps.es/cima/dochtml/p/84846/P_84846.html"
         },
         {
             name: "Tobramicina 100 mg Solución inyectable",
@@ -599,7 +599,7 @@ document.addEventListener("DOMContentLoaded", function() {
             appearance: "Solución clara e incolora.",
             administrationTime: "30 minutos",
             storage: "Conservar a temperatura ambiente. Proteger de la luz.",
-            technicalSheet: "https://cima.aemps.es/cima/pdfs/es/ft/82045/FT_82045.pdf"
+            technicalSheet: "https://cima.aemps.es/cima/pdfs/es/ft/65261/FichaTecnica_65261.html.pdf"
         }, 
     ],
     V:[
@@ -612,7 +612,7 @@ document.addEventListener("DOMContentLoaded", function() {
             appearance: "Solución clara a ligeramente amarilla.",
             administrationTime: "1-2 horas",
             storage: "Conservar a temperatura ambiente. Usar dentro de 6 horas tras la reconstitución.",
-            technicalSheet: "https://cima.aemps.es/cima/pdfs/es/ft/91023/FT_91023.pdf"
+            technicalSheet: "https://cima.aemps.es/cima/pdfs/es/ft/67282/FichaTecnica_67282.html.pdf"
         },
         {
             name: "Voriconazol 200 mg Polvo para solución para perfusión",
@@ -623,7 +623,7 @@ document.addEventListener("DOMContentLoaded", function() {
             appearance: "Solución clara e incolora.",
             administrationTime: "1-2 horas",
             storage: "Conservar en nevera (2-8°C). Una vez reconstituido, usar dentro de 24 horas.",
-            technicalSheet: "https://cima.aemps.es/cima/pdfs/es/ft/94012/FT_94012.pdf"
+            technicalSheet: "https://cima.aemps.es/cima/pdfs/es/ft/80941/80941_ft.pdf"
         },        
     ],
     Z:[
@@ -635,7 +635,8 @@ document.addEventListener("DOMContentLoaded", function() {
             preparation: "Listo para usar. Puede diluirse en 5% de SG para perfusión.",
             appearance: "Solución clara e incolora.",
             administrationTime: "1 hora",
-            storage: "Conservar a temperatura inferior a 25°C. Proteger de la luz."
+            storage: "Conservar a temperatura inferior a 25°C. Proteger de la luz.",
+            technicalSheet: "https://cima.aemps.es/cima/pdfs/es/ft/69184/FichaTecnica_69184.html.pdf"
         },
     ], 
 };
