@@ -9,7 +9,7 @@
     margin: 0;
     padding: 0;
     background-color: transparent; /* Asegura que el fondo sea transparente */
-    border: none; /* Elimina bordes */
+    border: none; /* Elimina bordes */    
 }
 
 body {
@@ -20,18 +20,30 @@ body {
     padding: 0;
     box-sizing: border-box;
     background-color: #f4f4f9;
-    
+    overflow-x: hidden; /* Evita scroll horizontal innecesario */    
 }
 
+/* Header fijo */
 header {
-    background-color: #007bff;
-    color: white;
+    position: fixed; /* Hace que el header quede fijo */
+    top: 0; /* Posición en la parte superior */
+    left: 0; /* Alineado a la izquierda */
+    width: 100%; /* Que ocupe todo el ancho */
+    z-index: 1000; /* Para asegurarse de que quede encima del resto del contenido */
+    background-color: #007bff; /* Mantiene el fondo del header */
+    color: white; /* Color del texto */
+    padding: 15px 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra para diferenciarlo del contenido */
     text-align: center;
-    padding: 1rem 0;
-    margin: 0;
-    border: none;
-    box-shadow: none; /* Elimina sombras en el header */
 }
+
+/* Asegura que el contenido principal no quede debajo del header */
+#main-content {
+    margin-top: 80px; /* Ajusta este valor según la altura del header */
+    padding: 20px;
+}
+
+
 
 .container {
     display: flex;
@@ -73,6 +85,12 @@ header {
     overflow-y: auto;
 }
 
+/* Contenedor del abecedario */
+#alphabet {
+    float: left;
+    width: 10%; /* Ajusta el ancho del abecedario */
+    min-width: 50px;
+}
 #alphabet-list {   /*--abecedario--*/
     list-style: none;
     padding: 0;
@@ -95,7 +113,7 @@ header {
 }
 
 #seek-container {   /*--caja externa de buscar atb--*/
-    margin: 1rem 0;
+    margin: 1rem 10px;
     text-align: center;
 
 }
@@ -118,13 +136,6 @@ header {
     box-sizing: border-box;
 }
 
-#antibiotic-info p {
-    color: #ff0000; /* Rojo claro */
-    font-weight: bold;
-    font-size: 1.2rem;
-    text-align: center;
-}
-
 #search-results {
     width: 90%;
     max-width: 800px;
@@ -141,24 +152,27 @@ header {
     transition: background-color 0.3s ease;
 }
 
+
+#antibiotic-info p {
+    color: #ff0000; /* Rojo claro */
+    font-weight: bold;
+    font-size: 1.2rem;
+    text-align: center;
+}
+
 .antibiotic-item:hover {
     background-color: #e0f7fa;
     border-radius: 5px;
 }
 
 #antibiotic-info {
-    width: 90%;
+    width: 85%; /* Ajusta el tamaño en relación al abecedario */
     max-width: 800px;
-    overflow-y: auto; /* Habilita el desplazamiento vertical */
-    margin: 0 auto; /* Centrar horizontalmente */
-    padding: 1rem;
+    padding: 20px;
+    background-color: #f9f9f9;
     border: 1px solid #ddd;
     border-radius: 5px;
-    background-color: #f9f9f9;
-    overflow: hidden; /* Evitar desplazamientos no deseados */
-    box-sizing: border-box; /* Incluir padding y borde en el tamaño total */
-    height: auto; /* Adaptar al contenido */
-    transition: height 0.3s ease; /* Suavidad al cambiar de tamaño */
+    box-sizing: border-box;
     text-align: center;
 }
 
@@ -194,47 +208,40 @@ li {
 
 /* Hacer la tabla adaptable */
 @media (max-width: 768px) {
+    #alphabet {
+        width: 90%; /* El abecedario ocupará todo el ancho */
+        float: none;
+        text-align: center;
+    }
+
+    #antibiotic-info {
+        width: 95%; /* El contenedor de información ocupará todo el ancho */
+        margin-left: 0;
+    }
+
     .details-table th,
     .details-table td {
         display: block; /* Convierte filas en bloques */
         width: 100%; /* Asegura que cada celda ocupe todo el ancho */
-    }
-
-    .details-table th {
         text-align: left; /* Mantén el texto alineado a la izquierda */
         font-size: 1rem; /* Tamaño de fuente más pequeño */
-    }
 
-    .details-table td {
-        text-align: left; /* Asegura que el contenido esté alineado */
-        font-size: 0.9rem; /* Tamaño de fuente ajustado */
+
     }
-}
 
 /* Asegura que el contenedor principal sea responsive */
-#main-content {
+    #main-content {
     padding: 1rem; /* Espaciado alrededor del contenido */
+    margin-top: 60px; /* Ajusta el espacio para móviles */
 }
 
-
-@media (max-width: 768px) {
     header {
         height: 50px; /* Ajusta la altura del header */
         font-size: 1em; /* Ajusta el tamaño de fuente del título */
         padding: 0;        
         margin: 0 ;
-    }
-    #antibiotic-info {
-        width: 30%; /* Reducir en pantallas pequeñas */
-    }
-}
-@media (max-width: 768px) {
-    #antibiotic-info {
-        width: 100%; /* Ocupa todo el ancho disponible */
-        margin: 0; /* Elimina márgenes */
-        padding: 1rem; /* Ajusta el espaciado interno */
-        border-radius: 0; /* Esquina cuadrada para ajustarse al diseño */
-    }
+        padding: 10px 5px; /* Ajusta el espaciado en móviles */
+    } 
     
     .details {
         padding: 1rem; /* Reduce el espacio de padding interno */
@@ -245,11 +252,16 @@ li {
         padding: 0; /* Elimina relleno adicional */
     }
 }
-
-/* Para pantallas pequeñas */
-@media (max-width: 768px) {
-    #antibiotic-info {
-        max-height: 100vh ; /* Más espacio para dispositivos pequeños */
-        margin: 0 10px; /* Asegura un margen alrededor del contenido */
-    }
+#main-content, #seek-bar-container, #antibiotic-info {
+    background-color: transparent; /* Elimina cualquier color de fondo no deseado */
+    border: none; /* Asegura que no haya bordes */
+    margin: 0; /* Elimina márgenes */
+    padding: 0; /* Elimina espacios internos */
 }
+header {
+    margin-bottom: 0; /* Asegura que el header no tenga margen inferior */
+}
+#main-content {
+    margin-top: 50px; /* Ajusta según la altura del header */
+}
+
