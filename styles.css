@@ -149,6 +149,7 @@ header {
 #antibiotic-info {
     width: 90%;
     max-width: 800px;
+    overflow-y: auto; /* Habilita el desplazamiento vertical */
     margin: 0 auto; /* Centrar horizontalmente */
     padding: 1rem;
     border: 1px solid #ddd;
@@ -245,30 +246,10 @@ li {
     }
 }
 
-
-.top-bar {
-    background-color: #f9f9f9;
-    padding: 1rem;
-    border-bottom: 1px solid #ddd;
-    text-align: left;
-}
-
-.top-bar button {
-    background-color: #007bff;
-    color: white;
-    border: none;
-    padding: 0.5rem 1rem;
-    font-size: 1rem;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.top-bar button:hover {
-    background-color: #0056b3;
-}
-
-.technical-sheet-frame {
-    width: 100%;
-    height: calc(100vh - 60px); /* Altura completa menos la barra superior */
-    border: none;
+/* Para pantallas pequeñas */
+@media (max-width: 768px) {
+    #antibiotic-info {
+        max-height: calc(100vh - 200px); /* Más espacio para dispositivos pequeños */
+        margin: 0 10px; /* Asegura un margen alrededor del contenido */
+    }
 }
