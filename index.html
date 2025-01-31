@@ -11,14 +11,17 @@
         <h1>Listado de Antibióticos</h1>
     </header>
     <main>
+        <div id="main-content">
+            <!-- Aquí va el contenido principal de la aplicación -->
+        </div>
         <div class="container">
             <aside class="sidebar">
-                <input type="text" id="search-bar" placeholder="Buscar antibiótico...">
-                <ul id="alphabet-list">
-                    <!-- Generar dinámicamente desde script.js -->
-                </ul>
+                <ul id="alphabet-list"></ul>
             </aside>
             <section class="details">
+                <div id="seek-container">
+                    <input type="text" id="seek-bar" placeholder="Buscar antibiótico...">
+                </div>
                 <ul id="search-results"></ul>
                 <div id="antibiotic-info">
                     <h2>Información del Antibiótico</h2>
@@ -26,7 +29,9 @@
                 </div>
             </section>
             
+            
         </div>
+        
     </main>
     <script src="script.js"></script>
 </body>

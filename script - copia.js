@@ -503,7 +503,7 @@ document.addEventListener("DOMContentLoaded", function() {
             appearance: "Solución clara a ligeramente opalescente.",
             administrationTime: "3 horas",
             storage: "Conservar en nevera (2-8°C). Una vez reconstituido, usar dentro de 6 horas a temperatura ambiente o 12 horas en refrigeración.",
-            technicalSheet: "https://cima.aemps.es/cima/pdfs/es/ft/115989001/FT_115989001.html.pdf"
+            technicalSheet: "https://cima.aemps.es/cima/pdfs/es/ft/85045/FT_85045.pdf"
         },
     ],
     P:[
@@ -640,18 +640,9 @@ document.addEventListener("DOMContentLoaded", function() {
     ], 
 };
 
-
-
-    let originalContent = ""; // Guardar el contenido inicial
-
-    document.addEventListener("DOMContentLoaded", function () {
-        const mainContent = document.getElementById("main-content");
-        originalContent = mainContent.innerHTML; // Guarda el contenido inicial
-    });
-
+const alphabetList = document.getElementById("alphabet-list");
     const searchBar = document.getElementById("seek-bar");
     const resultsContainer = document.getElementById("search-results");
-    const alphabetList = document.getElementById("alphabet-list");
     const antibioticInfo = document.getElementById("antibiotic-info");
 
     // Generar la lista del alfabeto
@@ -661,97 +652,88 @@ document.addEventListener("DOMContentLoaded", function() {
         listItem.textContent = letter;
         listItem.classList.add("alphabet-item");
 
-        // Evento para mostrar antibióticos
-        listItem.addEventListener("click", () => displayAntibiotics(letter));
+        // Agregar evento para mostrar antibióticos
+        listItem.addEventListener("click", () => {
+            displayAntibiotics(letter);
+        });
+
         alphabetList.appendChild(listItem);
     }
 
-    // Mostrar antibióticos por letra
+    // Mostrar antibióticos según la letra seleccionada
     function displayAntibiotics(letter) {
         const antibioticsForLetter = antibiotics[letter] || [];
+    
+        // Si no hay antibióticos para la letra, muestra un mensaje
         if (antibioticsForLetter.length === 0) {
             antibioticInfo.innerHTML = `<p style="color: red;">No existen antibióticos con la letra ${letter}.</p>`;
             return;
         }
-
+    
+        // Generar lista de antibióticos
         const list = antibioticsForLetter
             .map(
-                (atb) =>
-                    `<li class="antibiotic-item" data-name="${atb.name}">
-                        ${atb.name}
-                    </li>`
+                (atb) => `
+                <li class="antibiotic-item" data-name="${atb.name}">
+                    ${atb.name}
+                </li>`
             )
             .join("");
-
+    
         antibioticInfo.innerHTML = `
-            <h2>Antibióticos que empiezan con ${letter}</h2>
-            <ul>${list}</ul>
+            <h2 class='info-title'>Antibióticos que empiezan con ${letter}</h2>
+            <ul class='antibiotic-list'>
+                ${list}
+            </ul>
         `;
-
-        addClickEventsToAntibiotics();
+    
+        // Agregar eventos de clic a los elementos generados
+        addAntibioticClickEvents(letter);
     }
 
-    // Asignar eventos a los antibióticos
-    function addClickEventsToAntibiotics() {
+    
+    function addAntibioticClickEvents(letter) {
         const items = document.querySelectorAll(".antibiotic-item");
-
+    
         items.forEach((item) => {
             item.addEventListener("click", () => {
-                const name = item.getAttribute("data-name");
-                displayDetails(name);
+                const antibioticName = item.getAttribute("data-name");
+                const antibiotic = antibiotics[letter].find(
+                    (atb) => atb.name === antibioticName
+                );
+                showDetails(antibiotic); // Muestra los detalles del antibiótico seleccionado
             });
-
+    
+            // Asegurarte de que los elementos sean interactivos
             item.style.cursor = "pointer";
         });
     }
-
-    // Mostrar detalles del antibiótico seleccionado
-    function displayDetails(name) {
-        const antibiotic = Object.values(antibiotics)
-            .flat()
-            .find((atb) => atb.name === name);
-
-        if (!antibiotic) {
-            antibioticInfo.innerHTML = `<p style="color: red;">Detalles no disponibles.</p>`;
-            return;
-        }
-
-        antibioticInfo.innerHTML = `
-            <h2>${antibiotic.name}</h2>
-            <table class="details-table">
-                <tr><th>Presentación</th><td>${antibiotic.presentation || "N/A"}</td></tr>
-                <tr><th>Tipo</th><td>${antibiotic.type || "N/A"}</td></tr>
-                <tr><th>Dosis</th><td>${antibiotic.dose || "N/A"}</td></tr>
-                <tr><th>Preparación</th><td>${antibiotic.preparation || "N/A"}</td></tr>
-                <tr><th>Aspecto</th><td>${antibiotic.appearance || "N/A"}</td></tr>
-                <tr><th>Tiempo de administración</th><td>${antibiotic.administrationTime || "N/A"}</td></tr>
-                <tr><th>Conservación</th><td>${antibiotic.storage || "N/A"}</td></tr>
-                <tr><th>Ficha técnica</th>
-                    <td>
-                        <a href="#" id="view-technical-sheet" data-url="${antibiotic.technicalSheet}">
-                            Ver ficha técnica
-                        </a>
-                    </td>
-                </tr>
-            </table>
-        `;
-
-        const technicalSheetLink = document.getElementById("view-technical-sheet");
-        technicalSheetLink.addEventListener("click", (event) => {
-            event.preventDefault();
-            const url = technicalSheetLink.getAttribute("data-url");
-            loadTechnicalSheet(url);
-        });
-    }
-
-    // Cargar la ficha técnica
-
-    function loadTechnicalSheet(url) {
-        if (!url || url === "#") {
-            alert("La ficha técnica no está disponible.");
-            return;
-        }
-        window.open(url, "_blank"); // Abrir la ficha técnica en una nueva pestaña
-    }
     
-}); 
+    
+    // Manejar búsqueda
+    searchBar.addEventListener("input", function () {
+        const query = searchBar.value.toLowerCase();
+        resultsContainer.innerHTML = "";
+
+        if (!query) return;
+
+        const results = [];
+        for (const letter in antibiotics) {
+            results.push(
+                ...antibiotics[letter].filter((atb) =>
+                    atb.name.toLowerCase().includes(query)
+                )
+            );
+        }
+
+        if (results.length > 0) {
+            results.forEach((atb) => {
+                const listItem = document.createElement("li");
+                listItem.textContent = atb.name;
+                resultsContainer.appendChild(listItem);
+            });
+        } else {
+            resultsContainer.innerHTML = `<p>No se encontraron resultados.</p>`;
+        }
+    });
+});
