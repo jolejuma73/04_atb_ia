@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 appearance: "Solución clara",
                 administrationTime: "Administrar durante 30 minutos",
                 storage: "Conservar a temperatura ambiente",
-                technicalSheet: "https://cima.aemps.es/cima/pdfs/es/ft/57014/FT_57014.pdf"
+                technicalSheet: "https://cima.aemps.es/cima/pdfs/es/ft/65679/FichaTecnica_65679.html.pdf"
             },
             {
                 name: "Ampicilina 1 gr Polvo y disolvente para solución inyectable y para perfusión",
@@ -661,11 +661,12 @@ document.addEventListener("DOMContentLoaded", function() {
     function displayAntibiotics(letter) {
         if (!antibiotics[letter] || antibiotics[letter].length === 0) {
             antibioticInfo.innerHTML = `
-                <h2 class='info-title'>No hay antibióticos para esta letra</h2>
-                <p>Busque otro antibiótico en el listado general.</p>
-            `;
+                <p style="color: red; font-weight: bold;">
+                    No existen antibióticos en este listado que empiecen con la letra ${letter}.
+                </p>`;
             return;
         }
+        
 
         const list = antibiotics[letter].map(atb => `<li class='antibiotic-item' data-name='${atb.name}'>${atb.name}</li>`).join("");
         antibioticInfo.innerHTML = `
@@ -706,20 +707,94 @@ document.addEventListener("DOMContentLoaded", function() {
         antibioticInfo.innerHTML = details;
     }
 
-    // Buscar antibióticos
-    const searchBar = document.getElementById("search-bar");
-    searchBar.addEventListener("input", function() {
-        const query = searchBar.value.toLowerCase();
-        let results = [];
-
+// Actualiza los resultados de la búsqueda
+    const results = [];
+    function updateSearchResults(query) {
+        // Limpia el contenedor de detalles
+        document.getElementById('antibiotic-info').innerHTML = `
+            <h2>Información del Antibiótico</h2>
+            <p>Seleccione un antibiótico para ver los detalles.</p>
+        `;
+    
+        const results = [];
         for (const letter in antibiotics) {
-            results = results.concat(
-                antibiotics[letter].filter(atb => atb.name.toLowerCase().includes(query))
+            results.push(
+                ...antibiotics[letter].filter((atb) =>
+                    atb.name.toLowerCase().includes(query.toLowerCase())
+                )
             );
         }
+    
+        const resultsContainer = document.getElementById('search-results');
+        resultsContainer.innerHTML = ''; // Limpia los resultados anteriores
+    
+        if (results.length > 0) {
+            results.forEach((atb) => {
+                const listItem = document.createElement('li');
+                listItem.textContent = atb.name;
+                listItem.classList.add('antibiotic-item');
+                listItem.dataset.name = atb.name;
+                listItem.dataset.letter = getAntibioticLetter(atb.name);
+                listItem.addEventListener('click', () => showDetails(atb));
+                resultsContainer.appendChild(listItem);
+            });
+        } else {
+            resultsContainer.innerHTML = '<p>No se encontraron resultados.</p>';
+        }
+    }
+    
+    
+function getAntibioticLetter(name) {
+    return name.charAt(0).toUpperCase();
+}
 
-        const resultList = results.map(atb => `<li class='antibiotic-item' data-name='${atb.name}'>${atb.name}</li>`).join("");
-        antibioticInfo.innerHTML = `<h2 class='info-title'>Resultados de la búsqueda</h2><ul class='antibiotic-list'>${resultList}</ul>`;
-        addAntibioticClickEvents("search");
+document.getElementById('search-results').addEventListener('click', (e) => {
+    if (e.target && e.target.classList.contains('antibiotic-item')) {
+        const name = e.target.dataset.name;
+        const letter = e.target.dataset.letter;
+        const antibiotic = antibiotics[letter].find(atb => atb.name === name);
+        showDetails(antibiotic);
+    }
+});
+
+function showDetails(atb) {
+    const detailsContainer = document.getElementById('antibiotic-info');
+    detailsContainer.innerHTML = `
+        <h2>${atb.name}</h2>
+        <p><strong>Presentación:</strong> ${atb.presentation}</p>
+        <p><strong>Tipo:</strong> ${atb.type}</p>
+        <p><strong>Dosis:</strong> ${atb.dose}</p>
+        <p><strong>Preparación:</strong> ${atb.preparation}</p>
+        <p><strong>Apariencia:</strong> ${atb.appearance}</p>
+        <p><strong>Tiempo de administración:</strong> ${atb.administrationTime}</p>
+        <p><strong>Conservación:</strong> ${atb.storage}</p>
+        <a href="${atb.technicalSheet}" target="_blank">Ficha técnica</a>
+    `;
+}
+
+
+
+    // Buscar antibióticos
+    const searchBar = document.getElementById("search-bar");
+searchBar.addEventListener("input", function () {
+    const query = searchBar.value.toLowerCase();
+    updateSearchResults(query);
+});
+
+
+});
+// Manejar clics en las letras del alfabeto
+document.querySelectorAll('#alphabet-list li').forEach(letter => {
+    letter.addEventListener('click', () => {
+        const selectedLetter = letter.textContent.trim();
+        const antibioticsForLetter = antibiotics.filter(atb => atb.name.startsWith(selectedLetter));
+        
+        const detailsDiv = document.getElementById('antibiotic-info');
+        if (antibioticsForLetter.length > 0) {
+            detailsDiv.innerHTML = `<ul>${antibioticsForLetter.map(atb => `<li>${atb.name}</li>`).join('')}</ul>`;
+        } else {
+            detailsDiv.innerHTML = `<p style="color: red; font-weight: bold;">No existen antibióticos en este listado que empiecen con la letra ${selectedLetter}</p>`;
+        }
     });
 });
+

@@ -30,11 +30,13 @@ header {
 }
 
 #search-bar {
-    width: 100%;
+    width: 90%;
     padding: 0.5rem;
     margin-bottom: 1rem;
     border: 1px solid #ccc;
     border-radius: 5px;
+    font-family: 'Poppins', 'Nunito', 'Quicksand', sans-serif;
+
 }
 
 #alphabet-list {
@@ -52,20 +54,66 @@ header {
     background-color: #f0f0f0;
 }
 
+#alphabet-list li:hover {
+    background-color: #e0f7fa; /* Un color claro para el fondo */
+    border-radius: 5px; /* Bordes redondeados opcionales */
+    transition: background-color 0.3s ease; /* Animación suave */
+    cursor: pointer;
+
+}
 .details {
     flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
     padding: 2rem;
     background-color: #ffffff;
-    overflow-y: auto;
+    overflow-y: auto; /* Permitir scroll si es necesario */
+    box-sizing: border-box;
+}
+
+#antibiotic-info p {
+    color: #ff0000; /* Rojo claro */
+    font-weight: bold;
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+#search-results {
+    margin-top: 20px;
+    list-style: none;
+    padding: 0;
+}
+
+.antibiotic-item {
+    padding: 0.5rem;
+    border-bottom: 1px solid #ddd;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.antibiotic-item:hover {
+    background-color: #e0f7fa;
+    border-radius: 5px;
 }
 
 #antibiotic-info {
-    background-color: #f9f9f9;
+    width: 100%; /* Fijo para ancho */
+    max-width: 800px; /* Tamaño máximo opcional */
+    margin: 0 auto; /* Centrar horizontalmente */
     padding: 1rem;
     border: 1px solid #ddd;
     border-radius: 5px;
+    background-color: #f9f9f9;
+    overflow: hidden; /* Evitar desplazamientos no deseados */
+    box-sizing: border-box; /* Incluir padding y borde en el tamaño total */
+    height: auto; /* Adaptar al contenido */
+    transition: height 0.3s ease; /* Suavidad al cambiar de tamaño */
 }
-.antibiotic-item:hover {
-    background-color: #f0f0f0; /* Un color claro para el resaltado */
-    cursor: pointer; /* Cambia el cursor a pointer para indicar interactividad */
+@media (max-width: 768px) {
+    #antibiotic-info {
+        width: 90%; /* Reducir en pantallas pequeñas */
+    }
 }
+
