@@ -25,23 +25,21 @@ body {
 
 /* Header fijo */
 header {
-    position: fixed; /* Hace que el header quede fijo */
-    top: 0; /* Posición en la parte superior */
-    left: 0; /* Alineado a la izquierda */
-    width: 100%; /* Que ocupe todo el ancho */
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 8vh; 
+    font-size: 1em; 
     z-index: 1000; /* Para asegurarse de que quede encima del resto del contenido */
-    background-color: #007bff; /* Mantiene el fondo del header */
-    color: white; /* Color del texto */
+    background-color: #7793ee; 
+    color: #302f2f; /* Color del texto */
     padding: 15px 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra para diferenciarlo del contenido */
     text-align: center;
 }
 
-/* Asegura que el contenido principal no quede debajo del header */
-#main-content {
-    margin-top: 80px; /* Ajusta este valor según la altura del header */
-    padding: 20px;
-}
+
 
 
 
@@ -62,13 +60,13 @@ header {
     border: 1px solid #ccc;
     border-radius: 5px;
     font-family: 'Poppins', 'Nunito', 'Quicksand', sans-serif;
-    background-color: #aad6;
+    background-color:   #ebf5f7;
     
 }
 #seek-bar {/*--buscar antibiotico item--*/
     max-width: 90%;
-    background-color: #ccc;
-    border: 2px solid #888;
+    background-color:  #d8e7eb ;
+    border: 1px solid #ccc;
     overflow-y: auto;
     padding: 1rem;
     border-radius: 8px;
@@ -79,29 +77,38 @@ header {
 .sidebar { /*caja del abecedario--*/
     width: 15%;
     max-width: 120px;
-    background-color: #fff;
+    min-width: 80px;
+    background-color: #ebf5f7;
     border-right: 1px solid #ddd;
     padding: 1rem;
-    overflow-y: auto;
+    overflow-y: auto;   
 }
 
 /* Contenedor del abecedario */
 #alphabet {
     float: left;
-    width: 10%; /* Ajusta el ancho del abecedario */
-    min-width: 50px;
+    width: 20%; /* Ajusta el ancho del abecedario */
+    min-width: 280px; 
+    box-sizing: border-box;
+    margin: 0; 
+    padding-top: 10px; /* Espacio adicional para separación */
 }
+
 #alphabet-list {   /*--abecedario--*/
     list-style: none;
     padding: 0;
     margin: 0;
 }
 
+/* Elementos del abecedario */
+
 #alphabet-list li {/*--alrededor del abecedario--*/
     cursor: pointer;
     padding: 0.5rem;
-    border-bottom: 1px solid #ddd;
+    border: 1px solid #ddd;
+    border-radius:8px;
     text-align: center;
+    background-color: #d8e7eb;
 }
 
 #alphabet-list li:hover {   /*--alrededor del abecedario--*/
@@ -115,12 +122,11 @@ header {
 #seek-container {   /*--caja externa de buscar atb--*/
     margin: 1rem 10px;
     text-align: center;
-
 }
 
 #search-results {
     list-style: none;
-    padding: 0;     background-color: #009;
+    padding: 0;     
 
 }
 
@@ -131,7 +137,7 @@ header {
     align-items: center;
     justify-content: flex-start;
     padding: 2rem;
-    background-color: #ffffff;
+    background-color: #ebf5f7;
     overflow-y: auto; /* Permitir scroll si es necesario */
     box-sizing: border-box;
 }
@@ -156,7 +162,7 @@ header {
 #antibiotic-info p {
     color: #ff0000; /* Rojo claro */
     font-weight: bold;
-    font-size: 1.2rem;
+    font-size: 1rem;
     text-align: center;
 }
 
@@ -174,6 +180,7 @@ header {
     border-radius: 5px;
     box-sizing: border-box;
     text-align: center;
+
 }
 
 ul {
@@ -206,10 +213,32 @@ li {
     background-color: #f9f9f9; /* Fondo claro para encabezados */
 }
 
+#main-content, #seek-bar-container, #antibiotic-info {
+    background-color: transparent; /* Elimina cualquier color de fondo no deseado */
+    border: none; /* Asegura que no haya bordes */
+    margin: 0; /* Elimina márgenes */
+    padding: 0; /* Elimina espacios internos */
+}
+
+
+#main-content {
+    margin-top: 60px; 
+    box-sizing: border-box;
+    padding: 1rem; /* Espaciado alrededor del contenido */
+}
+
+
 /* Hacer la tabla adaptable */
 @media (max-width: 768px) {
+    header {
+        font-size: 0.8em; 
+        height: 6vh;
+    }
+    #main-content {
+        margin-top: 40px;
+    }
     #alphabet {
-        width: 90%; /* El abecedario ocupará todo el ancho */
+        width: 100%; /* El abecedario ocupará todo el ancho */
         float: none;
         text-align: center;
     }
@@ -225,23 +254,8 @@ li {
         width: 100%; /* Asegura que cada celda ocupe todo el ancho */
         text-align: left; /* Mantén el texto alineado a la izquierda */
         font-size: 1rem; /* Tamaño de fuente más pequeño */
-
-
     }
 
-/* Asegura que el contenedor principal sea responsive */
-    #main-content {
-    padding: 1rem; /* Espaciado alrededor del contenido */
-    margin-top: 60px; /* Ajusta el espacio para móviles */
-}
-
-    header {
-        height: 50px; /* Ajusta la altura del header */
-        font-size: 1em; /* Ajusta el tamaño de fuente del título */
-        padding: 0;        
-        margin: 0 ;
-        padding: 10px 5px; /* Ajusta el espaciado en móviles */
-    } 
     
     .details {
         padding: 1rem; /* Reduce el espacio de padding interno */
@@ -252,16 +266,3 @@ li {
         padding: 0; /* Elimina relleno adicional */
     }
 }
-#main-content, #seek-bar-container, #antibiotic-info {
-    background-color: transparent; /* Elimina cualquier color de fondo no deseado */
-    border: none; /* Asegura que no haya bordes */
-    margin: 0; /* Elimina márgenes */
-    padding: 0; /* Elimina espacios internos */
-}
-header {
-    margin-bottom: 0; /* Asegura que el header no tenga margen inferior */
-}
-#main-content {
-    margin-top: 50px; /* Ajusta según la altura del header */
-}
-
