@@ -693,17 +693,49 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Asignar eventos a los antibióticos
     function addClickEventsToAntibiotics() {
-        const items = document.querySelectorAll(".antibiotic-item");
-
-        items.forEach((item) => {
+        const antibioticItems = document.querySelectorAll(".antibiotic-item");
+    
+        antibioticItems.forEach((item) => {
             item.addEventListener("click", () => {
-                const name = item.getAttribute("data-name");
-                displayDetails(name);
+                const selectedAntibiotic = item.getAttribute("data-name");
+    
+                // Mostrar la información del antibiótico seleccionado
+                displayDetails(selectedAntibiotic);
+    
+                // Limpiar el input de búsqueda
+                const searchBar = document.getElementById("seek-bar");
+                searchBar.value = "";
+    
+                // Limpiar la lista de resultados
+                const resultsContainer = document.getElementById("search-results");
+                resultsContainer.innerHTML = "";
             });
-
-            item.style.cursor = "pointer";
         });
     }
+    
+    function displayDetails(antibioticName) {
+        const antibiotic = antibioticsData.find(atb => atb.name === antibioticName);
+    
+        if (antibiotic) {
+            // Actualiza el contenedor de información con los detalles del antibiótico
+            const infoContainer = document.getElementById("antibiotic-info");
+            infoContainer.innerHTML = `
+                <h2>${antibiotic.name}</h2>
+                <p><strong>Presentación:</strong> ${antibiotic.presentation}</p>
+                <p><strong>Tipo:</strong> ${antibiotic.type}</p>
+                <p><strong>Dosis:</strong> ${antibiotic.dose}</p>
+                <p><strong>Preparación:</strong> ${antibiotic.preparation}</p>
+                <p><strong>Aspecto:</strong> ${antibiotic.aspect}</p>
+                <p><strong>Tiempo de administración:</strong> ${antibiotic.adminTime}</p>
+                <p><strong>Conservación:</strong> ${antibiotic.conservation}</p>
+                <a href="${antibiotic.technicalSheet}" target="_blank">Ficha técnica</a>
+            `;
+        } else {
+            console.error(`No se encontró información para el antibiótico: ${antibioticName}`);
+        }
+    }
+    
+    
 
     // Mostrar detalles del antibiótico seleccionado
     function displayDetails(name) {
@@ -754,4 +786,36 @@ document.addEventListener("DOMContentLoaded", function() {
         window.open(url, "_blank"); // Abrir la ficha técnica en una nueva pestaña
     }
     
+    // Búsqueda dinámica de antibióticos
+document.getElementById("seek-bar").addEventListener("input", function () {
+    const query = this.value.toLowerCase(); // Convierte el valor ingresado a minúsculas
+    const allAntibiotics = Object.values(antibiotics).flat(); // Obtiene todos los antibióticos de todas las letras
+    const filteredAntibiotics = allAntibiotics.filter((atb) =>
+        atb.name.toLowerCase().includes(query)
+    ); // Filtra los antibióticos que coincidan con la búsqueda
+
+    if (filteredAntibiotics.length === 0) {
+        antibioticInfo.innerHTML = `
+            <p style="color: red;">No se encontraron antibióticos que coincidan con "${query}".</p>
+        `;
+    } else {
+        const list = filteredAntibiotics
+            .map(
+                (atb) => `
+                <li class="antibiotic-item" data-name="${atb.name}">
+                    ${atb.name}
+                </li>`
+            )
+            .join("");
+
+        antibioticInfo.innerHTML = `
+            <h2>Resultados de la búsqueda</h2>
+            <ul>${list}</ul>
+        `;
+
+        addClickEventsToAntibiotics(); // Asegura que los eventos "click" estén configurados para los elementos encontrados
+    }
+});
+document.getElementById("seek-bar").value = "";
+
 }); 

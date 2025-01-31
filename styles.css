@@ -1,11 +1,26 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0; /* Elimina todos los bordes */
+    box-shadow: none; /* Elimina sombras */
+    box-sizing: border-box;
+}
+#main-content, #seek-bar-container {
+    margin: 0;
+    padding: 0;
+    background-color: transparent; /* Asegura que el fondo sea transparente */
+    border: none; /* Elimina bordes */
+}
+
 body {
     font-family: 'Poppins', 'Nunito', 'Quicksand', sans-serif;
     font-weight: bold;
     color: #1c1c1c;
-    margin: 0;
+    margin: 0 ;
     padding: 0;
     box-sizing: border-box;
     background-color: #f4f4f9;
+    
 }
 
 header {
@@ -13,12 +28,15 @@ header {
     color: white;
     text-align: center;
     padding: 1rem 0;
+    margin: 0;
+    border: none;
+    box-shadow: none; /* Elimina sombras en el header */
 }
 
 .container {
     display: flex;
     flex-direction: row;
-    height: calc(100vh - 4rem);
+
 }
 
 #seek-container {
@@ -33,6 +51,7 @@ header {
     border-radius: 5px;
     font-family: 'Poppins', 'Nunito', 'Quicksand', sans-serif;
     background-color: #aad6;
+    
 }
 #seek-bar {/*--buscar antibiotico item--*/
     max-width: 90%;
@@ -42,47 +61,49 @@ header {
     padding: 1rem;
     border-radius: 8px;
     text-align: center;
+
 }
-  
-.sidebar {
+
+.sidebar { /*caja del abecedario--*/
     width: 15%;
     max-width: 120px;
     background-color: #fff;
     border-right: 1px solid #ddd;
     padding: 1rem;
     overflow-y: auto;
-
 }
 
-#alphabet-list {
+#alphabet-list {   /*--abecedario--*/
     list-style: none;
     padding: 0;
     margin: 0;
 }
 
-#alphabet-list li {
+#alphabet-list li {/*--alrededor del abecedario--*/
     cursor: pointer;
     padding: 0.5rem;
     border-bottom: 1px solid #ddd;
     text-align: center;
-
 }
 
-#alphabet-list li:hover {
+#alphabet-list li:hover {   /*--alrededor del abecedario--*/
     background-color: #f0f0f0;
     border-radius: 5px; /* Bordes redondeados opcionales */
     transition: background-color 0.3s ease; /* Animación suave */
     cursor: pointer;
+
 }
 
-#seek-container {
+#seek-container {   /*--caja externa de buscar atb--*/
     margin: 1rem 0;
     text-align: center;
+
 }
 
 #search-results {
     list-style: none;
-    padding: 0;
+    padding: 0;     background-color: #009;
+
 }
 
 .details {
@@ -196,6 +217,12 @@ li {
 
 
 @media (max-width: 768px) {
+    header {
+        height: 50px; /* Ajusta la altura del header */
+        font-size: 1em; /* Ajusta el tamaño de fuente del título */
+        padding: 0;        
+        margin: 0 ;
+    }
     #antibiotic-info {
         width: 30%; /* Reducir en pantallas pequeñas */
     }
