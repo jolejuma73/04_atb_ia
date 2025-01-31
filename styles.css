@@ -113,7 +113,7 @@ header {
 }
 @media (max-width: 768px) {
     #antibiotic-info {
-        width: 90%; /* Reducir en pantallas pequeñas */
+        width: 30%; /* Reducir en pantallas pequeñas */
     }
 }
 

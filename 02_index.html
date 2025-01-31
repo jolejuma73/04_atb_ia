@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>02_Listado de Antibióticos</title>
+    <link rel="stylesheet" href="02_styles.css">
+</head>
+<body>
+    <header>
+        <h1>Listado de Antibióticos</h1>
+    </header>
+    <main>
+        <div id="search-container">
+            <input type="text" id="search-bar" placeholder="Buscar Antibiótico" oninput="updateSearchResults(this.value)">
+            <button id="reset-button" onclick="resetSearch()">Volver</button>
+        </div>
+        <ul id="alphabet-list">
+            <!-- Letras generadas dinámicamente -->
+        </ul>
+        <div id="antibiotic-info">
+            <h2>Información del Antibiótico</h2>
+            <p>Seleccione un antibiótico para ver los detalles.</p>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
