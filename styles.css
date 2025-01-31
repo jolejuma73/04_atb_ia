@@ -249,7 +249,7 @@ li {
 /* Para pantallas pequeñas */
 @media (max-width: 768px) {
     #antibiotic-info {
-        max-height: calc(100vh - 200px); /* Más espacio para dispositivos pequeños */
+        max-height: calc(100vh ); /* Más espacio para dispositivos pequeños */
         margin: 0 10px; /* Asegura un margen alrededor del contenido */
     }
 }
