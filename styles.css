@@ -21,7 +21,7 @@ body {
     margin: 0 ;
     padding: 0;
     box-sizing: border-box;
-    background-color: var(--color-principal);
+    background-color: #fff;
     overflow-x: hidden; /* Evita scroll horizontal innecesario */    
 }
 
