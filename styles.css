@@ -60,7 +60,7 @@ header {
     margin-bottom: 1rem;
     
     font-family: 'Poppins', 'Nunito', 'Quicksand', sans-serif;
-    background-color: #c9c9c9;
+    background-color: #fff;
 
     
 }
@@ -83,7 +83,7 @@ header {
 
 .sidebar { /*caja del abecedario--*/    
     width: clamp(80px,20%,120px) ;    
-    background-color: #c9c9c9;
+    background-color: #fff;
     border-right: 1px solid #ddd;
     padding: 1rem;
     overflow-y: auto;  
