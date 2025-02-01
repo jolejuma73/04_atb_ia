@@ -13,15 +13,15 @@
 }
 
 body {
-    --color-principal: #ebf5f7;
+    --color-principal: #368f3f;
 
-    font-family: 'Poppins', 'Nunito', 'Quicksand', sans-serif;
+    font-family: 'noto-sans' 'Quicksand', sans-serif;
     font-weight: bold;
     color: #1c1c1c;
     margin: 0 ;
     padding: 0;
     box-sizing: border-box;
-    background-color: #f4f4f9;
+    background-color: #fff;
     overflow-x: hidden; /* Evita scroll horizontal innecesario */    
 }
 
@@ -32,12 +32,12 @@ header {
     left: 0;
     right: 0; 
     margin: 0 auto;
-    width: 70%; 
-    height: clamp(60px, 8vw, 90px);
+    width: 100%; 
+    height: clamp(75px, 8vw, 90px);
     font-size: clamp(0.8em, 2.2vw, 1.2em) ; 
     z-index: 1000; /* Para asegurarse de que quede encima del resto del contenido */
-    background-color: #7793ee; 
-    color: #302f2f; /* Color del texto */
+    background-color: var(--color-principal); 
+    color: #2e2925; /* Color del texto */
     padding: 15px 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra para diferenciarlo del contenido */
     text-align: center;
@@ -60,13 +60,13 @@ header {
     margin-bottom: 1rem;
     
     font-family: 'Poppins', 'Nunito', 'Quicksand', sans-serif;
-    background-color: var(--color-principal);
+    background-color: #fff;
 
     
 }
 #seek-bar {/*--buscar antibiotico item--*/
     width: clamp(200px, 80%, 600px); /* Controla el ancho con límites */
-    background-color:  #d8e7eb ;
+    background-color: var(--color-principal );
     border: 1px solid #ccc;
     overflow-y: auto;
     padding: 1rem;
@@ -74,6 +74,7 @@ header {
     text-align: center;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
     transition: transform 0.2s, box-shadow 0.2s; /* Animación para hover */
+color:#2e2925;
 }
 
 #seek-bar:hover {
@@ -83,7 +84,7 @@ header {
 
 .sidebar { /*caja del abecedario--*/    
     width: clamp(80px,20%,120px) ;    
-    background-color: #ebf5f7;
+    background-color: #fff;
     border-right: 1px solid #ddd;
     padding: 1rem;
     overflow-y: auto;  
@@ -112,7 +113,7 @@ header {
     border: 1px solid #ddd;
     border-radius:8px;
     text-align: center;
-    background-color: #d8e7eb;
+    background-color: var(--color-principal);
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
     transition: transform 0.2s, box-shadow 0.2s; /* Animación para hover */
 }
@@ -146,7 +147,7 @@ header {
     align-items: center;
     justify-content: flex-start;
     padding: 2rem;
-    background-color: #ebf5f7;
+    background-color: #fff;
     overflow-y: auto; /* Permitir scroll si es necesario */
     box-sizing: border-box;
 }
@@ -234,7 +235,7 @@ li {
     margin-top: 60px; 
     box-sizing: border-box;
     padding: 1rem; /* Espaciado alrededor del contenido */
-    margin-top: clamp(0.8em, 7vw, 70px);
+    margin-top: clamp(1.2em, 7vw, 70px);
 
 }
 
