@@ -13,7 +13,7 @@
 }
 
 body {
-    --color-principal: #ebf5f7;
+    --color-principal: #368f3f;
 
     font-family: 'Poppins', 'Nunito', 'Quicksand', sans-serif;
     font-weight: bold;
@@ -36,7 +36,7 @@ header {
     height: clamp(75px, 8vw, 90px);
     font-size: clamp(0.8em, 2.2vw, 1.2em) ; 
     z-index: 1000; /* Para asegurarse de que quede encima del resto del contenido */
-    background-color: #368f3f; 
+    background-color: var(--color-principal); 
     color: #2e2925; /* Color del texto */
     padding: 15px 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra para diferenciarlo del contenido */
@@ -83,7 +83,7 @@ header {
 
 .sidebar { /*caja del abecedario--*/    
     width: clamp(80px,20%,120px) ;    
-    background-color: #ebf5f7;
+    background-color: var(--color-principal);
     border-right: 1px solid #ddd;
     padding: 1rem;
     overflow-y: auto;  
