@@ -15,7 +15,7 @@
 body {
     --color-principal: #368f3f;
 
-    font-family: 'Poppins', 'Nunito', 'Quicksand', sans-serif;
+    font-family: 'noto-sans' 'Quicksand', sans-serif;
     font-weight: bold;
     color: #1c1c1c;
     margin: 0 ;
