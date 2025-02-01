@@ -4,17 +4,29 @@ body {
     padding: 0;
     box-sizing: border-box;
     text-align: center;
-    background-color: #f8f9fa;
+    min-height: 100vh;
+    overflow: hidden; /* Previene el scroll innecesario */
+
 }
 
+
+main {
+    background-color: rgba(255, 255, 255, 0.85); /* Fondo blanco translúcido para mejorar la legibilidad */
+    border-radius: 8px; /* Opcional: añade bordes redondeados */
+    padding: 1rem;
+    margin: 2rem auto;
+    max-width: 1200px; /* Ajusta según tus necesidades */
+}
+
+
 header {
-    background-color: #007bff;
-    color: white;
+    background-color: #1b67b8c5;
+    color: rgb(31, 23, 23);
     padding: 1rem 0;
     margin-bottom: 1rem;
 }
 
-header h1 {
+h1 {
     margin: 0;
     font-size: 1.5rem;
 }
@@ -27,42 +39,39 @@ main {
 }
 
 #search-container {
-    width: 100%;
+    width: 80%;
     max-width: 600px;
     margin-bottom: 1rem;
     position: sticky;
     top: 0;
     background-color: #f8f9fa;
     padding: 1rem 0;
-    z-index: 10;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
 }
 
+
 #seek-bar {
-    width:clamp(400px, 90%, 800px) ;
+    width:clamp(100px, 90%, 800px) ;
     padding: 0.75rem;
     font-size: 1rem;
-    border: 2px solid black;
+    border: 1px solid #d4d3d3;
     border-radius: 5px;
     margin-bottom: 0.5rem;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     text-align: center;
 }
-
-.reset-btn {
-    margin: 10px auto;
-    padding: 10px 20px;
-    font-size: 1rem;
+#reset-button {
+    background-color: #007bff;
     color: white;
-    background-color: #7793ee;
+    padding: 10px 20px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
 }
 
-.reset-btn:hover {
-    background-color: #5674c5;
+#reset-button:hover {
+    background-color: #0056b3;
 }
 
 
@@ -88,7 +97,7 @@ main {
 }
 
 #alphabet-list li:hover {
-    background-color: #007bff;
+    background-color: #c1d6ec;
     color: white;
 }
 
@@ -129,8 +138,15 @@ main {
     background-color: #007bff;
     color: white;
 }
+#header {
+    margin-bottom: 20px; /* Espaciado entre el encabezado y el contenido */
+}
 
+#antibiotic-info {
+    overflow: auto; /* Permitir desplazamiento si el contenido es demasiado largo */
+}
 
+/*--media queries--*/
 
 @media (min-width: 768px) {
     #search-container {
@@ -141,3 +157,4 @@ main {
         gap: 1rem;
     }
 }
+

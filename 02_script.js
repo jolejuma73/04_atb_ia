@@ -849,4 +849,44 @@ document.getElementById("reset-button").addEventListener("click", function () {
         listItem.addEventListener("click", () => displayAntibiotics(letter));
         alphabetList.appendChild(listItem);
     }
+
+// Función que reinicia el estado inicial de la página
+document.addEventListener("DOMContentLoaded", function () {
+    const resetButton = document.getElementById("reset-button");
+    const searchBar = document.getElementById("seek-bar");
+    const antibioticInfo = document.getElementById("antibiotic-info");
+
+    if (!resetButton) {
+        console.error("Botón de reinicio no encontrado");
+        return;
+    }
+resetButton.style.backgroundColor = "red"; // Cambiar color al iniciar para testear
+
+    // Evento para reiniciar
+    resetButton.addEventListener("click", function () {
+        console.log("Botón Reiniciar pulsado");
+
+        // Limpiar el campo de búsqueda
+        if (searchBar) {
+            searchBar.value = "";
+        } else {
+            console.error("Campo de búsqueda no encontrado");
+        }
+
+        // Restablecer el contenido de la información
+        if (antibioticInfo) {
+            antibioticInfo.innerHTML = `
+                <h2>Información del Antibiótico</h2>
+                <p>Seleccione un antibiótico para ver los detalles.</p>
+            `;
+        } else {
+            console.error("Contenedor de información no encontrado");
+        }
+    });
 });
+
+
+
+
+});
+
