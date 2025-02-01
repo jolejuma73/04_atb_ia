@@ -38,29 +38,33 @@ main {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-#search-bar {
-    width: 100%;
+#seek-bar {
+    width:clamp(400px, 90%, 800px) ;
     padding: 0.75rem;
     font-size: 1rem;
     border: 2px solid black;
     border-radius: 5px;
     margin-bottom: 0.5rem;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
 }
 
-#reset-button {
-    padding: 0.5rem 1rem;
+.reset-btn {
+    margin: 10px auto;
+    padding: 10px 20px;
     font-size: 1rem;
-    background-color: #007bff;
     color: white;
+    background-color: #7793ee;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
-#reset-button:hover {
-    background-color: #0056b3;
+.reset-btn:hover {
+    background-color: #5674c5;
 }
+
 
 #alphabet-list {
     display: flex;
@@ -125,6 +129,8 @@ main {
     background-color: #007bff;
     color: white;
 }
+
+
 
 @media (min-width: 768px) {
     #search-container {
