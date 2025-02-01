@@ -146,7 +146,7 @@ header {
     align-items: center;
     justify-content: flex-start;
     padding: 2rem;
-    background-color: #ebf5f7;
+    background-color: #fff;
     overflow-y: auto; /* Permitir scroll si es necesario */
     box-sizing: border-box;
 }
