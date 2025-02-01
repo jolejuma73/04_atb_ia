@@ -14,14 +14,17 @@
 
 body {
     --color-principal: #368f3f;
+    --color-secundario: #2e2925;
+    --color-terciario: #fbfbfb;
 
-    font-family: 'noto-sans' 'Quicksand', sans-serif;
-    font-weight: bold;
+
+    font-family: 'Noto+Sans', 'Verdana', sans-serif;
+    font-weight:bold;
     color: #1c1c1c;
     margin: 0 ;
     padding: 0;
     box-sizing: border-box;
-    background-color: #fff;
+    background-color: var(--color-terciario) ;
     overflow-x: hidden; /* Evita scroll horizontal innecesario */    
 }
 
@@ -37,7 +40,7 @@ header {
     font-size: clamp(0.8em, 2.2vw, 1.2em) ; 
     z-index: 1000; /* Para asegurarse de que quede encima del resto del contenido */
     background-color: var(--color-principal); 
-    color: #2e2925; /* Color del texto */
+    color: var(--color-secundario); /* Color del texto */
     padding: 15px 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra para diferenciarlo del contenido */
     text-align: center;
@@ -54,13 +57,10 @@ header {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    width: clamp(300px,90%,1200px);
-    
+    width: clamp(300px,90%,1200px);    
     padding: 0.5rem ;
-    margin-bottom: 1rem;
-    
-    font-family: 'Poppins', 'Nunito', 'Quicksand', sans-serif;
-    background-color: #fff;
+    margin-bottom: 1rem;    
+    background-color: var(--color-terciario) ;
 
     
 }
@@ -74,17 +74,32 @@ header {
     text-align: center;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
     transition: transform 0.2s, box-shadow 0.2s; /* Animación para hover */
-color:#2e2925;
+    color: var(--color-secundario);
 }
 
 #seek-bar:hover {
     transform: translateY(-2px); /* Levantar ligeramente al pasar el mouse */
     box-shadow: 0px 6px 10px rgba(165, 163, 163, 0.15); /* Sombra más pronunciada en hover */
+    background-color: var(--color-terciario) ;
+}
+
+#seek-bar:focus {
+    outline: none; /* Elimina el contorno predeterminado */
+    border: 1px solid var(--color-principal); /* Opcional: establece un nuevo borde */
+    box-shadow: none; /* Elimina cualquier sombra */
+}
+#seek-bar::placeholder {
+    color: var(--color-secundario);
+    opacity: 1; /* Asegura que el color sea completamente visible */
+    font-family: 'Noto+Sans', 'Verdana', sans-serif;
+    font-weight: bold;
+    color: var(--color-secundario);
+
 }
 
 .sidebar { /*caja del abecedario--*/    
-    width: clamp(80px,20%,120px) ;    
-    background-color: #fff;
+    width: clamp(220px,30%,300px) ;    
+    background-color: var(--color-terciario) ;
     border-right: 1px solid #ddd;
     padding: 1rem;
     overflow-y: auto;  
@@ -119,13 +134,12 @@ color:#2e2925;
 }
 
 #alphabet-list li:hover {   /*--alrededor del abecedario--*/
-    background-color: #d9f0fa;
+    background-color: var(--color-terciario) ;
     border-radius: 5px; /* Bordes redondeados opcionales */
     transition: background-color 0.3s ease; /* Animación suave */
     cursor: pointer;
     transform: translateY(-2px); /* Levantar ligeramente al pasar el mouse */
     box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.15); /* Sombra más pronunciada en hover */
-
 }
 
 #seek-container {   /*--caja externa de buscar atb--*/
@@ -135,21 +149,20 @@ color:#2e2925;
 
 #search-results {
     list-style: none;
-    padding: 0; 
-    
-
+    padding: 0;  
 }
 
-.details {
+.details { /*--información antibióticos--*/
     flex-grow: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
     padding: 2rem;
-    background-color: #fff;
+    background-color: var(--color-terciario) ;
     overflow-y: auto; /* Permitir scroll si es necesario */
     box-sizing: border-box;
+    font-family: 'Noto+Sans', 'Verdana', sans-serif;
 }
 
 #search-results {
@@ -176,15 +189,14 @@ color:#2e2925;
 }
 
 .antibiotic-item:hover {
-    background-color: #e0f7fa;
+    background-color: var(--color-terciario) ;
     border-radius: 5px;
 }
 
 #antibiotic-info {
-    width: 85%; /* Ajusta el tamaño en relación al abecedario */
-    max-width: 800px;
+    width: clamp(200px, 80%, 600px); /* Controla el ancho con límites */
     padding: 20px;
-    background-color: #f9f9f9;
+    background-color: var(--color-terciario) ;
     border: 1px solid #ddd;
     border-radius: 5px;
     box-sizing: border-box;
@@ -219,7 +231,7 @@ li {
 
 .details-table th {
     font-weight: bold; /* Resalta los encabezados */
-    background-color: #f9f9f9; /* Fondo claro para encabezados */
+    background-color: var(--color-terciario) ;
 }
 
 #main-content, #seek-bar-container, #antibiotic-info {
