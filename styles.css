@@ -234,7 +234,7 @@ li {
     margin-top: 60px; 
     box-sizing: border-box;
     padding: 1rem; /* Espaciado alrededor del contenido */
-    margin-top: clamp(0.8em, 7vw, 70px);
+    margin-top: clamp(1em, 7vw, 70px);
 
 }
 
