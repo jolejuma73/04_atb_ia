@@ -33,7 +33,7 @@ header {
     right: 0; 
     margin: 0 auto;
     width: 70%; 
-    height: clamp(60px, 8vw, 90px);
+    height: clamp(80px, 8vw, 90px);
     font-size: clamp(0.8em, 2.2vw, 1.2em) ; 
     z-index: 1000; /* Para asegurarse de que quede encima del resto del contenido */
     background-color: #7793ee; 
