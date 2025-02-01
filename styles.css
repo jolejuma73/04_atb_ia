@@ -36,8 +36,8 @@ header {
     height: clamp(75px, 8vw, 90px);
     font-size: clamp(0.8em, 2.2vw, 1.2em) ; 
     z-index: 1000; /* Para asegurarse de que quede encima del resto del contenido */
-    background-color: #7793ee; 
-    color: #302f2f; /* Color del texto */
+    background-color: #368f3f; 
+    color: #2e2925; /* Color del texto */
     padding: 15px 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra para diferenciarlo del contenido */
     text-align: center;
