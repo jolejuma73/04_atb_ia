@@ -22,7 +22,7 @@
 body {
     --color-principal: #368f3f;
 
-    font-family: 'noto-sans' 'Quicksand', sans-serif;
+    font-family: 'noto-sans' 'verdana', sans-serif;
     font-weight: bold;
     color: var(--color-secundario); /* Color del texto */
     margin: 0 ;
@@ -63,7 +63,7 @@ header {
     width: clamp(300px,90%,1200px);    
     padding: 0.5rem ;
     margin-bottom: 1rem;    
-    font-family: 'Poppins', 'Nunito', 'Quicksand', sans-serif;
+    font-family: 'noto-sans' 'verdana', sans-serif;
     background-color: var(--color-terciario);
 
     
@@ -94,6 +94,8 @@ header {
 #seek-bar::placeholder {
     color: var(--color-secundario); 
     opacity: 1; /* Asegura que el color sea completamente visible */
+    font-family: 'noto-sans' 'verdana', sans-serif;
+
 }
 
 .sidebar { /*caja del abecedario--*/    
@@ -187,6 +189,8 @@ header {
     font-weight: bold;
     font-size: 1rem;
     text-align: center;
+    font-family: 'noto-sans' 'verdana', sans-serif;
+
 }
 
 .antibiotic-item:hover {
@@ -203,6 +207,7 @@ header {
     border-radius: 5px;
     box-sizing: border-box;
     text-align: center;
+    font-family: 'noto-sans' 'verdana', sans-serif;
 
 }
 
