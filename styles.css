@@ -1,3 +1,10 @@
+:root {
+    --color-principal: #368f3f;
+    --color-secundario: #2e2925;
+    --color-terciario: #fbfbfb;
+    --color-hover: #2a6d30;
+    --color-borde: #0000001a;
+    --color-fondo: #f7f7f7;
 * {
     margin: 0;
     padding: 0;
@@ -21,7 +28,7 @@ body {
     margin: 0 ;
     padding: 0;
     box-sizing: border-box;
-    background-color: #fff;
+    background-color: var(--color-terciario: #fbfbfb);
     overflow-x: hidden; /* Evita scroll horizontal innecesario */    
 }
 
@@ -80,6 +87,16 @@ color:#2e2925;
 #seek-bar:hover {
     transform: translateY(-2px); /* Levantar ligeramente al pasar el mouse */
     box-shadow: 0px 6px 10px rgba(165, 163, 163, 0.15); /* Sombra más pronunciada en hover */
+}
+
+    #seek-bar:focus {
+    outline: none; /* Elimina el contorno predeterminado */
+    border: 1px solid var(--color-principal); /* Opcional: establece un nuevo borde */
+    box-shadow: none; /* Elimina cualquier sombra */
+}
+#seek-bar::placeholder {
+    color: black; /* Cambia el color del placeholder a negro */
+    opacity: 1; /* Asegura que el color sea completamente visible */
 }
 
 .sidebar { /*caja del abecedario--*/    
