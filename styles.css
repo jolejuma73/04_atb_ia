@@ -5,6 +5,8 @@
     --color-fondo: #ebf5ed;/*--pantone 7740c__10--*/
     --color-hover: #d9ebd8;/*pantone 7740c__80--*/
     --color-borde: #4fa66a;/*pantone 7740c__20--*/
+	font-family: 'noto-sans' 'verdana', 'sans-serif';
+
 }
 * {
     margin: 0;
@@ -22,7 +24,6 @@
 
 body {
 
-    font-family: 'noto-sans' 'verdana', 'sans-serif';
     font-weight: bold;
     color: var(--color-fuente); /* Color del texto */
     margin: 0 ;
@@ -41,14 +42,26 @@ header {
     margin: 0 auto;
     width: 100%; 
     height: clamp(75px, 8vw, 90px);
-    font-size: clamp(0.8em, 2.2vw, 1.2em) ; 
+	z-index: 1000; 
+	font-size: clamp(0.8em, 2.2vw, 1.2em) ; 
     background-color: var(--color-principal); 
     color: var(--color-fuente); /* Color del texto */
     padding: 15px 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra para diferenciarlo del contenido */
     text-align: center;
-    border-radius: 12px ;
+    border-radius: 8px;
 }
+
+/* Ajuste del área desplazable */
+main {
+	margin: 0; /* Asegúrate de que no haya margen */
+    padding: 0px; /* Espaciado interno opcional */
+    margin-top: 10px; /* Altura exacta del header */
+    height: calc(100vh - 60px); /* Resta la altura del header del viewport */
+    overflow-y: auto; /* Desplazamiento vertical */
+    background-color: var(--color-terciario);
+}
+
 
 .container {
     display: flex;
@@ -63,7 +76,6 @@ header {
     width: clamp(300px,90%,1200px);    
     padding: 0.5rem ;
     margin-bottom: 1rem;    
-    font-family: 'noto-sans' 'verdana', 'sans-serif';
     background-color: var(--color-fondo);
 
     
@@ -83,7 +95,7 @@ header {
 
 }
 
-#seek-bar:hover {
+	#seek-bar:hover {
     transform: translateY(-2px); /* Levantar ligeramente al pasar el mouse */
     box-shadow: 0px 6px 10px rgba(165, 163, 163, 0.15);
 	background-color: var(--color-hover) ;
@@ -94,7 +106,7 @@ header {
     border: 1px solid var(--color-borde); /* Opcional: establece un nuevo borde */
     box-shadow: none; /* Elimina cualquier sombra */
 }
-#seek-bar::placeholder {
+	#seek-bar::placeholder {
     color: var(--color-fuente); 
     opacity: 1; /* Asegura que el color sea completamente visible */
     font-family: 'Noto Sans', 'Verdana', 'sans-serif';
@@ -194,7 +206,6 @@ header {
     font-weight: bold;
     font-size: 1rem;
     text-align: center;
-    font-family: 'noto-sans' 'verdana', 'sans-serif';
 
 }
 
@@ -211,8 +222,6 @@ header {
     border-radius: 5px;
     box-sizing: border-box;
     text-align: center;
-    font-family: 'noto-sans' 'verdana', 'sans-serif';
-
 }
 
 ul {
@@ -228,7 +237,7 @@ li {
 
 /* Asegura que la tabla sea responsive */
 	h2 {
-    margin-bottom: 20px; /* Ajusta el valor según sea necesario */
+    margin-bottom: 10px; /* Ajusta el valor según sea necesario */
     color: var(--color-fuente); 
 
 }
@@ -284,6 +293,36 @@ li {
     padding: 1rem; /* Espaciado alrededor del contenido */
     margin-top: clamp(1.2em, 7vw, 70px);
 
+}
+
+/*/*pantone 7740c____#368f3f--
+    --color-principal: #92c99b;pantone 7740c__50--
+    --color-fuente: #2e2925;--pantone black c--
+    --color-fondo: #ebf5ed;--pantone 7740c__10--
+    --color-hover: #d9ebd8;pantone 7740c__80--
+    --color-borde: #4fa66a;pantone 7740c__20--*/
+/*--scroll--*/
+/* Estilo para la barra de desplazamiento */
+::-webkit-scrollbar {
+  width: 8px; /* Ancho de la barra vertical */
+  height: 4px; /* Altura de la barra horizontal */
+}
+
+/* Color de fondo de la barra */
+::-webkit-scrollbar-track {
+  background: transparent; /* Color del fondo del track */
+  border-radius: 10px; /* Opcional: bordes redondeados */
+}
+
+/* Color de la barra deslizante */
+::-webkit-scrollbar-thumb {
+  background: #368f3f; /* Color principal de la barra */
+  border-radius: 10px; /* Bordes redondeados de la barra */
+}
+
+/* Color de la barra deslizante al pasar el cursor */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-fuente); /* Color más oscuro cuando el cursor pasa por encima */
 }
 
 
