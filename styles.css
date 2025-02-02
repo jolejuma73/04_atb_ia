@@ -28,7 +28,7 @@ body {
     margin: 0 ;
     padding: 0;
     box-sizing: border-box;
-    background-color: #080;
+    background-color: var(--color-terciario);
     overflow-x: hidden; /* Evita scroll horizontal innecesario */    
 }
 
@@ -61,13 +61,11 @@ header {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    width: clamp(300px,90%,1200px);
-    
+    width: clamp(300px,90%,1200px);    
     padding: 0.5rem ;
-    margin-bottom: 1rem;
-    
+    margin-bottom: 1rem;    
     font-family: 'Poppins', 'Nunito', 'Quicksand', sans-serif;
-    background-color: #fff;
+    background-color: var(--color-terciario);
 
     
 }
@@ -101,7 +99,7 @@ color:#2e2925;
 
 .sidebar { /*caja del abecedario--*/    
     width: clamp(80px,20%,120px) ;    
-    background-color: #fff;
+    background-color: var(--color-terciario);
     border-right: 1px solid #ddd;
     padding: 1rem;
     overflow-y: auto;  
@@ -136,7 +134,7 @@ color:#2e2925;
 }
 
 #alphabet-list li:hover {   /*--alrededor del abecedario--*/
-    background-color: #d9f0fa;
+    background-color: var(--color-terciario);
     border-radius: 5px; /* Bordes redondeados opcionales */
     transition: background-color 0.3s ease; /* Animación suave */
     cursor: pointer;
@@ -164,7 +162,7 @@ color:#2e2925;
     align-items: center;
     justify-content: flex-start;
     padding: 2rem;
-    background-color: #fff;
+    background-color: var(--color-terciario);
     overflow-y: auto; /* Permitir scroll si es necesario */
     box-sizing: border-box;
 }
@@ -193,7 +191,7 @@ color:#2e2925;
 }
 
 .antibiotic-item:hover {
-    background-color: #e0f7fa;
+    background-color: var(--color-terciario);
     border-radius: 5px;
 }
 
@@ -201,7 +199,7 @@ color:#2e2925;
     width: 85%; /* Ajusta el tamaño en relación al abecedario */
     max-width: 800px;
     padding: 20px;
-    background-color: #f9f9f9;
+    background-color: var(--color-terciario);
     border: 1px solid #ddd;
     border-radius: 5px;
     box-sizing: border-box;
@@ -236,7 +234,7 @@ li {
 
 .details-table th {
     font-weight: bold; /* Resalta los encabezados */
-    background-color: #f9f9f9; /* Fondo claro para encabezados */
+    background-color: var(--color-terciario);
 }
 
 #main-content, #seek-bar-container, #antibiotic-info {
