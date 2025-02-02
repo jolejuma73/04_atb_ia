@@ -1,11 +1,10 @@
 :root {
-    --color-principal: #92c99b;/*pantone 7740c--*/
-    --color-secundario: #2e2925;
-    --color-terciario: #fbfbfb;/*--COLOR FONDO--*/
-		/*pantone 7740c____#368f3f--*/
+	/*pantone 7740c____#368f3f--*/
+    --color-principal: #92c99b;/*pantone 7740c__50--*/
+    --color-fuente: #2e2925;/*--pantone black c--*/
+    --color-fondo: #ebf5ed;/*--pantone 7740c__10--*/
     --color-hover: #d9ebd8;/*pantone 7740c__80--*/
-    --color-borde: #92c99b;/*pantone 7740c__50--*/
-    --color-fondo: #4fa66a;/*pantone 7740c__20--*/
+    --color-borde: #4fa66a;/*pantone 7740c__20--*/
 }
 * {
     margin: 0;
@@ -23,13 +22,13 @@
 
 body {
 
-    font-family: 'noto-sans' 'verdana', sans-serif;
+    font-family: 'noto-sans' 'verdana', 'sans-serif';
     font-weight: bold;
-    color: var(--color-secundario); /* Color del texto */
+    color: var(--color-fuente); /* Color del texto */
     margin: 0 ;
     padding: 0;
     box-sizing: border-box;
-    background-color: var(--color-terciario);
+    background-color: var(--color-fondo);
     overflow-x: hidden; /* Evita scroll horizontal innecesario */    
 }
 
@@ -44,7 +43,7 @@ header {
     height: clamp(75px, 8vw, 90px);
     font-size: clamp(0.8em, 2.2vw, 1.2em) ; 
     background-color: var(--color-principal); 
-    color: var(--color-secundario); /* Color del texto */
+    color: var(--color-fuente); /* Color del texto */
     padding: 15px 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra para diferenciarlo del contenido */
     text-align: center;
@@ -64,8 +63,8 @@ header {
     width: clamp(300px,90%,1200px);    
     padding: 0.5rem ;
     margin-bottom: 1rem;    
-    font-family: 'noto-sans' 'verdana', sans-serif;
-    background-color: var(--color-terciario);
+    font-family: 'noto-sans' 'verdana', 'sans-serif';
+    background-color: var(--color-fondo);
 
     
 }
@@ -79,8 +78,8 @@ header {
     text-align: center;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
     transition: transform 0.2s, box-shadow 0.2s; /* Animación para hover */
-    color: var(--color-secundario);
-    font-family: 'noto-sans' 'verdana', sans-serif;
+    color: var(--color-fuente);
+    font-family: 'noto-sans' 'verdana', 'sans-serif';
 
 }
 
@@ -92,13 +91,13 @@ header {
 
     #seek-bar:focus {
     outline: none; /* Elimina el contorno predeterminado */
-    border: 1px solid var(--color-principal); /* Opcional: establece un nuevo borde */
+    border: 1px solid var(--color-borde); /* Opcional: establece un nuevo borde */
     box-shadow: none; /* Elimina cualquier sombra */
 }
 #seek-bar::placeholder {
-    color: var(--color-secundario); 
+    color: var(--color-fuente); 
     opacity: 1; /* Asegura que el color sea completamente visible */
-    font-family: 'Noto Sans', 'Verdana', sans-serif;
+    font-family: 'Noto Sans', 'Verdana', 'sans-serif';
     font-size: 16px; /* Ajusta el tamaño de fuente si es necesario */
     letter-spacing: 1.5px; /* Asegura que sea en píxeles y no un número sin unidad */
 }
@@ -106,8 +105,8 @@ header {
 
 .sidebar { /*caja del abecedario--*/    
     width: clamp(100px,20%,120px) ;    
-    background-color: var(--color-terciario);
-    border-right: 1px solid #ddd;
+    background-color: var(--color-fondo);
+    border-right: 1px solid var(--color-borde);
     padding: 1rem;
     overflow-y: auto;  
 }
@@ -132,7 +131,7 @@ header {
 #alphabet-list li {/*--alrededor del abecedario--*/
     cursor: pointer;
     padding: 0.5rem;
-    border: 1px solid #ddd;
+    border: 1px solid var(--color-borde);
     border-radius:8px;
     text-align: center;
     background-color: var(--color-principal);
@@ -169,7 +168,7 @@ header {
     align-items: center;
     justify-content: flex-start;
     padding: 2rem;
-    background-color: var(--color-terciario);
+    background-color: var(--color-fondo);
     overflow-y: auto; /* Permitir scroll si es necesario */
     box-sizing: border-box;
 }
@@ -184,36 +183,35 @@ header {
 
 .antibiotic-item {
     padding: 0.5rem;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid var(--color-borde);
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
 
 #antibiotic-info p {
-    color: #ff0000; /* Rojo claro */
+    color: #368f3f; /* Rojo claro #368f3f*/
     font-weight: bold;
     font-size: 1rem;
     text-align: center;
-    font-family: 'noto-sans' 'verdana', sans-serif;
+    font-family: 'noto-sans' 'verdana', 'sans-serif';
 
 }
 
 .antibiotic-item:hover {
 	background-color: var(--color-hover);
-    border-radius: 5px;
 }
 
 #antibiotic-info {
     width: 85%; /* Ajusta el tamaño en relación al abecedario */
     max-width: 800px;
     padding: 20px;
-    background-color: var(--color-terciario);
-    border: 1px solid #ddd;
+    background-color: var(--color-fondo);
+    border: 1px solid var(--color-borde);
     border-radius: 5px;
     box-sizing: border-box;
     text-align: center;
-    font-family: 'noto-sans' 'verdana', sans-serif;
+    font-family: 'noto-sans' 'verdana', 'sans-serif';
 
 }
 
@@ -231,6 +229,8 @@ li {
 /* Asegura que la tabla sea responsive */
 	h2 {
     margin-bottom: 20px; /* Ajusta el valor según sea necesario */
+    color: var(--color-fuente); 
+
 }
 
 	.details-table {
@@ -243,17 +243,19 @@ li {
 	.details-table td {
     padding: 10px; /* Espaciado dentro de las celdas */
     text-align: left; /* Alinea el texto a la izquierda */
-    border-bottom: 1px solid #ddd; /* Línea de separación entre filas */
+    border-bottom: 1px solid var(--color-borde); /* Línea de separación entre filas */
 
 }
 
 	.details-table th {
-    font-weight: bold; /* Resalta los encabezados */
-	background-color:#9bcf9f;
+    font-weight: bold; /* Resalta los encabezados--*/
+		background-color:var(--color-principal);
+
 }
 	.details-table td {
     font-weight: 400; /* Resalta los encabezados */
-    background-color: var(--color-terciario);
+    background-color: var(--color-fondo);
+
 }
 	.details-table tbody tr:first-child th:first-child {
     border-radius:12px 0 0 0;
