@@ -97,6 +97,8 @@ header {
     color: var(--color-secundario); 
     opacity: 1; /* Asegura que el color sea completamente visible */
     font-family: 'noto-sans' 'verdana', sans-serif;
+    letter-spacing: 2;
+
 
 }
 
