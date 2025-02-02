@@ -752,7 +752,8 @@ document.addEventListener("DOMContentLoaded", function() {
         antibioticInfo.innerHTML = `
             <h2>${antibiotic.name}</h2>
             <table class="details-table">
-                <tr><th>Presentación</th><td>${antibiotic.presentation || "N/A"}</td></tr>
+                <tr><th><img src="mano03.png" alt="Icono de presentación" class="icono-presentacion"> Presentación</th>
+<td>${antibiotic.presentation || "N/A"}</td></tr>
                 <tr><th>Tipo</th><td>${antibiotic.type || "N/A"}</td></tr>
                 <tr><th>Dosis</th><td>${antibiotic.dose || "N/A"}</td></tr>
                 <tr><th>Preparación</th><td>${antibiotic.preparation || "N/A"}</td></tr>
