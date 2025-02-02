@@ -97,8 +97,10 @@ header {
     color: var(--color-secundario); 
     opacity: 1; /* Asegura que el color sea completamente visible */
     font-family: 'Noto Sans', 'Verdana', sans-serif;
-    letter-spacing: 2px; /* Corrige el espaciado entre letras */
+    font-size: 16px; /* Ajusta el tamaño de fuente si es necesario */
+    letter-spacing: 2px; /* Asegura que sea en píxeles y no un número sin unidad */
 }
+
 
 .sidebar { /*caja del abecedario--*/    
     width: clamp(80px,20%,120px) ;    
