@@ -21,6 +21,19 @@
     background-color: transparent; /* Asegura que el fondo sea transparente */
     border: none; /* Elimina bordes */  
 }
+img {
+    max-width: 100%;
+    height: auto; /* Esto puede forzar tamaños grandes si no se controlan */
+}
+
+.details-table th:first-child img {
+    width: 30px; /* Ajusta a tu preferencia */
+    height: 30px;
+    margin-right: 5px; /* Espacio entre imagen y texto */
+    vertical-align: middle; /* Alineación vertical con el texto */
+}
+
+
 
 body {
 
