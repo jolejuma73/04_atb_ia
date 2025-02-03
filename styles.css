@@ -1,5 +1,5 @@
 :root {
-	/*pantone 7740c____#368f3f--*/
+	--color-pantone: #368f3f; /*--pantone 7740c____#368f3f--*/
     --color-principal: #92c99b;/*pantone 7740c__50--*/
     --color-fuente: #2e2925;/*--pantone black c--*/
     --color-fondo: #ebf5ed;/*--pantone 7740c__10--*/
@@ -21,19 +21,6 @@
     background-color: transparent; /* Asegura que el fondo sea transparente */
     border: none; /* Elimina bordes */  
 }
-img {
-    max-width: 100%;
-    height: auto; /* Esto puede forzar tamaños grandes si no se controlan */
-}
-
-.details-table th:first-child img {
-    width: 30px; /* Ajusta a tu preferencia */
-    height: 30px;
-    margin-right: 5px; /* Espacio entre imagen y texto */
-    vertical-align: middle; /* Alineación vertical con el texto */
-}
-
-
 
 body {
 
@@ -86,7 +73,7 @@ main {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    width: clamp(300px,90%,1200px);    
+    width: clamp(250px,90%,1200px);    
     padding: 0.5rem ;
     margin-bottom: 1rem;    
     background-color: var(--color-fondo);
@@ -94,22 +81,22 @@ main {
     
 }
 #seek-bar {/*--buscar antibiotico item--*/
-    width: clamp(300px, 80%, 600px); /* Controla el ancho con límites */
+    width: clamp(250px, 90%, 600px); /* Controla el ancho con límites */
     background-color: var(--color-principal );
     border: 1px solid #ccc;
     overflow-y: auto;
-    padding: 1rem;
+    padding: 1rem ;
+    margin: 0 auto;
     border-radius: 8px;
     text-align: center;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
-    transition: transform 0.2s, box-shadow 0.2s; /* Animación para hover */
+    transition: transform 0.3s, box-shadow 0.2s; /* Animación para hover */
     color: var(--color-fuente);
     font-family: 'noto-sans' 'verdana', 'sans-serif';
 
 }
 
 	#seek-bar:hover {
-    transform: translateY(-2px); /* Levantar ligeramente al pasar el mouse */
     box-shadow: 0px 6px 10px rgba(165, 163, 163, 0.15);
 	background-color: var(--color-hover) ;
 }
@@ -169,21 +156,18 @@ main {
     border-radius: 5px; /* Bordes redondeados opcionales */
     transition: background-color 0.3s ease; /* Animación suave */
     cursor: pointer;
-    transform: translateY(-2px); /* Levantar ligeramente al pasar el mouse */
     box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.15); /* Sombra más pronunciada en hover */
 
 }
 
 #seek-container {   /*--caja externa de buscar atb--*/
-    margin: 1rem 10px;
+    margin: 0 auto;
     text-align: center;
 }
 
 #search-results {
     list-style: none;
-    padding: 0; 
-    
-
+    padding: 0;   
 }
 
 .details {
@@ -256,7 +240,8 @@ li {
 }
 
 	.details-table {
-    width: 100%; /* Ocupa el ancho completo del contenedor */
+    margin-top: 40px;
+    width: 90%; 
     border-collapse: collapse; /* Elimina espacios entre celdas */
     margin-bottom: 1rem; /* Espaciado inferior */
 }
@@ -270,8 +255,9 @@ li {
 }
 
 	.details-table th {
+    width: 240px; /* Ancho por defecto */
     font-weight: bold; /* Resalta los encabezados--*/
-		background-color:var(--color-principal);
+	background-color:var(--color-principal);
 
 }
 	.details-table td {
@@ -280,15 +266,39 @@ li {
 
 }
 	.details-table tbody tr:first-child th:first-child {
-    border-radius:12px 0 0 0;
+    border-radius:8px 0 0 0;
 }
 	.details-table tr:last-child th:first-child {
-    border-radius: 0 0 0 12px;
+    border-radius: 0 0 0 8px;
 	border-bottom:none;
 }
 	.details-table td:hover {
-    font-size:1.1rem;
+	background-color: var(--color-hover) ;
+}
 
+.details-table td a {
+    color: var(--color-fuente);
+    text-decoration: none;
+}
+.details-table td a:hover {
+    text-decoration: underline;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+
+/*--IMG--*/
+
+img {
+    max-width: 100%;
+    height: auto; /* Esto puede forzar tamaños grandes si no se controlan */
+}
+
+.details-table th img {
+    width: 30px; /* Ajusta a tu preferencia */
+    height: 30px;
+    margin-right: 5px; /* Espacio entre imagen y texto */
+    vertical-align: middle; /* Alineación vertical con el texto */
 }
 
 #main-content, #seek-bar-container, #antibiotic-info {
@@ -308,13 +318,6 @@ li {
 
 }
 
-/*/*pantone 7740c____#368f3f--
-    --color-principal: #92c99b;pantone 7740c__50--
-    --color-fuente: #2e2925;--pantone black c--
-    --color-fondo: #ebf5ed;--pantone 7740c__10--
-    --color-hover: #d9ebd8;pantone 7740c__80--
-    --color-borde: #4fa66a;pantone 7740c__20--*/
-/*--scroll--*/
 /* Estilo para la barra de desplazamiento */
 ::-webkit-scrollbar {
   width: 8px; /* Ancho de la barra vertical */
@@ -359,17 +362,25 @@ li {
         width: 100%; /* Asegura que cada celda ocupe todo el ancho */
         text-align: left; /* Mantén el texto alineado a la izquierda */
         font-size: 1rem; /* Tamaño de fuente más pequeño */
-		border-bottom:none
-
+        border-bottom:none
     }
-	
+    
 	.details-table th {
 		border-radius:8px;
-		text-align:center;	
+		text-align:center;
+        width: 250px; /* Ancho para pantallas pequeñas */
+        justify-items: center;
+	
 	}
 	.details-table td {
 		text-align:center;	
 	}
+    .details-table td:hover {
+        font-size: 16px ;
+        background: var(--color-hover); 
+        border-radius: 8px;
+        margin: 4px;
+    }
 
 	.details-table tbody tr:first-child th:first-child {
     border-radius: 8px;
@@ -387,4 +398,25 @@ li {
     #search-results {
         padding: 0; /* Elimina relleno adicional */
     }
+/* Estilos para resoluciones pequeñas */
+@media (max-width: 768px) {
+    .details-table {
+        margin: 0 auto; /* Centra horizontalmente la tabla */
+        width: 90%; /* Ajusta el ancho de la tabla */
+    }
+
+    .details-table th,
+    .details-table td {
+        display: block; /* Hace que cada celda ocupe toda la fila */
+        text-align: center; /* Centra horizontalmente el texto */
+        width: 100%; /* Las celdas se expanden al ancho completo */
+    }
+
+    .details-table tr {
+        display: flex; /* Usa flexbox para centrar los elementos */
+        flex-direction: column; /* Pone las celdas en una columna */
+        align-items: center; /* Centra horizontalmente */
+        justify-content: center; /* Centra verticalmente */
+    }
+}
 }
