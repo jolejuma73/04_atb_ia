@@ -756,7 +756,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     <th><img src="imagenes/01_presentacion.png" alt="Icono de presentación" class="icono-presentacion">Presentación</th>
                     <td>${antibiotic.presentation || "N/A"}</td></tr>
                 <tr>
-                    <th><img src="imagenes/02_tipo2.png" alt="Icono de presentación" class="icono-presentacion">Tipo de Antiinfecioso</th>
+                    <th><img src="imagenes/02_tipo.png" alt="Icono de presentación" class="icono-presentacion">Tipo de Antiinfecioso</th>
                     <td>${antibiotic.type || "N/A"}</td></tr>
                 <tr>
                     <th><img src="imagenes/03_dosis.png" alt="Icono de dosis" class="icono-dosis">Dosis</th>
@@ -765,7 +765,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     <th><img src="imagenes/04_preparacion.png" alt="Icono de preparación" class="icono-preparacion">Preparación</th>
                     <td>${antibiotic.preparation || "N/A"}</td></tr>
                 <tr>
-                    <th><img src="imagenes/05_aspecto2.png" alt="Icono de Aspecto" class="icono-aspecto">Aspecto</th>
+                    <th><img src="imagenes/05_aspecto.png" alt="Icono de Aspecto" class="icono-aspecto">Aspecto</th>
                     <td>${antibiotic.appearance || "N/A"}</td></tr>
                 <tr>
                     <th><img src="imagenes/06_tiempo.png" alt="Icono de Tiempo de administración" class="icono-tiempo">Tiempo de administración</th>
