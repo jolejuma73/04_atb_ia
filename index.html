@@ -1,38 +1,27 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>antiinfecciosos</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <title>6nuevo</title>
+    <link rel="stylesheet" href="6.css">
 </head>
 <body>
     <header>
         <h1>Antiinfecciosos</h1>
+        <div>
+            <input type="text" id="search-bar" placeholder="Buscar antiinfecciosos...">
+        </div>
     </header>
     <main>
-        <div id="main-content">
-            <!-- Aquí va el contenido principal de la aplicación -->
-        </div>
-        <div class="container">
-            <aside class="sidebar">
-                <ul id="alphabet-list"></ul>
-            </aside>
-            <section class="details">
-                <div id="seek-container">
-                    <input type="text" id="seek-bar" placeholder="Buscar antiinfecciosos...">
-                </div>
-                <ul id="search-results"></ul>
-                <div id="antibiotic-info">
-                    <h2>Información del Antiinfeccioso.</h2>
-                    <p>Seleccione un antiinfeccioso para ver los detalles.</p>
-                </div>
-            </section>           
-        </div>        
+        <aside class="sidebar">
+            <ul id="alphabet-list"></ul>
+        </aside>
+        <section id="content">
+            <h2 id="antibiotic-name"></h2>
+            <div id="antibiotic-details"></div>
+        </section>
     </main>
-    <script src="script.js"></script>
+    <script src="6.js"></script>
 </body>
 </html>
