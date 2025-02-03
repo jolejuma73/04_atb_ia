@@ -756,7 +756,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     <th><img src="imagenes/01_presentacion.png" alt="Icono de presentación" class="icono-presentacion">Presentación</th>
                     <td>${antibiotic.presentation || "N/A"}</td></tr>
                 <tr>
-                    <th><img src="imagenes/tipo.png" alt="Icono de presentación" class="icono-presentacion">Tipo de Antiinfecioso</th>
+                    <th><img src="imagenes/02_tipo.png" alt="Icono de presentación" class="icono-presentacion">Tipo de Antiinfecioso</th>
                     <td>${antibiotic.type || "N/A"}</td></tr>
                 <tr>
                     <th><img src="imagenes/03_dosis2.png" alt="Icono de dosis" class="icono-dosis">Dosis</th>
