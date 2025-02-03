@@ -414,7 +414,7 @@ border-radius: 10px; /* Bordes redondeados de la barra */
     .details-table th {
       display: flex; /* Activa el diseño flexbox */
       align-items: center; /* Alinea verticalmente la imagen y el texto */
-      justify-content: start; /* Alinea horizontalmente hacia la izquierda */
+      justify-content: space-between; /* Alinea horizontalmente hacia la izquierda */
       gap: 8px; /* Espaciado entre la imagen y el texto */
       text-align: left; /* Asegura que el texto esté alineado a la izquierda */
     }
