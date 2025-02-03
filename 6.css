@@ -408,4 +408,26 @@ border-radius: 10px; /* Bordes redondeados de la barra */
         justify-content: center; /* Centra verticalmente */
     }
 }
+
+/* Estilos responsivos para resoluciones pequeñas */
+@media (max-width: 768px) {
+    .details-table th {
+      display: flex; /* Activa el diseño flexbox */
+      align-items: center; /* Alinea verticalmente la imagen y el texto */
+      justify-content: start; /* Alinea horizontalmente hacia la izquierda */
+      gap: 8px; /* Espaciado entre la imagen y el texto */
+      text-align: left; /* Asegura que el texto esté alineado a la izquierda */
+    }
+  
+    .details-table th img {
+      flex-shrink: 0; /* Evita que la imagen se reduzca */
+      width: 24px; /* Define un ancho adecuado */
+      height: 24px; /* Define una altura adecuada */
+    }
+  
+    .details-table th span {
+      flex-grow: 1; /* Permite que el texto ocupe el espacio restante */
+    }
+  }
+  
 }

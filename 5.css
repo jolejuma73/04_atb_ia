@@ -81,8 +81,8 @@ main {
     
 }
 #seek-bar {/*--buscar antibiotico item--*/
-    width: clamp(250px, 90%, 600px); /* Controla el ancho con límites */
-    background-color: var(--color-principal );
+    width: clamp(250px, 90%, 900px); 
+    background-color: var(--color-principal);
     border: 1px solid #ccc;
     overflow-y: auto;
     padding: 1rem ;
@@ -125,7 +125,7 @@ main {
 
 /* Contenedor del abecedario */
 #alphabet {
-    width: 20%; /* Ajusta el ancho del abecedario */
+    width: 100%; /* Ajusta el ancho del abecedario */
     min-width: 260px; 
     box-sizing: border-box;
     margin: 0; 
@@ -156,7 +156,7 @@ main {
     border-radius: 5px; /* Bordes redondeados opcionales */
     transition: background-color 0.3s ease; /* Animación suave */
     cursor: pointer;
-    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.15); /* Sombra más pronunciada en hover */
+    box-shadow: 0px 6px 10px #00000026; /* Sombra más pronunciada en hover */
 
 }
 
@@ -199,7 +199,7 @@ main {
 
 
 #antibiotic-info p {
-    color: #368f3f; /* Rojo claro #368f3f*/
+    color: var(--color-pantone); /* Rojo claro #368f3f*/
     font-weight: bold;
     font-size: 1rem;
     text-align: center;
@@ -211,8 +211,7 @@ main {
 }
 
 #antibiotic-info {
-    width: 85%; /* Ajusta el tamaño en relación al abecedario */
-    max-width: 800px;
+    width: clamp(280px,90%,900px);
     padding: 20px;
     background-color: var(--color-fondo);
     border: 1px solid var(--color-borde);
@@ -241,7 +240,7 @@ li {
 
 	.details-table {
     margin-top: 40px;
-    width: 90%; 
+    width: 100%; 
     border-collapse: collapse; /* Elimina espacios entre celdas */
     margin-bottom: 1rem; /* Espaciado inferior */
 }
@@ -311,7 +310,6 @@ img {
 
 
 #main-content {
-    margin-top: 60px; 
     box-sizing: border-box;
     padding: 1rem; /* Espaciado alrededor del contenido */
     margin-top: clamp(1.2em, 7vw, 70px);
@@ -332,7 +330,7 @@ img {
 
 /* Color de la barra deslizante */
 ::-webkit-scrollbar-thumb {
-  background: #368f3f; /* Color principal de la barra */
+  background: var(--color-pantone); /* Color principal de la barra */
   border-radius: 10px; /* Bordes redondeados de la barra */
 }
 
@@ -344,7 +342,14 @@ img {
 
 /* Hacer la tabla adaptable */
 @media (max-width: 768px) {
-	
+    .sidebar {
+        width: 100%;
+        max-width: 90px;
+    }
+    #seek-container	{
+        width: 90%; 
+
+    }
         #alphabet {
         width: 100%; /* El abecedario ocupará todo el ancho */
         float: none;
@@ -352,7 +357,7 @@ img {
     }
 
     #antibiotic-info {
-        width: 80%; /* El contenedor de información ocupará todo el ancho */
+        width: 90%; 
         margin-left: 0;
     }
 
@@ -396,7 +401,7 @@ img {
     }
 
     #search-results {
-        padding: 0; /* Elimina relleno adicional */
+        padding: 10px; /* Elimina relleno adicional */
     }
 /* Estilos para resoluciones pequeñas */
 @media (max-width: 768px) {
