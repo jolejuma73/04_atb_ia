@@ -262,6 +262,7 @@ li {
 	.details-table tr:last-child th:first-child {
     border-radius: 0 0 0 8px;
 	border-bottom:none;
+
 }
 	.details-table td:hover {
 	background-color: var(--color-hover) ;
@@ -275,6 +276,11 @@ li {
     text-decoration: underline;
     font-weight: bold;
     font-size: 16px;
+}
+
+
+.details-table tr:last-child td:last-child a {
+    color: var(--color-pantone) ;
 }
 
 
