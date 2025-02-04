@@ -1,4 +1,11 @@
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
+    const alphabetList = document.getElementById("alphabet-list");
+    const sidebar = document.querySelector(".sidebar");
+    const mainButtonContainer = document.getElementById("main-button-container");
+    const searchResults = document.getElementById("search-results");
+    const searchBar = document.getElementById("seek-bar");
+    const antibioticInfo = document.getElementById("antibiotic-info");
+
     const antibiotics = {
         A: [
             {
@@ -643,29 +650,15 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 
-    let originalContent = ""; // Guardar el contenido inicial
+    
 
-    document.addEventListener("DOMContentLoaded", function () {
-        const mainContent = document.getElementById("main-content");
-        originalContent = mainContent.innerHTML; // Guarda el contenido inicial
+    // Generar dinámicamente las letras del abecedario
+    Object.keys(antibiotics).forEach((letter) => {
+        const li = document.createElement("li");
+        li.textContent = letter;
+        li.className = "alphabet-item";
+        alphabetList.appendChild(li);
     });
-
-    const searchBar = document.getElementById("seek-bar");
-    const resultsContainer = document.getElementById("search-results");
-    const alphabetList = document.getElementById("alphabet-list");
-    const antibioticInfo = document.getElementById("antibiotic-info");
-
-    // Generar la lista del alfabeto
-    for (let i = 65; i <= 90; i++) {
-        const letter = String.fromCharCode(i);
-        const listItem = document.createElement("li");
-        listItem.textContent = letter;
-        listItem.classList.add("alphabet-item");
-
-        // Evento para mostrar antibióticos
-        listItem.addEventListener("click", () => displayAntibiotics(letter));
-        alphabetList.appendChild(listItem);
-    }
 
     // Mostrar antibióticos por letra
     function displayAntibiotics(letter) {
@@ -692,52 +685,6 @@ document.addEventListener("DOMContentLoaded", function() {
         addClickEventsToAntibiotics();
     }
 
-    // Asignar eventos a los antibióticos
-    function addClickEventsToAntibiotics() {
-        const antibioticItems = document.querySelectorAll(".antibiotic-item");
-    
-        antibioticItems.forEach((item) => {
-            item.addEventListener("click", () => {
-                const selectedAntibiotic = item.getAttribute("data-name");
-    
-                // Mostrar la información del antibiótico seleccionado
-                displayDetails(selectedAntibiotic);
-    
-                // Limpiar el input de búsqueda
-                const searchBar = document.getElementById("seek-bar");
-                searchBar.value = "";
-    
-                // Limpiar la lista de resultados
-                const resultsContainer = document.getElementById("search-results");
-                resultsContainer.innerHTML = "";
-            });
-        });
-    }
-    
-    function displayDetails(antibioticName) {
-        const antibiotic = antibioticsData.find(atb => atb.name === antibioticName);
-    
-        if (antibiotic) {
-            // Actualiza el contenedor de información con los detalles del antibiótico
-            const infoContainer = document.getElementById("antibiotic-info");
-            infoContainer.innerHTML = `
-                <h2>${antibiotic.name}</h2>
-                <p><strong>Presentación:</strong> ${antibiotic.presentation}</p>
-                <p><strong>Tipo:</strong> ${antibiotic.type}</p>
-                <p><strong>Dosis:</strong> ${antibiotic.dose}</p>
-                <p><strong>Preparación:</strong> ${antibiotic.preparation}</p>
-                <p><strong>Aspecto:</strong> ${antibiotic.aspect}</p>
-                <p><strong>Tiempo de administración:</strong> ${antibiotic.adminTime}</p>
-                <p><strong>Conservación:</strong> ${antibiotic.conservation}</p>
-                <a href="${antibiotic.technicalSheet}" target="_blank">Ficha técnica</a>
-            `;
-        } else {
-            console.error(`No se encontró información para el antibiótico: ${antibioticName}`);
-        }
-    }
-    
-    
-
     // Mostrar detalles del antibiótico seleccionado
     function displayDetails(name) {
         const antibiotic = Object.values(antibiotics)
@@ -750,86 +697,130 @@ document.addEventListener("DOMContentLoaded", function() {
         }
 
         antibioticInfo.innerHTML = `
-            <h2>${antibiotic.name}</h2>
-            <table class="details-table">
-                <tr>
-                    <th><img src="imagenes/01_presentacion.png" alt="Icono de presentación" class="icono-presentacion">Presentación</th>
-                    <td>${antibiotic.presentation || "N/A"}</td></tr>
-                <tr>
-                    <th><img src="imagenes/02_tipo.png" alt="Icono de presentación" class="icono-presentacion">Tipo de Antiinfecioso</th>
-                    <td>${antibiotic.type || "N/A"}</td></tr>
-                <tr>
-                    <th><img src="imagenes/03_dosis.png" alt="Icono de dosis" class="icono-dosis">Dosis</th>
-                    <td>${antibiotic.dose || "N/A"}</td></tr>
-                <tr>
-                    <th><img src="imagenes/04_preparacion.png" alt="Icono de preparación" class="icono-preparacion">Preparación</th>
-                    <td>${antibiotic.preparation || "N/A"}</td></tr>
-                <tr>
-                    <th><img src="imagenes/05_aspecto.png" alt="Icono de Aspecto" class="icono-aspecto">Aspecto</th>
-                    <td>${antibiotic.appearance || "N/A"}</td></tr>
-                <tr>
-                    <th><img src="imagenes/06_tiempo.png" alt="Icono de Tiempo de administración" class="icono-tiempo">Tiempo de administración</th>
-                    <td>${antibiotic.administrationTime || "N/A"}</td></tr>
-                <tr>
-                    <th><img src="imagenes/07_conservacion.png" alt="Icono de Conservación" class="icono-conservacion">Conservación</th>
-                    <td>${antibiotic.storage || "N/A"}</td></tr>
-                <tr>
-                    <th><img src="imagenes/08_ficha_tecnica.png" alt="Icono de Ficha técnica" class="icono-ficha_tecnica">Ficha técnica</th>
-                    <td>
-                        <a href="#" id="view-technical-sheet" data-url="${antibiotic.technicalSheet}">Ver ficha técnica</a>
-                    </td>
-                </tr>
-            </table>
-        `;
+        <h2>${antibiotic.name}</h2>
+        <table class="details-table">
+            <tr>
+                <th><img src="imagenes/01_presentacion.png" alt="Icono de presentación">Presentación</th>
+                <td>${antibiotic.presentation || "N/A"}</td>
+            </tr>
+            <tr>
+                <th><img src="imagenes/02_tipo.png" alt="Icono de tipo">Tipo de Antiinfecioso</th>
+                <td>${antibiotic.type || "N/A"}</td>
+            </tr>
+            <tr>
+                <th><img src="imagenes/03_dosis.png" alt="Icono de dosis">Dosis</th>
+                <td>${antibiotic.dose || "N/A"}</td>
+            </tr>
+            <tr>
+                <th><img src="imagenes/04_preparacion.png" alt="Icono de preparación">Preparación</th>
+                <td>${antibiotic.preparation || "N/A"}</td>
+            </tr>
+            <tr>
+                <th><img src="imagenes/05_aspecto.png" alt="Icono de aspecto">Aspecto</th>
+                <td>${antibiotic.appearance || "N/A"}</td>
+            </tr>
+            <tr>
+                <th><img src="imagenes/06_tiempo.png" alt="Icono de tiempo">Tiempo de administración</th>
+                <td>${antibiotic.administrationTime || "N/A"}</td>
+            </tr>
+            <tr>
+                <th><img src="imagenes/07_conservacion.png" alt="Icono de conservación">Conservación</th>
+                <td>${antibiotic.storage || "N/A"}</td>
+            </tr>
+            <tr>
+                <th><img src="imagenes/08_ficha_tecnica.png" alt="Icono de ficha técnica">Ficha técnica</th>
+                <td>
+                    <a href="${antibiotic.technicalSheet}" target="_blank">Ver ficha técnica</a>
+                </td>
+            </tr>
+        </table>
+    `;
+}
 
-        const technicalSheetLink = document.getElementById("view-technical-sheet");
-        technicalSheetLink.addEventListener("click", (event) => {
-            event.preventDefault();
-            const url = technicalSheetLink.getAttribute("data-url");
-            loadTechnicalSheet(url);
+    // Asignar eventos a los antibióticos
+    function addClickEventsToAntibiotics() {
+        const antibioticItems = document.querySelectorAll(".antibiotic-item");
+        antibioticItems.forEach((item) => {
+            item.addEventListener("click", () => {
+                const selectedAntibiotic = item.getAttribute("data-name");
+                displayDetails(selectedAntibiotic);
+            });
         });
     }
 
-    // Cargar la ficha técnica
-
-    function loadTechnicalSheet(url) {
-        if (!url || url === "#") {
-            alert("La ficha técnica no está disponible.");
-            return;
+    // Evento: Clic en una letra del abecedario
+    alphabetList.addEventListener("click", function (event) {
+        if (event.target.tagName === "LI") {
+            const letter = event.target.textContent;
+            displayAntibiotics(letter);
+            sidebar.style.display = "none"; // Ocultar sidebar
+            mainButtonContainer.style.display = "flex"; // Mostrar botón "Ir al Inicio"
         }
-        window.open(url, "_blank"); // Abrir la ficha técnica en una nueva pestaña
-    }
-    
-    // Búsqueda dinámica de antibióticos
-document.getElementById("seek-bar").addEventListener("input", function () {
-    const query = this.value.toLowerCase(); // Convierte el valor ingresado a minúsculas
-    const allAntibiotics = Object.values(antibiotics).flat(); // Obtiene todos los antibióticos de todas las letras
-    const filteredAntibiotics = allAntibiotics.filter((atb) =>
-        atb.name.toLowerCase().includes(query)
-    ); // Filtra los antibióticos que coincidan con la búsqueda
+    });
 
-    if (filteredAntibiotics.length === 0) {
-        antibioticInfo.innerHTML = `
-            <p style="color: red;">No se encontraron antibióticos que coincidan con "${query}".</p>
-        `;
-    } else {
-        const list = filteredAntibiotics
-            .map(
-                (atb) => `
-                <li class="antibiotic-item" data-name="${atb.name}">
-                    ${atb.name}
-                </li>`
-            )
-            .join("");
 
-        antibioticInfo.innerHTML = `
-            <h2>Resultados de la búsqueda</h2>
-            <ul>${list}</ul>
-        `;
-
-        addClickEventsToAntibiotics(); // Asegura que los eventos "click" estén configurados para los elementos encontrados
+// Detectar búsqueda en la barra de búsqueda
+searchBar.addEventListener("keypress", function (event) {
+    if (event.key === "Enter" && searchBar.value.trim() !== "") {
+        const query = searchBar.value.trim().toLowerCase();
+        displaySearchResults(query); // Mostrar los resultados de la búsqueda
+        sidebar.style.display = "none"; // Ocultar el sidebar
+        mainButtonContainer.style.display = "flex"; // Mostrar el botón "Ir al Inicio"
     }
 });
-document.getElementById("seek-bar").value = "";
+    // Búsqueda dinámica de antibióticos
+    searchBar.addEventListener("input", function () {
+        const query = this.value.toLowerCase();
+        const allAntibiotics = Object.values(antibiotics).flat();
+        const filteredAntibiotics = allAntibiotics.filter((atb) =>
+            atb.name.toLowerCase().includes(query)
+        );
 
-}); 
+        if (filteredAntibiotics.length === 0) {
+            antibioticInfo.innerHTML = `
+                <p style="color: red;">No se encontraron antibióticos que coincidan con "${query}".</p>
+            `;
+        } else {
+            const list = filteredAntibiotics
+                .map(
+                    (atb) => `
+                    <li class="antibiotic-item" data-name="${atb.name}">
+                        ${atb.name}
+                    </li>`
+                )
+                .join("");
+
+            antibioticInfo.innerHTML = `
+                <h2>Resultados de la búsqueda</h2>
+                <ul>${list}</ul>
+            `;
+
+            addClickEventsToAntibiotics();
+        }
+    });
+
+    // Evento: Volver al inicio
+   mainButtonContainer.addEventListener("click", function () {
+    sidebar.style.display = "block"; // Mostrar el sidebar
+    mainButtonContainer.style.display = "none"; // Ocultar el botón "Ir al Inicio"
+    searchResults.style.display = "none"; // Ocultar los resultados de búsqueda
+    antibioticInfo.innerHTML = `<p>Seleccione un antibiótico para ver los detalles.</p>`; // Reiniciar el contenido del área de detalles
+});
+function hideSidebar() {
+    const sidebar = document.querySelector('.sidebar');
+    sidebar.style.display = 'none';
+}
+
+document.getElementById('alphabet-list').addEventListener('click', (event) => {
+    if (event.target.tagName === 'LI') {
+        hideSidebar();
+    }
+});
+
+document.getElementById('seek-bar').addEventListener('keypress', (event) => {
+    if (event.key === 'Enter' && event.target.value.trim() !== '') {
+        hideSidebar();
+    }
+});
+
+});
