@@ -526,7 +526,7 @@ border-radius: 10px; /* Bordes redondeados de la barra */
         text-align: left; /* Asegura que el texto esté alineado a la izquierda */
         padding-left: 10px; /* Resetea cualquier padding general */
 		justify-content:space-between;
-		padding-right:80px;
+		padding-right:50px;
 		font-size:13px;
     }
 
