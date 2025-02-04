@@ -56,35 +56,38 @@ header {
 /*--  BOTON DE VOLVER--*/
 
 
-#return-container {
+#main-button-container {
+    margin-bottom: 1rem; /* Espaciado debajo del botón */
+    width: 100%; /* Asegura que el botón use todo el ancho disponible */
     display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: var(--color-fondo);
-    margin: 0;
-    padding: 10px 0; /* Espaciado superior e inferior */
-    border-bottom: 1px solid var(--color-borde); /* Línea para separarlo visualmente */
-    position: sticky; /* Para que permanezca visible al hacer scroll */
-    top: calc(clamp(75px, 8vw, 90px)); /* Misma altura que el header */
-    z-index: 999; /* Asegura que esté por encima del contenido principal */
+    justify-content: center; /* Centra el botón horizontalmente */
 }
 
-#return-button {
-    background-color: var(--color-pantone);
-    color: white;
-    font-size: 1rem;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+#main-button {
+    background-color: var(--color-principal); /* Fondo del botón */
+    color: var(--color-fuente); /* Color del texto */
+    padding: 10px 20px; /* Tamaño del botón */
+    border: none; /* Sin borde */
+    border-radius: 8px; /* Bordes redondeados */
+    text-decoration: none; /* Elimina subrayado */
+    font-weight: bold; /* Texto en negrita */
+    text-align: center; /* Centra el texto dentro del botón */
+    cursor: pointer; /* Cambia el cursor a una mano */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Animaciones */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    width: 90%; /* Botón adaptado al ancho del sidebar */
 }
 
-#return-button:hover {
-    background-color: var(--color-borde);
-    transform: scale(1.05); /* Efecto de aumento al pasar el mouse */
+#main-button:hover {
+    background-color: var(--color-hover); /* Cambia el color al pasar el ratón */
+    transform: scale(1.05); /* Aumenta ligeramente el tamaño */
 }
+
+#main-button:active {
+    background-color: var(--color-borde); /* Color al hacer clic */
+    transform: scale(0.95); /* Reduce ligeramente el tamaño */
+}
+
 
 
 
@@ -160,6 +163,58 @@ main {
     padding: 1rem;
     overflow-y: auto;  
 }
+/*--nuevo--*/
+/* Estilo compartido */
+.sidebar-item {
+    display: flex; /* Asegura que el contenido esté centrado */
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    width: clamp(40px, 5vw, 60px); /* Ancho adaptable */
+    height: clamp(40px, 5vw, 60px); /* Alto adaptable */
+    border-radius: 8px; /* Bordes redondeados */
+    background-color: var(--color-principal); /* Fondo */
+    color: var(--color-fuente); /* Color del texto */
+    font-weight: bold; /* Texto en negrita */
+    cursor: pointer; /* Cursor tipo mano */
+    margin-bottom: 10px; /* Separación entre elementos */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Animación */
+    text-decoration: none; /* Sin subrayado para enlaces */
+    text-align: center; /* Centra el texto o contenido */
+}
+
+.sidebar-item:hover {
+    background-color: var(--color-hover); /* Color al pasar el ratón */
+    transform: scale(1.05); /* Animación de aumento */
+}
+
+.sidebar-item:active {
+    background-color: var(--color-borde); /* Color al hacer clic */
+    transform: scale(0.95); /* Animación de reducción */
+}
+
+.sidebar-item img {
+    width: 50%; /* Imagen proporcional al tamaño del botón */
+    height: 50%;
+}
+
+/* Ajustes para pantallas pequeñas */
+@media (max-width: 768px) {
+    .sidebar-item {
+        width: clamp(30px, 10vw, 50px); /* Reduce el tamaño en pantallas pequeñas */
+        height: clamp(30px, 10vw, 50px);
+        margin-bottom: 8px; /* Reduce el espaciado */
+    }
+}
+
+/* Ajustes para pantallas grandes */
+@media (min-width: 1200px) {
+    .sidebar-item {
+        width: clamp(50px, 3vw, 70px); /* Aumenta ligeramente en pantallas grandes */
+        height: clamp(50px, 3vw, 70px);
+    }
+}
+
 
 /* Contenedor del abecedario */
 #alphabet {
@@ -267,32 +322,38 @@ li {
 
 }
 
-	.details-table {
-    margin-top: 40px;
-    width: 90%; 
-    border-collapse: collapse; /* Elimina espacios entre celdas */
-    margin-bottom: 1rem; /* Espaciado inferior */
+
+/*--nuevo--*/
+
+
+.details-table {
+    width: 100%; /* Asegura que la tabla ocupe todo el ancho disponible */
+    border-collapse: collapse; /* Evita espacios entre celdas */
+    table-layout: fixed; /* Mantiene un ancho uniforme para las columnas */
 }
 
-	.details-table th,
-	.details-table td {
-    padding: 10px; /* Espaciado dentro de las celdas */
-    text-align: left; /* Alinea el texto a la izquierda */
-    border-bottom: 1px solid var(--color-borde); /* Línea de separación entre filas */
-
+.details-table th, .details-table td {
+    padding: 10px; /* Espaciado interno */
+    border-bottom: 1px solid var(--color-borde); /* Línea inferior */
+    text-align: left; /* Alinea el contenido a la izquierda */
+    vertical-align: top; /* Asegura que el contenido inicie en la parte superior */
+    word-break: break-word; /* Permite dividir palabras largas */
 }
 
-	.details-table th {
-    width: 240px; /* Ancho por defecto */
-    font-weight: bold; /* Resalta los encabezados--*/
-	background-color:var(--color-principal);
-
+.details-table th {
+    background-color: var(--color-principal); /* Fondo para los encabezados */
+    color: var(--color-fuente); /* Color del texto */
+    font-weight: bold; /* Negrita para distinguir los encabezados */
+    display: table-cell; /* Asegura el comportamiento natural de tabla */
 }
-	.details-table td {
-    font-weight: 400; /* Resalta los encabezados */
-    background-color: var(--color-fondo);
-	text-align:center;	
-	}
+
+.details-table td {
+    background-color: var(--color-fondo); /* Fondo para las celdas */
+    color: var(--color-fuente); /* Color del texto */
+}
+
+
+
 
 
 	.details-table tbody tr:first-child th:first-child {
@@ -391,6 +452,8 @@ border-radius: 10px; /* Bordes redondeados de la barra */
         width: 80%; /* El contenedor de información ocupará todo el ancho */
         margin-left: 0;
     }
+	    
+
 
     .details-table th,
     .details-table td {
@@ -406,7 +469,7 @@ border-radius: 10px; /* Bordes redondeados de la barra */
 		text-align:center;
         width: 250px; /* Ancho para pantallas pequeñas */
         justify-items: center;
-	
+
 	}
 
     .details-table td:hover {
@@ -457,22 +520,23 @@ border-radius: 10px; /* Bordes redondeados de la barra */
 /* Estilos responsivos para resoluciones pequeñas */
 @media (max-width: 768px) {
     .details-table th {
-      display: flex; /* Activa el diseño flexbox */
-      align-items: center; /* Alinea verticalmente la imagen y el texto */
-      justify-content: space-between; /* Alinea horizontalmente hacia la izquierda */
-      gap: 8px; /* Espaciado entre la imagen y el texto */
-      text-align: left; /* Asegura que el texto esté alineado a la izquierda */
+        display: flex; /* Mantén Flexbox para la alineación */
+        align-items: center; /* Centra verticalmente la imagen y el texto */
+        gap: 8px; /* Espaciado entre la imagen y el texto */
+        text-align: left; /* Asegura que el texto esté alineado a la izquierda */
+        padding-left: 10px; /* Resetea cualquier padding general */
+		justify-content:space-between;
+		padding-right:80px;
+		font-size:13px;
     }
-  
+
     .details-table th img {
-      flex-shrink: 0; /* Evita que la imagen se reduzca */
-      width: 24px; /* Define un ancho adecuado */
-      height: 24px; /* Define una altura adecuada */
+        flex-shrink: 0; /* Evita que la imagen se reduzca */
+        width: 24px; /* Tamaño adecuado para pantallas pequeñas */
+        height: 24px; /* Tamaño adecuado para pantallas pequeñas */
     }
-  
-    .details-table th span {
-      flex-grow: 1; /* Permite que el texto ocupe el espacio restante */
+
+    .details-table th .text-content {
+        padding-left: 10px; /* Espaciado adicional para el texto */
     }
-  }
-  
 }
