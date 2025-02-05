@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
+    
     // 1. Selección de elementos del DOM
-    const inicialesContainer = document.getElementById("iniciales");
+    const inicialesContainer = document.querySelector(".contenedor-iniciales");
     const listaAntiinfecciosos = document.getElementById("lista-antiinfecciosos");
     const detalleAntiinfeccioso = document.getElementById("detalle-antiinfeccioso");
     const zonaBusqueda = document.querySelector(".zona-busqueda");
@@ -657,34 +658,38 @@ document.addEventListener("DOMContentLoaded", function () {
     // 3. Mostrar iniciales
 
     function mostrarIniciales() {
-        console.log("Generando iniciales..."); // Para verificar
         const inicialesContainer = document.getElementById("iniciales");
-        inicialesContainer.innerHTML = "";
+        inicialesContainer.innerHTML = ""; // Limpia cualquier contenido previo
+        inicialesContainer.style.display = "block"; // Asegúrate de que sea visible
     
         Object.keys(antibiotics).forEach(inicial => {
-            console.log("Creando botón para la inicial:", inicial); // Depuración
             const button = document.createElement("button");
             button.textContent = inicial;
+            button.classList.add("boton-inicial"); // Clase opcional para estilos
             button.addEventListener("click", () => mostrarAntiinfecciosos(inicial));
             inicialesContainer.appendChild(button);
         });
     }
     
     
-    
     // 4. Mostrar antiinfecciosos de una inicial seleccionada
 
-    
     function mostrarAntiinfecciosos(inicial) {
-        console.log("Inicial seleccionada:", inicial);
+        listaAntiinfecciosos.innerHTML = "";
+        detalleAntiinfeccioso.innerHTML = "";
     
-        const resultados = antibiotics[inicial];
-        console.log("Antiinfecciosos disponibles:", resultados);
+        // Ocultar "Selecciona una inicial" y las iniciales
+        document.querySelector("#titulo-iniciales").style.display = "none";
+    document.querySelector("#iniciales").style.display = "none";
+    document.querySelector(".zona-busqueda").style.display = "none";
+    document.querySelector("#lista-antiinfecciosos").style.display = "block";
+
+        // Mostrar el listado de antiinfecciosos
+        listaAntiinfecciosos.style.display = "block";
     
-        listaAntiinfecciosos.innerHTML = ""; // Limpia el contenedor
-    
-        if (resultados && resultados.length > 0) {
-            resultados.forEach(antibiotico => {
+        const results = antibiotics[inicial];
+        if (results && results.length > 0) {
+            results.forEach(antibiotico => {
                 const item = document.createElement("div");
                 item.classList.add("aii-item");
                 item.textContent = antibiotico.name;
@@ -692,88 +697,93 @@ document.addEventListener("DOMContentLoaded", function () {
                 listaAntiinfecciosos.appendChild(item);
             });
         } else {
-            listaAntiinfecciosos.innerHTML = `<p>No se encontraron antiinfecciosos para la inicial "${inicial}".</p>`;
+            listaAntiinfecciosos.innerHTML = `<p>No se encontraron antiinfecciosos para la inicial seleccionada.</p>`;
         }
-    
-        // Mostrar el contenedor
-        listaAntiinfecciosos.style.display = "block";
-        listaAntiinfecciosos.classList.add("active");
     }
     
-        
     
+        
     // 5. Mostrar detalles de un antiinfeccioso seleccionado
 
     function mostrarDetalles(antibiotico) {
-        listaAntiinfecciosos.style.display = "none";
-        detalleAntiinfeccioso.style.display = "block";
+        // Oculta el contenedor de iniciales y otras zonas
+        document.querySelector("#titulo-iniciales").style.display = "none";
+    document.querySelector(".zona-busqueda").style.display = "none";
+    document.querySelector("#iniciales").style.display = "none";
+    document.querySelector("#lista-antiinfecciosos").style.display = "none";
+    document.querySelector("#detalle-antiinfeccioso").style.display = "block";
+
     
+        // Muestra los detalles
+        detalleAntiinfeccioso.style.display = "block";
         detalleAntiinfeccioso.innerHTML = `
             <table class="detalle-tabla">
                 <thead>
                     <tr>
-                        <th><img src="imagenes/01_presentacion.png" alt="Icono de Presentación" aria-label="Presentación"></th>
+                        <th><img src="imagenes/01_presentacion.png" alt="Icono de Presentación" class="icono"></th>
                         <th>Presentación</th>
                         <td>${antibiotico.presentation}</td>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td><img src="imagenes/02_tipo.png" alt="Icono de Tipo" aria-label="Tipo"></td>
+                        <td><img src="imagenes/02_tipo.png" alt="Icono de Tipo" class="icono"></td>
                         <td>Tipo</td>
                         <td>${antibiotico.type}</td>
                     </tr>
                     <tr>
-                        <td><img src="imagenes/03_dosis.png" alt="Icono de Dosis" aria-label="Dosis"></td>
+                        <td><img src="imagenes/03_dosis.png" alt="Icono de Dosis" class="icono"></td>
                         <td>Dosis</td>
                         <td>${antibiotico.dose}</td>
                     </tr>
                     <tr>
-                        <td><img src="imagenes/04_preparacion.png" alt="Icono de Preparación" aria-label="Preparación"></td>
+                        <td><img src="imagenes/04_preparacion.png" alt="Icono de Preparación" class="icono"></td>
                         <td>Preparación</td>
                         <td>${antibiotico.preparation}</td>
                     </tr>
                     <tr>
-                        <td><img src="imagenes/05_aspecto.png" alt="Icono de Aspecto" aria-label="Aspecto"></td>
+                        <td><img src="imagenes/05_aspecto.png" alt="Icono de Aspecto" class="icono"></td>
                         <td>Aspecto</td>
                         <td>${antibiotico.appearance}</td>
                     </tr>
                     <tr>
-                        <td><img src="imagenes/06_tiempo.png" alt="Icono de Tiempo de Administración" aria-label="Tiempo de Administración"></td>
+                        <td><img src="imagenes/06_tiempo.png" alt="Icono de Tiempo de Administración" class="icono"></td>
                         <td>Tiempo de Administración</td>
                         <td>${antibiotico.administrationTime}</td>
                     </tr>
                     <tr>
-                        <td><img src="imagenes/07_conservacion.png" alt="Icono de Conservación" aria-label="Conservación"></td>
+                        <td><img src="imagenes/07_conservacion.png" alt="Icono de Conservación" class="icono"></td>
                         <td>Conservación</td>
                         <td>${antibiotico.storage}</td>
                     </tr>
                     <tr>
-                        <td><img src="imagenes/08_ficha_tecnica.png" alt="Icono de Ficha Técnica" aria-label="Ficha Técnica"></td>
+                        <td><img src="imagenes/08_ficha_tecnica.png" alt="Icono de Ficha Técnica" class="icono"></td>
                         <td>Ficha Técnica</td>
                         <td><a href="#" onclick="mostrarFichaTecnica('${antibiotico.technicalSheet}'); return false;" aria-label="Ver ficha técnica">Ver ficha técnica</a></td>
                     </tr>
-
                 </tbody>
             </table>`;
     }
     
+    
 
     // 6. Funcionalidad de búsqueda por texto
+
     inputBusqueda.addEventListener("input", () => {
         const searchText = inputBusqueda.value.toLowerCase().trim();
+        console.log("Texto buscado:", searchText); // Agregado para depuración
+    
         listaAntiinfecciosos.innerHTML = "";
-        detalleAntiinfeccioso.innerHTML = "";
-
+    
         if (searchText === "") {
             listaAntiinfecciosos.innerHTML = `<p>Ingrese un término para buscar.</p>`;
             return;
         }
-
+    
         const results = Object.values(antibiotics)
             .flat()
             .filter(antibiotico => antibiotico.name.toLowerCase().includes(searchText));
-
+    
         if (results.length > 0) {
             results.forEach(antibiotico => {
                 const item = document.createElement("div");
@@ -785,40 +795,51 @@ document.addEventListener("DOMContentLoaded", function () {
         } else {
             listaAntiinfecciosos.innerHTML = `<p>No se encontraron resultados para "${searchText}".</p>`;
         }
-
+    
         listaAntiinfecciosos.style.display = "block";
     });
+    
 
-    // Otras funciones definidas aquí...
+// 7. Funcionalidad del botón de volver al inicio
+
 
 // 7. Funcionalidad del botón de volver al inicio
 function reiniciarEstado() {
-    listaAntiinfecciosos.style.display = "none";
-    detalleAntiinfeccioso.style.display = "none";
-    inicialesContainer.style.display = "block";
-    zonaBusqueda.style.display = "block";
-    tituloSeleccion.style.display = "block";
-    tituloLista.style.display = "block";
-
-
-    document.querySelector("#main-button-container").style.display = "none";
+    // Mostrar las secciones iniciales
+    function reiniciarEstado() {
+        document.querySelector("#titulo-iniciales").style.display = "block";
     document.querySelector("#iniciales").style.display = "block";
     document.querySelector(".zona-busqueda").style.display = "block";
-    document.querySelector("#lista-antiinfecciosos").innerHTML = "";
-    document.querySelector("#detalle-antiinfeccioso").innerHTML = "";
     document.querySelector("#lista-antiinfecciosos").style.display = "none";
     document.querySelector("#detalle-antiinfeccioso").style.display = "none";
+    document.querySelector("#ficha-tecnica-contenido").style.display = "none";
+    }
+    
 
-    // Limpia cualquier contenido previo
-    listaAntiinfecciosos.innerHTML = "";
-    detalleAntiinfeccioso.innerHTML = "";
+    // Limpiar las listas y detalles mostrados
+    document.querySelector("#lista-antiinfecciosos").innerHTML = "";
+    document.querySelector("#detalle-antiinfeccioso").innerHTML = "";
+
+    // Mostrar el título de iniciales nuevamente
+    document.querySelector("#titulo-iniciales").style.display = "block";
+
+    // Eliminar el contenedor de la ficha técnica si existe
+    const fichaTecnicaContainer = document.querySelector("#ficha-tecnica-container");
+    if (fichaTecnicaContainer) {
+        fichaTecnicaContainer.remove();
+    }
+
+    // Ocultar el botón de inicio
+    document.querySelector("#main-button-container").style.display = "none";
+    document.querySelector("#main-button").addEventListener("click", (e) => {
+        e.preventDefault();
+        console.log("Botón inicio presionado"); // Agregado para depuración
+        reiniciarEstado(); // Asegúrate de que esta función esté definida y funcional
+    });
+    
+    
 }
 
-// Asignar evento al botón de volver al inicio
-document.querySelector("#main-button").addEventListener("click", (e) => {
-    e.preventDefault();
-    reiniciarEstado();
-});
 
 // 8. Iniciar la visualización de las iniciales
 mostrarIniciales();
@@ -847,32 +868,24 @@ document.addEventListener("click", (e) => {
 });
 // 9. Mostrar la ficha técnica en un iframe
 
-
 function mostrarFichaTecnica(enlace) {
-    console.log("Abriendo ficha técnica:", enlace);
-
     let fichaTecnicaContainer = document.querySelector("#ficha-tecnica-container");
     if (!fichaTecnicaContainer) {
         fichaTecnicaContainer = document.createElement("div");
         fichaTecnicaContainer.id = "ficha-tecnica-container";
         fichaTecnicaContainer.style.marginTop = "20px";
-        fichaTecnicaContainer.style.display = "block";
         document.querySelector("main").appendChild(fichaTecnicaContainer);
     }
 
     fichaTecnicaContainer.innerHTML = `
-        <iframe src="${enlace}" width="100%" height="600px" frameborder="0" title="Ficha Técnica"></iframe>
+        <iframe src="${enlace}" width="100%" height="600px" frameborder="0"></iframe>
     `;
 
-    // Ocultar las secciones innecesarias
+    // Ocultar otras secciones
     document.querySelector("#iniciales").style.display = "none";
     document.querySelector(".zona-busqueda").style.display = "none";
     document.querySelector("#lista-antiinfecciosos").style.display = "none";
     document.querySelector("#detalle-antiinfeccioso").style.display = "none";
     document.querySelector("#titulo-iniciales").style.display = "none";
-
-    const botonVolver = document.querySelector("#main-button-container");
-    if (botonVolver) {
-        botonVolver.style.display = "block";
-    }
 }
+
