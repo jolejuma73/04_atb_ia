@@ -9,6 +9,20 @@
     font-family: 'Noto Sans', 'Verdana', sans-serif;
 }
 
+
+.ficha-contenido {
+    display: none; /* Oculto inicialmente */
+    margin: 20px;
+    padding: 15px;
+    border: 1px solid #ccc;
+    background-color: #f8f8f8;
+}
+#ficha-tecnica-container iframe {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
 /* Estilos generales */
 body {
     display: flex;

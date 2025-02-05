@@ -99,7 +99,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 administrationTime: "60 minutos",
                 storage: "El producto reconstituido con agua para inyección, permanece estable 24 horas en nevera. Una vez diluido, se ha demostrado estable entre 1-3 horas.",
                 technicalSheet: "https://cima.aemps.es/cima/pdfs/es/ft/73962/73962_ft.pdf"
-            }
+            },
         ],
         C: [
             {
@@ -657,17 +657,19 @@ document.addEventListener("DOMContentLoaded", function () {
     // 3. Mostrar iniciales
 
     function mostrarIniciales() {
-        inicialesContainer.innerHTML = ""; // Limpia botones previos
+        console.log("Generando iniciales..."); // Para verificar
+        const inicialesContainer = document.getElementById("iniciales");
+        inicialesContainer.innerHTML = "";
+    
         Object.keys(antibiotics).forEach(inicial => {
+            console.log("Creando botón para la inicial:", inicial); // Depuración
             const button = document.createElement("button");
             button.textContent = inicial;
-            button.addEventListener("click", () => {
-                console.log("Inicial seleccionada:", inicial); // Depuración
-                mostrarAntiinfecciosos(inicial);
-            });
+            button.addEventListener("click", () => mostrarAntiinfecciosos(inicial));
             inicialesContainer.appendChild(button);
         });
     }
+    
     
     
     // 4. Mostrar antiinfecciosos de una inicial seleccionada
@@ -703,61 +705,55 @@ document.addEventListener("DOMContentLoaded", function () {
     // 5. Mostrar detalles de un antiinfeccioso seleccionado
 
     function mostrarDetalles(antibiotico) {
-        // Ocultar las demás secciones
-        document.querySelector("#iniciales").style.display = "none";
-        document.querySelector(".zona-busqueda").style.display = "none";    
-        document.querySelector(".zona-iniciales").style.display = "none"; 
-        document.querySelector("#lista-antiinfecciosos").style.display = "none";
-    
-        // Mostrar la sección de detalles
+        listaAntiinfecciosos.style.display = "none";
         detalleAntiinfeccioso.style.display = "block";
     
-        // Agregar los detalles del antiinfeccioso
         detalleAntiinfeccioso.innerHTML = `
             <table class="detalle-tabla">
                 <thead>
                     <tr>
-                        <th><img src="imagenes/01_presentacion.png" class="icono" alt="Icono de Presentación" aria-label="Presentación"></th>
+                        <th><img src="imagenes/01_presentacion.png" alt="Icono de Presentación" aria-label="Presentación"></th>
                         <th>Presentación</th>
                         <td>${antibiotico.presentation}</td>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td><img src="imagenes/02_tipo.png" class="icono" alt="Icono de Tipo" aria-label="Tipo"></td>
+                        <td><img src="imagenes/02_tipo.png" alt="Icono de Tipo" aria-label="Tipo"></td>
                         <td>Tipo</td>
                         <td>${antibiotico.type}</td>
                     </tr>
                     <tr>
-                        <td><img src="imagenes/03_dosis.png" class="icono"   alt="Icono de Dosis" aria-label="Dosis"></td>
+                        <td><img src="imagenes/03_dosis.png" alt="Icono de Dosis" aria-label="Dosis"></td>
                         <td>Dosis</td>
                         <td>${antibiotico.dose}</td>
                     </tr>
                     <tr>
-                        <td><img src="imagenes/04_preparacion.png" class="icono"  alt="Icono de Preparación" aria-label="Preparación"></td>
+                        <td><img src="imagenes/04_preparacion.png" alt="Icono de Preparación" aria-label="Preparación"></td>
                         <td>Preparación</td>
                         <td>${antibiotico.preparation}</td>
                     </tr>
                     <tr>
-                        <td><img src="imagenes/05_aspecto.png" class="icono"  alt="Icono de Aspecto" aria-label="Aspecto"></td>
+                        <td><img src="imagenes/05_aspecto.png" alt="Icono de Aspecto" aria-label="Aspecto"></td>
                         <td>Aspecto</td>
                         <td>${antibiotico.appearance}</td>
                     </tr>
                     <tr>
-                        <td><img src="imagenes/06_tiempo.png" class="icono"  alt="Icono de Tiempo de Administración" aria-label="Tiempo de Administración"></td>
+                        <td><img src="imagenes/06_tiempo.png" alt="Icono de Tiempo de Administración" aria-label="Tiempo de Administración"></td>
                         <td>Tiempo de Administración</td>
                         <td>${antibiotico.administrationTime}</td>
                     </tr>
                     <tr>
-                        <td><img src="imagenes/07_conservacion.png" class="icono"  alt="Icono de Conservación" aria-label="Conservación"></td>
+                        <td><img src="imagenes/07_conservacion.png" alt="Icono de Conservación" aria-label="Conservación"></td>
                         <td>Conservación</td>
                         <td>${antibiotico.storage}</td>
                     </tr>
                     <tr>
-                        <td><img src="imagenes/08_ficha_tecnica.png" class="icono"  alt="Icono de Ficha Técnica" aria-label="Ficha Técnica"></td>
+                        <td><img src="imagenes/08_ficha_tecnica.png" alt="Icono de Ficha Técnica" aria-label="Ficha Técnica"></td>
                         <td>Ficha Técnica</td>
-                        <td><a href="${antibiotico.technicalSheet}" target="_blank" aria-label="Ver ficha técnica">Ver ficha técnica</a></td>
+                        <td><a href="#" onclick="mostrarFichaTecnica('${antibiotico.technicalSheet}'); return false;" aria-label="Ver ficha técnica">Ver ficha técnica</a></td>
                     </tr>
+
                 </tbody>
             </table>`;
     }
@@ -828,3 +824,55 @@ document.querySelector("#main-button").addEventListener("click", (e) => {
 mostrarIniciales();
 
 });
+
+
+// 9. Evento para mostrar ficha técnica en la misma página
+
+
+document.addEventListener("click", (e) => {
+    if (e.target.classList.contains("ficha-tecnica")) {
+        e.preventDefault(); // Previene el comportamiento predeterminado del enlace
+
+        const fichaUrl = e.target.getAttribute("data-ficha"); // Obtén la URL de la ficha técnica
+        const fichaContenedor = document.querySelector("#ficha-tecnica-contenido");
+
+        // Muestra el contenedor de la ficha técnica
+        fichaContenedor.style.display = "block";
+
+        // Inserta un iframe para cargar la ficha técnica
+        fichaContenedor.innerHTML = `
+            <iframe src="${fichaUrl}" width="100%" height="600px" frameborder="0"></iframe>
+        `;
+    }
+});
+// 9. Mostrar la ficha técnica en un iframe
+
+
+function mostrarFichaTecnica(enlace) {
+    console.log("Abriendo ficha técnica:", enlace);
+
+    let fichaTecnicaContainer = document.querySelector("#ficha-tecnica-container");
+    if (!fichaTecnicaContainer) {
+        fichaTecnicaContainer = document.createElement("div");
+        fichaTecnicaContainer.id = "ficha-tecnica-container";
+        fichaTecnicaContainer.style.marginTop = "20px";
+        fichaTecnicaContainer.style.display = "block";
+        document.querySelector("main").appendChild(fichaTecnicaContainer);
+    }
+
+    fichaTecnicaContainer.innerHTML = `
+        <iframe src="${enlace}" width="100%" height="600px" frameborder="0" title="Ficha Técnica"></iframe>
+    `;
+
+    // Ocultar las secciones innecesarias
+    document.querySelector("#iniciales").style.display = "none";
+    document.querySelector(".zona-busqueda").style.display = "none";
+    document.querySelector("#lista-antiinfecciosos").style.display = "none";
+    document.querySelector("#detalle-antiinfeccioso").style.display = "none";
+    document.querySelector("#titulo-iniciales").style.display = "none";
+
+    const botonVolver = document.querySelector("#main-button-container");
+    if (botonVolver) {
+        botonVolver.style.display = "block";
+    }
+}
