@@ -55,6 +55,7 @@ header {
 main {
     margin: 0 auto;
     padding: 1rem;
+    width: 1000px;
     max-width: 1200px; /* Ancho máximo del contenido */
     height: calc(100vh - 100px); /* Altura que reste el header */
     overflow-y: auto; /* Scroll vertical si es necesario */

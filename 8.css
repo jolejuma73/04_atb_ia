@@ -1,508 +1,155 @@
+/* Definición de variables de color y fuente */
 :root {
-	--color-pantone: #368f3f; /*--pantone 7740c____#368f3f--*/
-    --color-principal: #92c99b;/*pantone 7740c__50--*/
-    --color-fuente: #2e2925;/*--pantone black c--*/
-    --color-fondo: #ebf5ed;/*--pantone 7740c__10--*/
-    --color-hover: #d9ebd8;/*pantone 7740c__80--*/
-    --color-borde: #4fa66a;/*pantone 7740c__20--*/
-	font-family: 'noto-sans' 'verdana', 'sans-serif';
-
-}
-* {
-    margin: 0;
-    padding: 0;
-    border: 0; /* Elimina todos los bordes */
-    box-shadow: none; /* Elimina sombras */
-    box-sizing: border-box;
+    --color-pantone: #368f3f; /* Pantone 7740c */
+    --color-principal: #92c99b; /* Pantone 7740c 50% */
+    --color-fuente: #2e2925; /* Pantone Black C */
+    --color-fondo: #ebf5ed; /* Pantone 7740c 10% */
+    --color-hover: #d9ebd8; /* Pantone 7740c 80% */
+    --color-borde: #4fa66a; /* Pantone 7740c 20% */
+    font-family: 'Noto Sans', 'Verdana', sans-serif;
 }
 
-
+/* Estilos generales */
 body {
-    margin: 0;
-    padding: 0;
-    background-color: var(--color-fondo);
     display: flex;
     flex-direction: column;
-    align-items: center;
-    height: 100vh; /* Altura completa de la pantalla */
-	    overflow: hidden; /* Evita scroll en el cuerpo */
-
-}
-
-
-header {
-    position: fixed; 
-    top: 0; 
-    left: 0;
-    right: 0; 
-    margin: 0 auto;
-    width: 100%; 
-    height: clamp(75px, 8vw, 90px);
-	z-index: 1000; 
-	font-size: clamp(0.8em, 2.2vw, 1.2em) ; 
-    background-color: transparent; 
-    color: var(--color-pantone); /* Color del texto */
-    padding: 15px 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra para diferenciarlo del contenido */
+    min-height: 100vh;
+    margin: 0;
+    background-color: var(--color-fondo);
+    color: var(--color-fuente);
+    margin: 0;
+    padding: 0;
     text-align: center;
-    border-radius: 8px;
-	text-decoration:underline;
 }
-
-
-/* Ajuste del área desplazable */
 
 main {
-    margin: 0 auto;
-    padding: 1rem;
-    max-width: 1200px; /* Ancho máximo del contenido */
-    height: calc(100vh - 100px); /* Altura que reste el header */
-    overflow-y: auto; /* Scroll vertical si es necesario */
-    overflow-x: hidden; /* Evita scroll horizontal */
-	overflow-y: auto; /* Permite scroll solo dentro de este contenedor */
-	margin-top: clamp(75px, 8vw, 100px);
-
+    flex: 1; /* Hace que el contenido principal ocupe el espacio restante */
 }
 
-
-.common-container {
-    max-width: 800px; /* Ancho máximo compartido */
-    margin: 0 auto; /* Centrar el contenedor */
-    display: flex;
-    flex-direction: column; /* Alinear los elementos verticalmente */
-    gap: 1rem; /* Separación entre elementos */
-}
-
-.common-width-container {
-    display: flex;
-    flex-direction: column; /* Alineación vertical */
-    align-items: center;
-    max-width: 800px; /* Define un ancho máximo consistente */
-    width: 90%;
-    margin: 0 auto;
-    overflow: visible; /* Permite que el contenido se expanda */
-}
-
-
-
-.row-container {
-    display: flex; /* Configura el contenedor como fila */
-    align-items: center; /* Alinea los elementos al inicio verticalmente */
-    justify-content: space-between; /* Espacio entre sidebar y buscador */
-    gap: 1rem; /* Espaciado entre el sidebar y el contenido principal */
-    padding: 1rem; /* Espaciado interno */
-    max-width: 1200px; /* Ancho máximo del contenedor */
-    margin: 1rem auto; /* Centra horizontalmente */
-    flex-wrap: nowrap; /* Evita que los elementos se envuelvan */
-}
-.sidebar-seek-container {
-    display: flex;
-    flex-direction: column; /* Alinea los elementos verticalmente */
-    align-items: center; /* Centra horizontalmente */
-    gap: 1rem; /* Espaciado entre el sidebar y el buscador */
-    margin: 1rem auto;
-    width: 100%;
-    max-width: 800px; /* Limitar el ancho del contenedor */
-}
-
-.sidebar {
-    display: flex;
-    flex-wrap: wrap; /* Permitir múltiples filas si es necesario */
-    justify-content: center; /* Centrar horizontalmente */
-    gap: 0.5rem;
-    width: 100%; /* Asegura que ocupe el ancho del contenedor */
-}
-
-
-#alphabet-list {
-    display: flex;
-    flex-wrap: wrap; /* Letras en varias filas si es necesario */
-    gap: 0.5rem; /* Espaciado entre letras */
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-#alphabet-list li {
-    padding: 10px 15px;
-    background-color: var(--color-principal);
-    border-radius: 8px;
-    text-align: center;
-    font-weight: bold;
+header {
+    background-color: var(--color-pantone);
     color: var(--color-fuente);
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+    padding: 20px;
 }
 
-#alphabet-list li:hover {
-    background-color: var(--color-hover);
+.container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 20px;
 }
 
-
-#seek-container {
-    text-align: center;
-    width: 100%;
-}
-
-#seek-bar {
-    padding: 0.8rem;
-    font-size: 1rem;
-    border: 1px solid var(--color-borde);
-    border-radius: 12px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-
-
-
-	#seek-bar:hover {
-    box-shadow: 0px 6px 10px rgba(165, 163, 163, 0.15);
-	background-color: var(--color-hover) ;
-}
-
-    #seek-bar:focus {
-    outline: none; /* Elimina el contorno predeterminado */
-    border: 1px solid var(--color-borde); /* Opcional: establece un nuevo borde */
-    box-shadow: none; /* Elimina cualquier sombra */
-}
-	#seek-bar::placeholder {
-    color: var(--color-fuente); 
-    opacity: 1; /* Asegura que el color sea completamente visible */
-    font-family: 'Noto Sans', 'Verdana', 'sans-serif';
-    font-size: 16px; /* Ajusta el tamaño de fuente si es necesario */
-    letter-spacing: 1.5px; /* Asegura que sea en píxeles y no un número sin unidad */
-}
-#seek-bar,
-#antibiotic-info {
-    width: clamp(280px, 90%, 800px); /* Ancho adaptable con mínimo de 280px y máximo de 800px */
-    box-sizing: border-box; /* Asegura que el padding no afecte el ancho */
-}
-
-
-
-#main-button-container {
-    display: flex; /* Usar Flexbox */
-    justify-content: center; /* Centrar horizontalmente */
-    align-items: center; /* Centrar verticalmente */
-    margin: 1rem auto; /* Asegurar centrado global */
-    width: 100%; /* Ocupar todo el ancho disponible */
-	text-align: center; /* Asegurar centrado del contenido */
-
-}
-
-
-#main-button {
-    background-color: transparent; /* Fondo transparente */
-    border: none;
-    cursor: pointer;
+/* Zona de iniciales */
+#iniciales {
     display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
     justify-content: center;
-    align-items: center;
-    width: 60px; /* Tamaño del botón */
-    height: 60px;
-    border-radius: 50%;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, background-color 0.3s ease;
+    margin: 10px 0;
 }
 
-
-#main-button:hover {
-    background-color: var(--color-hover);
-    transform: scale(1.05);
+#iniciales {
+    display: block;
 }
-
-#main-button:active {
-    background-color: var(--color-borde);
-    transform: scale(0.95);
-}
-
-.home-icon {
-    width: 24px; /* Ajustar tamaño del ícono */
-    height: 24px;
-}
-
-/* Contenedor del abecedario */
-
-.details {
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    padding: 2rem;
-    background-color: var(--color-fondo);
-    overflow-y: auto; /* Permitir scroll si es necesario */
-    box-sizing: border-box;
-}
-
-#search-results {
-    display: none;
-    width: clamp(280px, 90%, 1200px);
-    margin-top: 10px;
-    list-style: none;
-    padding: 0;
-    text-align: center;
-}
-
-
-.antibiotic-item {
-    padding: 0.5rem;
-    border-bottom: 1px solid var(--color-borde);
+#iniciales button {
+    padding: 10px 15px;
+    font-size: 16px;
     cursor: pointer;
+    background-color: #6abf69;
+    border: none;
+    border-radius: 5px;
+    color: white;
     transition: background-color 0.3s ease;
 }
 
-
-#antibiotic-info p {
-    color: var(--color-pantone);
-    font-weight: bold;
-    font-size: 1rem;
-    text-align: center;
-
+#iniciales button:hover {
+    background-color: #4fa657;
 }
 
-.antibiotic-item:hover {
-	background-color: var(--color-hover);
+/*--botón de volver al inicio --*/
+#volver-inicio {
+    display: none;
 }
-#antibiotic-info {
-    width: 100%; /* Ocupa el ancho completo del contenedor padre */
-    max-width: 800px; /* Define un ancho máximo */
-    margin: 1rem auto; /* Centrar horizontalmente con margen superior */
-    padding: 1rem;
+
+
+
+.zona-iniciales {
+    background-color: var(--color-principal);
+    padding: 15px;
+    border-radius: 10px;
+}
+
+/* Zona de búsqueda */
+.zona-busqueda {
+    background-color: var(--color-hover);
+    padding: 15px;
+    border-radius: 10px;
+}
+
+input[type="text"] {
+    padding: 10px;
     border: 1px solid var(--color-borde);
-    border-radius: 12px;
+    border-radius: 5px;
+}
+
+/* Zona de botón de vuelta al inicio */
+.zona-boton {
+    background-color: var(--color-principal);
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.zona-boton img {
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+}
+
+/* Zona de antiinfecciosos */
+.zona-antiinfecciosos {
     background-color: var(--color-fondo);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    overflow: visible; /* Permite que el contenido fluya sin restricciones */
+    padding: 15px;
+    border-radius: 10px;
 }
 
-#antibiotic-info {
-    max-height: 400px; /* Límite de altura para el contenedor */
-    overflow-y: auto; /* Scroll vertical si el contenido excede el límite */
+#lista-antiinfecciosos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
 }
 
-#antibiotic-info ul {
-    list-style-type: none; /* Elimina los puntos de la lista */
-    padding: 0;
-    margin: 0;
+#lista-antiinfecciosos div {
+    background-color: var(--color-hover);
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
-#antibiotic-info li {
-    padding: 0.5rem 0; /* Espaciado vertical entre los elementos */
-    border-bottom: 1px solid var(--color-borde); /* Línea divisoria entre elementos */
+#detalle-antiinfeccioso {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: var(--color-principal);
+    border-radius: 5px;
+}
+#lista-antiinfecciosos, #detalle-antiinfeccioso {
+    display: none;
 }
 
-#aantibiotic-info li:last-child {
-    border-bottom: none; /* Elimina la línea del último elemento */
-}
-
-
-
-ul {
-    list-style-type: none; /* Eliminar los puntos de la lista */
-    padding: 0; /* Opcional: eliminar el padding predeterminado */
-}
-
-li {
-    margin-bottom: 0.5rem; /* Opcional: agregar espacio entre los elementos de la lista */
-    cursor: pointer; /* Opcional: mostrar un cursor de mano */
+#lista-antiinfecciosos.active,
+#detalle-antiinfeccioso.active {
+    display: block;
 }
 
 
-	h2 {
-    margin-bottom: 10px; /* Ajusta el valor según sea necesario */
-    color: var(--color-fuente); 
+/*----footer----*/
 
-}
-
-
-.details-table {
-    width: 100%; /* Asegura que la tabla ocupe todo el ancho disponible */
-    border-collapse: collapse; /* Evita espacios entre celdas */
-    table-layout: fixed; /* Mantiene un ancho uniforme para las columnas */
-}
-
-.details-table th, .details-table td {
-    padding: 10px; /* Espaciado interno */
-    border-bottom: 1px solid var(--color-borde); /* Línea inferior */
-    text-align: left; /* Alinea el contenido a la izquierda */
-    vertical-align: top; /* Asegura que el contenido inicie en la parte superior */
-    word-break: break-word; /* Permite dividir palabras largas */
-}
-
-.details-table th {
-    background-color: var(--color-principal); /* Fondo para los encabezados */
-    color: var(--color-fuente); /* Color del texto */
-    font-weight: bold; /* Negrita para distinguir los encabezados */
-    display: table-cell; /* Asegura el comportamiento natural de tabla */
-}
-
-.details-table td {
-    background-color: var(--color-fondo); /* Fondo para las celdas */
-    color: var(--color-fuente); /* Color del texto */
-}
-
-.details-table tbody tr:first-child th:first-child {
-    border-radius:8px 0 0 0;
-}
-.details-table tr:last-child th:first-child {
-    border-radius: 0 0 0 8px;
-	border-bottom:none;
-
-}
-.details-table td:hover {
-	background-color: var(--color-hover) ;
-}
-
-.details-table td a {
+footer {
+    background-color: var(--color-pantone);
     color: var(--color-fuente);
-    text-decoration: none;
-}
-.details-table td a:hover {
-    text-decoration: underline;
-    font-weight: bold;
-    font-size: 16px;
-}
-
-
-.details-table tr:last-child td:last-child a {
-    color: var(--color-pantone) ;
-}
-
-
-/*--IMG--*/
-
-img {
-    max-width: 100%;
-    height: auto; /* Esto puede forzar tamaños grandes si no se controlan */
-}
-
-.details-table th img {
-    width: 30px; /* Ajusta a tu preferencia */
-    height: 30px;
-    margin-right: 5px; /* Espacio entre imagen y texto */
-    vertical-align: middle; /* Alineación vertical con el texto */
-}
-
-
-
-/* Estilo para la barra de desplazamiento */
-::-webkit-scrollbar {
-  width: 8px; /* Ancho de la barra vertical */
-  height: 4px; /* Altura de la barra horizontal */
-}
-
-/* Color de fondo de la barra */
-::-webkit-scrollbar-track {
-  background: transparent; /* Color del fondo del track */
-  border-radius: 10px; /* Opcional: bordes redondeados */
-}
-
-/* Color de la barra deslizante */
-::-webkit-scrollbar-thumb {
-background: var(--color-pantone);
-border-radius: 10px; /* Bordes redondeados de la barra */
-}
-
-/* Color de la barra deslizante al pasar el cursor */
-::-webkit-scrollbar-thumb:hover {
-  background: var(--color-fuente); /* Color más oscuro cuando el cursor pasa por encima */
-}
-
-
-/* Hacer la tabla adaptable */
-@media (max-width: 768px) {
-	.row-container {
-        flex-direction: column; /* Cambiar a columna en pantallas pequeñas */
-        align-items: center;
-    }
-	
-	.common-width-container {
-        width: 95%; /* Ajustar el ancho para pantallas pequeñas */
-    }
-    .sidebar {
-        flex-direction: row; /* Mostrar letras en fila */
-        flex-wrap: wrap; /* Permitir que las letras se ajusten en filas */
-        justify-content: center;
-        max-width: 100%; /* Ajustar ancho */
-    }
-    #seek-bar {
-        width: 90%; /* Reducir ancho del seek-bar en pantallas pequeñas */
-    }
-    .sidebar-seek-container {
-        flex-direction: column; /* Cambia a diseño en columna */
-        align-items: center; /* Centra todos los elementos */
-    }
-    #antibiotic-info {
-        width: 80%; /* El contenedor de información ocupará todo el ancho */
-        margin-left: 0;
-    }
-	.details {
-        padding: 1rem; /* Reduce el espacio de padding interno */
-        align-items: flex-start; /* Alinea el contenido hacia la izquierda */
-    }
-    .details-table {
-        margin: 0 auto; /* Centra horizontalmente la tabla */
-        width: 90%; /* Ajusta el ancho de la tabla */
-    }
-    .details-table td:hover {
-        font-size: 16px ;
-        background: var(--color-hover); 
-        border-radius: 8px;
-        margin: 4px;
-    }
-	.details-table tbody tr:first-child th:first-child {
-    border-radius: 8px;
-	}
-	.details-table tr:last-child th:first-child {
-    border-radius: 8px;
-	}
-    .details-table th,
-    .details-table td {
-        display: block; /* Hace que cada celda ocupe toda la fila */
-        text-align: center; /* Centra horizontalmente el texto */
-        width: 100%; /* Las celdas se expanden al ancho completo */
-    }
-    .details-table tr {
-        display: flex; /* Usa flexbox para centrar los elementos */
-        flex-direction: column; /* Pone las celdas en una columna */
-        align-items: center; /* Centra horizontalmente */
-        justify-content: center; /* Centra verticalmente */
-    }
-    .details-table th {
-        display: flex; /* Mantén Flexbox para la alineación */
-        align-items: center; /* Centra verticalmente la imagen y el texto */
-        gap: 8px; /* Espaciado entre la imagen y el texto */
-        text-align: left; /* Asegura que el texto esté alineado a la izquierda */
-        padding-left: 10px; /* Resetea cualquier padding general */
-		justify-content:space-between;
-		padding-right:80px;
-		font-size:13px;
-    }
-    .details-table th img {
-        flex-shrink: 0; /* Evita que la imagen se reduzca */
-        width: 24px; /* Tamaño adecuado para pantallas pequeñas */
-        height: 24px; /* Tamaño adecuado para pantallas pequeñas */
-    }
-    .details-table th .text-content {
-        padding-left: 10px; /* Espaciado adicional para el texto */
-    }
-    
-}
-@media (max-width: 768px) {
-    #seek-bar,
-    #antibiotic-info {
-        width: clamp(240px, 90%, 600px); /* Ancho más reducido para pantallas pequeñas */
-    }
-}
-
-@media (min-width: 1200px) {
-    #seek-bar,
-    #antibiotic-info {
-        width: clamp(400px, 80%, 1000px); /* Ancho mayor para pantallas grandes */
-    }
-	.common-width-container {
-        max-width: 1000px; /* Ancho máximo en pantallas grandes */
-    }
+    text-align: center;
+    padding: 10px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
 }

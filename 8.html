@@ -1,43 +1,34 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>8</title>
-    <link rel="stylesheet" href="8.css">
-    <link rel="icon" href="imagenes/00_A_icono.png" type="image/png"> 
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-
+    <title>Antiinfecciosos</title>
+	<link rel="stylesheet" href="8.css">
 </head>
-<body>
-	
-    <header>
-        <h1>Antiinfecciosos</h1>
-    </header>
-	
-    <main>
-        <div class="sidebar-seek-container">
-			<aside class="sidebar">
-				<ul id="alphabet-list"></ul>
-			</aside>
-			<div class="common-width-container">
-				<div id="seek-container">
-					<input type="text" id="seek-bar" placeholder="Buscar antiinfecciosos...">
-				</div>
-				<div id="main-button-container">
-					<a href="7.html" id="main-button">
-						<img src="imagenes/09_inicio.png"  title="Ir al principio" alt="Volver a Inicio" class="home-icon">
-					</a>
-				</div>
-				<div id="antibiotic-info">
-					<h2>Información del Antiinfeccioso.</h2>
-					<p>Seleccione un antiinfeccioso para ver los detalles.</p>
-				</div>
-			</div>
-		</div>
+<body><div id="app">
+	<header>
+	  <h1>Antiinfecciosos</h1>
+	</header>
+	<main>
+	  <div class="zona-iniciales">
+		<h2>Selecciona una inicial</h2>
+		<div id="iniciales"></div>
+	  </div>
+	  <div class="zona-busqueda">
+		<h2>Buscar antiinfeccioso</h2>
+		<input type="text" id="buscar-input" placeholder="Escribe el nombre..." />
+	  </div>
+	  <button id="volver-inicio" style="display: none;">Volver al inicio</button>
+	  <div id="lista-antiinfecciosos"></div>
+	  <div id="detalle-antiinfeccioso"></div>
 	</main>
-    <script src="8.js"></script>
+	<footer>
+	  <p>&copy; 2025 Antiinfecciosos. Todos los derechos reservados.</p>
+	</footer>
+  </div>
+  
+	<script src="8.js" defer></script>
 </body>
 </html>
+
