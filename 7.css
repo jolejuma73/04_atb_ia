@@ -29,6 +29,7 @@ body {
 
 }
 
+/*--ENCABEZADO--*/
 
 header {
     position: fixed; 
@@ -96,6 +97,8 @@ main {
     margin: 1rem auto; /* Centra horizontalmente */
     flex-wrap: nowrap; /* Evita que los elementos se envuelvan */
 }
+
+/*--LISTADO ALFABETICO--*/
 .sidebar-seek-container {
     display: flex;
     flex-direction: column; /* Alinea los elementos verticalmente */
@@ -138,6 +141,8 @@ main {
 #alphabet-list li:hover {
     background-color: var(--color-hover);
 }
+
+/*--BUSCAR ANTIINFECCIOSO--*/
 
 
 #seek-container {
@@ -242,7 +247,8 @@ main {
     margin-top: 10px;
     list-style: none;
     padding: 0;
-    text-align: center;
+    text-align: center;    
+
 }
 
 
@@ -254,7 +260,7 @@ main {
 }
 
 
-#antibiotic-info p {
+#antibiotic-info p {  /*--Seleccione un antiinfeccioso para ver los detalles.--*/
     color: var(--color-pantone);
     font-weight: bold;
     font-size: 1rem;
@@ -270,31 +276,29 @@ main {
     max-width: 800px; /* Define un ancho máximo */
     margin: 1rem auto; /* Centrar horizontalmente con margen superior */
     padding: 1rem;
-    border: 1px solid var(--color-borde);
     border-radius: 12px;
     background-color: var(--color-fondo);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     text-align: center;
     overflow: visible; /* Permite que el contenido fluya sin restricciones */
-}
-
-#antibiotic-info {
-    max-height: 400px; /* Límite de altura para el contenedor */
+    max-height: 900px; /* Límite de altura para el contenedor */
     overflow-y: auto; /* Scroll vertical si el contenido excede el límite */
 }
 
-#antibiotic-info ul {
+
+#antibiotic-info ul {  /*--LISTADO DE AII--*/
     list-style-type: none; /* Elimina los puntos de la lista */
     padding: 0;
-    margin: 0;
+    margin: 0;    
 }
 
 #antibiotic-info li {
     padding: 0.5rem 0; /* Espaciado vertical entre los elementos */
     border-bottom: 1px solid var(--color-borde); /* Línea divisoria entre elementos */
+
 }
 
-#aantibiotic-info li:last-child {
+#aantibiotic-info li:last-child {  /*--LISTADO DE AII--*/
     border-bottom: none; /* Elimina la línea del último elemento */
 }
 
@@ -317,11 +321,15 @@ li {
 
 }
 
+/*--TABLA DE INFORMACION DEL AII--*/
 
 .details-table {
-    width: 100%; /* Asegura que la tabla ocupe todo el ancho disponible */
+    width: 100%; 
+    height: 100%;
     border-collapse: collapse; /* Evita espacios entre celdas */
-    table-layout: fixed; /* Mantiene un ancho uniforme para las columnas */
+    table-layout: fixed; /* Mantiene un ancho uniforme para las columnas */    
+
+
 }
 
 .details-table th, .details-table td {
@@ -330,6 +338,8 @@ li {
     text-align: left; /* Alinea el contenido a la izquierda */
     vertical-align: top; /* Asegura que el contenido inicie en la parte superior */
     word-break: break-word; /* Permite dividir palabras largas */
+    
+
 }
 
 .details-table th {
@@ -337,18 +347,31 @@ li {
     color: var(--color-fuente); /* Color del texto */
     font-weight: bold; /* Negrita para distinguir los encabezados */
     display: table-cell; /* Asegura el comportamiento natural de tabla */
+
 }
 
 .details-table td {
-    background-color: var(--color-fondo); /* Fondo para las celdas */
+    background-color: var(--color-hover); /* Fondo para las celdas */
     color: var(--color-fuente); /* Color del texto */
+    border-left: 1px solid var(--color-borde);
+
 }
 
-.details-table tbody tr:first-child th:first-child {
-    border-radius:8px 0 0 0;
+.details-table  tr:first-child th:first-child { /*--celda a1--*/
+    border-radius:8px 0 0 0;    
+
 }
-.details-table tr:last-child th:first-child {
+.details-table tr:last-child th:first-child {  /*--celda a8--*/
     border-radius: 0 0 0 8px;
+	border-bottom:none;
+}
+
+.details-table  tr:first-child td:last-child { /*--celda b1--*/
+    border-radius:0 8px 0 0;
+}
+.details-table tr:last-child td:last-child {  /*--celda b8--*/
+    border-radius: 0 0 8px 0;
+
 	border-bottom:none;
 
 }
@@ -410,7 +433,20 @@ border-radius: 10px; /* Bordes redondeados de la barra */
 ::-webkit-scrollbar-thumb:hover {
   background: var(--color-fuente); /* Color más oscuro cuando el cursor pasa por encima */
 }
+/* Footer */
+footer {
+    background-color: var(--color-pantone);
+    color: var(--color-fuente);
+    text-align: center;
+    padding: 10px;
+    margin-top: auto;
+    font-size: 14px;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    position: fixed;
 
+}
 
 /* Hacer la tabla adaptable */
 @media (max-width: 768px) {
@@ -456,8 +492,8 @@ border-radius: 10px; /* Bordes redondeados de la barra */
 	.details-table tbody tr:first-child th:first-child {
     border-radius: 8px;
 	}
-	.details-table tr:last-child th:first-child {
-    border-radius: 8px;
+	.details-table tr:last-child {
+    border-radius: 0 0 8px 8px;font-size: 2rem;
 	}
     .details-table th,
     .details-table td {
