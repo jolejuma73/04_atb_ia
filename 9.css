@@ -1,0 +1,272 @@
+/* Variables de colores y fuentes */
+:root {
+    --color-pantone: #368f3f; /* Pantone 7740c */
+    --color-principal: #92c99b; /* Pantone 7740c 50% */
+    --color-fuente: #2e2925; /* Pantone Black C */
+    --color-fondo: #ebf5ed; /* Pantone 7740c 10% */
+    --color-hover: #d9ebd8; /* Pantone 7740c 80% */
+    --color-borde: #4fa66a; /* Pantone 7740c 20% */
+    font-family: 'Noto Sans', 'Verdana', sans-serif;
+}
+
+/* Estilo general */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--color-fondo);
+    color: var(--color-fuente);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
+    font-family: 'Noto Sans', 'Verdana', sans-serif;
+}
+
+/* Header */
+header {
+    background-color: var(--color-pantone);
+    color: var(--color-fuente);
+    padding: 20px;
+    text-align: center;
+}
+
+/* Botón de inicio */
+#main-button-container {
+    text-align: center;
+    margin: 20px 0;
+}
+
+#main-button img {
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+#main-button img:hover {
+    transform: scale(1.1);
+}
+
+/* Contenedor principal */
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Contenedor del abecedario y búsqueda */
+.contenedor-busqueda {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    max-width: 600px;
+    align-items: center;
+}
+
+/* Estilo del abecedario */
+#iniciales {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+#iniciales button {
+    padding: 15px;
+    margin: 0 10px;
+    background-color: var(--color-principal);
+    color: var(--color-fuente);
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#iniciales button:hover {
+    background-color: var(--color-hover);
+}
+
+/* Input de búsqueda */
+.zona-busqueda {
+    width: 100%;
+    text-align: center;
+}
+
+#buscar-input {
+    width: 100%;
+    max-width: 400px;
+    padding: 10px;
+    border: 1px solid var(--color-borde);
+    border-radius: 5px;
+}
+
+/* Estilo del placeholder */
+#buscar-input::placeholder {
+    font-family: 'Noto Sans', 'Verdana', sans-serif;
+    color: var(--color-fuente); /* Color del texto del placeholder */
+    font-size: 14px; /* Ajusta el tamaño si es necesario */
+}
+
+/* Lista de antiinfecciosos */
+#lista-antiinfecciosos {
+    display: none;
+    width: 100%;
+    max-width: 600px;
+    margin-top: 20px;
+}
+
+#lista-antiinfecciosos.active {
+    display: block;
+}
+
+#lista-antiinfecciosos div {
+    padding: 10px;
+    background-color: var(--color-principal);
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    transition: background-color 0.3s ease;
+}
+
+#lista-antiinfecciosos div:hover {
+    background-color: var(--color-hover);
+}
+
+/* Detalles del antiinfeccioso */
+
+.aii-name {
+    font-family: "Noto Sans", sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    color: #4caf50; /* Verde oscuro */
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#detalle-antiinfeccioso {
+    display: none;
+    width: 100%;
+    max-width: 600px;
+    padding: 0px;
+    background-color: var(--color-principal);
+    border-radius: 5px;
+}
+#detalle-antiinfeccioso {
+    display: none;
+}
+
+#detalle-antiinfeccioso.active {
+    display: block;
+}
+
+.detalle-tabla {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-family: "Noto Sans", sans-serif;
+    font-size: 16px;
+    text-align: left;
+    background-color: #f2f2f2;
+    border: 1px solid #ddd;
+}
+
+.detalle-tabla th,
+.detalle-tabla td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    vertical-align: top; /* Alinea el contenido al inicio de la celda */
+}
+
+.detalle-tabla th {
+    display: grid;
+    grid-template-columns: auto 1fr; /* Imagen y texto en dos columnas */
+    gap: 10px; /* Espaciado entre la imagen y el texto */
+    font-weight: bold;
+    color: #4caf50; /* Verde oscuro */
+}
+
+.detalle-tabla th img {
+    width: 24px;
+    height: 24px;
+    align-self: start; /* Asegura que la imagen esté al inicio de la celda */
+}
+
+.detalle-tabla td {
+    background-color: #ffffff;
+    word-wrap: break-word; /* Asegura que el texto largo se ajuste */
+}
+
+
+.grid-celda {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    gap: 10px;
+}
+
+.grid-celda img.icono {
+    width: 40px;
+    height: 40px;
+}
+
+.grid-celda span {
+    font-weight: bold;
+    color: var(--color-fuente);
+}
+
+/* Footer */
+footer {
+    background-color: var(--color-pantone);
+    color: var(--color-fuente);
+    text-align: center;
+    padding: 10px;
+    margin-top: auto;
+    font-size: 14px;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    position: fixed;
+
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    #iniciales button {
+        flex: 1 1 30%;
+    }
+
+    #buscar-input {
+        width: 100%;
+    }
+
+    #main-button img {
+        width: 40px;
+        height: 40px;
+    }
+}
+@media (max-width: 768px) {
+    .grid-celda {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .grid-celda img.icono {
+        margin: 0 auto;
+    }
+}
+@media (max-width: 768px) {
+    .detalle-tabla th {
+        grid-template-columns: 1fr; /* Imagen y texto en filas separadas */
+        text-align: center;
+    }
+
+    .detalle-tabla th img {
+        margin-bottom: 8px; /* Espaciado adicional */
+    }
+}
