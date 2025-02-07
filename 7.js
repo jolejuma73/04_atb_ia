@@ -709,7 +709,7 @@ document.addEventListener("DOMContentLoaded", function () {
             <tr>
                 <th>
                     <span class="img-tipo"><img src="imagenes/02_tipo.png" alt="Icono de tipo"></span>
-                    <span>Tipo de Antiinfecioso</span>
+                    <span  class="nombre-tipo>Tipo de Antiinfecioso</span>
                 </th>
                     <td>${antibiotic.type || "N/A"}</td>
             </tr>
@@ -717,7 +717,7 @@ document.addEventListener("DOMContentLoaded", function () {
             <tr>
                 <th>
                     <span class="img-dosis"><img src="imagenes/03_dosis.png" alt="Icono de dosis"></span>
-                    <span >Dosis</span>
+                    <span  class="nombre-dosis>Dosis</span>
                 </th>    
                     <td>${antibiotic.dose || "N/A"}</td>
             </tr>
@@ -726,7 +726,7 @@ document.addEventListener("DOMContentLoaded", function () {
             <tr>
                 <th>
                     <span class="img-preparacion"><img src="imagenes/04_preparacion.png"  alt="Icono de preparación"></span>
-                    <span >Preparación</span>
+                    <span  class="nombre-preparacion>Preparación</span>
                 </th>
                     <td>${antibiotic.preparation || "N/A"}</td>
             </tr>
@@ -734,7 +734,7 @@ document.addEventListener("DOMContentLoaded", function () {
             <tr>
                 <th>
                     <span class="img-aspecto"><img src="imagenes/05_aspecto.png" alt="Icono de Aspecto"></span>
-                    <span >Aspecto</span>
+                    <span  class="nombre-aspecto>Aspecto</span>
                 </th>
                     <td>${antibiotic.appearance || "N/A"}</td>
             </tr>
@@ -749,14 +749,14 @@ document.addEventListener("DOMContentLoaded", function () {
             <tr>
                 <th>
                     <span class="img-conservacion"><img src="imagenes/07_conservacion.png" alt="Icono de Conservación"></span>
-                    <span>Conservación</span>
+                    <span  class="nombre-conservacion>Conservación</span>
                 </th>
                     <td>${antibiotic.storage || "N/A"}</td>
             </tr>
             <tr>
                 <th>
                     <span class="img-ficha_tecnica"><img src="imagenes/08_ficha_tecnica.png" alt="Icono de ficha técnica"></span>
-                    <span>Ficha técnica</span></th>
+                    <span  class="nombre-ficha_tecnica>Ficha técnica</span></th>
                 <td>
                     <a href="${antibiotic.technicalSheet}" target="_blank">Ver ficha técnica</a>
                 </td>
