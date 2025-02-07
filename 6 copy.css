@@ -49,6 +49,8 @@ header {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra para diferenciarlo del contenido */
     text-align: center;
     border-radius: 8px;
+    user-select: none;
+    pointer-events: none;
 }
 
 
@@ -62,30 +64,6 @@ header {
     justify-content: center; /* Centra el botón horizontalmente */
 }
 
-#main-button {
-    background-color: var(--color-principal); /* Fondo del botón */
-    color: var(--color-fuente); /* Color del texto */
-    padding: 10px 20px; /* Tamaño del botón */
-    border: none; /* Sin borde */
-    border-radius: 8px; /* Bordes redondeados */
-    text-decoration: none; /* Elimina subrayado */
-    font-weight: bold; /* Texto en negrita */
-    text-align: center; /* Centra el texto dentro del botón */
-    cursor: pointer; /* Cambia el cursor a una mano */
-    transition: background-color 0.3s ease, transform 0.3s ease; /* Animaciones */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
-    width: 90%; /* Botón adaptado al ancho del sidebar */
-}
-
-#main-button:hover {
-    background-color: var(--color-hover); /* Cambia el color al pasar el ratón */
-    transform: scale(1.05); /* Aumenta ligeramente el tamaño */
-}
-
-#main-button:active {
-    background-color: var(--color-borde); /* Color al hacer clic */
-    transform: scale(0.95); /* Reduce ligeramente el tamaño */
-}
 
 /* Ajuste del área desplazable */
 main {
@@ -131,7 +109,7 @@ main {
 }
 
 	#seek-bar:hover {
-    box-shadow: 0px 6px 10px rgba(165, 163, 163, 0.15);
+    box-shadow: 0px 3px 5px var(--color-fuente);
 	background-color: var(--color-hover) ;
 }
 
@@ -158,7 +136,6 @@ main {
     padding: 1rem;
     overflow-y: auto;  
 }
-/*--nuevo--*/
 /* Estilo compartido */
 .sidebar-item {
     display: flex; /* Asegura que el contenido esté centrado */
@@ -187,14 +164,6 @@ main {
     background-color: var(--color-borde); /* Color al hacer clic */
     transform: scale(0.95); /* Animación de reducción */
 }
-
-.sidebar-item img {
-    width: 50%; /* Imagen proporcional al tamaño del botón */
-    height: 50%;
-}
-
-
-
 
 /* Contenedor del abecedario */
 #alphabet {
@@ -239,7 +208,7 @@ main {
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    padding: 2rem;
+    padding: 1rem;
     background-color: var(--color-fondo);
     overflow-y: auto; /* Permitir scroll si es necesario */
     box-sizing: border-box;
@@ -253,20 +222,12 @@ main {
     text-align: center;
 }
 
-.antibiotic-item {
+.antibiotic-item {/*--listado de aii--*/
     padding: 0.5rem;
     border-bottom: 1px solid var(--color-borde);
     cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-
-#antibiotic-info p {
-    color: var(--color-pantone);
-    font-weight: bold;
-    font-size: 1rem;
-    text-align: center;
-
+    transition: background-color 0.3s ease; 
+    font-weight: 400;
 }
 
 .antibiotic-item:hover {
@@ -284,20 +245,36 @@ main {
     text-align: center;
 }
 
-ul {
-    list-style-type: none; /* Eliminar los puntos de la lista */
-    padding: 0; /* Opcional: eliminar el padding predeterminado */
+#antibiotic-info h2 { /*--TEXTO: Información del Antiinfeccioso--*/
+    user-select: none;
+    pointer-events: none;
+    text-decoration: underline;
+}
+#antibiotic-info p {  /*--TEXTO: Seleccione un Antiinfeccioso para ver los detalles.--*/
+    color: var(--color-pantone);
+    font-weight: bold;
+    font-size: 1rem;
+    text-align: center;
+    user-select: none;
+    pointer-events: none;
+    text-decoration: underline;
 }
 
-li {
+/*--INICIALES--*/
+ul {/*--contenedor de iniciales--*/
+    list-style-type: none; /* Eliminar los puntos de la lista */
+    padding: 0; /* Opcional: eliminar el padding predeterminado */
+    }
+
+li { /*--iniciales--*/
     margin-bottom: 0.5rem; /* Opcional: agregar espacio entre los elementos de la lista */
     cursor: pointer; /* Opcional: mostrar un cursor de mano */
 }
 
 
 /* Asegura que la tabla sea responsive */
-	h2 {
-    margin-bottom: 10px; /* Ajusta el valor según sea necesario */
+	h2 {  /*--nombre del antiinfeccioso en la tabla de detalles--*/
+    margin-bottom: 20px; /* Ajusta el valor según sea necesario */
     color: var(--color-fuente); 
 
 }
@@ -506,6 +483,10 @@ border-radius: 10px; /* Bordes redondeados de la barra */
 
     .details-table th .text-content {
         padding-left: 10px; /* Espaciado adicional para el texto */
+    }
+    h2 {
+        font-size: 1.2rem;
+
     }
     /* Ajustes para pantallas pequeñas */
 @media (max-width: 768px) {
