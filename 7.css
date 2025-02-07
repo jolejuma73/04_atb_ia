@@ -56,15 +56,23 @@ header {
 main {
     margin: 0 auto;
     padding: 1rem;
-    width: 1000px;
+    width: 95vw;
     max-width: 1200px; /* Ancho máximo del contenido */
+    min-height: 500px; /* Altura mínima */
+    height: auto; /* Ajuste automático */
+    
     height: calc(100vh - 100px); /* Altura que reste el header */
     overflow-y: auto; /* Scroll vertical si es necesario */
     overflow-x: hidden; /* Evita scroll horizontal */
 	overflow-y: auto; /* Permite scroll solo dentro de este contenedor */
 	margin-top: clamp(75px, 8vw, 100px);
+    
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Centra horizontalmente los elementos */
+    }
 
-}
+
 
 
 .common-container {
@@ -158,9 +166,6 @@ main {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-
-
-
 	#seek-bar:hover {
     box-shadow: 0px 6px 10px rgba(165, 163, 163, 0.15);
 	background-color: var(--color-hover) ;
@@ -180,8 +185,8 @@ main {
 }
 #seek-bar,
 #antibiotic-info {
-    width: clamp(280px, 90%, 800px); /* Ancho adaptable con mínimo de 280px y máximo de 800px */
-    box-sizing: border-box; /* Asegura que el padding no afecte el ancho */
+    width: 90%; /* Ocupa el 90% del ancho de su contenedor */
+    max-width: 800px; /* Define un ancho máximo */
 }
 
 
@@ -225,6 +230,9 @@ main {
 .home-icon {
     width: 30px; /* Ajustar tamaño del ícono */
     height: 30px;
+    margin: 0 auto;
+    text-align: center;
+
 }
 
 /* Contenedor del abecedario */
@@ -281,8 +289,8 @@ main {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     text-align: center;
     overflow: visible; /* Permite que el contenido fluya sin restricciones */
-    max-height: 900px; /* Límite de altura para el contenedor */
-    overflow-y: auto; /* Scroll vertical si el contenido excede el límite */
+    height: auto; /* Ajuste automático */
+        overflow-y: auto; /* Scroll vertical si el contenido excede el límite */
 }
 
 
@@ -325,7 +333,7 @@ li {
 
 .details-table {
     width: 100%; 
-    height: 100%;
+    height: auto;
     border-collapse: collapse; /* Evita espacios entre celdas */
     table-layout: fixed; /* Mantiene un ancho uniforme para las columnas */    
 
@@ -347,7 +355,6 @@ li {
     color: var(--color-fuente); /* Color del texto */
     font-weight: bold; /* Negrita para distinguir los encabezados */
     display: table-cell; /* Asegura el comportamiento natural de tabla */
-
 }
 
 .details-table td {
@@ -371,14 +378,11 @@ li {
 }
 .details-table tr:last-child td:last-child {  /*--celda b8--*/
     border-radius: 0 0 8px 0;
-
 	border-bottom:none;
-
 }
 .details-table td:hover {
 	background-color: var(--color-hover) ;
 }
-
 .details-table td a {
     color: var(--color-fuente);
     text-decoration: none;
@@ -400,6 +404,8 @@ li {
 img {
     max-width: 100%;
     height: auto; /* Esto puede forzar tamaños grandes si no se controlan */
+    
+
 }
 
 .details-table th img {
@@ -428,11 +434,73 @@ img {
 background: var(--color-pantone);
 border-radius: 10px; /* Bordes redondeados de la barra */
 }
-
-/* Color de la barra deslizante al pasar el cursor */
-::-webkit-scrollbar-thumb:hover {
-  background: var(--color-fuente); /* Color más oscuro cuando el cursor pasa por encima */
+::-webkit-scrollbar {
+    width: 0px; /* Ancho de la barra vertical */
+    height: 0px; /* Altura de la barra horizontal */
 }
+
+
+.img-presentacion {
+    margin-right: 165px; /* Espacio entre el icono y el texto */
+  }  
+  .nombre-presentacion {
+    margin-left: 10px; /* Espacio entre el icono y el texto */
+  }
+  .img-tipo {
+    margin-right: 120px; /* Espacio entre el icono y el texto */
+  }
+  
+  .img-nombre-tipo {
+    margin-right: 210px; /* Espacio entre el icono y el texto */
+  }
+  
+  .img-dosis {
+    margin-right: 225px; /* Espacio entre el icono y el texto */
+  }
+  
+  .nombre-dosis {
+    margin-right: 10px; /* Espacio entre el icono y el texto */
+  }
+  
+  .img-preparacion {
+    margin-right: 180px; /* Espacio entre el icono y el texto */
+  }
+  
+  .img-nombre-preparacion {
+    margin-right: 10px; /* Espacio entre el icono y el texto */
+  }
+  
+  .img-aspecto {
+    margin-right: 210px; /* Espacio entre el icono y el texto */
+  }
+  
+  .nombre-aspecto {
+    margin-right: 10px; /* Espacio entre el icono y el texto */
+  }
+  
+  .img-tiempo {
+    margin-right: 85px; /* Espacio entre el icono y el texto */
+  }
+  
+  .nombre-tiempo {
+    margin-right: none; /* Espacio entre el icono y el texto */
+  }
+  
+  .img-conservacion {
+    margin-right: 170px; /* Espacio entre el icono y el texto */
+  }
+  
+  .nombre-conservacion {
+    margin-right: 10px; /* Espacio entre el icono y el texto */
+  }
+  
+  .img-ficha_tecnica {
+    margin-right: 175px; /* Espacio entre el icono y el texto */
+  }
+  
+  .nombre-ficha_tecnica {
+    margin-right: 10px; /* Espacio entre el icono y el texto */
+  }
 /* Footer */
 footer {
     background-color: var(--color-pantone);
@@ -445,8 +513,13 @@ footer {
     bottom: 0;
     left: 0;
     position: fixed;
-
 }
+
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
 
 /* Hacer la tabla adaptable */
 @media (max-width: 768px) {
@@ -483,18 +556,29 @@ footer {
         margin: 0 auto; /* Centra horizontalmente la tabla */
         width: 90%; /* Ajusta el ancho de la tabla */
     }
+    .details-table td {
+        border-left: none;
+    }
+
     .details-table td:hover {
         font-size: 16px ;
         background: var(--color-hover); 
         border-radius: 8px;
-        margin: 4px;
     }
-	.details-table tbody tr:first-child th:first-child {
-    border-radius: 8px;
-	}
-	.details-table tr:last-child {
-    border-radius: 0 0 8px 8px;font-size: 2rem;
-	}
+
+    .details-table  tr:first-child th:first-child { /*--celda a1--*/
+        border-radius:8px 8px 0 0;    
+    
+    }
+    .details-table tr:last-child th:first-child {  /*--celda a8--*/
+        border-radius: 0 0 0 0;
+        border-bottom:none;
+    }
+    
+    .details-table tr:last-child td:last-child {  /*--celda b8--*/
+        border-radius: 0 0 8px 8px;
+        border-bottom:none;
+    }
     .details-table th,
     .details-table td {
         display: block; /* Hace que cada celda ocupe toda la fila */
@@ -530,16 +614,12 @@ footer {
 @media (max-width: 768px) {
     #seek-bar,
     #antibiotic-info {
-        width: clamp(240px, 90%, 600px); /* Ancho más reducido para pantallas pequeñas */
-    }
-}
-
-@media (min-width: 1200px) {
-    #seek-bar,
-    #antibiotic-info {
-        width: clamp(400px, 80%, 1000px); /* Ancho mayor para pantallas grandes */
+        width: 95%; /* Ajusta el ancho para pantallas pequeñas */
     }
 	.common-width-container {
         max-width: 1000px; /* Ancho máximo en pantallas grandes */
+    }
+    main {
+        width: 95vw; /* Ajusta el ancho para pantallas pequeñas */
     }
 }
