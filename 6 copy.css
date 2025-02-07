@@ -6,6 +6,7 @@
     --color-hover: #d9ebd8;/*pantone 7740c__80--*/
     --color-borde: #4fa66a;/*pantone 7740c__20--*/
 	font-family: 'noto-sans' 'verdana', 'sans-serif';
+}
 
 * {
     margin: 0;
@@ -14,25 +15,17 @@
     box-shadow: none; /* Elimina sombras */
     box-sizing: border-box;
 }
-#main-content, #seek-bar-container {
-    margin: 0;
-    padding: 0;
-    background-color: transparent; /* Asegura que el fondo sea transparente */
-    border: none; /* Elimina bordes */  
-}
 
-body {
-
-    font-weight: bold;
-    color: var(--color-fuente); /* Color del texto */
+body {    
     margin: 0 ;
     padding: 0;
-    box-sizing: border-box;
     background-color: var(--color-fondo);
+    font-weight: bold;
+    color: var(--color-fuente); /* Color del texto */
     overflow-x: hidden; /* Evita scroll horizontal innecesario */    
 }
 
-/* Header fijo */
+/*--ENCABEZADO--*/
 header {
     position: fixed; 
     top: 0; 
@@ -44,7 +37,7 @@ header {
 	z-index: 1000; 
 	font-size: clamp(0.8em, 2.2vw, 1.2em) ; 
     background-color: var(--color-principal); 
-    color: var(--color-fuente); /* Color del texto */
+    color: var(--color-fuente); 
     padding: 15px 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra para diferenciarlo del contenido */
     text-align: center;
@@ -53,17 +46,14 @@ header {
     pointer-events: none;
 }
 
-
-/*--  BOTON DE VOLVER--*/
-
-
-#main-button-container {
-    margin-bottom: 1rem; /* Espaciado debajo del botón */
-    width: 100%; /* Asegura que el botón use todo el ancho disponible */
-    display: flex;
-    justify-content: center; /* Centra el botón horizontalmente */
+#main-content, #seek-bar-container {
+    margin: 0;
+    padding: 0;
+    background-color: transparent; /* Asegura que el fondo sea transparente */
+    border: none; /* Elimina bordes */  
 }
 
+/*--  BOTON DE VOLVER--*/
 
 /* Ajuste del área desplazable */
 main {
@@ -72,16 +62,22 @@ main {
     margin-top: 10px; /* Altura exacta del header */
     height: calc(100vh - 60px); /* Resta la altura del header del viewport */
     overflow-y: auto; /* Desplazamiento vertical */
-    background-color: var(--color-terciario);
 }
 
+#main-button-container {  /*--contenedor botón VOLVER--*/
+    margin-bottom: 1rem; /* Espaciado debajo del botón */
+    width: 100%; /* Asegura que el botón use todo el ancho disponible */
+    display: flex;
+    justify-content: center; /* Centra el botón horizontalmente */
+}
 
-.container {
+.container {   /*-CONTENEDOR CENTRO DE LA PAGINA--*/
     display: flex;
     flex-direction: row;
 }
+/*--CAJA DE BUSQUEDA--*/
 
-#seek-container {
+#seek-container { /*--caja que contiene a la caja de busqueda--*/
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -91,10 +87,10 @@ main {
     background-color: var(--color-fondo);
     margin: 0 auto;
     text-align: center;
-    }
+}
     
 
-#seek-bar {/*--buscar antibiotico item--*/
+#seek-bar { /*--buscar antibiotico item--*/
     width: clamp(250px, 90%, 900px); /* Controla el ancho con límites */
     background-color: var(--color-principal );
     border: 1px solid var(--color-borde);
@@ -123,7 +119,7 @@ main {
     opacity: 1; /* Asegura que el color sea completamente visible */
     font-family: 'Noto Sans', 'Verdana', 'sans-serif';
     font-size: 16px; /* Ajusta el tamaño de fuente si es necesario */
-    letter-spacing: 1.5px; /* Asegura que sea en píxeles y no un número sin unidad */
+    letter-spacing: 1.2px; /* Asegura que sea en píxeles y no un número sin unidad */
 }
 
 
@@ -278,11 +274,6 @@ li { /*--iniciales--*/
     color: var(--color-fuente); 
 
 }
-
-
-/*--nuevo--*/
-
-
 .details-table {
     width: 100%; /* Asegura que la tabla ocupe todo el ancho disponible */
     border-collapse: collapse; /* Evita espacios entre celdas */
