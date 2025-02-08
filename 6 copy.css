@@ -496,5 +496,7 @@ opacity: 0.5;
         height: auto;
         overflow: hidden; /* Permite que el contenido fluya sin restricciones */
     }
- 
+footer {
+    font-size: 0.6em;
+}
 }
