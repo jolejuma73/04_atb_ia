@@ -753,10 +753,10 @@ document.addEventListener("DOMContentLoaded", function () {
         if (event.target.tagName === "LI") {
             const letter = event.target.textContent;
             displayAntibiotics(letter);
-            sidebar.style.display = "none"; // Ocultar sidebar
-            mainButtonContainer.style.display = "flex"; // Mostrar botón "Ir al Inicio"
+            antibioticInfo.style.margin = "0 auto"; // Reasegurar centrado
         }
     });
+    
 
 
 // Detectar búsqueda en la barra de búsqueda
