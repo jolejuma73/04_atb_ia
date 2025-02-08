@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const searchResults = document.getElementById("search-results");
     const searchBar = document.getElementById("seek-bar");
     const antibioticInfo = document.getElementById("antibiotic-info");
-
+    
     const antibiotics = {
         A: [
             {
@@ -750,13 +750,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Evento: Clic en una letra del abecedario
     alphabetList.addEventListener("click", function (event) {
-        if (event.target.tagName === "LI") {
-            const letter = event.target.textContent;
-            displayAntibiotics(letter);
-            antibioticInfo.style.margin = "0 auto"; // Reasegurar centrado
-        }
-    });
-    
+    if (event.target.tagName === "LI") {
+        const letter = event.target.textContent;
+        displayAntibiotics(letter);
+        antibioticInfo.style.margin = "0 auto"; // Reasegurar centrado
+    }
+});
+
 
 
 // Detectar búsqueda en la barra de búsqueda

@@ -282,6 +282,9 @@ main {
     border-radius: 5px;
     box-sizing: border-box;
     text-align: center;
+    max-height: 1200px; /* Límite de altura para el contenedor */
+    overflow: visible; /* Permite que el contenido fluya sin restricciones */
+    box-sizing: border-box;
 }
 
 ul {
