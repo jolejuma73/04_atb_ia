@@ -1,19 +1,19 @@
 :root {
-	--color-pantone: #368f3f; /*--pantone 7740c____#368f3f--*/
-    --color-principal: #92c99b;/*pantone 7740c__50--*/
-    --color-fuente: #2e2925;/*--pantone black c--*/
-    --color-fondo: #ebf5ed;/*--pantone 7740c__10--*/
-    --color-hover: #d9ebd8;/*pantone 7740c__80--*/
-    --color-borde: #4fa66a;/*pantone 7740c__20--*/
+	--color-pantone: #368f3f;   /*--pantone 7740c--#368f3f--*/
+    --color-fuente: #2e2925;    /*--pantone black c--*/
+    --color-fondo: #ebf5ed;     /*--pantone 7740c__10--*/
+    --color-borde: #4fa66a;     /*--pantone 7740c__20--*/
+    --color-principal: #92c99b; /*--pantone 7740c__50--*/
+    --color-hover: #d9ebd8;     /*--pantone 7740c__80--*/
 	font-family: 'noto-sans' 'verdana', 'sans-serif';
 }
 
 * {
     margin: 0;
     padding: 0;
-    border: 0; /* Elimina todos los bordes */
-    box-shadow: none; /* Elimina sombras */
     box-sizing: border-box;
+    text-wrap:balance;
+
 }
 
 body {
@@ -24,8 +24,6 @@ body {
     flex-direction: column;
     align-items: center;
     height: 100vh; /* Altura completa de la pantalla */
-	overflow: hidden; /* Evita scroll en el cuerpo */
-
 }
 
 /*--ENCABEZADO--*/
@@ -46,7 +44,6 @@ header {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra para diferenciarlo del contenido */
     text-align: center;
     border-radius: 8px;
-	text-decoration:underline;
     user-select: none;
     pointer-events: none;
 }
@@ -56,15 +53,9 @@ header {
 
 main {
     margin: 0 auto;
-    padding: 1.5rem;
-    width: 1000px;
-    max-width: 1200px; /* Ancho máximo del contenido */
+    padding: 0;
     height: calc(100vh - 100px); /* Altura que reste el header */
-    overflow-y: auto; /* Scroll vertical si es necesario */
-    overflow-x: hidden; /* Evita scroll horizontal */
-	overflow-y: auto; /* Permite scroll solo dentro de este contenedor */
 	margin-top: clamp(75px, 8vw, 100px);
-
 }
 
 
@@ -73,13 +64,13 @@ main {
     flex-direction: column; /* Alineación vertical */
     align-items: center;
     max-width: 800px; /* Define un ancho máximo consistente */
-    width: 90%;
+    width: 100%;
     margin: 0 auto;
     overflow: visible; /* Permite que el contenido se expanda */
 }
 
 
-/*--LISTADO ALFABETICO--*/
+/*--BARRA DEL ABECEDARIO  --*/
 .sidebar-seek-container {
     display: flex;
     flex-direction: column; /* Alinea los elementos verticalmente */
@@ -87,7 +78,7 @@ main {
     gap: 1rem; /* Espaciado entre el sidebar y el buscador */
     margin: 1rem auto;
     width: 100%;
-    max-width: 800px; /* Limitar el ancho del contenedor */
+    max-width: 1200px; /* Limitar el ancho del contenedor */
 }
 
 .sidebar {
@@ -102,14 +93,16 @@ main {
 #alphabet-list {
     display: flex;
     flex-wrap: wrap; /* Letras en varias filas si es necesario */
-    gap: 0.5rem; /* Espaciado entre letras */
+    justify-content: space-evenly; /* Centrar horizontalmente */
+    gap: .5rem; /* Espaciado entre letras */
     list-style: none;
     padding: 0;
     margin: 0;
+
 }
 
 #alphabet-list li {
-    padding: 10px 15px;
+    padding: 15px ;
     background-color: var(--color-principal);
     border-radius: 8px;
     text-align: center;
@@ -117,11 +110,13 @@ main {
     color: var(--color-fuente);
     cursor: pointer;
     transition: background-color 0.3s ease;
+    font-size: 1rem;
 }
 
 #alphabet-list li:hover {
     background-color: var(--color-hover);
 }
+
 
 /*--CAJA DE BUSQUEDA--*/
 
@@ -140,7 +135,7 @@ main {
     
 
 #seek-bar { /*--buscar antibiotico item--*/
-    width: clamp(250px, 90%, 900px); /* Controla el ancho con límites */
+    width: clamp(250px, 90%, 1200px); /* Controla el ancho con límites */
     background-color: var(--color-principal );
     border: 1px solid var(--color-borde);
     overflow-y: auto;
@@ -167,15 +162,11 @@ main {
     color: var(--color-fuente); 
     opacity: 1; /* Asegura que el color sea completamente visible */
     font-family: 'Noto Sans', 'Verdana', 'sans-serif';
-    font-size: 16px; /* Ajusta el tamaño de fuente si es necesario */
+    font-size: 1.2rem; /* Ajusta el tamaño de fuente si es necesario */
     letter-spacing: 1.2px; /* Asegura que sea en píxeles y no un número sin unidad */
 }
 
-#seek-bar,
-#antibiotic-info {
-    width: clamp(280px, 90%, 800px); /* Ancho adaptable con mínimo de 280px y máximo de 800px */
-    box-sizing: border-box; /* Asegura que el padding no afecte el ancho */
-}
+
 /*--  BOTON DE VOLVER--*/
 
 
@@ -220,7 +211,7 @@ main {
     height: 30px;
 }
 
-/* Contenedor del abecedario */
+/*--DETAILS--*/
 
 .details {
     flex-grow: 1;
@@ -240,10 +231,8 @@ main {
     margin-top: 10px;
     list-style: none;
     padding: 0;
-    text-align: center;    
-
+    text-align: center;  
 }
-
 
 .antibiotic-item {
     padding: 0.5rem;
@@ -253,12 +242,13 @@ main {
 }
 
 
-#antibiotic-info p {  /*--Seleccione un antiinfeccioso para ver los detalles.--*/
+#antibiotic-info p {  /*--TEXTO: Seleccione un antiinfeccioso para ver los detalles.--*/
     color: var(--color-pantone);
     font-weight: bold;
-    font-size: 1rem;
+    font-size: 1.2rem;
     text-align: center;
-
+    user-select: none;
+    pointer-events: none;
 }
 
 .antibiotic-item:hover {
@@ -266,7 +256,7 @@ main {
 }
 #antibiotic-info {
     width: 100%; /* Ocupa el ancho completo del contenedor padre */
-    max-width: 800px; /* Define un ancho máximo */
+    max-width: 1200px; /* Define un ancho máximo */
     margin: 1rem auto; /* Centrar horizontalmente con margen superior */
     padding: 1rem;
     border-radius: 12px;
@@ -274,7 +264,7 @@ main {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     text-align: center;
     overflow: visible; /* Permite que el contenido fluya sin restricciones */
-    max-height: 900px; /* Límite de altura para el contenedor */
+    max-height: 1200px; /* Límite de altura para el contenedor */
     overflow-y: auto; /* Scroll vertical si el contenido excede el límite */
 }
 
@@ -297,41 +287,50 @@ main {
 
 
 
-ul {
-    list-style-type: none; /* Eliminar los puntos de la lista */
-    padding: 0; /* Opcional: eliminar el padding predeterminado */
-}
+/*--Información del Antiinfeccioso. pantalla principal y resto H2--*/
 
-li {
-    margin-bottom: 0.5rem; /* Opcional: agregar espacio entre los elementos de la lista */
-    cursor: pointer; /* Opcional: mostrar un cursor de mano */
-}
-
-
-	h2 {
-    margin-bottom: 10px; /* Ajusta el valor según sea necesario */
+.h2-info-aii {  /*--TEXTO:Información del Antiinfeccioso. pantalla principal--*/
     color: var(--color-fuente); 
-
+    text-align: center;
+    user-select: none;
+    pointer-events: none;
+    font-size: 1.5em;
 }
 
+.h2-empieza-con {    /*--TEXTO:Información del Antiinfeccioso. listado aii--*/
+    font-size: 1.5rem;
+}
+.h2-details {  /*-- Nombre del aii en detalles--*/
+    font-size: 1.5rem;
+}
+h2 {     /*--TEXTO:Información del Antiinfeccioso. detalles aii--*/
+    margin-bottom: .5em; /* Ajusta el valor según sea necesario */
+    color: var(--color-fuente); 
+    text-align: center;
+    user-select: none;
+    pointer-events: none;
+    font-size: 1.5em;
+    text-wrap:balance
+}
 /*--TABLA DE INFORMACION DEL AII--*/
 
 .details-table {
     width: 100%; 
     height: 100%;
     border-collapse: collapse; /* Evita espacios entre celdas */
-    table-layout: fixed; /* Mantiene un ancho uniforme para las columnas */    
-
-
+    table-layout: fixed; /* Mantiene un ancho uniforme para las columnas */ 
+    font-size: 1.1em;
+    user-select: none;
+    pointer-events: auto;
+    border-radius: 12px;
 }
 
 .details-table th, .details-table td {
-    padding: 10px; /* Espaciado interno */
+    padding: 10px 20px; /* Espaciado interno */
     border-bottom: 1px solid var(--color-borde); /* Línea inferior */
     text-align: left; /* Alinea el contenido a la izquierda */
     vertical-align: top; /* Asegura que el contenido inicie en la parte superior */
     word-break: break-word; /* Permite dividir palabras largas */
-    
 
 }
 
@@ -340,38 +339,31 @@ li {
     color: var(--color-fuente); /* Color del texto */
     font-weight: bold; /* Negrita para distinguir los encabezados */
     display: table-cell; /* Asegura el comportamiento natural de tabla */
-
 }
 
 .details-table td {
     background-color: var(--color-hover); /* Fondo para las celdas */
     color: var(--color-fuente); /* Color del texto */
     border-left: 1px solid var(--color-borde);
-
 }
 
 .details-table  tr:first-child th:first-child { /*--celda a1--*/
-    border-radius:8px 0 0 0;    
-
+    border-radius:8px 0 0 0;  
 }
 .details-table tr:last-child th:first-child {  /*--celda a8--*/
     border-radius: 0 0 0 8px;
 	border-bottom:none;
 }
-
 .details-table  tr:first-child td:last-child { /*--celda b1--*/
     border-radius:0 8px 0 0;
 }
 .details-table tr:last-child td:last-child {  /*--celda b8--*/
     border-radius: 0 0 8px 0;
-
 	border-bottom:none;
-
 }
 .details-table td:hover {
-	background-color: var(--color-hover) ;
+	opacity: 0.7 ;
 }
-
 .details-table td a {
     color: var(--color-fuente);
     text-decoration: none;
@@ -379,10 +371,8 @@ li {
 .details-table td a:hover {
     text-decoration: underline;
     font-weight: bold;
-    font-size: 16px;
+    font-size: 1.2em;
 }
-
-
 .details-table tr:last-child td:last-child a {
     color: var(--color-pantone) ;
 }
@@ -398,7 +388,7 @@ img {
 .details-table th img {
     width: 30px; /* Ajusta a tu preferencia */
     height: 30px;
-    margin-right: 5px; /* Espacio entre imagen y texto */
+    margin-right: 50px; /* Espacio entre imagen y texto */
     vertical-align: middle; /* Alineación vertical con el texto */
 }
 
@@ -406,8 +396,7 @@ img {
 
 /* Estilo para la barra de desplazamiento */
 ::-webkit-scrollbar {
-  width: 8px; /* Ancho de la barra vertical */
-  height: 4px; /* Altura de la barra horizontal */
+    width: 12px; /* Ancho del thumb */
 }
 
 /* Color de fondo de la barra */
@@ -424,8 +413,9 @@ border-radius: 10px; /* Bordes redondeados de la barra */
 
 /* Color de la barra deslizante al pasar el cursor */
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--color-fuente); /* Color más oscuro cuando el cursor pasa por encima */
+  background: var(--color-principal); /* Color más oscuro cuando el cursor pasa por encima */
 }
+
 /* Footer */
 footer {
     background-color: var(--color-pantone);
@@ -442,20 +432,17 @@ footer {
 }
 
 /* Hacer la tabla adaptable */
+
 @media (max-width: 768px) {
-	.row-container {
-        flex-direction: column; /* Cambiar a columna en pantallas pequeñas */
-        align-items: center;
-    }
-	
 	.common-width-container {
         width: 95%; /* Ajustar el ancho para pantallas pequeñas */
+        padding-bottom: 70px;
     }
     .sidebar {
-        flex-direction: row; /* Mostrar letras en fila */
-        flex-wrap: wrap; /* Permitir que las letras se ajusten en filas */
+        display: flex;
+        flex-flow: row wrap; /* Mostrar letras en fila */
         justify-content: center;
-        max-width: 100%; /* Ajustar ancho */
+        max-width: 80%; /* Ajustar ancho */
     }
     #seek-bar {
         width: 90%; /* Reducir ancho del seek-bar en pantallas pequeñas */
@@ -465,7 +452,7 @@ footer {
         align-items: center; /* Centra todos los elementos */
     }
     #antibiotic-info {
-        width: 80%; /* El contenedor de información ocupará todo el ancho */
+        width: 90%; /* El contenedor de información ocupará todo el ancho */
         margin-left: 0;
     }
 	.details {
@@ -476,49 +463,53 @@ footer {
         margin: 0 auto; /* Centra horizontalmente la tabla */
         width: 90%; /* Ajusta el ancho de la tabla */
     }
-    .details-table td:hover {
-        font-size: 16px ;
-        background: var(--color-hover); 
-        border-radius: 8px;
-        margin: 4px;
-    }
-	.details-table tbody tr:first-child th:first-child {
-    border-radius: 8px;
-	}
-	.details-table tr:last-child {
-    border-radius: 0 0 8px 8px;font-size: 2rem;
-	}
-    .details-table th,
-    .details-table td {
-        display: block; /* Hace que cada celda ocupe toda la fila */
-        text-align: center; /* Centra horizontalmente el texto */
-        width: 100%; /* Las celdas se expanden al ancho completo */
-    }
-    .details-table tr {
-        display: flex; /* Usa flexbox para centrar los elementos */
-        flex-direction: column; /* Pone las celdas en una columna */
-        align-items: center; /* Centra horizontalmente */
-        justify-content: center; /* Centra verticalmente */
-    }
-    .details-table th {
-        display: flex; /* Mantén Flexbox para la alineación */
-        align-items: center; /* Centra verticalmente la imagen y el texto */
-        gap: 8px; /* Espaciado entre la imagen y el texto */
-        text-align: left; /* Asegura que el texto esté alineado a la izquierda */
-        padding-left: 10px; /* Resetea cualquier padding general */
-		justify-content:space-between;
-		padding-right:80px;
-		font-size:13px;
-    }
-    .details-table th img {
-        flex-shrink: 0; /* Evita que la imagen se reduzca */
-        width: 24px; /* Tamaño adecuado para pantallas pequeñas */
-        height: 24px; /* Tamaño adecuado para pantallas pequeñas */
-    }
-    .details-table th .text-content {
-        padding-left: 10px; /* Espaciado adicional para el texto */
-    }
     
+    
+.details-table th,
+.details-table td {
+    display: block; /* Hace que cada celda ocupe toda la fila */
+    text-align: center; /* Centra horizontalmente el texto */
+    width: 100%; /* Las celdas se expanden al ancho completo */
+    border:none;
+    font-size: 1.1rem;
+
+}
+.details-table tr {
+    display: flex; /* Usa flexbox para centrar los elementos */
+    flex-direction: column; /* Pone las celdas en una columna */
+    align-items: center; /* Centra horizontalmente */
+    justify-content: center; /* Centra verticalmente */
+}
+.details-table th {
+    display: flex; /* Mantén Flexbox para la alineación */
+    align-items: center; /* Centra verticalmente la imagen y el texto */
+    gap: 8px; /* Espaciado entre la imagen y el texto */
+    text-align: left; /* Asegura que el texto esté alineado a la izquierda */
+    padding-left: 10px; /* Resetea cualquier padding general */
+	justify-content:space-between;
+	padding-right:80px;
+}
+.details-table th img {
+    flex-shrink: 0; /* Evita que la imagen se reduzca */
+    width: 24px; /* Tamaño adecuado para pantallas pequeñas */
+    height: 24px; /* Tamaño adecuado para pantallas pequeñas */
+}
+.details-table th .text-content {
+    padding-left: 10px; /* Espaciado adicional para el texto */
+}
+
+.details-table  tr:first-child th:first-child { /*--celda a1--*/
+    border-radius:8px 8px 0 0; 
+}
+.details-table tr:last-child th:first-child {  /*--celda a8--*/
+    border-radius: none;
+}
+.details-table  tr:first-child td:last-child { /*--celda b1--*/
+    border-radius: 0px;
+}
+.details-table tr:last-child td:last-child {  /*--celda b8--*/
+    border-radius: 0 0 8px 8px;
+}	
 }
 @media (max-width: 768px) {
     #seek-bar,
@@ -530,7 +521,7 @@ footer {
 @media (min-width: 1200px) {
     #seek-bar,
     #antibiotic-info {
-        width: clamp(400px, 80%, 1000px); /* Ancho mayor para pantallas grandes */
+        width: clamp(400px, 80%, 1200px); /* Ancho mayor para pantallas grandes */
     }
 	.common-width-container {
         max-width: 1000px; /* Ancho máximo en pantallas grandes */

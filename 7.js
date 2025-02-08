@@ -678,7 +678,7 @@ document.addEventListener("DOMContentLoaded", function () {
             .join("");
 
         antibioticInfo.innerHTML = `
-            <h2>Antibióticos que empiezan con ${letter}</h2>
+            <h2 class="h2-empieza-con">Antibióticos que empiezan con ${letter}</h2>
             <ul>${list}</ul>
         `;
 
@@ -697,7 +697,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         antibioticInfo.innerHTML = `
-        <h2>${antibiotic.name}</h2>
+            <h2 class="h2-details">${antibiotic.name}</h2>
         <table class="details-table">
             <tr>
                 <th><img src="imagenes/01_presentacion.png" alt="Icono de presentación">Presentación</th>

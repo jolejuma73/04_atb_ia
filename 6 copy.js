@@ -685,7 +685,7 @@ document.addEventListener("DOMContentLoaded", function() {
             .join("");
 
         antibioticInfo.innerHTML = `
-            <h2>Antibióticos que empiezan con ${letter}</h2>
+            <h2 class="h2-empieza-con">Antibióticos que empiezan con ${letter}</h2>
             <ul>${list}</ul>
         `;
 
@@ -750,29 +750,35 @@ document.addEventListener("DOMContentLoaded", function() {
         }
 
         antibioticInfo.innerHTML = `
-            <h2>${antibiotic.name}</h2>
-             <table class="details-table">
+            <h2 class="h2-details">${antibiotic.name}</h2>
+            <table class="details-table">
                 <tr>
                     <th><img src="imagenes/01_presentacion.png" alt="Icono de presentación" class="icono-presentacion">Presentación</th>
-                    <td>${antibiotic.presentation || "N/A"}</td></tr>
+                    <td>${antibiotic.presentation || "N/A"}</td>
+                </tr>
                 <tr>
                     <th><img src="imagenes/02_tipo.png" alt="Icono de presentación" class="icono-presentacion">Tipo de Antiinfecioso</th>
                     <td>${antibiotic.type || "N/A"}</td></tr>
                 <tr>
                     <th><img src="imagenes/03_dosis.png" alt="Icono de dosis" class="icono-dosis">Dosis</th>
-                    <td>${antibiotic.dose || "N/A"}</td></tr>
+                    <td>${antibiotic.dose || "N/A"}</td>
+                </tr>
                 <tr>
                     <th><img src="imagenes/04_preparacion.png" alt="Icono de preparación" class="icono-preparacion">Preparación</th>
-                    <td>${antibiotic.preparation || "N/A"}</td></tr>
+                    <td>${antibiotic.preparation || "N/A"}</td>
+                </tr>
                 <tr>
                     <th><img src="imagenes/05_aspecto.png" alt="Icono de Aspecto" class="icono-aspecto">Aspecto</th>
-                    <td>${antibiotic.appearance || "N/A"}</td></tr>
+                    <td>${antibiotic.appearance || "N/A"}</td>
+                </tr>
                 <tr>
                     <th><img src="imagenes/06_tiempo.png" alt="Icono de Tiempo de administración" class="icono-tiempo">Tiempo de administración</th>
-                    <td>${antibiotic.administrationTime || "N/A"}</td></tr>
+                    <td>${antibiotic.administrationTime || "N/A"}</td>
+                </tr>
                 <tr>
                     <th><img src="imagenes/07_conservacion.png" alt="Icono de Conservación" class="icono-conservacion">Conservación</th>
-                    <td>${antibiotic.storage || "N/A"}</td></tr>
+                    <td>${antibiotic.storage || "N/A"}</td>
+                </tr>
                 <tr>
                     <th><img src="imagenes/08_ficha_tecnica.png" alt="Icono de Ficha técnica" class="icono-ficha_tecnica">Ficha técnica</th>
                     <td>
