@@ -439,13 +439,13 @@ footer {
     padding: 1rem;
 }
 
-#volver, #volver2 {
+.volver {
     background-color: transparent;
     border: none;
     cursor: pointer;
 }
 
-#volver img, #volver2 img {
+.volver img {
     width: 40px;
     height: 40px;
 }
@@ -476,7 +476,7 @@ footer {
 }
 #contenedor3 {
     display: none;
-}#volver2 {
+}.volver {
     /* ... estilos para el botón ... */
 }
 

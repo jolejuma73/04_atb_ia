@@ -6,33 +6,24 @@
     --color-hover: #d9ebd8;/*pantone 7740c__80--*/
     --color-borde: #4fa66a;/*pantone 7740c__20--*/
 	font-family: 'noto-sans' 'verdana', 'sans-serif';
+}
 
 * {
     margin: 0;
     padding: 0;
-    border: 0; /* Elimina todos los bordes */
-    box-shadow: none; /* Elimina sombras */
     box-sizing: border-box;
-}
-#main-content, #seek-bar-container {
-    margin: 0;
-    padding: 0;
-    background-color: transparent; /* Asegura que el fondo sea transparente */
-    border: none; /* Elimina bordes */  
-}
-
-body {
-
-    font-weight: bold;
-    color: var(--color-fuente); /* Color del texto */
-    margin: 0 ;
-    padding: 0;
-    box-sizing: border-box;
-    background-color: var(--color-fondo);
     overflow-x: hidden; /* Evita scroll horizontal innecesario */    
 }
 
-/* Header fijo */
+body {    
+    margin: 0 ;
+    padding: 0;
+    background-color: var(--color-fondo);
+    font-weight: bold;
+    color: var(--color-fuente); /* Color del texto */
+}
+
+/*--ENCABEZADO--*/
 header {
     position: fixed; 
     top: 0; 
@@ -44,48 +35,17 @@ header {
 	z-index: 1000; 
 	font-size: clamp(0.8em, 2.2vw, 1.2em) ; 
     background-color: var(--color-principal); 
-    color: var(--color-fuente); /* Color del texto */
+    color: var(--color-fuente); 
     padding: 15px 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra para diferenciarlo del contenido */
     text-align: center;
     border-radius: 8px;
+    user-select: none;
+    pointer-events: none;
 }
 
 
 /*--  BOTON DE VOLVER--*/
-
-
-#main-button-container {
-    margin-bottom: 1rem; /* Espaciado debajo del botón */
-    width: 100%; /* Asegura que el botón use todo el ancho disponible */
-    display: flex;
-    justify-content: center; /* Centra el botón horizontalmente */
-}
-
-#main-button {
-    background-color: var(--color-principal); /* Fondo del botón */
-    color: var(--color-fuente); /* Color del texto */
-    padding: 10px 20px; /* Tamaño del botón */
-    border: none; /* Sin borde */
-    border-radius: 8px; /* Bordes redondeados */
-    text-decoration: none; /* Elimina subrayado */
-    font-weight: bold; /* Texto en negrita */
-    text-align: center; /* Centra el texto dentro del botón */
-    cursor: pointer; /* Cambia el cursor a una mano */
-    transition: background-color 0.3s ease, transform 0.3s ease; /* Animaciones */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
-    width: 90%; /* Botón adaptado al ancho del sidebar */
-}
-
-#main-button:hover {
-    background-color: var(--color-hover); /* Cambia el color al pasar el ratón */
-    transform: scale(1.05); /* Aumenta ligeramente el tamaño */
-}
-
-#main-button:active {
-    background-color: var(--color-borde); /* Color al hacer clic */
-    transform: scale(0.95); /* Reduce ligeramente el tamaño */
-}
 
 /* Ajuste del área desplazable */
 main {
@@ -94,30 +54,44 @@ main {
     margin-top: 10px; /* Altura exacta del header */
     height: calc(100vh - 60px); /* Resta la altura del header del viewport */
     overflow-y: auto; /* Desplazamiento vertical */
-    background-color: var(--color-terciario);
 }
 
 
-.container {
+#main-content {
+    margin-top: 60px; 
+    box-sizing: border-box;
+    padding: 1rem; /* Espaciado alrededor del contenido */
+    margin-top: clamp(1.2em, 7vw, 70px);
+}
+
+#main-button-container {  /*--contenedor botón VOLVER--*/
+    margin-bottom: 1rem; /* Espaciado debajo del botón */
+    width: 100%; /* Asegura que el botón use todo el ancho disponible */
+    display: flex;
+    justify-content: center; /* Centra el botón horizontalmente */
+}
+
+.container {   /*-CONTENEDOR CENTRO DE LA PAGINA--*/
     display: flex;
     flex-direction: row;
 }
+/*--CAJA DE BUSQUEDA--*/
 
-#seek-container {
+#seek-container { /*--caja que contiene a la caja de busqueda--*/
     display: flex;
     flex-direction: row;
     justify-content: center;
-    width: clamp(250px,90%,1200px);    
+    width: clamp(250px,100%,1200px);    
     padding: 0.5rem ;
     margin-bottom: 1rem;    
     background-color: var(--color-fondo);
     margin: 0 auto;
     text-align: center;
-    }
+}
     
 
-#seek-bar {/*--buscar antibiotico item--*/
-    width: clamp(250px, 90%, 900px); /* Controla el ancho con límites */
+#seek-bar { /*--buscar antibiotico item--*/
+    width: clamp(250px, 100%, 900px); /* Controla el ancho con límites */
     background-color: var(--color-principal );
     border: 1px solid var(--color-borde);
     overflow-y: auto;
@@ -131,7 +105,7 @@ main {
 }
 
 	#seek-bar:hover {
-    box-shadow: 0px 6px 10px rgba(165, 163, 163, 0.15);
+    box-shadow: 0px 3px 5px var(--color-fuente);
 	background-color: var(--color-hover) ;
 }
 
@@ -144,8 +118,8 @@ main {
     color: var(--color-fuente); 
     opacity: 1; /* Asegura que el color sea completamente visible */
     font-family: 'Noto Sans', 'Verdana', 'sans-serif';
-    font-size: 16px; /* Ajusta el tamaño de fuente si es necesario */
-    letter-spacing: 1.5px; /* Asegura que sea en píxeles y no un número sin unidad */
+    font-size: 1.5em; /* Ajusta el tamaño de fuente si es necesario */
+    letter-spacing: 1.2px; /* Asegura que sea en píxeles y no un número sin unidad */
 }
 
 
@@ -158,7 +132,6 @@ main {
     padding: 1rem;
     overflow-y: auto;  
 }
-/*--nuevo--*/
 /* Estilo compartido */
 .sidebar-item {
     display: flex; /* Asegura que el contenido esté centrado */
@@ -187,14 +160,6 @@ main {
     background-color: var(--color-borde); /* Color al hacer clic */
     transform: scale(0.95); /* Animación de reducción */
 }
-
-.sidebar-item img {
-    width: 50%; /* Imagen proporcional al tamaño del botón */
-    height: 50%;
-}
-
-
-
 
 /* Contenedor del abecedario */
 #alphabet {
@@ -232,6 +197,103 @@ main {
     box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.15); /* Sombra más pronunciada en hover */
 
 }
+/*--DETAILS--*/
+
+
+#search-results {
+    width: clamp(280px,90%,1200px);
+    margin-top: 10px;
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
+.antibiotic-item {/*--listado de aii--*/
+    padding: 0.5rem;
+    border-bottom: 1px solid var(--color-borde);
+    cursor: pointer;
+    transition: background-color 0.3s ease; 
+}
+
+
+#antibiotic-info p {  /*--TEXTO: Seleccione un Antiinfeccioso para ver los detalles.--*/
+    color: var(--color-fuente);
+    font-weight: bold;
+    font-size: 1.2em;
+    text-align: center;
+    user-select: none;
+    pointer-events: none;
+}
+.antibiotic-item:hover {
+	background-color: var(--color-hover);
+}
+
+#antibiotic-info {    /*--TEXTO: Información del Antiinfeccioso--*/
+    width: 100%; /* Ajusta el tamaño en relación al abecedario */
+    max-width: 800px;
+    margin: 1rem auto; /* Centrar horizontalmente con margen superior */
+    padding: 1rem;
+    border-radius: 12px;
+    background-color: var(--color-fondo);
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    text-align: center;
+    overflow: visible; /* Permite que el contenido fluya sin restricciones */
+    max-height: 100vh; /* Límite de altura para el contenedor */
+    overflow-y: auto; /* Scroll vertical si el contenido excede el límite */
+}
+
+#antibiotic-info ul {  /*--LISTADO DE AII--*/
+    list-style-type: none; /* Elimina los puntos de la lista */
+    padding: 0;
+    margin: 0;    
+}
+
+#antibiotic-info li {
+    padding: 0.5rem 0; /* Espaciado vertical entre los elementos */
+    border-bottom: 1px solid var(--color-borde); /* Línea divisoria entre elementos */
+
+}
+
+#aantibiotic-info li:last-child {  /*--LISTADO DE AII--*/
+    border-bottom: none; /* Elimina la línea del último elemento */
+}
+
+
+/*--INICIALES--*/
+ul {/*--contenedor de iniciales--*/
+    list-style-type: none; /* Eliminar los puntos de la lista */
+    padding: 0; /* Opcional: eliminar el padding predeterminado */
+    }
+
+li { /*--iniciales--*/
+    margin-bottom: 0.5rem; /* Opcional: agregar espacio entre los elementos de la lista */
+    cursor: pointer; /* Opcional: mostrar un cursor de mano */
+}
+
+
+/*--Información del Antiinfeccioso. pantalla principal y resto H2--*/
+
+.info-aii-h2 {  /*--TEXTO:Información del Antiinfeccioso. pantalla principal--*/
+    color: var(--color-fuente); 
+    text-align: center;
+    user-select: none;
+    pointer-events: none;
+    }
+
+.h2-empieza-con {    /*--TEXTO:Información del Antiinfeccioso. listado aii--*/
+}
+.h2-details {  /*-- Nombre del aii en detalles--*/
+}
+h2 {     /*--TEXTO:Información del Antiinfeccioso. detalles aii--*/
+    margin-bottom: .5em; /* Ajusta el valor según sea necesario */
+    color: var(--color-fuente); 
+    text-align: center;
+    user-select: none;
+    pointer-events: none;
+    font-size: 1.5em;
+}
+
+/*--TABLA DE INFORMACION DEL AII--*/
 
 .details {
     flex-grow: 1;
@@ -245,78 +307,17 @@ main {
     box-sizing: border-box;
 }
 
-#search-results {
-    width: clamp(280px,90%,1200px);
-    margin-top: 10px;
-    list-style: none;
-    padding: 0;
-    text-align: center;
-}
-
-.antibiotic-item {
-    padding: 0.5rem;
-    border-bottom: 1px solid var(--color-borde);
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-
-#antibiotic-info p {
-    color: var(--color-pantone);
-    font-weight: bold;
-    font-size: 1rem;
-    text-align: center;
-
-}
-
-.antibiotic-item:hover {
-	background-color: var(--color-hover);
-}
-
-#antibiotic-info {
-    width: 85%; /* Ajusta el tamaño en relación al abecedario */
-    max-width: 800px;
-    padding: 20px;
-    background-color: var(--color-fondo);
-    border: 1px solid var(--color-borde);
-    border-radius: 5px;
-    box-sizing: border-box;
-    text-align: center;
-    max-height: 1200px; /* Límite de altura para el contenedor */
-    overflow: visible; /* Permite que el contenido fluya sin restricciones */
-    box-sizing: border-box;
-}
-
-ul {
-    list-style-type: none; /* Eliminar los puntos de la lista */
-    padding: 0; /* Opcional: eliminar el padding predeterminado */
-}
-
-li {
-    margin-bottom: 0.5rem; /* Opcional: agregar espacio entre los elementos de la lista */
-    cursor: pointer; /* Opcional: mostrar un cursor de mano */
-}
-
-
-/* Asegura que la tabla sea responsive */
-	h2 {
-    margin-bottom: 10px; /* Ajusta el valor según sea necesario */
-    color: var(--color-fuente); 
-
-}
-
-
-/*--nuevo--*/
-
-
 .details-table {
     width: 100%; /* Asegura que la tabla ocupe todo el ancho disponible */
     border-collapse: collapse; /* Evita espacios entre celdas */
     table-layout: fixed; /* Mantiene un ancho uniforme para las columnas */
+    font-size: 1.1em;
+    user-select: none;
+    pointer-events: none;
 }
 
 .details-table th, .details-table td {
-    padding: 10px; /* Espaciado interno */
+    padding: 10px 20px; /* Espaciado interno */
     border-bottom: 1px solid var(--color-borde); /* Línea inferior */
     text-align: left; /* Alinea el contenido a la izquierda */
     vertical-align: top; /* Asegura que el contenido inicie en la parte superior */
@@ -331,26 +332,28 @@ li {
 }
 
 .details-table td {
-    background-color: var(--color-fondo); /* Fondo para las celdas */
+    background-color: var(--color-hover); /* Fondo para las celdas */
     color: var(--color-fuente); /* Color del texto */
+    border-left: 1px solid var(--color-borde);
+    font-weight: 100; 
 }
-
-
-
-
-
-	.details-table tbody tr:first-child th:first-child {
-    border-radius:8px 0 0 0;
+.details-table  tr:first-child th:first-child { /*--celda a1--*/
+    border-radius:8px 0 0 0;    
 }
-	.details-table tr:last-child th:first-child {
+.details-table tr:last-child th:first-child {  /*--celda a8--*/
     border-radius: 0 0 0 8px;
 	border-bottom:none;
-
 }
-	.details-table td:hover {
-	background-color: var(--color-hover) ;
+.details-table  tr:first-child td:last-child { /*--celda b1--*/
+    border-radius:0 8px 0 0;
 }
-
+.details-table tr:last-child td:last-child {  /*--celda b8--*/
+    border-radius: 0 0 8px 0;
+	border-bottom:none;
+}
+.details-table td:hover {
+	background-color: var(--color-fondo) ;
+}
 .details-table td a {
     color: var(--color-fuente);
     text-decoration: none;
@@ -358,14 +361,11 @@ li {
 .details-table td a:hover {
     text-decoration: underline;
     font-weight: bold;
-    font-size: 16px;
+    font-size: 1.2em;
 }
-
-
 .details-table tr:last-child td:last-child a {
     color: var(--color-pantone) ;
 }
-
 
 /*--IMG--*/
 
@@ -381,27 +381,9 @@ img {
     vertical-align: middle; /* Alineación vertical con el texto */
 }
 
-#main-content, #seek-bar-container, #antibiotic-info {
-    background-color: transparent; /* Elimina cualquier color de fondo no deseado */
-    border: none; /* Asegura que no haya bordes */
-    margin: 0; /* Elimina márgenes */
-    padding: 0; /* Elimina espacios internos */
-
-}
-
-
-#main-content {
-    margin-top: 60px; 
-    box-sizing: border-box;
-    padding: 1rem; /* Espaciado alrededor del contenido */
-    margin-top: clamp(1.2em, 7vw, 70px);
-
-}
-
 /* Estilo para la barra de desplazamiento */
 ::-webkit-scrollbar {
-  width: 8px; /* Ancho de la barra vertical */
-  height: 4px; /* Altura de la barra horizontal */
+  width: 12px; /* Ancho de la barra vertical */
 }
 
 /* Color de fondo de la barra */
@@ -418,112 +400,169 @@ border-radius: 10px; /* Bordes redondeados de la barra */
 
 /* Color de la barra deslizante al pasar el cursor */
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--color-fuente); /* Color más oscuro cuando el cursor pasa por encima */
+    background: var(--color-principal);
 }
 
+/* Footer */
+footer {
+    background-color: var(--color-pantone);
+    color: var(--color-fuente);
+    text-align: center;
+    padding: 10px;
+    margin-top: auto;
+    font-size: 14px;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    position: fixed;
+
+}
+
+#seek-container {
+    /* ... otros estilos ... */
+    margin-top: 20px; /* Ajusta este valor según tu preferencia */
+}
+/* ... (resto del código CSS) ... */
+
+/* Estilos para los contenedores */
+#contenedor1, #contenedor2, #contenedor3 {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%; /* Asegurar que los contenedores ocupen toda la pantalla */
+}
+
+/* Estilos para los botones de volver */
+#main-button-container {
+    display: flex;
+    justify-content: flex-start; /* Alinear el botón a la izquierda */
+    padding: 1rem;
+}
+
+#volver, #volver2 {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+#volver img, #volver2 img {
+    width: 40px;
+    height: 40px;
+}
+
+/* ... (resto del código CSS) ... */
+/* ... (resto del código CSS) ... */
+
+/* Contenedor principal */
+#contenedor1 {
+    display: flex;
+    flex-direction: column; /* Los elementos se apilarán verticalmente */
+    width: 100%;
+}
+
+/* Barra de búsqueda */
+#seek-container {
+    /* ... (estilos existentes) ... */
+    width: 100%; /* Ocupar todo el ancho */
+    margin: 0 auto; /* Centrar horizontalmente */
+}
+
+/* Contenedor del abecedario */
+.sidebar {
+    width: 100%; /* Ocupará todo el ancho */
+    border-right: none; /* Eliminar borde derecho */
+    padding: 1rem;
+    overflow-y: auto;
+}
+#contenedor3 {
+    display: none;
+}#volver2 {
+    /* ... estilos para el botón ... */
+}
+
+#antibiotic-info {
+    /* ... estilos para el contenedor de detalles ... */
+}
+/* ... (resto del código CSS) ... */
 
 /* Hacer la tabla adaptable */
 @media (max-width: 768px) {
-	
-        #alphabet {
-        width: 100%; /* El abecedario ocupará todo el ancho */
-        float: none;
-        text-align: center;
-    }
-
-    #antibiotic-info {
-        width: 80%; /* El contenedor de información ocupará todo el ancho */
-        margin-left: 0;
-    }    
-
-    .details-table th,
-    .details-table td {
-        display: block; /* Convierte filas en bloques */
-        width: 100%; /* Asegura que cada celda ocupe todo el ancho */
-        text-align: left; /* Mantén el texto alineado a la izquierda */
-        font-size: 1rem; /* Tamaño de fuente más pequeño */
-        border-bottom:none
-    }
-    
-	.details-table th {
-		border-radius:8px;
-		text-align:center;
-        width: 250px; /* Ancho para pantallas pequeñas */
-        justify-items: center;
-	}
-
-    .details-table td:hover {
-        font-size: 16px ;
-        background: var(--color-hover); 
-        border-radius: 8px;
-        margin: 4px;
-    }
-	.details-table tbody tr:first-child th:first-child {
-    border-radius: 8px;
-	}
-	.details-table tr:last-child th:first-child {
-    border-radius: 8px;
-	}    
-    .details {
-        padding: 1rem; /* Reduce el espacio de padding interno */
-        align-items: flex-start; /* Alinea el contenido hacia la izquierda */
-    }
-    #search-results {
-        padding: 0; /* Elimina relleno adicional */
-    }
+.details-table td:hover {
+opacity: 0.5;
+}
+.details {
+    padding: 1rem; /* Reduce el espacio de padding interno */
+    align-items: flex-start; /* Alinea el contenido hacia la izquierda */
+}
+#search-results {
+    padding: 5px; /* Elimina relleno adicional */
+}
 /* Estilos para resoluciones pequeñas */
-    .details-table {
-        margin: 0 auto; /* Centra horizontalmente la tabla */
-        width: 90%; /* Ajusta el ancho de la tabla */
-    }
-
-    .details-table th,
-    .details-table td {
-        display: block; /* Hace que cada celda ocupe toda la fila */
-        text-align: center; /* Centra horizontalmente el texto */
-        width: 100%; /* Las celdas se expanden al ancho completo */
-    }
-
-    .details-table tr {
-        display: flex; /* Usa flexbox para centrar los elementos */
-        flex-direction: column; /* Pone las celdas en una columna */
-        align-items: center; /* Centra horizontalmente */
-        justify-content: center; /* Centra verticalmente */
-    }
+.details-table {
+    margin: 0 auto; /* Centra horizontalmente la tabla */
+    width: 100%; /* Ajusta el ancho de la tabla */
+    border-radius: 0;
+    border:0;
+    pointer-events: auto;
 }
-    .details-table th {
-        display: flex; /* Mantén Flexbox para la alineación */
-        align-items: center; /* Centra verticalmente la imagen y el texto */
-        gap: 8px; /* Espaciado entre la imagen y el texto */
-        text-align: left; /* Asegura que el texto esté alineado a la izquierda */
-        padding-left: 10px; /* Resetea cualquier padding general */
-		justify-content:space-between;
-		padding-right:50px;
-		font-size:13px;
-    }
-    .details-table th img {
-        flex-shrink: 0; /* Evita que la imagen se reduzca */
-        width: 24px; /* Tamaño adecuado para pantallas pequeñas */
-        height: 24px; /* Tamaño adecuado para pantallas pequeñas */
-    }
-
-    .details-table th .text-content {
-        padding-left: 10px; /* Espaciado adicional para el texto */
-    }
-    /* Ajustes para pantallas pequeñas */
-@media (max-width: 768px) {
-    .sidebar-item {
-        width: clamp(30px, 10vw, 50px); /* Reduce el tamaño en pantallas pequeñas */
-        height: clamp(30px, 10vw, 50px);
-        margin-bottom: 8px; /* Reduce el espaciado */
-    }
+.details-table th,.details-table td {
+    display: block; /* Hace que cada celda ocupe toda la fila */
+    text-align: center; /* Centra horizontalmente el texto */
+    width: 100%; /* Las celdas se expanden al ancho completo */
+    border-radius: 0;
+    border:0;
+}
+.details-table tr {
+    display: flex; /* Usa flexbox para centrar los elementos */
+    flex-direction: column; /* Pone las celdas en una columna */
+    align-items: center; /* Centra horizontalmente */
+    justify-content: center; /* Centra verticalmente */
+    border-radius: 0;
 }
 
-/* Ajustes para pantallas grandes */
-@media (min-width: 1200px) {
-    .sidebar-item {
-        width: clamp(50px, 3vw, 70px); /* Aumenta ligeramente en pantallas grandes */
-        height: clamp(50px, 3vw, 70px);
+.details-table th {
+    display: flex; /* Mantén Flexbox para la alineación */
+    align-items: center; /* Centra verticalmente la imagen y el texto */
+    gap: 8px; /* Espaciado entre la imagen y el texto */
+    text-align: left; /* Asegura que el texto esté alineado a la izquierda */
+    padding-left: 10px; /* Resetea cualquier padding general */
+	justify-content:space-between;
+	padding-right:50px;
+	font-size: 1.2rem;
+}
+.details-table th img {
+    flex-shrink: 0; /* Evita que la imagen se reduzca */
+    width: 30px; /* Tamaño adecuado para pantallas pequeñas */
+    height: 30px; /* Tamaño adecuado para pantallas pequeñas */
+}
+.details-table th .text-content {
+    padding-left: 10px; /* Espaciado adicional para el texto */
+}
+.details-table  tr:first-child th:first-child { /*--celda a1--*/
+    border-radius: 8px 8px 0 0 ; 
+}
+.details-table tr:last-child th:first-child {  /*--celda a8--*/
+    border-radius: 0;
+}
+.details-table  tr:first-child td:last-child { /*--celda b1--*/
+    border-radius: 0px;
+}
+.details-table tr:last-child td:last-child {  /*--celda b8--*/
+    border-radius: 0 0 8px 8px;
+}	
+    h2 {
+        font-size: 1.2rem;
+        text-wrap:balance;
     }
+    #antibiotic-info h2 {
+        font-size: 1.2rem; /* Tamaño para pantallas pequeñas */
+    } 
+    
+    #antibiotic-info  {
+        height: auto;
+        overflow: hidden; /* Permite que el contenido fluya sin restricciones */
+    }
+footer {
+    font-size: 0.6em;
 }
 }
