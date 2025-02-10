@@ -14,14 +14,14 @@
     <header>
         <h1>6_movil Antiinfecciosos</h1>
     </header>
-<main>
+    <main>
         <div id="main-content">
-			<div id="contenedor1" id="inicio">
+            <div id="contenedor1" > <!-- Página inicial -->
                 <div id="seek-container">
                     <input type="text" id="seek-bar" placeholder="Buscar antiinfecciosos...">
                 </div>
                 <aside class="sidebar">
-                    <div id="main-button-container" style="display: none;"> <--- Botón oculto al inicio
+                    <div id="main-button-container" style="display: none;"> 
                         <a href="6 copy.html" id="sidebar-item">
                             <img src="imagenes/09_inicio.png" alt="Ir a la página principal">
                         </a>
@@ -29,32 +29,31 @@
                     <ul id="alphabet-list"></ul>
                 </aside>
             </div>
-            <div id="contenedor2" style="display: none;">
+            <div id="contenedor2" style="display: none;"> <!-- Lista de AII -->
                 <div id="main-button-container">
                     <button id="volver">
                         <img src="imagenes/09_inicio.png" alt="Volver">
                     </button>
                 </div>
                 <section class="details">
-                    <ul id="search-results"></ul>
-                    <div id="antibiotic-info">
-                        <h2 class="info-aii-h2">Información del Antiinfeccioso</h2>
+                    <div >
+                        <h2>Información del Antiinfeccioso</h2>
                         <p>Seleccione un elemento para ver los detalles</p>
+                        <ul id="search-results"></ul>
                     </div>
                 </section>
             </div>
-            <div id="contenedor3" style="display: none;">
+            <div id="contenedor3" style="display: none;"> <!-- Detalles del AII -->
                 <div id="main-button-container">
                     <button id="volver2">
                         <img src="imagenes/09_inicio.png" alt="Volver">
                     </button>
-                </div>
-                <section class="details">
-                    <div id="antibiotic-info">
-                        <h2 class="info-aii-h2">Información del Antiinfeccioso</h2>
-                        <p>Seleccione un elemento para ver los detalles</p>
+                    <div id="antibiotic-info" class="info-container">
+                        <p>CONTENEDOR 3</p>
+
                     </div>
-                </section>
+                </div>
+
             </div>
         </div>        
     </main>

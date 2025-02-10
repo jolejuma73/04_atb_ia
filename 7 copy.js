@@ -687,10 +687,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Mostrar detalles del antibiótico seleccionado
     function displayDetails(name) {
-        const antibiotic = Object.values(antibiotics)
+        const antibioticInfo = document.getElementById("antibiotic-info");
+    
+        const antibiotic = Object.values(antibioticsData)
             .flat()
             .find((atb) => atb.name === name);
-
+    
+        console.log("Mostrando detalles para:", antibiotic);
+    
         if (!antibiotic) {
             antibioticInfo.innerHTML = `<p style="color: red;">Detalles no disponibles.</p>`;
             return;
@@ -735,7 +739,12 @@ document.addEventListener("DOMContentLoaded", function () {
             </tr>
         </table>
     `;
+    
+    console.log("Contenido generado en antibiotic-info:", antibioticInfo.innerHTML);
+
+    switchContainers(document.getElementById("contenedor2"), document.getElementById("contenedor3"));
 }
+
 
     // Asignar eventos a los antibióticos
     function addClickEventsToAntibiotics() {
@@ -819,7 +828,7 @@ searchBar.addEventListener("keypress", function (event) {
     });
 
     // Evento: Volver al inicio
-   mainButtonContainer.addEventListener("click", function () {
+    mainButtonContainer.addEventListener("click", function () {
     sidebar.style.display = "block"; // Mostrar el sidebar
     mainButtonContainer.style.display = "none"; // Ocultar el botón "Ir al Inicio"
     searchResults.style.display = "none"; // Ocultar los resultados de búsqueda
@@ -841,5 +850,10 @@ document.getElementById('seek-bar').addEventListener('keypress', (event) => {
         hideSidebar();
     }
 });
+function switchContainers(hideContainer, showContainer) {
+    console.log("Ocultando:", hideContainer.id, "Mostrando:", showContainer.id);
+    hideContainer.style.display = "none";
+    showContainer.style.display = "block";
+}
 
 });

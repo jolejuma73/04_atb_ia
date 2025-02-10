@@ -310,7 +310,7 @@ h2 {     /*--TEXTO:Información del Antiinfeccioso. detalles aii--*/
 .details-table {
     width: 100%; /* Asegura que la tabla ocupe todo el ancho disponible */
     border-collapse: collapse; /* Evita espacios entre celdas */
-    table-layout: fixed; /* Mantiene un ancho uniforme para las columnas */
+    table-layout: auto; /* Mantiene un ancho uniforme para las columnas */
     font-size: 1.1em;
     user-select: none;
     pointer-events: none;
@@ -481,9 +481,14 @@ footer {
 }
 
 #antibiotic-info {
-    /* ... estilos para el contenedor de detalles ... */
+    display: block;
+    overflow: visible; /* Asegura que no haya recortes de contenido */
+    max-height: none; /* Elimina restricciones de altura */
+    padding: 1rem;
+    opacity: 1;
+
 }
-/* ... (resto del código CSS) ... */
+
 
 /* Hacer la tabla adaptable */
 @media (max-width: 768px) {
