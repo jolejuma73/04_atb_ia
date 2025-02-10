@@ -81,17 +81,21 @@ main {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    width: clamp(250px,100%,1200px);    
+    width: 100%;    
     padding: 0.5rem ;
     margin-bottom: 1rem;    
     background-color: var(--color-fondo);
     margin: 0 auto;
     text-align: center;
+    width: 100%; 
+    margin: 0 auto; 
+    margin-top: 20px; 
 }
+
+
     
 
 #seek-bar { /*--buscar antibiotico item--*/
-    width: clamp(250px, 100%, 900px); /* Controla el ancho con límites */
     background-color: var(--color-principal );
     border: 1px solid var(--color-borde);
     overflow-y: auto;
@@ -102,6 +106,15 @@ main {
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
     transition: transform 0.3s, box-shadow 0.2s; /* Animación para hover */
     color: var(--color-fuente);
+    margin-top: 20px; /* Ajusta el espacio superior */
+    margin-bottom: 10px; /* Espacio inferior adicional, si es necesario */
+    font-size: 16px;
+    border: 2px solid #40916c; /* Borde verde */
+    width: 95%; 
+        max-width: 600px; /* Limita el ancho máximo */
+        height: 6vh;
+    box-sizing: border-box; /* Incluye el padding dentro del ancho */
+    outline: none;
 }
 
 	#seek-bar:hover {
@@ -126,11 +139,14 @@ main {
 
 /*--BARRA DEL ABECEDARIO  --*/
 .sidebar { /*caja del abecedario--*/    
-    width: clamp(100px,20%,120px) ;    
     background-color: var(--color-fondo);
     border-right: 1px solid var(--color-borde);
     padding: 1rem;
     overflow-y: auto;  
+        width: 100%; /* Ocupará todo el ancho */
+        border-right: none; /* Eliminar borde derecho */
+        padding: 1rem;
+        overflow-y: auto;
 }
 /* Estilo compartido */
 .sidebar-item {
@@ -366,6 +382,25 @@ h2 {     /*--TEXTO:Información del Antiinfeccioso. detalles aii--*/
 .details-table tr:last-child td:last-child a {
     color: var(--color-pantone) ;
 }
+.details-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Espaciado entre los elementos */
+    align-items: center; /* Centra los elementos horizontalmente */
+}
+
+.detail-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.detail-item img {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 10px; /* Espaciado entre el icono y el texto */
+}
 
 /*--IMG--*/
 
@@ -418,11 +453,6 @@ footer {
 
 }
 
-#seek-container {
-    /* ... otros estilos ... */
-    margin-top: 20px; /* Ajusta este valor según tu preferencia */
-}
-/* ... (resto del código CSS) ... */
 
 /* Estilos para los contenedores */
 #contenedor1, #contenedor2, #contenedor3 {
@@ -435,9 +465,11 @@ footer {
 /* Estilos para los botones de volver */
 #main-button-container {
     display: flex;
-    justify-content: flex-start; /* Alinear el botón a la izquierda */
+    justify-content: center; /* Asegura que el botón esté centrado */
     padding: 1rem;
+    width: 100%; /* Asegúrate de que el contenedor ocupe el ancho completo */
 }
+
 
 .volver {
     background-color: transparent;
@@ -460,23 +492,16 @@ footer {
     width: 100%;
 }
 
-/* Barra de búsqueda */
-#seek-container {
-    /* ... (estilos existentes) ... */
-    width: 100%; /* Ocupar todo el ancho */
-    margin: 0 auto; /* Centrar horizontalmente */
-}
+
 
 /* Contenedor del abecedario */
-.sidebar {
-    width: 100%; /* Ocupará todo el ancho */
-    border-right: none; /* Eliminar borde derecho */
-    padding: 1rem;
-    overflow-y: auto;
+.
 }
 #contenedor3 {
     display: none;
-}.volver {
+}
+
+.volver {
     /* ... estilos para el botón ... */
 }
 
@@ -488,6 +513,79 @@ footer {
     opacity: 1;
 
 }
+
+#contenedor3 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 20px;
+    gap: 20px; /* Espaciado entre los elementos */
+    background-color: #f8f9fa; /* Fondo claro */
+    border-radius: 15px; /* Bordes redondeados */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+    max-width: 600px; /* Limita el ancho máximo del contenedor */
+    margin: 20px auto; /* Centra el contenedor horizontalmente */
+}
+
+#antibiotic-info h2 {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #2d6a4f; /* Verde oscuro */
+}
+
+#antibiotic-info table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+#antibiotic-info th,
+#antibiotic-info td {
+    padding: 15px;
+    text-align: left;
+    vertical-align: middle;
+}
+
+#antibiotic-info th {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Espaciado entre el icono y el texto */
+    font-size: 18px;
+    background-color: #95d5b2; /* Verde suave */
+    color: #1b4332; /* Verde más oscuro */
+    border-radius: 10px;
+}
+
+#antibiotic-info td {
+    font-size: 16px;
+    background-color: #e9f5ec; /* Fondo verde muy claro */
+    color: #344e41; /* Verde más oscuro */
+    border-radius: 10px;
+}
+
+#antibiotic-info img {
+    width: 24px; /* Tamaño consistente para los iconos */
+    height: 24px;
+}
+#volver2 {
+    align-self: center; /* Centra el botón horizontalmente */
+    margin-top: 10px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+#volver2:hover {
+    background-color: #2d6a4f; /* Verde oscuro */
+}
+
 
 
 /* Hacer la tabla adaptable */
