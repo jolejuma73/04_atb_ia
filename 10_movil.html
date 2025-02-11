@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>10_movil Antiinfecciosos</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="10_movil.css">
+    <link rel="icon" href="imagenes/00_A_icono.png" type="image/png">    
+</head>
+<body>
+    <header>
+        <h1>10_movil 2 Antiinfecciosos</h1>
+    </header>
+    <main>
+        <div id="main-content">
+            <div id="contenedor1" > <!-- Página inicial -->
+                <div id="seek-container">
+                    <input type="text" id="seek-bar" placeholder="Buscar antiinfecciosos...">
+                </div>
+                <aside class="sidebar">
+                    <ul id="alphabet-list"></ul>
+                </aside>
+            </div>
+        <div id="contenedor2" style="display: none;"> <!-- Lista de AII -->
+            <div id="main-button-container">
+                <a href="10_movil.html" id="sidebar-item">
+                    <img src="imagenes/09_inicio.png" alt="Ir a la página principal">
+                </a>
+            </div>
+
+            <section class="details">
+                <div class="details-info">
+                    <h2>Información del Antiinfeccioso</h2>
+                    <p>Seleccione un elemento para ver los detalles</p>
+                </div>
+                <div><ul id="search-results"></ul>
+                </div>
+            </section>
+        </div>
+
+            <div id="contenedor3" style="display: none;">
+                <div id="main-button-container-secondary">
+                    <a href="10_movil.html">
+                        <img src="imagenes/09_inicio.png" alt="Ir a la página principal">
+                </div>
+                <div id="antibiotic-info" class="info-container">
+                </div>
+            </div>          
+        </div>        
+    </main>
+    <footer>
+        <p>&copy; 2025 Antiinfecciosos. Todos los derechos reservados.</p>
+        <p>C.G.Francisco Manuel--M.G.José Antonio--M.M. Francisco Javier</p>
+    </footer>
+    <script src="10_movil.js"></script>
+</body>
+</html>
