@@ -79,32 +79,42 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // Mostrar detalles en contenedor3
-    function displayDetails(antibiotic) {
-        let fichaTecnica = "N/A";
-        if (antibiotic.technicalSheet && antibiotic.technicalSheet.trim() !== "" && antibiotic.technicalSheet.endsWith(".pdf")) {
-            let url = antibiotic.technicalSheet;
-            if (!url.startsWith("http://") && !url.startsWith("https://")) {
-                url = "https://" + url; // Asegurar protocolo correcto
-            }
-            console.log("Enlace a ficha técnica generado:", url); // Depuración
-            fichaTecnica = `<a href="${url}" target="_blank" rel="noopener noreferrer">Ver ficha técnica</a>`;
+    // Función para eliminar solo enlaces <a> sin afectar imágenes u otros elementos HTML
+// Función para eliminar cualquier etiqueta HTML y dejar solo texto plano
+function stripHTML(text) {
+    if (!text) return "N/A";
+    let tempElement = document.createElement("div");
+    tempElement.innerHTML = text;
+    return tempElement.textContent || tempElement.innerText || "N/A"; // Extrae solo texto puro
+}
+
+function displayDetails(antibiotic) {
+    let fichaTecnica = "N/A";
+    if (antibiotic.technicalSheet && antibiotic.technicalSheet.trim() !== "" && antibiotic.technicalSheet.endsWith(".pdf")) {
+        let url = antibiotic.technicalSheet;
+        if (!url.startsWith("http://") && !url.startsWith("https://")) {
+            url = "https://" + url;
         }
-
-        antibioticInfo.innerHTML = `
-            <h2 class="h2-details">${antibiotic.name}</h2>
-            <table class="details-table">
-                <tr><th><img src="imagenes/01_presentacion.png" alt="Icono de presentación"> Presentación</th><td>${antibiotic.presentation || "N/A"}</td></tr>
-                <tr><th><img src="imagenes/02_tipo.png" alt="Icono de tipo"> Tipo</th><td>${antibiotic.type || "N/A"}</td></tr>
-                <tr><th><img src="imagenes/03_dosis.png" alt="Icono de dosis"> Dosis</th><td>${antibiotic.dose || "N/A"}</td></tr>
-                <tr><th><img src="imagenes/04_preparacion.png" alt="Icono de preparación"> Preparación</th><td>${antibiotic.preparation || "N/A"}</td></tr>
-                <tr><th><img src="imagenes/05_aspecto.png" alt="Icono de aspecto"> Apariencia</th><td>${antibiotic.appearance || "N/A"}</td></tr>
-                <tr><th><img src="imagenes/06_tiempo.png" alt="Icono de tiempo"> Tiempo de administración</th><td>${antibiotic.administrationTime || "N/A"}</td></tr>
-                <tr><th><img src="imagenes/07_conservacion.png" alt="Icono de conservación"> Conservación</th><td>${antibiotic.storage || "N/A"}</td></tr>
-                <tr><th><img src="imagenes/08_ficha_tecnica.png" alt="Icono de ficha técnica"> Ficha técnica</th><td>${fichaTecnica}</td></tr>
-            </table>
-        `;
-
-        contenedor2.style.display = "none";
-        contenedor3.style.display = "flex";
+        fichaTecnica = `<a href="${url}" target="_blank" rel="noopener noreferrer">Ver ficha técnica</a>`;
     }
+
+    antibioticInfo.innerHTML = `
+        <h2 class="h2-details">${stripHTML(antibiotic.name)}</h2>
+        <table class="details-table">
+            <tr><th><img src="imagenes/01_presentacion.png" alt="Icono de presentación"> Presentación</th><td>${stripHTML(antibiotic.presentation)}</td></tr>
+            <tr><th><img src="imagenes/02_tipo.png" alt="Icono de tipo"> Tipo</th><td>${stripHTML(antibiotic.type)}</td></tr>
+            <tr><th><img src="imagenes/03_dosis.png" alt="Icono de dosis"> Dosis</th><td>${stripHTML(antibiotic.dose)}</td></tr>
+            <tr><th><img src="imagenes/04_preparacion.png" alt="Icono de preparación"> Preparación</th><td>${stripHTML(antibiotic.preparation)}</td></tr>
+            <tr><th><img src="imagenes/05_aspecto.png" alt="Icono de aspecto"> Apariencia</th><td>${stripHTML(antibiotic.appearance)}</td></tr>
+            <tr><th><img src="imagenes/06_tiempo.png" alt="Icono de tiempo"> Tiempo de administración</th><td>${stripHTML(antibiotic.administrationTime)}</td></tr>
+            <tr><th><img src="imagenes/07_conservacion.png" alt="Icono de conservación"> Conservación</th><td>${stripHTML(antibiotic.storage)}</td></tr>
+            <tr><th><img src="imagenes/08_ficha_tecnica.png" alt="Icono de ficha técnica"> Ficha técnica</th><td>${fichaTecnica}</td></tr>
+        </table>
+    `;
+
+    contenedor2.style.display = "none";
+    contenedor3.style.display = "flex";
+}
+
+
 });

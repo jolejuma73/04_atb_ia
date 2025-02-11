@@ -655,7 +655,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const alphabetList = document.getElementById("alphabet-list");
     const antibioticInfo = document.getElementById("antibiotic-info");
 
-    // Generar la lista del alfabeto
+    // Generar la lista de iniciales
     for (let i = 65; i <= 90; i++) {
         const letter = String.fromCharCode(i);
         const listItem = document.createElement("li");
