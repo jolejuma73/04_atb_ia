@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Listado de Antibióticos</title>
-    <link rel="stylesheet" href="02_styles.css">
+    <link rel="stylesheet" href="11.css">
 </head>
 <body>
     <header>
@@ -12,31 +12,30 @@
     </header>
 
     <main id="main-content">
-        <!-- Botón de reinicio (Inicio) -->
+        <!-- Botón de inicio -->
         <div id="reset-container">
             <button id="reset-button">
-                <img id="home-button"   src="imagenes/09_inicio.png" alt="Inicio">
+                <img id="home-button" src="imagenes/09_inicio.png" alt="Inicio">
             </button>
         </div>
-
+    
         <!-- Contenedor principal -->
         <div class="container">
-            <!-- Sidebar arriba SIEMPRE -->
+            <!-- Sidebar (Alfabeto) -->
             <aside class="sidebar">
                 <ul id="alphabet-list"></ul>
             </aside>
-
-            <!-- Contenido principal -->
-            <section class="details">
-                <!-- Barra de búsqueda -->
+    
+            <!-- Sección de búsqueda -->
+            <section class="search-section">
                 <div id="seek-container">
                     <input type="text" id="seek-bar" placeholder="Buscar antibiótico...">
                 </div>
-                
-                <!-- Resultados de la búsqueda -->
                 <ul id="search-results"></ul>
-                
-                <!-- Información detallada del antibiótico -->
+            </section>
+    
+            <!-- Información del antibiótico -->
+            <section class="details">
                 <div id="antibiotic-info">
                     <h2 class="antibiotic-title"></h2>
                     <div class="antibiotic-details">
@@ -46,7 +45,7 @@
             </section>
         </div>
     </main>
-
-    <script src="02_script.js"></script>
+    
+    <script src="11.js"></script>
 </body>
 </html>

@@ -111,12 +111,18 @@ h1 {
 
 
 /* Sidebar arriba en móviles */
+/* Asegurar que el sidebar esté visible en la pantalla principal */
 .sidebar {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    width: 100%;
-    margin-bottom: 20px;
+    display: flex;  /* Asegura que se vea */
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-top: 1rem;
+}
+
+/* Ocultar cuando se busque un antibiótico o se seleccione uno */
+.hidden {
+    display: none !important;
 }
 
 #alphabet-list {
@@ -393,50 +399,30 @@ h1 {
 /* Hacer que el sidebar esté a la izquierda en pantallas grandes */
 @media (min-width: 768px) {
     .container {
-        flex-direction: row; /* Cambia a fila en pantallas grandes */
-        align-items: flex-start;
-        justify-content: center;
+        flex-direction: column; /* Cambia a fila en pantallas grandes */
+        align-items: space-between;
+        justify-content: flex-start;
     }
 
     .sidebar {
-        width: 250px; /* Sidebar más pequeño en pantallas grandes */
-        justify-content: flex-start;
-        margin-bottom: 0;
-    }
-
-    .details {
-        flex-grow: 1; /* Ocupar el resto del espacio */
-        width: auto;
-    }
-}
-
-/* RESPONSIVE: 1 columna en móviles */
-@media (max-width: 600px) {
-    .details-table {
-        display: block;
-    }
-
-    .details-table tr {
+        order: 1;
+        flex: 0 0 220px; /* Fijamos un ancho */
         display: flex;
         flex-direction: column;
-        align-items: flex-start;
-        background: white;
-        border-radius: 5px;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        margin-bottom: 10px;
-        padding: 10px;
+        align-items: center;
     }
-
-    .details-table th, .details-table td {
-        display: block;
-        text-align: left;
-        padding: 12px;
-        font-size: 1rem;
+    .search-section {
+        order: 2;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
-}
-
-/* RESPONSIVE: 2 columnas en pantallas grandes */
-@media (min-width: 768px) {
+    .details {
+        order: 3;
+        flex: 2;
+        max-width: 600px;
+    }
     .details-table tbody {
         display: grid;
         grid-template-columns: repeat(2, 1fr); /* 2 columnas */
@@ -447,13 +433,45 @@ h1 {
         display: flex;
         flex-direction: row;
         align-items: center;
+        justify-content: space-between;
     }
 
     .details-table th {
-        width: 30%;
+        width: 35%;
+        text-align: left;
     }
 
     .details-table td {
-        width: 70%;
+        width: 65%;
+        text-align: left;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    #sidebar-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+    #alphabet-list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+        max-width: 600px;
+    }
+
+    .alphabet-item {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+    }
+
+    #search-bar {
+        display: block;
+        margin-bottom: 20px;
+        text-align: center;
     }
 }

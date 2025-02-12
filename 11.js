@@ -25,11 +25,16 @@ function cargarAntibioticos(data) {
 }
 
 // 3. Mostrar antibióticos por letra seleccionada
+// 3. Mostrar antibióticos por letra seleccionada
 function displayAntibiotics(letter) {
     const searchResults = document.getElementById("search-results");
     searchResults.innerHTML = "";
 
-    if (!antibioticsData[letter]) return;
+    // Verificar si hay antibióticos para esa letra
+    if (!antibioticsData[letter] || antibioticsData[letter].length === 0) {
+        console.warn(`No hay antibióticos para la letra: ${letter}`);
+        return;
+    }
 
     antibioticsData[letter].forEach(antibiotic => {
         const button = document.createElement("button");
@@ -39,14 +44,25 @@ function displayAntibiotics(letter) {
         button.addEventListener("click", () => displayDetails(antibiotic.name));
         searchResults.appendChild(button);
     });
+
+    // Mostrar la lista de antibióticos
+    searchResults.style.display = "block";
+
+    // Ocultar sidebar y barra de búsqueda cuando se muestra la lista
+    document.getElementById("alphabet-list").style.display = "none";
+    document.getElementById("seek-container").style.display = "none";
+
+    // Mostrar el botón de volver
+    document.getElementById("reset-button").style.display = "block";
+
+    console.log(`Mostrando antibióticos para la letra: ${letter}`);
 }
+
 
 // 4. Función para mostrar detalles de un antibiótico seleccionado
 function displayDetails(antibioticName) {
     const infoContainer = document.getElementById("antibiotic-info");
-    const searchResults = document.getElementById("search-results");
     infoContainer.innerHTML = "";
-    searchResults.innerHTML = ""; // Borra la lista de antibióticos buscados
     
     let selectedAntibiotic;
     Object.values(antibioticsData).forEach(group => {
@@ -106,42 +122,30 @@ function displayDetails(antibioticName) {
     });
     
     infoContainer.appendChild(detailsTable);
+    
+    // Ocultar la lista de antibióticos y mostrar el botón de volver
+    document.getElementById("search-results").style.display = "none";
+    document.getElementById("reset-button").style.display = "block";
 }
 
-// 5. Agregar funcionalidad de búsqueda
-document.getElementById("seek-bar").addEventListener("input", function () {
-    const searchValue = this.value.trim().toLowerCase();
-    const searchResults = document.getElementById("search-results");
-    searchResults.innerHTML = "";
-    
-    if (searchValue === "") return;
-    
-    Object.values(antibioticsData).flat().forEach(antibiotic => {
-        if (antibiotic.name.toLowerCase().includes(searchValue)) {
-            const button = document.createElement("button");
-            button.textContent = antibiotic.name;
-            button.classList.add("antibiotic-item");
-            button.setAttribute("data-name", antibiotic.name);
-            button.addEventListener("click", () => displayDetails(antibiotic.name));
-            searchResults.appendChild(button);
-        }
-    });
-});
+// 5. Configurar el botón de volver al inicio
+document.getElementById("reset-button").addEventListener("click", function () {
+    console.log("Botón de inicio presionado, restaurando la vista principal...");
 
-// 6. Función para volver al inicio y restaurar la vista inicial
-document.addEventListener("DOMContentLoaded", function () {
-    const homeButton = document.getElementById("home-button");
-    
-    if (homeButton) {
-        homeButton.addEventListener("click", function () {
-            console.log("Botón de inicio presionado, regresando a la página principal...");
-            document.getElementById("main-content").style.display = "block";
-            document.getElementById("alphabet-list").style.display = "flex";
-            document.getElementById("search-results").style.display = "block";
-            document.getElementById("seek-bar").value = "";
-            document.getElementById("antibiotic-info").innerHTML = `<h2 class="antibiotic-title">Información del Antibiótico</h2><p>Seleccione un antibiótico para ver los detalles.</p>`;
-        });
-    } else {
-        console.error("No se encontró el botón de inicio.");
-    }
+    // Mostrar el sidebar y la barra de búsqueda
+    document.getElementById("alphabet-list").style.display = "flex";
+    document.getElementById("seek-container").style.display = "block";
+
+    // Ocultar los resultados de búsqueda y la información del antibiótico
+    document.getElementById("search-results").style.display = "none";
+    document.getElementById("antibiotic-info").innerHTML = `
+        <h2 class="antibiotic-title">Información del Antibiótico</h2>
+        <p>Seleccione un antibiótico para ver los detalles.</p>
+    `;
+
+    // Asegurar que el botón de inicio no esté visible en la pantalla principal
+    document.getElementById("reset-button").style.display = "none";
+
+    // Limpiar la barra de búsqueda
+    document.getElementById("seek-bar").value = "";
 });
