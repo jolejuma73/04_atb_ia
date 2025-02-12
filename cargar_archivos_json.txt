@@ -1,5 +1,5 @@
 // Cargar datos del archivo JSON
-fetch("6_movil.json")
+fetch("antiinfecciosos.json")
     .then((response) => {
         if (!response.ok) throw new Error("Error al cargar el JSON");
         return response.json();
@@ -12,3 +12,27 @@ fetch("6_movil.json")
     .catch((error) => {
         console.error("Error al cargar los datos:", error);
     });
+
+
+document.addEventListener("DOMContentLoaded", function() {
+    fetch("antiinfecciosos.json")
+        .then(response => {
+            if (!response.ok) {
+                throw new Error("No se pudo cargar el archivo JSON");
+            }
+            return response.json();
+        })
+        .then(data => {
+            console.log("Datos cargados correctamente:", data);
+            cargarAntibioticos(data); // Llamar la función correctamente
+        })
+        .catch(error => {
+            console.error("Error al cargar el JSON:", error);
+        });
+
+    // Definir la función antes de ser llamada
+    function cargarAntibioticos(data) {
+        console.log("Antibióticos disponibles:", data);
+        window.antibiotics = data; // Guardar datos en una variable global
+    }
+});

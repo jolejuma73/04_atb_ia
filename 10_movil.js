@@ -116,5 +116,4 @@ function displayDetails(antibiotic) {
     contenedor3.style.display = "flex";
 }
 
-
 });
