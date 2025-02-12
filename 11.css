@@ -1,19 +1,29 @@
 /* Reseteo general */
+:root {
+    --color-pantone: #368f3f; /*--pantone 7740c____#368f3f--*/
+    --color-principal: #92c99b;/*pantone 7740c__50--*/
+    --color-fuente: #2e2925;/*--pantone black c--*/
+    --color-fondo: #ebf5ed;/*--pantone 7740c__10--*/
+    --color-hover: #d9ebd8;/*pantone 7740c__80--*/
+    --color-borde: #4fa66a;/*pantone 7740c__20--*/
+    font-family: 'Noto Sans', 'Verdana', sans-serif;
+}
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    box-sizing: border-box;    
+    font-family: var(--color-fuente);
+    color: var(--color-fuente);
 }
 
 body {
-    font-family: Arial, sans-serif;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
     padding: 20px;
-    background-color: #f8f9fa;
+    background-color: var(--color-fondo);
 
 }
 /* Contenedor principal en columna SIEMPRE */
@@ -25,7 +35,7 @@ body {
     width: 100%;
     max-width: 900px;
     padding: 20px;
-    background-color: white;
+    background-color: var(--color-fondo);
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
@@ -38,11 +48,12 @@ main {
     flex-direction: column;
     align-items: center;
     padding: 1rem;
-    background-color: rgba(255, 255, 255, 0.85); /* Fondo blanco translúcido para mejorar la legibilidad */
+    background-color: var(--color-fondo);
     border-radius: 8px; /* Opcional: añade bordes redondeados */
     padding: 1rem;
     margin: 2rem auto;
     max-width: 1200px; /* Ajusta según tus necesidades */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 #main-content {
     display: block;
@@ -50,22 +61,16 @@ main {
 
 
 header {
-    background-color: #1b67b8;
-    color: white;
-    padding: 1rem 0;
+    background-color:var(--color-pantone);
+    padding: 1.5rem 0;
     text-align: center;
     margin-bottom: 1rem;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     font-weight: bold;
     width: 100%;
-    border: 2px solid #65a7ec;
+    border: 2px solid var(--color-borde);
 }
 
-h1 {
-    margin: 0;
-    font-size: 1.8rem;
-    letter-spacing: 1px;
-}
 
 
 /* Botón de reinicio centrado */
@@ -78,8 +83,7 @@ h1 {
 
 /* Botón estilizado */
 #reset-button {
-    background-color: #65a57a;
-    color: white;
+    background-color: var(--color-principal);
     padding: 10px 20px;
     border: none;
     border-radius: 20%;
@@ -89,26 +93,35 @@ h1 {
 }
 
 #reset-button:hover {
-    background-color: #0056b3;
+    background-color: var(--color-hover);
 }
 /* Asegurar que la barra de búsqueda se vea bien */
 #seek-container {
-    width: 100%;
-    max-width: 600px;
+    width: 600px;
+    max-width: 800px;
     text-align: center;
     margin: 1.5rem auto;
 }
 
 #seek-bar {
-    width: 90%;
+    width: 100%;
     max-width: 600px;
     padding: 10px;
     font-size: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    background-color: var(--color-principal);
+    border: 1px solid var(--color-borde);
+    border-radius: 8px;
     text-align: center;
 }
+#seek-bar:hover {
+background-color: var(--color-hover);
+}
 
+#seek-bar::placeholder {
+    font-family: 'Noto Sans', 'Verdana', sans-serif;
+    letter-spacing: 5px;
+
+}
 
 /* Sidebar arriba en móviles */
 /* Asegurar que el sidebar esté visible en la pantalla principal */
@@ -117,7 +130,8 @@ h1 {
     flex-direction: column;
     align-items: center;
     gap: 10px;
-    margin-top: 1rem;
+    margin: 1rem;
+    border-radius: 8px;
 }
 
 /* Ocultar cuando se busque un antibiótico o se seleccione uno */
@@ -141,7 +155,7 @@ h1 {
     line-height: 2.5rem;
     text-align: center;
     font-weight: bold;
-    background-color: #e3e3e3;
+    background-color: var(--color-principal);
     border-radius: 50%;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -152,8 +166,8 @@ h1 {
 }
 
 #alphabet-list li:hover {
-    background-color: #007bff;
-    color: white;
+    background-color: var(--color-hover);
+    color: var(--color-fuente);
 }
 
 #alphabet-list li.disabled {
@@ -396,56 +410,6 @@ h1 {
     text-align: left;
 }
 
-/* Hacer que el sidebar esté a la izquierda en pantallas grandes */
-@media (min-width: 768px) {
-    .container {
-        flex-direction: column; /* Cambia a fila en pantallas grandes */
-        align-items: space-between;
-        justify-content: flex-start;
-    }
-
-    .sidebar {
-        order: 1;
-        flex: 0 0 220px; /* Fijamos un ancho */
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-    .search-section {
-        order: 2;
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-    .details {
-        order: 3;
-        flex: 2;
-        max-width: 600px;
-    }
-    .details-table tbody {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr); /* 2 columnas */
-        gap: 10px;
-    }
-
-    .details-table tr {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-    }
-
-    .details-table th {
-        width: 35%;
-        text-align: left;
-    }
-
-    .details-table td {
-        width: 65%;
-        text-align: left;
-    }
-}
 
 @media screen and (min-width: 1024px) {
     #sidebar-container {
