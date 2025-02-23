@@ -42,6 +42,7 @@ header {
     border-radius: 8px;
     user-select: none;
     pointer-events: none;
+    margin-bottom: 250px;
 }
 
 
@@ -54,27 +55,108 @@ main {
     margin-top: 10px; /* Altura exacta del header */
     height: calc(100vh - 60px); /* Resta la altura del header del viewport */
     overflow-y: auto; /* Desplazamiento vertical */
+    padding-top: 3.5rem;
 }
 
-
-#main-content {
-    margin-top: 60px; 
-    box-sizing: border-box;
-    padding: 1rem; /* Espaciado alrededor del contenido */
-    margin-top: clamp(1.2em, 7vw, 70px);
-}
 
 #main-button-container {  /*--contenedor botón VOLVER--*/
     margin-bottom: 1rem; /* Espaciado debajo del botón */
     width: 100%; /* Asegura que el botón use todo el ancho disponible */
     display: flex;
     justify-content: center; /* Centra el botón horizontalmente */
+    margin: 0 auto;
 }
 
 .container {   /*-CONTENEDOR CENTRO DE LA PAGINA--*/
     display: flex;
     flex-direction: row;
 }
+
+
+/*--BARRA DEL ABECEDARIO  --*/
+.sidebar { /*caja del abecedario--*/  
+    width: 20%;  
+    width: clamp(100px,20%,120px) ;    
+    background-color: var(--color-fondo);
+    border-right: 1px solid var(--color-borde);
+    padding: 1rem;
+    overflow-y: auto;  
+    align-items: center;
+}
+.sidebar {
+    width: 100%; /* Ocupará todo el ancho */
+    border-right: none; /* Eliminar borde derecho */
+    padding: 1rem;
+    overflow-y: auto;
+}
+/* Estilo compartido */
+#sidebar-item {
+    display: flex; /* Asegura que el contenido esté centrado */
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    width: clamp(40px, 5vw, 60px); /* Ancho adaptable */
+    height: clamp(40px, 5vw, 60px); /* Alto adaptable */
+    border-radius: 8px; /* Bordes redondeados */
+    background-color: var(--color-principal); /* Fondo */
+    color: var(--color-fuente); /* Color del texto */
+    font-weight: bold; /* Texto en negrita */
+    cursor: pointer; /* Cursor tipo mano */
+    margin-bottom: 10px; /* Separación entre elementos */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Animación */
+    text-decoration: none; /* Sin subrayado para enlaces */
+    text-align: center; /* Centra el texto o contenido */
+}
+
+.sidebar-item:hover {
+    background-color: var(--color-hover); /* Color al pasar el ratón */
+    transform: scale(1.05); /* Animación de aumento */
+}
+
+.sidebar-item:active {
+    background-color: var(--color-borde); /* Color al hacer clic */
+    transform: scale(0.95); /* Animación de reducción */
+}
+
+/* Contenedor del abecedario */
+#alphabet {
+    width: 100%; /* Ajusta el ancho del abecedario */
+    min-width: 260px; 
+    box-sizing: border-box;
+    margin: 0; 
+    padding-top: 10px; /* Espacio adicional para separación */
+}
+
+#alphabet-list {   /*--abecedario--*/
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 20%;
+    max-width: 150px;
+}
+
+/* Elementos del abecedario */
+
+#alphabet-list li {/*--alrededor del abecedario--*/
+    cursor: pointer;
+    padding: 0.5rem;
+    border: 1px solid var(--color-borde);
+    border-radius:8px;
+    text-align: center;
+    background-color: var(--color-principal);
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    transition: transform 0.2s, box-shadow 0.2s; /* Animación para hover */
+}
+
+#alphabet-list li:hover {   /*--alrededor del abecedario--*/
+	background-color: var(--color-hover);
+    border-radius: 8px; /* Bordes redondeados opcionales */
+    transition: background-color 0.3s ease; /* Animación suave */
+    cursor: pointer;
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.15); /* Sombra más pronunciada en hover */
+
+}
+
 /*--CAJA DE BUSQUEDA--*/
 
 #seek-container { /*--caja que contiene a la caja de busqueda--*/
@@ -123,82 +205,7 @@ main {
 }
 
 
-
-/*--BARRA DEL ABECEDARIO  --*/
-.sidebar { /*caja del abecedario--*/    
-    width: clamp(100px,20%,120px) ;    
-    background-color: var(--color-fondo);
-    border-right: 1px solid var(--color-borde);
-    padding: 1rem;
-    overflow-y: auto;  
-}
-/* Estilo compartido */
-.sidebar-item {
-    display: flex; /* Asegura que el contenido esté centrado */
-    justify-content: center; /* Centra horizontalmente */
-    align-items: center; /* Centra verticalmente */
-    width: clamp(40px, 5vw, 60px); /* Ancho adaptable */
-    height: clamp(40px, 5vw, 60px); /* Alto adaptable */
-    border-radius: 8px; /* Bordes redondeados */
-    background-color: var(--color-principal); /* Fondo */
-    color: var(--color-fuente); /* Color del texto */
-    font-weight: bold; /* Texto en negrita */
-    cursor: pointer; /* Cursor tipo mano */
-    margin-bottom: 10px; /* Separación entre elementos */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
-    transition: background-color 0.3s ease, transform 0.3s ease; /* Animación */
-    text-decoration: none; /* Sin subrayado para enlaces */
-    text-align: center; /* Centra el texto o contenido */
-}
-
-.sidebar-item:hover {
-    background-color: var(--color-hover); /* Color al pasar el ratón */
-    transform: scale(1.05); /* Animación de aumento */
-}
-
-.sidebar-item:active {
-    background-color: var(--color-borde); /* Color al hacer clic */
-    transform: scale(0.95); /* Animación de reducción */
-}
-
-/* Contenedor del abecedario */
-#alphabet {
-    width: 100%; /* Ajusta el ancho del abecedario */
-    min-width: 260px; 
-    box-sizing: border-box;
-    margin: 0; 
-    padding-top: 10px; /* Espacio adicional para separación */
-}
-
-#alphabet-list {   /*--abecedario--*/
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-/* Elementos del abecedario */
-
-#alphabet-list li {/*--alrededor del abecedario--*/
-    cursor: pointer;
-    padding: 0.5rem;
-    border: 1px solid var(--color-borde);
-    border-radius:8px;
-    text-align: center;
-    background-color: var(--color-principal);
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
-    transition: transform 0.2s, box-shadow 0.2s; /* Animación para hover */
-}
-
-#alphabet-list li:hover {   /*--alrededor del abecedario--*/
-	background-color: var(--color-hover);
-    border-radius: 8px; /* Bordes redondeados opcionales */
-    transition: background-color 0.3s ease; /* Animación suave */
-    cursor: pointer;
-    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.15); /* Sombra más pronunciada en hover */
-
-}
 /*--DETAILS--*/
-
 
 #search-results {
     width: clamp(280px,90%,1200px);
@@ -280,10 +287,6 @@ li { /*--iniciales--*/
     pointer-events: none;
     }
 
-.h2-empieza-con {    /*--TEXTO:Información del Antiinfeccioso. listado aii--*/
-}
-.h2-details {  /*-- Nombre del aii en detalles--*/
-}
 h2 {     /*--TEXTO:Información del Antiinfeccioso. detalles aii--*/
     margin-bottom: .5em; /* Ajusta el valor según sea necesario */
     color: var(--color-fuente); 
@@ -296,11 +299,13 @@ h2 {     /*--TEXTO:Información del Antiinfeccioso. detalles aii--*/
 /*--TABLA DE INFORMACION DEL AII--*/
 
 .details {
+    width: 80%;
     flex-grow: 1;
+    width: clamp(800px, 80%, 1200px);
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: center;
     padding: 2rem;
     background-color: var(--color-fondo);
     overflow-y: auto; /* Permitir scroll si es necesario */
@@ -320,22 +325,35 @@ h2 {     /*--TEXTO:Información del Antiinfeccioso. detalles aii--*/
     padding: 10px 20px; /* Espaciado interno */
     border-bottom: 1px solid var(--color-borde); /* Línea inferior */
     text-align: left; /* Alinea el contenido a la izquierda */
+    display: table-cell; /* Asegura el comportamiento natural de tabla */
     vertical-align: top; /* Asegura que el contenido inicie en la parte superior */
     word-break: break-word; /* Permite dividir palabras largas */
 }
 
-.details-table th {
-    background-color: var(--color-principal); /* Fondo para los encabezados */
-    color: var(--color-fuente); /* Color del texto */
-    font-weight: bold; /* Negrita para distinguir los encabezados */
-    display: table-cell; /* Asegura el comportamiento natural de tabla */
-    }
+.details-table .th-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%; /* Asegura que el div ocupe todo el ancho del th */
+}
+
+.details-table th img {
+    order: 1; /* Coloca la imagen al final */
+}
 
 .details-table th {
+    background-color: (); 
+    color: var(--color-fuente); 
+    font-weight: bold; 
+    }  
+
+/*.details-table th {
     display: flex;
-justify-content: end;    color: aqua;
-    text-transform: uppercase;  
-}
+justify-content: space-between;
+align-items: center;
+padding-right: 10px;    color: rgb(56, 173, 173);
+display: table-cell; 
+}*/
 
 .details-table td {
     background-color: var(--color-hover); /* Fondo para las celdas */
@@ -345,8 +363,9 @@ justify-content: end;    color: aqua;
     
 }
 .details-table .icon {
-    margin-right: 10px; /* Espacio entre el icono y el nombre */
+order: 2;
 }
+
 .details-table  tr:first-child th:first-child { /*--celda a1--*/
     border-radius:8px 0 0 0;    
 }
@@ -428,67 +447,22 @@ footer {
 
 }
 
-#seek-container {
-    /* ... otros estilos ... */
-    margin-top: 20px; /* Ajusta este valor según tu preferencia */
-}
-/* ... (resto del código CSS) ... */
-
-/* Estilos para los contenedores */
-#contenedor1, #contenedor2, #contenedor3 {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: 100%; /* Asegurar que los contenedores ocupen toda la pantalla */
-}
-
-/* Estilos para los botones de volver */
 #main-button-container {
     display: flex;
     justify-content: flex-start; /* Alinear el botón a la izquierda */
     padding: 1rem;
 }
 
-#volver, #volver2 {
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-}
-
-#volver img, #volver2 img {
-    width: 40px;
-    height: 40px;
-}
-
-/* ... (resto del código CSS) ... */
-/* ... (resto del código CSS) ... */
-
-/* Contenedor principal */
-#contenedor1 {
-    display: flex;
-    flex-direction: column; /* Los elementos se apilarán verticalmente */
-    width: 100%;
-}
-
 /* Barra de búsqueda */
 #seek-container {
-    /* ... (estilos existentes) ... */
     width: 100%; /* Ocupar todo el ancho */
     margin: 0 auto; /* Centrar horizontalmente */
+    margin-top: 20px; /* Ajusta este valor según tu preferencia */
+
 }
 
 /* Contenedor del abecedario */
-.sidebar {
-    width: 100%; /* Ocupará todo el ancho */
-    border-right: none; /* Eliminar borde derecho */
-    padding: 1rem;
-    overflow-y: auto;
-}
-#contenedor3 {
-    display: none;
-}#volver2 {
-    /* ... estilos para el botón ... */
-}
+
 
 #antibiotic-info {
     /* ... estilos para el contenedor de detalles ... */

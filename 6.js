@@ -751,36 +751,81 @@ document.addEventListener("DOMContentLoaded", function() {
 
         antibioticInfo.innerHTML = `
             <h2>${antibiotic.name}</h2>
-            <table class="details-table">
-                <tr>
-                    <th><img src="imagenes/01_presentacion.png" alt="Icono de presentación" class="icon">Presentación</th>
-                    <td>${antibiotic.presentation || "N/A"}</td></tr>
-                <tr>
-                    <th><img src="imagenes/02_tipo.png" alt="Icono de presentación" class="icon">Tipo de Antiinfecioso</th>
-                    <td>${antibiotic.type || "N/A"}</td></tr>
-                <tr>
-                    <th><img src="imagenes/03_dosis.png" alt="Icono de dosis" class="icono-dosis">Dosis</th>
-                    <td>${antibiotic.dose || "N/A"}</td></tr>
-                <tr>
-                    <th><img src="imagenes/04_preparacion.png" alt="Icono de preparación" class="icono-preparacion">Preparación</th>
-                    <td>${antibiotic.preparation || "N/A"}</td></tr>
-                <tr>
-                    <th><img src="imagenes/05_aspecto.png" alt="Icono de Aspecto" class="icono-aspecto">Aspecto</th>
-                    <td>${antibiotic.appearance || "N/A"}</td></tr>
-                <tr>
-                    <th><img src="imagenes/06_tiempo.png" alt="Icono de Tiempo de administración" class="icono-tiempo">Tiempo de administración</th>
-                    <td>${antibiotic.administrationTime || "N/A"}</td></tr>
-                <tr>
-                    <th><img src="imagenes/07_conservacion.png" alt="Icono de Conservación" class="icono-conservacion">Conservación</th>
-                    <td>${antibiotic.storage || "N/A"}</td></tr>
-                <tr>
-                    <th><img src="imagenes/08_ficha_tecnica.png" alt="Icono de Ficha técnica" class="icono-ficha_tecnica">Ficha técnica</th>
-                    <td>
-                        <a href="#" id="view-technical-sheet" data-url="${antibiotic.technicalSheet}">Ver ficha técnica</a>
-                    </td>
-                </tr>
-            </table>
-        `;
+    <table class="details-table">
+        <tr>
+            <th>
+                <div class="th-content">
+                <span>Presentación</span>
+                <img src="imagenes/01_presentacion.png" alt="Icono de presentación" class="icon">      
+                </div>
+            </th>
+            <td>${antibiotic.presentation || "N/A"}</td>
+        </tr>
+        <tr>
+            <th>
+                <div class="th-content">
+                <span>Tipo de Antiinfecioso</span>
+                <img src="imagenes/02_tipo.png" alt="Icono de presentación" class="icon">
+                </div>
+            </th>
+            <td>${antibiotic.type || "N/A"}</td>
+        </tr>
+        <tr>
+            <th>
+                <div class="th-content">
+                <span>Dosis</span>
+                <img src="imagenes/03_dosis.png" alt="Icono de dosis" class="icon">                
+                </div>
+            </th>
+            <td>${antibiotic.dose || "N/A"}</td>
+        </tr>
+        <tr>
+            <th>
+                <div class="th-content">
+                <span>Preparación</span>
+                <img src="imagenes/04_preparacion.png" alt="Icono de preparación" class="icono-preparacion">
+                </div>
+            </th>
+            <td>${antibiotic.preparation || "N/A"}</td>
+        </tr>
+        <tr>
+            <th>
+                <div class="th-content">
+                <span>Aspecto</span>
+                <img src="imagenes/05_aspecto.png" alt="Icono de Aspecto" class="icono-aspecto">
+                </div>
+            </th>
+            <td>${antibiotic.appearance || "N/A"}</td>
+        </tr>
+        <tr>
+            <th>
+                <div class="th-content">
+                <span>Tiempo de administración</span>
+                <img src="imagenes/06_tiempo.png" alt="Icono de Tiempo de administración" class="icono-tiempo">
+                </div>
+            </th>
+            <td>${antibiotic.administrationTime || "N/A"}</td>
+        </tr>
+        <tr>
+            <th>
+                <div class="th-content">
+                <span>Conservación</span>
+                <img src="imagenes/07_conservacion.png" alt="Icono de Conservación" class="icono-conservacion">               
+                </div>
+            </th>
+            <td>${antibiotic.storage || "N/A"}</td>
+        </tr>
+        <tr>
+            <th>
+                <div class="th-content">
+                <span>Ficha técnica</span>
+                <img src="imagenes/08_ficha_tecnica.png" alt="Icono de Ficha técnica" class="icono-ficha_tecnica">
+                </div>
+            </th>
+            <td><a href="#" id="view-technical-sheet" data-url="${antibiotic.technicalSheet}">Ver ficha técnica</a></td>
+        </tr>
+    </table>
+    `;
 
         const technicalSheetLink = document.getElementById("view-technical-sheet");
         technicalSheetLink.addEventListener("click", (event) => {
