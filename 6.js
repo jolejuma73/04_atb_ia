@@ -643,6 +643,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 
+
     let originalContent = ""; // Guardar el contenido inicial
 
     document.addEventListener("DOMContentLoaded", function () {
