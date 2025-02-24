@@ -716,7 +716,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
     
     function displayDetails(antiinfectiveName) {
-        const antiinfective = antiinfectivesData.find(atb => atb.name === antiinfectiveName);
+        const antiinfective = antiinfectiveData.find(atb => atb.name === antiinfectiveName);
     
         if (antiinfective) {
             // Actualiza el contenedor de información con los detalles del antibiótico
@@ -784,7 +784,7 @@ document.addEventListener("DOMContentLoaded", function() {
             <th>
                 <div class="th-content">
                 <span>Preparación</span>
-                <img src="imagenes/04_preparacion.png" alt="Icono de preparación" class="icono-preparacion">
+                <img src="imagenes/04_preparacion.png" alt="Icono de preparación" class="icon">
                 </div>
             </th>
             <td>${antiinfective.preparation || "N/A"}</td>
@@ -793,7 +793,7 @@ document.addEventListener("DOMContentLoaded", function() {
             <th>
                 <div class="th-content">
                 <span>Aspecto</span>
-                <img src="imagenes/05_aspecto.png" alt="Icono de Aspecto" class="icono-aspecto">
+                <img src="imagenes/05_aspecto.png" alt="Icono de Aspecto" class="icon">
                 </div>
             </th>
             <td>${antiinfective.appearance || "N/A"}</td>
@@ -802,7 +802,7 @@ document.addEventListener("DOMContentLoaded", function() {
             <th>
                 <div class="th-content">
                 <span>Tiempo de administración</span>
-                <img src="imagenes/06_tiempo.png" alt="Icono de Tiempo de administración" class="icono-tiempo">
+                <img src="imagenes/06_tiempo.png" alt="Icono de Tiempo de administración" class="icon">
                 </div>
             </th>
             <td>${antiinfective.administrationTime || "N/A"}</td>
@@ -811,7 +811,7 @@ document.addEventListener("DOMContentLoaded", function() {
             <th>
                 <div class="th-content">
                 <span>Conservación</span>
-                <img src="imagenes/07_conservacion.png" alt="Icono de Conservación" class="icono-conservacion">               
+                <img src="imagenes/07_conservacion.png" alt="Icono de Conservación" class="icon">               
                 </div>
             </th>
             <td>${antiinfective.storage || "N/A"}</td>
@@ -820,7 +820,7 @@ document.addEventListener("DOMContentLoaded", function() {
             <th>
                 <div class="th-content">
                 <span>Ficha técnica</span>
-                <img src="imagenes/08_ficha_tecnica.png" alt="Icono de Ficha técnica" class="icono-ficha_tecnica">
+                <img src="imagenes/08_ficha_tecnica.png" alt="Icono de Ficha técnica" class="icon">
                 </div>
             </th>
             <td><a href="#" id="view-technical-sheet" data-url="${antiinfective.technicalSheet}">Ver ficha técnica</a></td>
