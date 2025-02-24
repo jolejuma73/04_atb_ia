@@ -5,7 +5,7 @@
     --color-fondo: #ebf5ed;/*--pantone 7740c__10--*/
     --color-hover: #d9ebd8;/*pantone 7740c__80--*/
     --color-borde: #4fa66a;/*pantone 7740c__20--*/
-	font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+	--font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     --probar: #ee0808;
     --probar2: #e0f806;
     --probar3: #7fffd4;
@@ -25,7 +25,6 @@ body {
     background-color: var(--color-fondo);
     font-weight: bold;
     color: var(--color-fuente); /* Color del texto */
-    background-color: var(--probar3);
 }
 
 /*--ENCABEZADO--*/
@@ -36,25 +35,21 @@ header {
     right: 0; 
     margin: 0 auto;
     width: 100%; 
-    height: clamp(75px, 8vw, 90px);
+    height: clamp(5rem, 8vw, 6rem);
 	z-index: 1000; 
 	font-size: clamp(0.8em, 2.2vw, 1.2em) ; 
     background-color: var(--color-principal); 
     color: var(--color-fuente); 
     padding: 15px 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra para diferenciarlo del contenido */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     text-align: center;
     border-radius: 8px;
     user-select: none;
     pointer-events: none;
     margin-bottom: 250px;
-    background-color: var(--probar2);
 
 }
 
-
-
-/* Ajuste del área desplazable */
 main {
 	margin: 0; /* Asegúrate de que no haya margen */
     padding: 0px; /* Espaciado interno opcional */
@@ -62,17 +57,14 @@ main {
     height: calc(100vh - 60px); /* Resta la altura del header del viewport */
     overflow-y: auto; /* Desplazamiento vertical */
     padding-top: 3.5rem;
-    background-color: var(--probar3);
-
 }
 
 .container {   /*-SIDEBAR Y DETAILS--*/
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: start;
     align-items: start;
     width: 100%; 
-    background-color: var(--probar3);
 }
 
 /*--   .SIDEBAR  --*/
@@ -80,59 +72,53 @@ main {
 
 
 .sidebar { /*sidebar contiene #main-button container y #alfabet-list*/
-    margin-top: 1rem; 
+    margin-top: clamp(1.5rem, 4vw, 3rem);
+    margin-right: 1rem;
+    left: 0;
     width: 15%;  
-    width: clamp(5rem,90%,8rem) ;    
-    background-color: var(--color-fondo);
-    border-right: 1px solid var(--color-borde);
+    width: clamp(6rem,90%,8rem) ;   
+    background-color: transparent;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     padding: 0.5rem;
-    overflow-y: auto;  
     align-items: center;
-    border-right: none; 
     border-radius: 8px;
     overflow-y: auto;
-    background-color: var(--probar2);
 }
 
 /* Sidebar-home-container */
 
-#sidebar-home-container {  /*--contenedor botón VOLVER--*/
-    width: 95%; /* Asegura que el botón use todo el ancho disponible */
+#sidebar-home-container {  /*--contenedor botón sidebar-home--*/
+    width: 100%; /* Asegura que el botón use todo el ancho disponible */
     margin: .5rem 0;
     background-color: transparent;
     justify-content: start;
     justify-items: center;
     padding: .3rem;
-    border-radius: 8px;
-    background-color: var(--probar3);
+    border-radius: 50%;
 }
-#sidebar-home {
+
+#sidebar-home {  /* botón sidebar-home  */
     display: flex; /* Asegura que el contenido esté centrado */
     justify-content: center; /* Centra horizontalmente */
     align-items: end; /* Centra verticalmente */
-    background-color: var(--color-principal); /* Fondo */
+    background-color: transparent; /* Fondo */
     cursor: pointer; /* Cursor tipo mano */
     margin-bottom: 10px; /* Separación entre elementos */
     border-radius: 8px; /* Bordes redondeados */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
     transition: background-color 0.3s ease, transform 0.3s ease; /* Animación */
-    background-color: var(--probar3);
 }
 
 #sidebar-home:hover {
     background-color: var(--color-hover); /* Color al pasar el ratón */
-    transform: scale(1.05); /* Animación de aumento */
-    background-color: var(--probar3);
 }
 
 #sidebar-home:active {
     background-color: var(--color-borde); /* Color al hacer clic */
     transform: scale(0.95); /* Animación de reducción */
-    background-color: var(--probar2);
 }
 
 /* alphabet-list-container */
-
 
 #alphabet-list {   /*--alrededor del abecedario--*/
     list-style: none;
@@ -142,9 +128,7 @@ main {
     max-width: 150px;
     border-radius: 8px;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
-    background-color: var(--probar);
 }
-
 
 #alphabet-list li {/*--celda que contiene la letra  del abecedario--*/
     cursor: pointer;
@@ -153,9 +137,8 @@ main {
     border-radius:8px;
     text-align: center;
     background-color: var(--color-principal);
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); 
     transition: transform 0.2s, box-shadow 0.2s; /* Animación para hover */
-    background-color: var(--probar3);
 }
 
 #alphabet-list li:hover {   /*--alrededor del abecedario--*/
@@ -164,23 +147,20 @@ main {
     transition: background-color 0.3s ease; /* Animación suave */
     cursor: pointer;
     box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.15); /* Sombra más pronunciada en hover */
-background-color: var(--probar2);
 }
 
 /*--  DETAILS  --*/
 
 .details {
-    margin-top: 1rem;
+    margin: 3rem auto;
     padding: 2rem;
     width: 85%;
-    flex-grow: 1;
-    width: clamp(800px, 90%, 1600px);
+    width: clamp(800px, 80%, 1000px);
     align-self: start;    
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
-    background-color: var(--color-fondo);
+    background-color: var(--color-principal);
     overflow-y: auto; /* Permitir scroll si es necesario */
-    background-color: var(--probar2);
 }
 
 #seek-container { /*--caja que contiene a la caja de busqueda--*/
@@ -190,14 +170,13 @@ background-color: var(--probar2);
     width: clamp(400px,100%,1200px);    
     padding: 0.5rem ;
     margin-bottom: 1rem;    
-    background-color: var(--color-fondo);
+    background-color: transparent;
     margin: 0 auto;
     text-align: center;
     
     width: 100%; /* Ocupar todo el ancho */
     margin: 0 auto; /* Centrar horizontalmente */
     margin-top: 20px; /* Ajusta este valor según tu preferencia */
-    background-color: orange;
 
 }
 
@@ -214,27 +193,24 @@ background-color: var(--probar2);
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
     transition: transform 0.3s, box-shadow 0.2s; /* Animación para hover */
     color: var(--color-fuente);
-    background-color: blue;
 }
 
 
 
 	#seek-bar:hover {
-    box-shadow: 0px 3px 5px var(--color-fuente);
+    box-shadow: 0px 1px 5px var(--color-fuente);
 	background-color: var(--color-hover) ;
-    background-color: red;
 }
 
     #seek-bar:focus {
     outline: none; /* Elimina el contorno predeterminado */
     border: 1px solid var(--color-borde); /* Opcional: establece un nuevo borde */
     box-shadow: none; /* Elimina cualquier sombra */
-    background-color: pink;
 }
 	#seek-bar::placeholder {
     color: var(--color-fuente); 
     opacity: 1; /* Asegura que el color sea completamente visible */
-    font-family: 'Noto Sans', 'Verdana', 'sans-serif';
+    font-family: var(--font-family);
     font-size: 1.5em; /* Ajusta el tamaño de fuente si es necesario */
     letter-spacing: 1.2px; /* Asegura que sea en píxeles y no un número sin unidad */
 }
