@@ -310,6 +310,7 @@ h2 {  /*--TEXTO:Información del Antiinfeccioso. pantalla principal--*/
     height: 28px;
     margin-right: 10px; 
     max-width: 100%;
+    height: auto;
     order: 2; 
 }
 
@@ -331,8 +332,6 @@ h2 {  /*--TEXTO:Información del Antiinfeccioso. pantalla principal--*/
     font-weight: 500; 
     font-size: 1.1rem;
     pointer-events: visible;
-
-
 }
 
 .details-table tr:first-child th:first-child { /*--celda a1--*/
@@ -405,82 +404,70 @@ footer {
 
 }
 
+/* Disposición general en pantallas pequeñas */
 @media (max-width: 768px) {
-.details-table td:hover {
-opacity: 0.5;
-}
-.details {
-    padding: 1rem; /* Reduce el espacio de padding interno */
-    align-items: flex-start; /* Alinea el contenido hacia la izquierda */
-}
-#search-results {
-    padding: 5px; /* Elimina relleno adicional */
-}
-.details-table {
-    margin: 0 auto; /* Centra horizontalmente la tabla */
-    width: 100%; /* Ajusta el ancho de la tabla */
-    border-radius: 0;
-    border:0;
-    pointer-events: auto;
-}
-.details-table th,.details-table td {
-    display: block; /* Hace que cada celda ocupe toda la fila */
-    text-align: center; /* Centra horizontalmente el texto */
-    width: 100%; /* Las celdas se expanden al ancho completo */
-    border-radius: 0;
-    border:0;
-}
-.details-table tr {
-    display: flex; /* Usa flexbox para centrar los elementos */
-    flex-direction: column; /* Pone las celdas en una columna */
-    align-items: center; /* Centra horizontalmente */
-    justify-content: center; /* Centra verticalmente */
-    border-radius: 0;
-}
+    /* Cambiar el contenedor principal a columna */
+    .container {
+        flex-direction: column; /* Organiza los elementos en columna */
+        align-items: center; /* Centra horizontalmente */
+    }
 
-.details-table th {
-    display: flex; /* Mantén Flexbox para la alineación */
-    align-items: center; /* Centra verticalmente la imagen y el texto */
-    gap: 8px; /* Espaciado entre la imagen y el texto */
-    text-align: left; /* Asegura que el texto esté alineado a la izquierda */
-    padding-left: 10px; /* Resetea cualquier padding general */
-	justify-content:space-between;
-	padding-right:50px;
-	font-size: 1.2rem;
-}
-.details-table th img {
-    flex-shrink: 0; /* Evita que la imagen se reduzca */
-    width: 30px; /* Tamaño adecuado para pantallas pequeñas */
-    height: 30px; /* Tamaño adecuado para pantallas pequeñas */
-}
-.details-table th .text-content {
-    padding-left: 10px; /* Espaciado adicional para el texto */
-}
-.details-table  tr:first-child th:first-child { /*--celda a1--*/
-    border-radius: 8px 8px 0 0 ; 
-}
-.details-table tr:last-child th:first-child {  /*--celda a8--*/
-    border-radius: 0;
-}
-.details-table  tr:first-child td:last-child { /*--celda b1--*/
-    border-radius: 0px;
-}
-.details-table tr:last-child td:last-child {  /*--celda b8--*/
-    border-radius: 0 0 8px 8px;
-}	
-    h2 {
-        font-size: 1.2rem;
-        text-wrap:balance;
+    /* Mantener visible el botón de volver (#sidebar-home) */
+    #sidebar-home-container {
+        display: flex; /* Asegura que el botón se mantenga visible */
+        justify-content: center; /* Centra el botón horizontalmente */
+        margin-bottom: 1rem; /* Agrega espacio entre el botón y el resto del contenido */
     }
-    #antiinfective-info h2 {
-        font-size: 1.2rem; /* Tamaño para pantallas pequeñas */
-    } 
+
+    /* Ocultar el contenedor del alfabeto */
+    #alphabet-list-container {
+        display: none; /* Oculta completamente el alfabeto */
+    }
+
+    /* Ajustar el ancho del .details para ocupar toda la pantalla */
+    .details {
+        width: 100%; /* Ocupa todo el ancho disponible */
+        max-width: none; /* Elimina cualquier restricción de ancho máximo */
+        padding: 1rem; /* Reduce el padding interno */
+    }
+
+    /* Ajustar la barra de búsqueda */
+    #seek-container {
+        width: 100%; /* Ocupa todo el ancho */
+        margin: 0 auto; /* Centrado horizontal */
+    }
+
+    /* Ajustar la tabla de detalles */
+    .details-table {
+        width: 100%; /* Ajusta el ancho de la tabla */
+        border-radius: 0; /* Elimina bordes redondeados */
+        border: none; /* Quita bordes innecesarios */
+    }
+
+    .details-table th, .details-table td {
+        display: block; /* Cada celda ocupa toda la fila */
+        text-align: center; /* Centra el texto */
+        width: 100%; /* Las celdas ocupan todo el ancho */
+        border-radius: 0;
+        border: none;
+        padding: 0.5rem 0; /* Añade espacio interno para mejorar la legibilidad */
+    }
+    .details-table th{
+        background-color: var(--color-principal);
+    }
+    .details-table .th-content {
+        margin-left: 40px;
+    }
+    .details-table .icon {
+        margin-right: 70px;          
+    }
+
+    /* Asegura que la última celda no tenga borde inferior */
+    .details-table tr:last-child td {
+        border-bottom: none;
+    }
     
-    #antiinfective-info  {
-        height: auto;
-        overflow: hidden; /* Permite que el contenido fluya sin restricciones */
+    footer {
+        font-size: 0.6em;
     }
-footer {
-    font-size: 0.6em;
-}
 }
