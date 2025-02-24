@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
-    const antibiotics = {
+    const antiinfectives = {
         A: [
             {
                 name: "Aciclovir 250 mg Polvo para solución para perfusión",
@@ -653,7 +653,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const searchBar = document.getElementById("seek-bar");
     const resultsContainer = document.getElementById("search-results");
     const alphabetList = document.getElementById("alphabet-list");
-    const antibioticInfo = document.getElementById("antibiotic-info");
+    const antiinfectiveInfo = document.getElementById("antiinfective-info");
 
     // Generar la lista del alfabeto
     for (let i = 65; i <= 90; i++) {
@@ -669,22 +669,22 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Mostrar antibióticos por letra
     function displayAntibiotics(letter) {
-        const antibioticsForLetter = antibiotics[letter] || [];
-        if (antibioticsForLetter.length === 0) {
-            antibioticInfo.innerHTML = `<p style="color: red;">No existen antibióticos con la letra ${letter}.</p>`;
+        const antiinfectivesForLetter = antiinfectives[letter] || [];
+        if (antiinfectivesForLetter.length === 0) {
+            antiinfectiveInfo.innerHTML = `<p style="color: red;">No existen antibióticos con la letra ${letter}.</p>`;
             return;
         }
 
-        const list = antibioticsForLetter
+        const list = antiinfectivesForLetter
             .map(
                 (atb) =>
-                    `<li class="antibiotic-item" data-name="${atb.name}">
+                    `<li class="antiinfective-item" data-name="${atb.name}">
                         ${atb.name}
                     </li>`
             )
             .join("");
 
-        antibioticInfo.innerHTML = `
+        antiinfectiveInfo.innerHTML = `
             <h2>Antibióticos que empiezan con ${letter}</h2>
             <ul>${list}</ul>
         `;
@@ -694,9 +694,9 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Asignar eventos a los antibióticos
     function addClickEventsToAntibiotics() {
-        const antibioticItems = document.querySelectorAll(".antibiotic-item");
+        const antiinfectiveItems = document.querySelectorAll(".antiinfective-item");
     
-        antibioticItems.forEach((item) => {
+        antiinfectiveItems.forEach((item) => {
             item.addEventListener("click", () => {
                 const selectedAntibiotic = item.getAttribute("data-name");
     
@@ -714,25 +714,25 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
     
-    function displayDetails(antibioticName) {
-        const antibiotic = antibioticsData.find(atb => atb.name === antibioticName);
+    function displayDetails(antiinfectiveName) {
+        const antiinfective = antiinfectivesData.find(atb => atb.name === antiinfectiveName);
     
-        if (antibiotic) {
+        if (antiinfective) {
             // Actualiza el contenedor de información con los detalles del antibiótico
-            const infoContainer = document.getElementById("antibiotic-info");
+            const infoContainer = document.getElementById("antiinfective-info");
             infoContainer.innerHTML = `
-                <h2>${antibiotic.name}</h2>
-                <p><strong>Presentación:</strong> ${antibiotic.presentation}</p>
-                <p><strong>Tipo:</strong> ${antibiotic.type}</p>
-                <p><strong>Dosis:</strong> ${antibiotic.dose}</p>
-                <p><strong>Preparación:</strong> ${antibiotic.preparation}</p>
-                <p><strong>Aspecto:</strong> ${antibiotic.aspect}</p>
-                <p><strong>Tiempo de administración:</strong> ${antibiotic.adminTime}</p>
-                <p><strong>Conservación:</strong> ${antibiotic.conservation}</p>
-                <a href="${antibiotic.technicalSheet}" target="_blank">Ficha técnica</a>
+                <h2>${antiinfective.name}</h2>
+                <p><strong>Presentación:</strong> ${antiinfective.presentation}</p>
+                <p><strong>Tipo:</strong> ${antiinfective.type}</p>
+                <p><strong>Dosis:</strong> ${antiinfective.dose}</p>
+                <p><strong>Preparación:</strong> ${antiinfective.preparation}</p>
+                <p><strong>Aspecto:</strong> ${antiinfective.aspect}</p>
+                <p><strong>Tiempo de administración:</strong> ${antiinfective.adminTime}</p>
+                <p><strong>Conservación:</strong> ${antiinfective.conservation}</p>
+                <a href="${antiinfective.technicalSheet}" target="_blank">Ficha técnica</a>
             `;
         } else {
-            console.error(`No se encontró información para el antibiótico: ${antibioticName}`);
+            console.error(`No se encontró información para el antibiótico: ${antiinfectiveName}`);
         }
     }
     
@@ -740,17 +740,17 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Mostrar detalles del antibiótico seleccionado
     function displayDetails(name) {
-        const antibiotic = Object.values(antibiotics)
+        const antiinfective = Object.values(antiinfectives)
             .flat()
             .find((atb) => atb.name === name);
 
-        if (!antibiotic) {
-            antibioticInfo.innerHTML = `<p style="color: red;">Detalles no disponibles.</p>`;
+        if (!antiinfective) {
+            antiinfectiveInfo.innerHTML = `<p style="color: red;">Detalles no disponibles.</p>`;
             return;
         }
 
-        antibioticInfo.innerHTML = `
-            <h2>${antibiotic.name}</h2>
+        antiinfectiveInfo.innerHTML = `
+            <h2>${antiinfective.name}</h2>
     <table class="details-table">
         <tr>
             <th>
@@ -759,7 +759,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 <img src="imagenes/01_presentacion.png" alt="Icono de presentación" class="icon">      
                 </div>
             </th>
-            <td>${antibiotic.presentation || "N/A"}</td>
+            <td>${antiinfective.presentation || "N/A"}</td>
         </tr>
         <tr>
             <th>
@@ -768,7 +768,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 <img src="imagenes/02_tipo.png" alt="Icono de presentación" class="icon">
                 </div>
             </th>
-            <td>${antibiotic.type || "N/A"}</td>
+            <td>${antiinfective.type || "N/A"}</td>
         </tr>
         <tr>
             <th>
@@ -777,7 +777,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 <img src="imagenes/03_dosis.png" alt="Icono de dosis" class="icon">                
                 </div>
             </th>
-            <td>${antibiotic.dose || "N/A"}</td>
+            <td>${antiinfective.dose || "N/A"}</td>
         </tr>
         <tr>
             <th>
@@ -786,7 +786,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 <img src="imagenes/04_preparacion.png" alt="Icono de preparación" class="icono-preparacion">
                 </div>
             </th>
-            <td>${antibiotic.preparation || "N/A"}</td>
+            <td>${antiinfective.preparation || "N/A"}</td>
         </tr>
         <tr>
             <th>
@@ -795,7 +795,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 <img src="imagenes/05_aspecto.png" alt="Icono de Aspecto" class="icono-aspecto">
                 </div>
             </th>
-            <td>${antibiotic.appearance || "N/A"}</td>
+            <td>${antiinfective.appearance || "N/A"}</td>
         </tr>
         <tr>
             <th>
@@ -804,7 +804,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 <img src="imagenes/06_tiempo.png" alt="Icono de Tiempo de administración" class="icono-tiempo">
                 </div>
             </th>
-            <td>${antibiotic.administrationTime || "N/A"}</td>
+            <td>${antiinfective.administrationTime || "N/A"}</td>
         </tr>
         <tr>
             <th>
@@ -813,7 +813,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 <img src="imagenes/07_conservacion.png" alt="Icono de Conservación" class="icono-conservacion">               
                 </div>
             </th>
-            <td>${antibiotic.storage || "N/A"}</td>
+            <td>${antiinfective.storage || "N/A"}</td>
         </tr>
         <tr>
             <th>
@@ -822,7 +822,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 <img src="imagenes/08_ficha_tecnica.png" alt="Icono de Ficha técnica" class="icono-ficha_tecnica">
                 </div>
             </th>
-            <td><a href="#" id="view-technical-sheet" data-url="${antibiotic.technicalSheet}">Ver ficha técnica</a></td>
+            <td><a href="#" id="view-technical-sheet" data-url="${antiinfective.technicalSheet}">Ver ficha técnica</a></td>
         </tr>
     </table>
     `;
@@ -848,26 +848,26 @@ document.addEventListener("DOMContentLoaded", function() {
     // Búsqueda dinámica de antibióticos
 document.getElementById("seek-bar").addEventListener("input", function () {
     const query = this.value.toLowerCase(); // Convierte el valor ingresado a minúsculas
-    const allAntibiotics = Object.values(antibiotics).flat(); // Obtiene todos los antibióticos de todas las letras
+    const allAntibiotics = Object.values(antiinfectives).flat(); // Obtiene todos los antibióticos de todas las letras
     const filteredAntibiotics = allAntibiotics.filter((atb) =>
         atb.name.toLowerCase().includes(query)
     ); // Filtra los antibióticos que coincidan con la búsqueda
 
     if (filteredAntibiotics.length === 0) {
-        antibioticInfo.innerHTML = `
+        antiinfectiveInfo.innerHTML = `
             <p style="color: red;">No se encontraron antibióticos que coincidan con "${query}".</p>
         `;
     } else {
         const list = filteredAntibiotics
             .map(
                 (atb) => `
-                <li class="antibiotic-item" data-name="${atb.name}">
+                <li class="antiinfective-item" data-name="${atb.name}">
                     ${atb.name}
                 </li>`
             )
             .join("");
 
-        antibioticInfo.innerHTML = `
+        antiinfectiveInfo.innerHTML = `
             <h2>Resultados de la búsqueda</h2>
             <ul>${list}</ul>
         `;
