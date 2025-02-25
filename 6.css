@@ -1,15 +1,49 @@
+
+
 :root {
-	--color-pantone: #368f3f; /*--pantone 7740c____#368f3f--*/
-    --color-principal: #92c99b;/*pantone 7740c__50--*/
-    --color-fuente: #2e2925;/*--pantone black c--*/
-    --color-fondo: #ebf5ed;/*--pantone 7740c__10--*/
-    --color-hover: #d9ebd8;/*pantone 7740c__80--*/
-    --color-borde: #4fa66a;/*pantone 7740c__20--*/
-	--font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    --probar: #ee0808;
-    --probar2: #e0f806;
-    --probar3: #7fffd4;
-    ;
+    --font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    --fuente: #2e2925;/*--pantone black c--*/
+	--pantone: #368f3f; /*--pantone 7740c____#368f3f--*/
+    --principal: #92c99b;/*pantone 7740c__50--*/
+    --tabla: #cde2d5;
+    --fondo: #ebf5ed;/*--pantone 7740c__10--*/
+    --hover: #d9ebd8;/*pantone 7740c__80--*/
+    --borde: #4fa66a;/*pantone 7740c__20--*/
+    --celdas-th: var(--pantone37);
+    --celdas-td: var(--pantone901);
+    --pantone91:   #368f3f;     /*  pantone con blanco  */
+    --pantone82:   #5ea565;     /*  pantone con blanco  */
+    --pantone73:   #72b179;     /*  pantone con blanco  */
+    --pantone64:   #86bc8c;     /*  pantone con blanco  */
+    --pantone55:   #9bc79f;     /*  pantone con blanco  */
+    --pantone46:   #afd2b2;     /*  pantone con blanco  */
+    --pantone37:   #c3ddc5;     /*  pantone con blanco  */
+    --pantone28:   #d7e9d9;     /*  pantone con blanco  */
+    --pantone19:   #ebf4ec;     /*  pantone con blanco  */
+    --pantone00:   #ffffff;     /*  pantone con blanco  */
+    --pantone10:   #368f3f;     /*  pantone 100 con blanco 00 */
+    --pantone11:  #489950 ;    /*  pantone 100 con blanco 10 */
+    --pantone12:  #58a25f ;    /*  pantone 100 con blanco 20 */
+    --pantone13:  #64a96b ;    /*  pantone 100 con blanco 30 */
+    --pantone14:  #6faf76 ;    /*  pantone 100 con blanco 40 */
+    --pantone15:  #79b47f ;    /*  pantone 100 con blanco 50 */
+    --pantone16:  #81b987 ;    /*  pantone 100 con blanco 60 */
+    --pantone17:  #89bd8e ;    /*  pantone 100 con blanco 70 */
+    --pantone18:  #8fc194 ;    /*  pantone 100 con blanco 80 */
+    --pantone19:  #95c49a ;    /*  pantone 100 con blanco 90 */
+    --pantone110: #9bc79f ;    /*  pantone 100 con blanco 100*/
+    --pantone101: #edf5ee;     /*  pantone 10 con blanco 100 */
+    --pantone201: #deecdf ;    /*  pantone 20 con blanco 100 */
+    --pantone301: #d1e5d3 ;    /*  pantone 30 con blanco 100 */
+    --pantone401: #c6dfc8 ;    /*  pantone 40 con blanco 100 */
+    --pantone501: #bcdabf ;    /*  pantone 50 con blanco 100 */
+    --pantone601: #b4d5b7 ;    /*  pantone 60 con blanco 100 */
+    --pantone701: #acd1b0 ;    /*  pantone 70 con blanco 100 */
+    --pantone801: #a6cdaa ;    /*  pantone 80 con blanco 100 */
+    --pantone901: #a0caa4 ;    /*  pantone 90 con blanco 100 */
+    --pantone1010: #9bc79f ;    /*  pantone100 con blanco 100 */
+/*          https://gradients.app/es/mix   */
+
 }
 
 * {
@@ -22,9 +56,9 @@
 body {    
     margin: 0 ;
     padding: 0;
-    background-color: var(--color-fondo);
+    background-color: var(--fondo);
     font-weight: bold;
-    color: var(--color-fuente); 
+    color: var(--fuente); 
 }
 
 /*--ENCABEZADO--*/
@@ -38,7 +72,7 @@ header {
     height: clamp(5rem, 8vw, 6rem);
 	z-index: 1000; 
 	font-size: clamp(0.8em, 2.2vw, 1.2em) ; 
-    background-color: var(--color-principal); 
+    background-color: var(--pantone17); 
     padding: 15px 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     text-align: center;
@@ -111,7 +145,7 @@ main {
 }
 
 #sidebar-home:hover {
-    background-color: var(--color-hover); /* Color al pasar el ratón */
+    background-color: var(--hover); /* Color al pasar el ratón */
 }
 
 /* alphabet-list-container */
@@ -131,17 +165,17 @@ main {
     cursor: pointer;
     padding: .5rem;
     margin-bottom: .5rem;
-    border: 1px solid var(--color-borde);
+    border: 1px solid var(--borde);
     border-radius:8px;
     text-align: center;
-    background-color: var(--color-principal);
+    background-color: var(--principal);
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); 
     transition: transform 0.2s, box-shadow 0.2s; /* Animación para hover */
     cursor: pointer;
 }
 
 #alphabet-list li:hover {   /*--alrededor del abecedario--*/
-	background-color: var(--color-hover);
+	background-color: var(--hover);
     border-radius: 8px; /* Bordes redondeados opcionales */
     transition: background-color 0.3s ease; /* Animación suave */
     cursor: pointer;
@@ -158,7 +192,7 @@ main {
     align-self: start;    
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
-    background-color: var(--color-fondo);
+    background-color: var(--fondo);
     overflow-y: auto; /* Permitir scroll si es necesario */
 }
 
@@ -180,8 +214,8 @@ main {
 
 #seek-bar { /*--buscar antiinfectiveo item--*/
     width: clamp(250px, 100%, 900px); /* Controla el ancho con límites */
-    background-color: var(--color-principal );
-    border: 1px solid var(--color-borde);
+    background-color: var(--principal );
+    border: 1px solid var(--borde);
     overflow-y: auto;
     padding: 1rem ;
     margin: 0 auto;
@@ -189,17 +223,17 @@ main {
     text-align: center;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
     transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Animación suave */
-    color: var(--color-fuente);
+    color: var(--fuente);
 }
 
 	#seek-bar:hover {
-    box-shadow: 0px 1px 5px var(--color-fuente);
-	background-color: var(--color-hover) ;
+    box-shadow: 0px 1px 5px var(--fuente);
+	background-color: var(--hover) ;
 }
 
     #seek-bar:focus {
     outline: none; /* Elimina el contorno predeterminado */
-    border: 1px solid var(--color-borde); 
+    border: 1px solid var(--borde); 
     box-shadow: none; /* Elimina cualquier sombra */
 }
 	#seek-bar::placeholder {
@@ -230,7 +264,7 @@ main {
     margin: 1rem auto; 
     padding: 1rem;
     border-radius: 8px;
-    background-color: var(--color-fondo);
+    background-color: var(--fondo);
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); 
     text-align: center;
     overflow: visible;
@@ -241,13 +275,13 @@ h2 {  /*--TEXTO:Información del Antiinfeccioso. pantalla principal--*/
     text-align: center;
     user-select: none;
     pointer-events: none;
-    color: var(--color-pantone);
+    color: var(--pantone);
     font-size: 1.5rem;
     margin-bottom: 1rem;
 }
 
 #antiinfective-info p {  /*--TEXTO: Seleccione un Antiinfeccioso para ver los detalles.--*/
-    color: var(--color-fuente);
+    color: var(--fuente);
     font-weight: bold;
     text-align: center;
     user-select: none;
@@ -266,13 +300,13 @@ h2 {  /*--TEXTO:Información del Antiinfeccioso. pantalla principal--*/
 
 .antiinfective-item {/*--caja de cada uno de los aii del listado de aii--*/
     padding: 0.5rem;
-    border-bottom: 1px solid var(--color-borde);
+    border-bottom: 1px solid var(--borde);
     cursor: pointer;
     transition: background-color 0.3s ease; 
 }
 
 .antiinfective-item:hover {/* Sobre un aii del listado--*/
-	background-color: var(--color-hover);
+	background-color: var(--hover);
     border-radius: 8px;
 }
 
@@ -290,12 +324,11 @@ h2 {  /*--TEXTO:Información del Antiinfeccioso. pantalla principal--*/
 
 .details-table th , .details-table td {
     padding: 10px 20px; 
-    border-bottom: 1px solid var(--color-borde); 
+    border-bottom: 1px solid var(--borde); 
     text-align: left; 
     display: table-cell;
     vertical-align: top; 
     word-break: break-word; 
-    background-color: var(--color-hover);
     transition: background-color 0.3s ease; 
 }
 /*  Distribución de los nombres e iconos de los th  */
@@ -316,22 +349,25 @@ h2 {  /*--TEXTO:Información del Antiinfeccioso. pantalla principal--*/
 
 .details-table th {
     font-weight:900; 
-    color: var(--color-fuente);
+    color: var(--fuente);
     pointer-events: visible;
+    background-color: var(--celdas-th)
 }  
 
 .details-table th:hover {
-	background-color: var(--color-fondo) ;
+	background-color: var(--hover) ;
+
 }
 
 /*-----------------------*/
 .details-table td {
-    background-color: var(--color-hover); /* Fondo para las celdas */
-    color: var(--color-fuente); /* Color del texto */
-    border-left: 1px solid var(--color-borde);
+    color: var(--fuente); /* Color del texto */
+    border-left: 1px solid var(--borde);
     font-weight: 500; 
     font-size: 1.1rem;
     pointer-events: visible;
+    text-align: right;
+    background-color: var(--celdas-td)
 }
 
 .details-table tr:first-child th:first-child { /*--celda a1--*/
@@ -350,10 +386,11 @@ h2 {  /*--TEXTO:Información del Antiinfeccioso. pantalla principal--*/
 
 }
 .details-table td:hover {
-	background-color: var(--color-fondo) ;
+	background-color: var(--hover) ;
+
 }
 .details-table td a {
-    color: var(--color-fuente);
+    color: var(--fuente);
     text-decoration: none;
     pointer-events: visible;
     transition: color 0.3s ease, font-weight 0.3s ease;
@@ -364,7 +401,7 @@ h2 {  /*--TEXTO:Información del Antiinfeccioso. pantalla principal--*/
     font-size: 1rem;
 }
 .details-table tr:last-child td:last-child a {
-    color: var(--color-pantone) ;
+    color: var(--pantone) ;
 }
 
 /* Estilo para la barra de desplazamiento */
@@ -380,19 +417,19 @@ h2 {  /*--TEXTO:Información del Antiinfeccioso. pantalla principal--*/
     
     /* Color de la barra deslizante */
     ::-webkit-scrollbar-thumb {
-    background: var(--color-pantone);
+    background: var(--pantone);
     border-radius: 10px; /* Bordes redondeados de la barra */
     }
     
     /* Color de la barra deslizante al pasar el cursor */
     ::-webkit-scrollbar-thumb:hover {
-        background: var(--color-principal);
+        background: var(--principal);
     }
     
 /* Footer */
 footer {
-    background-color: var(--color-pantone);
-    color: var(--color-fuente);
+    background-color: var(--pantone17);
+    color: var(--fuente);
     text-align: center;
     padding: 10px;
     margin-top: auto;
@@ -421,39 +458,42 @@ footer {
 
     /* Ocultar el contenedor del alfabeto */
     #alphabet-list-container {
-        display: none; /* Oculta completamente el alfabeto */
+        display: none; 
     }
 
     /* Ajustar el ancho del .details para ocupar toda la pantalla */
     .details {
-        width: 100%; /* Ocupa todo el ancho disponible */
-        max-width: none; /* Elimina cualquier restricción de ancho máximo */
-        padding: 1rem; /* Reduce el padding interno */
+        width: 100%; 
+        max-width: none; 
+        padding: 1rem; 
     }
 
     /* Ajustar la barra de búsqueda */
     #seek-container {
-        width: 100%; /* Ocupa todo el ancho */
-        margin: 0 auto; /* Centrado horizontal */
+        width: 100%; 
+        margin: 0 auto; 
     }
 
-    /* Ajustar la tabla de detalles */
     .details-table {
-        width: 100%; /* Ajusta el ancho de la tabla */
-        border-radius: 0; /* Elimina bordes redondeados */
-        border: none; /* Quita bordes innecesarios */
+        width: 100%; 
+        border-radius: 0;
+        border: none; 
     }
 
     .details-table th, .details-table td {
         display: block; /* Cada celda ocupa toda la fila */
-        text-align: center; /* Centra el texto */
-        width: 100%; /* Las celdas ocupan todo el ancho */
+        text-align: center; 
+        width: 100%; 
         border-radius: 0;
         border: none;
-        padding: 0.5rem 0; /* Añade espacio interno para mejorar la legibilidad */
+        padding: 0.5rem 0; 
     }
-    .details-table th{
-        background-color: var(--color-principal);
+    .details-table th {
+        background-color: var(--celdas-th);
+    }
+    
+    .details-table td {
+        background-color: var(--celdas-td);
     }
     .details-table .th-content {
         margin-left: 40px;
@@ -466,7 +506,21 @@ footer {
     .details-table tr:last-child td {
         border-bottom: none;
     }
+    .details-table tr:first-child th:first-child { /*--celda a1--*/
+        border-radius:8px 8px 0 0;    
+    }
+    .details-table tr:last-child th:first-child {  /*--celda a8--*/
+        border-radius: 0 0 0 0;
+        border-bottom: none;
+    }
+    .details-table tr:first-child td:last-child { /*--celda b1--*/
+        border-radius:0 0 0 0;
+    }
+    .details-table tr:last-child td:last-child {  /*--celda b8--*/
+        border-radius: 0 0 8px 8px;
+        border-bottom: none;
     
+    }
     footer {
         font-size: 0.6em;
     }

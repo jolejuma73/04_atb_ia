@@ -663,13 +663,13 @@ document.addEventListener("DOMContentLoaded", function() {
         listItem.textContent = letter;
         listItem.classList.add("alphabet-item");
 
-        // Evento para mostrar antibióticos
-        listItem.addEventListener("click", () => displayAntibiotics(letter));
+        // Evento para mostrar antiinfecciosos
+        listItem.addEventListener("click", () => displayAntiinfectives(letter));
         alphabetList.appendChild(listItem);
     }
 
     // Mostrar antibióticos por letra
-    function displayAntibiotics(letter) {
+    function displayAntiinfectives(letter) {
         const antiinfectivesForLetter = antiinfectives[letter] || [];
         if (antiinfectivesForLetter.length === 0) {
             antiinfectiveInfo.innerHTML = `<p style="color: red;">No existen antibióticos con la letra ${letter}.</p>`;
@@ -678,31 +678,31 @@ document.addEventListener("DOMContentLoaded", function() {
 
         const list = antiinfectivesForLetter
             .map(
-                (atb) =>
-                    `<li class="antiinfective-item" data-name="${atb.name}">
-                        ${atb.name}
+                (aii) =>
+                    `<li class="antiinfective-item" data-name="${aii.name}">
+                        ${aii.name}
                     </li>`
             )
             .join("");
 
         antiinfectiveInfo.innerHTML = `
-            <h2>Antibióticos que empiezan con ${letter}</h2>
+            <h2>Antiinfecciosos que empiezan con ${letter}</h2>
             <ul>${list}</ul>
         `;
 
-        addClickEventsToAntibiotics();
+        addClickEventsToAntiinfectives();
     }
 
     // Asignar eventos a los antibióticos
-    function addClickEventsToAntibiotics() {
+    function addClickEventsToAntiinfectives() {
         const antiinfectiveItems = document.querySelectorAll(".antiinfective-item");
     
         antiinfectiveItems.forEach((item) => {
             item.addEventListener("click", () => {
-                const selectedAntibiotic = item.getAttribute("data-name");
+                const selectedAntiinfective = item.getAttribute("data-name");
     
                 // Mostrar la información del antibiótico seleccionado
-                displayDetails(selectedAntibiotic);
+                displayDetails(selectedAntiinfective);
     
                 // Limpiar el input de búsqueda
                 const searchBar = document.getElementById("seek-bar");
@@ -716,7 +716,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
     
     function displayDetails(antiinfectiveName) {
-        const antiinfective = antiinfectiveData.find(atb => atb.name === antiinfectiveName);
+        const antiinfective = antiinfectiveData.find(aii => aii.name === antiinfectiveName);
     
         if (antiinfective) {
             // Actualiza el contenedor de información con los detalles del antibiótico
@@ -743,7 +743,7 @@ document.addEventListener("DOMContentLoaded", function() {
     function displayDetails(name) {
         const antiinfective = Object.values(antiinfectives)
             .flat()
-            .find((atb) => atb.name === name);
+            .find((aii) => aii.name === name);
 
         if (!antiinfective) {
             antiinfectiveInfo.innerHTML = `<p style="color: red;">Detalles no disponibles.</p>`;
@@ -846,24 +846,24 @@ document.addEventListener("DOMContentLoaded", function() {
         window.open(url, "_blank"); // Abrir la ficha técnica en una nueva pestaña
     }
     
-    // Búsqueda dinámica de antibióticos
+    // Búsqueda dinámica de antiinfecciosos
 document.getElementById("seek-bar").addEventListener("input", function () {
     const query = this.value.toLowerCase(); // Convierte el valor ingresado a minúsculas
-    const allAntibiotics = Object.values(antiinfectives).flat(); // Obtiene todos los antibióticos de todas las letras
-    const filteredAntibiotics = allAntibiotics.filter((atb) =>
-        atb.name.toLowerCase().includes(query)
-    ); // Filtra los antibióticos que coincidan con la búsqueda
+    const allAntiinfectives = Object.values(antiinfectives).flat(); // Obtiene todos los antibióticos de todas las letras
+    const filteredAntiinfectives = allAntiinfectives.filter((aii) =>
+        aii.name.toLowerCase().includes(query)
+    ); // Filtra los antiinfecciosos que coincidan con la búsqueda
 
-    if (filteredAntibiotics.length === 0) {
+    if (filteredAntiinfectives.length === 0) {
         antiinfectiveInfo.innerHTML = `
-            <p style="color: red;">No se encontraron antibióticos que coincidan con "${query}".</p>
+            <p style="color: red;">No se encontraron antiinfecciosos que coincidan con "${query}".</p>
         `;
     } else {
-        const list = filteredAntibiotics
+        const list = filteredAntiinfectives
             .map(
-                (atb) => `
-                <li class="antiinfective-item" data-name="${atb.name}">
-                    ${atb.name}
+                (aii) => `
+                <li class="antiinfective-item" data-name="${aii.name}">
+                    ${aii.name}
                 </li>`
             )
             .join("");
@@ -873,7 +873,7 @@ document.getElementById("seek-bar").addEventListener("input", function () {
             <ul>${list}</ul>
         `;
 
-        addClickEventsToAntibiotics(); // Asegura que los eventos "click" estén configurados para los elementos encontrados
+        addClickEventsToAntiinfectives(); // Asegura que los eventos "click" estén configurados para los elementos encontrados
     }
 });
 document.getElementById("seek-bar").value = "";
