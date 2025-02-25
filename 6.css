@@ -453,8 +453,6 @@ footer {
     width: 5rem;
     height: 5rem;
     box-shadow: none;
-
-
 }
     /* Mantener visible el botón de volver (#sidebar-home) */
     #sidebar-home-container {
@@ -463,17 +461,14 @@ footer {
         padding: 0;
         margin: 0;        
     }
-
     #sidebar-home   {
         width: 40px;
         box-shadow: none; 
-    }
-
+}
     #sidebar-home  img {
         width: 40px;
         box-shadow: none;    
-    }
-
+}
     /* Ocultar el contenedor del alfabeto */
     #alphabet-list-container {
         display: none; 
@@ -483,7 +478,8 @@ footer {
     .details {
         width: 100%; 
         max-width: none; 
-        padding: 1rem; 
+        padding: .5rem; 
+        margin: .5rem auto;
     }
 
     /* Ajustar la barra de búsqueda */
@@ -491,7 +487,14 @@ footer {
         width: 100%; 
         margin: 0 auto; 
     }
-
+#antiinfective-info h2{
+    font-size: .8rem;
+    color: blue;
+}
+#antiinfective-info p{
+    font-size: .6rem;
+    color: yellow;
+}
     .details-table {
         width: 100%; 
         border-radius: 0;
