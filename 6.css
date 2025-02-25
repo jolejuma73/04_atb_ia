@@ -1,7 +1,6 @@
 
 
 :root {
-    --font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     --fuente: #2e2925;/*--pantone black c--*/
 	--pantone: #368f3f; /*--pantone 7740c____#368f3f--*/
     --principal: #92c99b;/*pantone 7740c__50--*/
@@ -43,14 +42,13 @@
     --pantone901: #a0caa4 ;    /*  pantone 90 con blanco 100 */
     --pantone1010: #9bc79f ;    /*  pantone100 con blanco 100 */
 /*          https://gradients.app/es/mix   */
-
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    overflow-x: hidden; /* Evita scroll horizontal innecesario */    
+    overflow-x: hidden; /* Evita scroll horizontal innecesario */
 }
 
 body {    
@@ -59,6 +57,7 @@ body {
     background-color: var(--fondo);
     font-weight: bold;
     color: var(--fuente); 
+    font-family:'Times New Roman', Times, serif;    
 }
 
 /*--ENCABEZADO--*/
@@ -76,7 +75,6 @@ header {
     padding: 15px 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     text-align: center;
-    border-radius: 8px;
     user-select: none;
     pointer-events: none;
     margin-bottom: 250px;
@@ -90,6 +88,7 @@ main {
     height: calc(100vh - 60px); /* Resta la altura del header del viewport */
     overflow-y: auto; /* Desplazamiento vertical */
     padding-top: 3.5rem;
+    
 }
 
 .container {   /*-SIDEBAR Y DETAILS--*/
@@ -99,6 +98,7 @@ main {
     align-items: start;
     width: 100%; 
     border: 10px solid transparent;
+    
 }
 
 /*--   .SIDEBAR  --*/
@@ -210,6 +210,7 @@ main {
     width: 100%;
     margin: 0 auto; 
     margin-top: 20px;
+    border-radius: 8px;
 }
 
 
@@ -450,50 +451,51 @@ footer {
         align-items: center; /* Centra horizontalmente */
     }
 .sidebar {
+    margin: 1rem auto;
+    margin-bottom: .5rem;
     width: 5rem;
-    height: 5rem;
+    height: auto;
     box-shadow: none;
 }
     /* Mantener visible el botón de volver (#sidebar-home) */
-    #sidebar-home-container {
-        display: flex; /* Asegura que el botón se mantenga visible */
-        justify-content: center; /* Centra el botón horizontalmente */
-        padding: 0;
-        margin: 0;        
-    }
-    #sidebar-home   {
-        width: 40px;
-        box-shadow: none; 
+#sidebar-home-container {
+    display: flex; /* Asegura que el botón se mantenga visible */
+    justify-content: center; /* Centra el botón horizontalmente */
+    padding: 0;
+    margin: 0;        
 }
-    #sidebar-home  img {
-        width: 40px;
-        box-shadow: none;    
+#sidebar-home   {
+    width: 30px;
+    box-shadow: none; 
 }
-    /* Ocultar el contenedor del alfabeto */
-    #alphabet-list-container {
-        display: none; 
-    }
+#sidebar-home  img {
+    width: 40px;
+    box-shadow: none;    
+}
+/* Ocultar el contenedor del alfabeto */
+#alphabet-list-container {
+    display: none; 
+}
 
-    /* Ajustar el ancho del .details para ocupar toda la pantalla */
-    .details {
-        width: 100%; 
-        max-width: none; 
-        padding: .5rem; 
-        margin: .5rem auto;
-    }
-
-    /* Ajustar la barra de búsqueda */
-    #seek-container {
-        width: 100%; 
-        margin: 0 auto; 
-    }
-#antiinfective-info h2{
+/* Ajustar el ancho del .details para ocupar toda la pantalla */
+.details {
+    width: 100%; 
+    max-width: none; 
+    padding: .5rem; 
+    margin: .5rem auto;
+}
+/* Ajustar la barra de búsqueda */
+#seek-container {
+    width: 100%; 
+    margin: 0 auto; 
+    padding: 0 ;
+    font-size: .7rem;
+}
+#antiinfective-info h2 {
     font-size: .8rem;
-    color: blue;
 }
-#antiinfective-info p{
+#antiinfective-info p {
     font-size: .6rem;
-    color: yellow;
 }
     .details-table {
         width: 100%; 
