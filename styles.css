@@ -1,39 +1,66 @@
-:root {
-	--color-pantone: #368f3f; /*--pantone 7740c____#368f3f--*/
-    --color-principal: #92c99b;/*pantone 7740c__50--*/
-    --color-fuente: #2e2925;/*--pantone black c--*/
-    --color-fondo: #ebf5ed;/*--pantone 7740c__10--*/
-    --color-hover: #d9ebd8;/*pantone 7740c__80--*/
-    --color-borde: #4fa66a;/*pantone 7740c__20--*/
-	font-family: 'noto-sans' 'verdana', 'sans-serif';
 
+
+:root {
+    --fuente: #2e2925;/*--pantone black c--*/
+	--pantone: #368f3f; /*--pantone 7740c____#368f3f--*/
+    --principal: #92c99b;/*pantone 7740c__50--*/
+    --tabla: #cde2d5;
+    --fondo: #ebf5ed;/*--pantone 7740c__10--*/
+    --hover: #d9ebd8;/*pantone 7740c__80--*/
+    --borde: #4fa66a;/*pantone 7740c__20--*/
+    --celdas-th: var(--pantone37);
+    --celdas-td: var(--pantone901);
+    --pantone91:   #368f3f;     /*  pantone con blanco  */
+    --pantone82:   #5ea565;     /*  pantone con blanco  */
+    --pantone73:   #72b179;     /*  pantone con blanco  */
+    --pantone64:   #86bc8c;     /*  pantone con blanco  */
+    --pantone55:   #9bc79f;     /*  pantone con blanco  */
+    --pantone46:   #afd2b2;     /*  pantone con blanco  */
+    --pantone37:   #c3ddc5;     /*  pantone con blanco  */
+    --pantone28:   #d7e9d9;     /*  pantone con blanco  */
+    --pantone19:   #ebf4ec;     /*  pantone con blanco  */
+    --pantone00:   #ffffff;     /*  pantone con blanco  */
+    --pantone10:   #368f3f;     /*  pantone 100 con blanco 00 */
+    --pantone11:  #489950 ;    /*  pantone 100 con blanco 10 */
+    --pantone12:  #58a25f ;    /*  pantone 100 con blanco 20 */
+    --pantone13:  #64a96b ;    /*  pantone 100 con blanco 30 */
+    --pantone14:  #6faf76 ;    /*  pantone 100 con blanco 40 */
+    --pantone15:  #79b47f ;    /*  pantone 100 con blanco 50 */
+    --pantone16:  #81b987 ;    /*  pantone 100 con blanco 60 */
+    --pantone17:  #89bd8e ;    /*  pantone 100 con blanco 70 */
+    --pantone18:  #8fc194 ;    /*  pantone 100 con blanco 80 */
+    --pantone19:  #95c49a ;    /*  pantone 100 con blanco 90 */
+    --pantone110: #9bc79f ;    /*  pantone 100 con blanco 100*/
+    --pantone101: #edf5ee;     /*  pantone 10 con blanco 100 */
+    --pantone201: #deecdf ;    /*  pantone 20 con blanco 100 */
+    --pantone301: #d1e5d3 ;    /*  pantone 30 con blanco 100 */
+    --pantone401: #c6dfc8 ;    /*  pantone 40 con blanco 100 */
+    --pantone501: #bcdabf ;    /*  pantone 50 con blanco 100 */
+    --pantone601: #b4d5b7 ;    /*  pantone 60 con blanco 100 */
+    --pantone701: #acd1b0 ;    /*  pantone 70 con blanco 100 */
+    --pantone801: #a6cdaa ;    /*  pantone 80 con blanco 100 */
+    --pantone901: #a0caa4 ;    /*  pantone 90 con blanco 100 */
+    --pantone1010: #9bc79f ;    /*  pantone100 con blanco 100 */
+/*          https://gradients.app/es/mix   */
 }
+
 * {
     margin: 0;
     padding: 0;
-    border: 0; /* Elimina todos los bordes */
-    box-shadow: none; /* Elimina sombras */
     box-sizing: border-box;
-}
-#main-content, #seek-bar-container {
-    margin: 0;
-    padding: 0;
-    background-color: transparent; /* Asegura que el fondo sea transparente */
-    border: none; /* Elimina bordes */  
+    overflow-x: hidden; /* Evita scroll horizontal innecesario */
 }
 
-body {
-
-    font-weight: bold;
-    color: var(--color-fuente); /* Color del texto */
+body {    
     margin: 0 ;
     padding: 0;
-    box-sizing: border-box;
-    background-color: var(--color-fondo);
-    overflow-x: hidden; /* Evita scroll horizontal innecesario */    
+    background-color: var(--fondo);
+    font-weight: bold;
+    color: var(--fuente); 
+    font-family:'Times New Roman', Times, serif;    
 }
 
-/* Header fijo */
+/*--ENCABEZADO--*/
 header {
     position: fixed; 
     top: 0; 
@@ -41,399 +68,478 @@ header {
     right: 0; 
     margin: 0 auto;
     width: 100%; 
-    height: clamp(75px, 8vw, 90px);
+    height: clamp(5rem, 8vw, 6rem);
 	z-index: 1000; 
 	font-size: clamp(0.8em, 2.2vw, 1.2em) ; 
-    background-color: var(--color-principal); 
-    color: var(--color-fuente); /* Color del texto */
+    background-color: var(--pantone17); 
     padding: 15px 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra para diferenciarlo del contenido */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     text-align: center;
-    border-radius: 8px;
+    user-select: none;
+    pointer-events: none;
+    margin-bottom: 250px;
+
 }
 
-/* Ajuste del área desplazable */
 main {
 	margin: 0; /* Asegúrate de que no haya margen */
     padding: 0px; /* Espaciado interno opcional */
     margin-top: 10px; /* Altura exacta del header */
     height: calc(100vh - 60px); /* Resta la altura del header del viewport */
     overflow-y: auto; /* Desplazamiento vertical */
-    background-color: var(--color-terciario);
+    padding-top: 3.5rem;
+    
 }
 
-
-.container {
+.container {   /*-SIDEBAR Y DETAILS--*/
     display: flex;
     flex-direction: row;
+    justify-content: start;
+    align-items: start;
+    width: 100%; 
+    border: 10px solid transparent;
+    
 }
 
-#seek-container {
+/*--   .SIDEBAR  --*/
+/*sidebar contiene #main-button container y #alfabet-list*/
+
+
+.sidebar { /*sidebar contiene #main-button container y #alfabet-list*/
+    margin-top: clamp(1.5rem, 4vw, 3rem);
+    margin-right: 1rem;
+    left: 0;
+    width: 15%;  
+    width: clamp(6rem,90%,8rem) ;   
+    background-color: transparent;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    padding: 0.5rem;
+    align-items: center;
+    border-radius: 8px;
+    overflow-y: auto;
+}
+
+/* Sidebar-home-container */
+
+#sidebar-home-container {  /*--contenedor botón sidebar-home--*/
+    width: 100%; 
+    margin: .5rem 0;
+    background-color: transparent;
+    justify-content: start;
+    justify-items: center;
+    padding: .3rem;
+    border-radius: 8px;
+}
+
+#sidebar-home {  /* botón sidebar-home  */
+    width: 100%;
+    height: 100%;
+    display: flex; /* Asegura que el contenido esté centrado */
+    justify-content: center; /* Centra horizontalmente */
+    align-items: end; /* Centra verticalmente */
+    background-color: transparent; /* Fondo */
+    cursor: pointer; /* Cursor tipo mano */
+    margin-bottom: 10px; /* Separación entre elementos */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Animación */
+}
+
+#sidebar-home:hover {
+    background-color: var(--hover); /* Color al pasar el ratón */
+}
+
+/* alphabet-list-container */
+
+#alphabet-list {   /*--alrededor del abecedario--*/
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    max-width: 150px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);     
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#alphabet-list li {/*--celda que contiene la letra  del abecedario--*/
+    cursor: pointer;
+    padding: .5rem;
+    margin-bottom: .5rem;
+    border: 1px solid var(--borde);
+    border-radius:8px;
+    text-align: center;
+    background-color: var(--principal);
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); 
+    transition: transform 0.2s, box-shadow 0.2s; /* Animación para hover */
+    cursor: pointer;
+}
+
+#alphabet-list li:hover {   /*--alrededor del abecedario--*/
+	background-color: var(--hover);
+    border-radius: 8px; /* Bordes redondeados opcionales */
+    transition: background-color 0.3s ease; /* Animación suave */
+    cursor: pointer;
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.15); /* Sombra más pronunciada en hover */
+}
+
+/*--  DETAILS  --*/
+
+.details {
+    margin: 3rem auto;
+    padding: 2rem;
+    width: 85%;
+    width: clamp(800px, 80%, 1000px);
+    align-self: start;    
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    background-color: var(--fondo);
+    overflow-y: auto; /* Permitir scroll si es necesario */
+}
+
+#seek-container { /*--caja que contiene a la caja de busqueda--*/
     display: flex;
     flex-direction: row;
     justify-content: center;
-    width: clamp(250px,90%,1200px);    
+    width: clamp(400px,100%,1200px);    
     padding: 0.5rem ;
-    margin-bottom: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-family: 'Poppins', 'Nunito', 'Quicksand', sans-serif;
-    background-color: rgba(173, 173, 192, 0.4);
-    
+    margin-bottom: 1rem;    
+    background-color: transparent;
+    margin: 0 auto;
+    text-align: center;    
+    width: 100%;
+    margin: 0 auto; 
+    margin-top: 20px;
+    border-radius: 8px;
 }
-#seek-bar {/*--buscar antibiotico item--*/
-    width: clamp(250px, 90%, 900px); /* Controla el ancho con límites */
-    background-color: var(--color-principal );
-    border: 1px solid var(--color-borde);
+
+
+#seek-bar { /*--buscar antiinfectiveo item--*/
+    width: clamp(250px, 100%, 900px); /* Controla el ancho con límites */
+    background-color: var(--principal );
+    border: 1px solid var(--borde);
     overflow-y: auto;
     padding: 1rem ;
     margin: 0 auto;
     border-radius: 8px;
     text-align: center;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
-    transition: transform 0.3s, box-shadow 0.2s; /* Animación para hover */
-    color: var(--color-fuente);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Animación suave */
+    color: var(--fuente);
 }
 
 	#seek-bar:hover {
-    box-shadow: 0px 6px 10px rgba(165, 163, 163, 0.15);
-	background-color: var(--color-hover) ;
+    box-shadow: 0px 1px 5px var(--fuente);
+	background-color: var(--hover) ;
 }
 
     #seek-bar:focus {
     outline: none; /* Elimina el contorno predeterminado */
-    border: 1px solid var(--color-borde); /* Opcional: establece un nuevo borde */
+    border: 1px solid var(--borde); 
     box-shadow: none; /* Elimina cualquier sombra */
 }
 	#seek-bar::placeholder {
-    color: var(--color-fuente); 
-    opacity: 1; /* Asegura que el color sea completamente visible */
-    font-family: 'Noto Sans', 'Verdana', 'sans-serif';
-    font-size: 16px; /* Ajusta el tamaño de fuente si es necesario */
-    letter-spacing: 1.5px; /* Asegura que sea en píxeles y no un número sin unidad */
+    opacity: 1; 
+    font-family: var(--font-family);
+    font-size: 1.5em; /* Ajusta el tamaño de fuente si es necesario */
+    letter-spacing: 1.2px; /* Asegura que sea en píxeles y no un número sin unidad */
 }
 
 
-.sidebar { /*caja del abecedario--*/    
-    width: clamp(100px,20%,120px) ;    
-    background-color: var(--color-fondo);
-    border-right: 1px solid var(--color-borde);
-    padding: 1rem;
-    overflow-y: auto;  
-}
-
-/* Contenedor del abecedario */
-#alphabet {
-    width: 100%; /* Ajusta el ancho del abecedario */
-    min-width: 260px; 
-    box-sizing: border-box;
-    margin: 0; 
-    padding-top: 10px; /* Espacio adicional para separación */
-}
-
-#alphabet-list {   /*--abecedario--*/
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-/* Elementos del abecedario */
-
-#alphabet-list li {/*--alrededor del abecedario--*/
-    cursor: pointer;
-    padding: 0.5rem;
-    border: 1px solid var(--color-borde);
-    border-radius:8px;
-    text-align: center;
-    background-color: var(--color-principal);
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
-    transition: transform 0.2s, box-shadow 0.2s; /* Animación para hover */
-}
-
-#alphabet-list li:hover {   /*--alrededor del abecedario--*/
-	background-color: var(--color-hover);
-    border-radius: 8px; /* Bordes redondeados opcionales */
-    transition: background-color 0.3s ease; /* Animación suave */
-    cursor: pointer;
-    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.15); /* Sombra más pronunciada en hover */
-
-}
-
-.details {
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    padding: 2rem;
-    background-color: var(--color-fondo);
-    overflow-y: auto; /* Permitir scroll si es necesario */
-    box-sizing: border-box;
-}
+/*--SEARCH-RESULTS--*/
+/*  Aquí aparecen los resultados de busqueda de los aii  */
 
 #search-results {
-    width: clamp(280px,90%,1200px);
+    width: clamp(280px,100%,1200px);
     margin-top: 10px;
     list-style: none;
     padding: 0;
     text-align: center;
 }
 
-.antibiotic-item {
-    padding: 0.5rem;
-    border-bottom: 1px solid var(--color-borde);
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
+/*  ANTIINFECTIVE-INFO  */
+/*--Información del Antiinfeccioso. pantalla principal y resto H2--*/
 
-
-#antibiotic-info p {
-    color: var(--color-pantone);
-    font-weight: bold;
-    font-size: 1rem;
-    text-align: center;
-
-}
-
-.antibiotic-item:hover {
-	background-color: var(--color-hover);
-}
-
-#antibiotic-info {
-    width: 85%; /* Ajusta el tamaño en relación al abecedario */
+#antiinfective-info {    /*Caja que contiene todo el ANTIINFECTIVE-INFO--*/
+    width: 100%; 
     max-width: 800px;
-    padding: 20px;
-    background-color: var(--color-fondo);
-    border: 1px solid var(--color-borde);
-    border-radius: 5px;
-    box-sizing: border-box;
+    margin: 1rem auto; 
+    padding: 1rem;
+    border-radius: 8px;
+    background-color: var(--fondo);
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); 
     text-align: center;
+    overflow: visible;
+    max-height: 100vh; 
+    overflow-y: auto; 
+}
+h2 {  /*--TEXTO:Información del Antiinfeccioso. pantalla principal--*/
+    text-align: center;
+    user-select: none;
+    pointer-events: none;
+    color: var(--pantone);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
 }
 
-ul {
-    list-style-type: none; /* Eliminar los puntos de la lista */
-    padding: 0; /* Opcional: eliminar el padding predeterminado */
+#antiinfective-info p {  /*--TEXTO: Seleccione un Antiinfeccioso para ver los detalles.--*/
+    color: var(--fuente);
+    font-weight: bold;
+    text-align: center;
+    user-select: none;
+    pointer-events: none;
+    font-size: 1rem;
 }
 
-li {
-    margin-bottom: 0.5rem; /* Opcional: agregar espacio entre los elementos de la lista */
-    cursor: pointer; /* Opcional: mostrar un cursor de mano */
+
+#antiinfective-info ul {  /*--contenedor de la caja de cada uno de los aii del listado de aii--*/
+    list-style-type: none; 
+    padding: 0;
+    margin: 0;    
+    border-radius: 8px;
 }
 
 
-/* Asegura que la tabla sea responsive */
-	h2 {
-    margin-bottom: 10px; /* Ajusta el valor según sea necesario */
-    color: var(--color-fuente); 
+.antiinfective-item {/*--caja de cada uno de los aii del listado de aii--*/
+    padding: 0.5rem;
+    border-bottom: 1px solid var(--borde);
+    cursor: pointer;
+    transition: background-color 0.3s ease; 
+}
+
+.antiinfective-item:hover {/* Sobre un aii del listado--*/
+	background-color: var(--hover);
+    border-radius: 8px;
+}
+
+/*--TABLA DE INFORMACION DEL AII--*/
+
+
+.details-table {
+    width: 100%; 
+    border-collapse: collapse;
+    table-layout: fixed; 
+    font-size: 1.1em;
+    user-select: none;
+    pointer-events: none;
+}
+
+.details-table th , .details-table td {
+    padding: .5rem .8rem; 
+    border-bottom: 1px solid var(--borde); 
+    text-align: left; 
+    display: table-cell;
+    vertical-align: top; 
+    word-break: break-word; 
+    transition: background-color 0.3s ease; 
+}
+/*  Distribución de los nombres e iconos de los th  */
+.details-table .th-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%; /* Asegura que el div ocupe todo el ancho del th */
+}
+.details-table .icon {
+    width:  28px; 
+    height: 28px;
+    margin-right: 10px; 
+    max-width: 100%;
+    height: auto;
+    order: 2; 
+}
+
+.details-table th {
+    font-weight:900; 
+    color: var(--fuente);
+    pointer-events: visible;
+    background-color: var(--celdas-th)
+}  
+
+.details-table th:hover {
+	background-color: var(--hover) ;
 
 }
 
-	.details-table {
-    margin-top: 40px;
-    width: 90%; 
-    border-collapse: collapse; /* Elimina espacios entre celdas */
-    margin-bottom: 1rem; /* Espaciado inferior */
+/*-----------------------*/
+.details-table td {
+    color: var(--fuente); /* Color del texto */
+    border-left: 1px solid var(--borde);
+    font-weight: 500; 
+    font-size: 1.1rem;
+    pointer-events: visible;
+    text-align: right;
+    background-color: var(--celdas-td);
+    text-wrap: pretty;   
 }
 
-	.details-table th,
-	.details-table td {
-    padding: 10px; /* Espaciado dentro de las celdas */
-    text-align: left; /* Alinea el texto a la izquierda */
-    border-bottom: 1px solid var(--color-borde); /* Línea de separación entre filas */
-
+.details-table tr:first-child th:first-child { /*--celda a1--*/
+    border-radius:8px 0 0 0;    
 }
-
-	.details-table th {
-    width: 240px; /* Ancho por defecto */
-    font-weight: bold; /* Resalta los encabezados--*/
-	background-color:var(--color-principal);
-
-}
-	.details-table td {
-    font-weight: 400; /* Resalta los encabezados */
-    background-color: var(--color-fondo);
-	text-align:center;	
-	}
-
-
-	.details-table tbody tr:first-child th:first-child {
-    border-radius:8px 0 0 0;
-}
-	.details-table tr:last-child th:first-child {
+.details-table tr:last-child th:first-child {  /*--celda a8--*/
     border-radius: 0 0 0 8px;
-	border-bottom:none;
+	border-bottom: none;
+}
+.details-table tr:first-child td:last-child { /*--celda b1--*/
+    border-radius:0 8px 0 0;
+}
+.details-table tr:last-child td:last-child {  /*--celda b8--*/
+    border-radius: 0 0 8px 0;
+	border-bottom: none;
 
 }
-	.details-table td:hover {
-	background-color: var(--color-hover) ;
-}
+.details-table td:hover {
+	background-color: var(--hover) ;
 
+}
 .details-table td a {
-    color: var(--color-fuente);
+    color: var(--fuente);
     text-decoration: none;
+    pointer-events: visible;
+    transition: color 0.3s ease, font-weight 0.3s ease;
 }
 .details-table td a:hover {
     text-decoration: underline;
     font-weight: bold;
-    font-size: 16px;
+    font-size: 1rem;
 }
-
-
 .details-table tr:last-child td:last-child a {
-    color: var(--color-pantone) ;
-}
-
-
-/*--IMG--*/
-
-img {
-    max-width: 100%;
-    height: auto; /* Esto puede forzar tamaños grandes si no se controlan */
-}
-
-.details-table th img {
-    width: 30px; /* Ajusta a tu preferencia */
-    height: 30px;
-    margin-right: 5px; /* Espacio entre imagen y texto */
-    vertical-align: middle; /* Alineación vertical con el texto */
-}
-
-#main-content, #seek-bar-container, #antibiotic-info {
-    background-color: transparent; /* Elimina cualquier color de fondo no deseado */
-    border: none; /* Asegura que no haya bordes */
-    margin: 0; /* Elimina márgenes */
-    padding: 0; /* Elimina espacios internos */
-
-}
-
-
-#main-content {
-    margin-top: 60px; 
-    box-sizing: border-box;
-    padding: 1rem; /* Espaciado alrededor del contenido */
-    margin-top: clamp(1.2em, 7vw, 70px);
-
+    color: var(--pantone) ;
 }
 
 /* Estilo para la barra de desplazamiento */
 ::-webkit-scrollbar {
-  width: 8px; /* Ancho de la barra vertical */
-  height: 4px; /* Altura de la barra horizontal */
-}
-
-/* Color de fondo de la barra */
-::-webkit-scrollbar-track {
-  background: transparent; /* Color del fondo del track */
-  border-radius: 10px; /* Opcional: bordes redondeados */
-}
-
-/* Color de la barra deslizante */
-::-webkit-scrollbar-thumb {
-background: var(--color-pantone);
-border-radius: 10px; /* Bordes redondeados de la barra */
-}
-
-/* Color de la barra deslizante al pasar el cursor */
-::-webkit-scrollbar-thumb:hover {
-  background: var(--color-fuente); /* Color más oscuro cuando el cursor pasa por encima */
-}
-
-
-/* Hacer la tabla adaptable */
-@media (max-width: 768px) {
-	
-        #alphabet {
-        width: 100%; /* El abecedario ocupará todo el ancho */
-        float: none;
-        text-align: center;
-    }
-
-    #antibiotic-info {
-        width: 80%; /* El contenedor de información ocupará todo el ancho */
-        margin-left: 0;
-    }
-
-    .details-table th,
-    .details-table td {
-        display: block; /* Convierte filas en bloques */
-        width: 100%; /* Asegura que cada celda ocupe todo el ancho */
-        text-align: left; /* Mantén el texto alineado a la izquierda */
-        font-size: 1rem; /* Tamaño de fuente más pequeño */
-        border-bottom:none
+    display:none;
     }
     
-	.details-table th {
-		border-radius:8px;
-		text-align:center;
-        width: 250px; /* Ancho para pantallas pequeñas */
-        justify-items: center;
-	
-	}
-
-    .details-table td:hover {
-        font-size: 16px ;
-        background: var(--color-hover); 
-        border-radius: 8px;
-        margin: 4px;
+    /* Color de fondo de la barra */
+    ::-webkit-scrollbar-track {
+      background: transparent; /* Color del fondo del track */
+      border-radius: 10px; /* Opcional: bordes redondeados */
     }
-
-	.details-table tbody tr:first-child th:first-child {
-    border-radius: 8px;
-	}
-	.details-table tr:last-child th:first-child {
-    border-radius: 8px;
-	}
-
     
-    .details {
-        padding: 1rem; /* Reduce el espacio de padding interno */
-        align-items: flex-start; /* Alinea el contenido hacia la izquierda */
+    /* Color de la barra deslizante */
+    ::-webkit-scrollbar-thumb {
+    background: var(--pantone);
+    border-radius: 10px; /* Bordes redondeados de la barra */
     }
+    
+    /* Color de la barra deslizante al pasar el cursor */
+    ::-webkit-scrollbar-thumb:hover {
+        background: var(--principal);
+    }
+    
+/* Footer */
+footer {
+    background-color: var(--pantone17);
+    color: var(--fuente);
+    text-align: center;
+    padding: 10px;
+    margin-top: auto;
+    font-size: 14px;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    position: fixed;
 
-    #search-results {
-        padding: 0; /* Elimina relleno adicional */
-    }
-/* Estilos para resoluciones pequeñas */
+}
+
+/* Disposición general en pantallas pequeñas */
 @media (max-width: 768px) {
-    .details-table {
-        margin: 0 auto; /* Centra horizontalmente la tabla */
-        width: 90%; /* Ajusta el ancho de la tabla */
-    }
-
-    .details-table th,
-    .details-table td {
-        display: block; /* Hace que cada celda ocupe toda la fila */
-        text-align: center; /* Centra horizontalmente el texto */
-        width: 100%; /* Las celdas se expanden al ancho completo */
-    }
-
-    .details-table tr {
-        display: flex; /* Usa flexbox para centrar los elementos */
-        flex-direction: column; /* Pone las celdas en una columna */
+    /* Cambiar el contenedor principal a columna */
+    .container {
+        flex-direction: column; /* Organiza los elementos en columna */
         align-items: center; /* Centra horizontalmente */
-        justify-content: center; /* Centra verticalmente */
     }
+.sidebar {
+    margin: 1rem auto;
+    margin-bottom: .5rem;
+    width: 5rem;
+    height: auto;
+    box-shadow: none;
+}
+    /* Mantener visible el botón de volver (#sidebar-home) */
+#sidebar-home-container {
+    display: flex; /* Asegura que el botón se mantenga visible */
+    justify-content: center; /* Centra el botón horizontalmente */
+    padding: 0;
+    margin: 0;        
+}
+#sidebar-home   {
+    width: 30px;
+    box-shadow: none; 
+}
+#sidebar-home  img {
+    width: 40px;
+    box-shadow: none;    
+}
+/* Ocultar el contenedor del alfabeto */
+#alphabet-list-container {
+    display: none; 
 }
 
-/* Estilos responsivos para resoluciones pequeñas */
-@media (max-width: 768px) {
-    .details-table th {
-      display: flex; /* Activa el diseño flexbox */
-      align-items: center; /* Alinea verticalmente la imagen y el texto */
-      justify-content: space-between; /* Alinea horizontalmente hacia la izquierda */
-      gap: 8px; /* Espaciado entre la imagen y el texto */
-      text-align: left; /* Asegura que el texto esté alineado a la izquierda */
-    }
-  
-    .details-table th img {
-      flex-shrink: 0; /* Evita que la imagen se reduzca */
-      width: 24px; /* Define un ancho adecuado */
-      height: 24px; /* Define una altura adecuada */
-    }
-  
-    .details-table th span {
-      flex-grow: 1; /* Permite que el texto ocupe el espacio restante */
-    }
-  }
-  
+/* Ajustar el ancho del .details para ocupar toda la pantalla */
+.details {
+    width: 100%; 
+    max-width: none; 
+    padding: .5rem; 
+    margin: .5rem auto;
+}
+/* Ajustar la barra de búsqueda */
+#seek-container {
+    width: 100%; 
+    margin: 0 auto; 
+    padding: 0 ;
+    font-size: .7rem;
+}
+#seek-bar, #seek-bar::placeholder, #antiinfective-info, #antiinfective-info h2, .details-table th, .details-table td  {
+    font-size: .8rem;
+}
+.details-table {
+    width: 100%; 
+    border-radius: 0;
+    border: none; 
+}
+.details-table th, .details-table td {
+    display: block; /* Cada celda ocupa toda la fila */
+    text-align: center; 
+    width: 100%; 
+    border-radius: 0;
+    border: none;
+    padding: 0.5rem 0; 
+}
+.details-table th {
+    background-color: var(--celdas-th);
+}
+.details-table td {
+    background-color: var(--celdas-td);
+}
+.details-table .th-content {
+    margin-left: 40px;
+}
+.details-table .icon {
+    margin-right: 70px; 
+    width: 24px;         
+}
+/* Asegura que la última celda no tenga borde inferior */
+.details-table tr:last-child td {
+    border-bottom: none;
+}
+.details-table tr:first-child th:first-child { /*--celda a1--*/
+    border-radius:8px 8px 0 0;    
+}
+.details-table tr:last-child th:first-child {  /*--celda a8--*/
+    border-radius: 0 0 0 0;
+    border-bottom: none;
+}
+.details-table tr:first-child td:last-child { /*--celda b1--*/
+    border-radius:0 0 0 0;
+}
+.details-table tr:last-child td:last-child {  /*--celda b8--*/
+    border-radius: 0 0 8px 8px;
+    border-bottom: none;
+}
+footer {
+    font-size: 0.6em;
+}
 }
