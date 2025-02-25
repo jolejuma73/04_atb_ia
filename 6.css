@@ -491,60 +491,54 @@ footer {
     padding: 0 ;
     font-size: .7rem;
 }
-#antiinfective-info h2 {
+#seek-bar, #seek-bar::placeholder, #antiinfective-info, #antiinfective-info h2, .details-table th, .details-table td  {
     font-size: .8rem;
 }
-#antiinfective-info p {
-    font-size: .6rem;
+.details-table {
+    width: 100%; 
+    border-radius: 0;
+    border: none; 
 }
-    .details-table {
-        width: 100%; 
-        border-radius: 0;
-        border: none; 
-    }
-
-    .details-table th, .details-table td {
-        display: block; /* Cada celda ocupa toda la fila */
-        text-align: center; 
-        width: 100%; 
-        border-radius: 0;
-        border: none;
-        padding: 0.5rem 0; 
-    }
-    .details-table th {
-        background-color: var(--celdas-th);
-    }
-    
-    .details-table td {
-        background-color: var(--celdas-td);
-    }
-    .details-table .th-content {
-        margin-left: 40px;
-    }
-    .details-table .icon {
-        margin-right: 70px;          
-    }
-
-    /* Asegura que la última celda no tenga borde inferior */
-    .details-table tr:last-child td {
-        border-bottom: none;
-    }
-    .details-table tr:first-child th:first-child { /*--celda a1--*/
-        border-radius:8px 8px 0 0;    
-    }
-    .details-table tr:last-child th:first-child {  /*--celda a8--*/
-        border-radius: 0 0 0 0;
-        border-bottom: none;
-    }
-    .details-table tr:first-child td:last-child { /*--celda b1--*/
-        border-radius:0 0 0 0;
-    }
-    .details-table tr:last-child td:last-child {  /*--celda b8--*/
-        border-radius: 0 0 8px 8px;
-        border-bottom: none;
-    
-    }
-    footer {
-        font-size: 0.6em;
-    }
+.details-table th, .details-table td {
+    display: block; /* Cada celda ocupa toda la fila */
+    text-align: center; 
+    width: 100%; 
+    border-radius: 0;
+    border: none;
+    padding: 0.5rem 0; 
+}
+.details-table th {
+    background-color: var(--celdas-th);
+}
+.details-table td {
+    background-color: var(--celdas-td);
+}
+.details-table .th-content {
+    margin-left: 40px;
+}
+.details-table .icon {
+    margin-right: 70px; 
+    width: 24px;         
+}
+/* Asegura que la última celda no tenga borde inferior */
+.details-table tr:last-child td {
+    border-bottom: none;
+}
+.details-table tr:first-child th:first-child { /*--celda a1--*/
+    border-radius:8px 8px 0 0;    
+}
+.details-table tr:last-child th:first-child {  /*--celda a8--*/
+    border-radius: 0 0 0 0;
+    border-bottom: none;
+}
+.details-table tr:first-child td:last-child { /*--celda b1--*/
+    border-radius:0 0 0 0;
+}
+.details-table tr:last-child td:last-child {  /*--celda b8--*/
+    border-radius: 0 0 8px 8px;
+    border-bottom: none;
+}
+footer {
+    font-size: 0.6em;
+}
 }
