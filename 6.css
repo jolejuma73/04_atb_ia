@@ -117,7 +117,6 @@ main {
     align-items: center;
     border-radius: 8px;
     overflow-y: auto;
-    background-color: #2e2925;
 }
 
 /* Sidebar-home-container */
@@ -130,7 +129,6 @@ main {
     justify-items: center;
     padding: .3rem;
     border-radius: 8px;
-    background-color: var(--pantone14);
 }
 
 #sidebar-home {  /* botón sidebar-home  */
@@ -145,7 +143,6 @@ main {
     border-radius: 8px; /* Bordes redondeados */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
     transition: background-color 0.3s ease, transform 0.3s ease; /* Animación */
-    background-color: aqua;
 }
 
 #sidebar-home:hover {
@@ -455,14 +452,26 @@ footer {
 .sidebar {
     width: 5rem;
     height: 5rem;
+    box-shadow: none;
+
+
 }
     /* Mantener visible el botón de volver (#sidebar-home) */
     #sidebar-home-container {
         display: flex; /* Asegura que el botón se mantenga visible */
         justify-content: center; /* Centra el botón horizontalmente */
-        background-color: bisque;
         padding: 0;
-        margin: 0;
+        margin: 0;        
+    }
+
+    #sidebar-home   {
+        width: 40px;
+        box-shadow: none; 
+    }
+
+    #sidebar-home  img {
+        width: 40px;
+        box-shadow: none;    
     }
 
     /* Ocultar el contenedor del alfabeto */
