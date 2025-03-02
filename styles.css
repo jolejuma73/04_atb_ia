@@ -1,4 +1,4 @@
-
+/* Definición de variables de color y fuente */
 
 :root {
     --fuente: #2e2925;/*--pantone black c--*/
@@ -48,7 +48,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    overflow-x: hidden; /* Evita scroll horizontal innecesario */
+    overflow-x: hidden; 
 }
 
 body {    
@@ -70,7 +70,6 @@ header {
     width: 100%; 
     height: clamp(5rem, 8vw, 6rem);
 	z-index: 1000; 
-	font-size: clamp(0.8em, 2.2vw, 1.2em) ; 
     background-color: var(--pantone17); 
     padding: 15px 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);

@@ -1,0 +1,384 @@
+/* Definición de variables de color y fuente */
+
+:root {
+    --fuente: #2e2925;/*--pantone black c--*/
+	--pantone: #368f3f; /*--pantone 7740c____#368f3f--*/
+    --principal: #92c99b;/*pantone 7740c__50--*/
+    --tabla: #cde2d5;
+    --fondo: #ebf5ed;/*--pantone 7740c__10--*/
+    --hover: #d9ebd8;/*pantone 7740c__80--*/
+    --borde: #4fa66a;/*pantone 7740c__20--*/
+    --celdas-th: var(--pantone37);
+    --celdas-td: var(--pantone46);
+    --header: var(--pantone12);
+    --pantone82:   #5ea565;     /*  pantone con blanco  */
+    --pantone73:   #72b179;     /*  pantone con blanco  */
+    --pantone64:   #86bc8c;     /*  pantone con blanco  */
+    --pantone55:   #9bc79f;     /*  pantone con blanco  */
+    --pantone46:   #afd2b2;     /*  pantone con blanco  */
+    --pantone37:   #c3ddc5;     /*  pantone con blanco  */
+    --pantone28:   #d7e9d9;     /*  pantone con blanco  */
+    --pantone19:   #ebf4ec;     /*  pantone con blanco  */
+    --pantone00:   #ffffff;     /*  pantone con blanco  */
+    --pantone11:  #489950 ;    /*  pantone 100 con blanco 10 */
+    --pantone12:  #58a25f ;    /*  pantone 100 con blanco 20 */
+    --pantone13:  #64a96b ;    /*  pantone 100 con blanco 30 */
+    --pantone14:  #6faf76 ;    /*  pantone 100 con blanco 40 */
+    --pantone15:  #79b47f ;    /*  pantone 100 con blanco 50 */
+    --pantone16:  #81b987 ;    /*  pantone 100 con blanco 60 */
+    --pantone17:  #89bd8e ;    /*  pantone 100 con blanco 70 */
+    --pantone18:  #8fc194 ;    /*  pantone 100 con blanco 80 */
+    --pantone19:  #95c49a ;    /*  pantone 100 con blanco 90 */
+    --pantone110: #9bc79f ;    /*  pantone 100 con blanco 100*/
+    --pantone101: #edf5ee;     /*  pantone 10 con blanco 100 */
+    --pantone201: #deecdf ;    /*  pantone 20 con blanco 100 */
+    --pantone301: #d1e5d3 ;    /*  pantone 30 con blanco 100 */
+    --pantone401: #c6dfc8 ;    /*  pantone 40 con blanco 100 */
+    --pantone501: #bcdabf ;    /*  pantone 50 con blanco 100 */
+    --pantone601: #b4d5b7 ;    /*  pantone 60 con blanco 100 */
+    --pantone701: #acd1b0 ;    /*  pantone 70 con blanco 100 */
+    --pantone801: #a6cdaa ;    /*  pantone 80 con blanco 100 */
+    --pantone901: #a0caa4 ;    /*  pantone 90 con blanco 100 */
+    --pantone1010: #9bc79f ;    /*  pantone100 con blanco 100 */
+/*          https://gradients.app/es/mix   */
+
+
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden; 
+}
+
+/* Estilos generales */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: var(--fondo);
+    color: var(--fuente);
+    text-align: center;
+    font-family: 'Noto Sans HK', sans-serif;
+}
+main {
+    flex: 1; /* Hace que el contenido principal ocupe el espacio restante */
+}
+
+header {
+    width: 100%;
+    max-width: 1000px;
+    height: clamp(5rem, 8vw, 6rem);
+    background-color: var(--header); 
+    color: var(--fuente);
+    padding: 20px;
+    margin: 10px auto;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    user-select: none;
+    pointer-events: none;
+    font-size: clamp(0.8em, 2.2vw, 1.2em) ; 
+
+}
+
+/* Zona de iniciales */
+
+.zona-iniciales {
+    width: 100%;
+    max-width: 1000px;
+    margin: 20px auto;
+    background-color: var(--principal);
+    padding: 13px;
+    border-radius: 10px;
+    display: grid; /* Usamos flexbox */
+    grid-template-rows: minmax(100px auto) minmax(60px auto);
+    justify-content: center; 
+    align-items: center; 
+
+}
+
+#iniciales {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    margin: 10px 20px;
+
+}
+
+#iniciales button {
+    padding: 10px 15px;
+    font-size: clamp(0.7em, 1.5vw, 1em) ; 
+    font-weight: clamp(300, 4vw, 700);
+    cursor: pointer;
+    background-color: var(--principal);
+    border: 1px solid var(--borde);
+    border-radius: 5px;
+    color: var(--fuente);
+    transition: background-color 0.3s ease;
+    min-width: 36px; /* Asegura un ancho mínimo para cada botón */
+    text-align: center; 
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+
+}
+
+#iniciales button:hover {
+    background-color: var(--hover);
+}
+
+/* Estilo para los botones de iniciales */
+/*.inicial-button {
+    padding: 10px 15px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    background-color: var(--principal); 
+    border: 1px solid var(--borde); 
+    border-radius: 5px; 
+    color: var(--fuente); 
+    transition: background-color 0.3s ease; 
+    min-width: 40px;
+    text-align: center; 
+color: red;}
+
+.inicial-button:hover {
+    background-color: var(--hover); 
+    color: red;
+}*/
+/* Zona de búsqueda */
+.zona-busqueda {
+    width: 100%;
+    max-width: 1000px;
+    background-color: var(--hover);
+    padding: 15px;
+    border-radius: 10px;
+    margin: 0 auto;
+}
+
+.zona-busqueda h2 {
+    color: var(--fuente); 
+    font-size: clamp(0.7em, 1.5vw, 1em) ; 
+    font-weight: clamp(300, 4vw, 700);   
+    padding: 15px ;
+    color: var(--pantone12);
+}
+
+input[type="text"] {
+    padding: 10px;
+    border: 1px solid var(--borde);
+    border-radius: 5px;
+    background-color: transparent;
+    margin-bottom: 15px;   
+}
+
+.zona-busqueda input::placeholder {
+    font-family: 'Noto Sans HK', sans-serif;
+    font-size: clamp(0.6em, 1.2vw, .9em) ; 
+    font-weight: clamp(500, 4vw, 700);  
+    color: var(--pantone12);
+
+}   
+background-color: blueviolet;
+/* Zona de botón de vuelta al inicio */
+
+#main-button-container {
+    text-align: center;
+    margin: 20px 0;
+}
+#main-button img {
+    width:  64px;
+    height: 64px;
+    cursor: pointer;
+}
+
+/* Zona de antiinfecciosos */
+
+#lista-antiinfecciosos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;    
+    font-size: 1em;
+}
+
+#lista-antiinfecciosos {
+    display: none; 
+}
+#lista-antiinfecciosos.active {
+    display: block;
+}
+
+
+#lista-antiinfecciosos div {
+    background-color: var(--hover);
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#lista-antiinfecciosos div:hover {
+    background-color: var(--borde);
+}
+
+
+#detalle-antiinfeccioso {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: var(--principal);
+    border-radius: 5px;
+    display: block; /* Mostrar por defecto */
+    width: 100%;
+    max-width: 1000px;
+    margin: 10px auto;
+}
+
+#detalle-antiinfeccioso h2 {
+    margin: 10px auto;
+    font-weight: 500;
+}
+#lista-antiinfecciosos.active,
+#detalle-antiinfeccioso.active {
+    display: block;
+}
+
+
+/*--TABLA DE INFORMACION DEL AII--*/
+
+
+.details-table {
+    width: 100%; 
+    border-collapse: collapse;
+    table-layout: fixed; 
+    font-size: 1.1em;
+    user-select: none;
+    pointer-events: none;
+}
+
+.details-table th , .details-table td {
+    padding: .5rem .8rem; 
+    border-bottom: 1px solid var(--borde); 
+    text-align: left; 
+    display: table-cell;
+    vertical-align: top; 
+    word-break: break-word; 
+    transition: background-color 0.3s ease; 
+}
+/*  Distribución de los nombres e iconos de los th  */
+.details-table .th-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%; /* Asegura que el div ocupe todo el ancho del th */
+}
+.details-table .icon {
+    width:  28px; 
+    height: 28px;
+    margin-right: 10px; 
+    max-width: 100%;
+    height: auto;
+    order: 2; 
+}
+.icon {
+    width:  30px; 
+    height: 30px; /* Mantén las proporciones */
+    margin-right: 8px; /* Espaciado entre el ícono y el texto */
+    vertical-align: middle; /* Alinea el ícono con el texto */
+}
+
+.details-table th {
+    font-weight:700; 
+    color: var(--fuente);
+    pointer-events: visible;
+    background-color: var(--celdas-th)
+}  
+
+.details-table th:hover {
+	background-color: var(--hover) ;
+
+}
+
+/*-----------------------*/
+.details-table td {
+    color: var(--fuente); 
+    border-left: 1px solid var(--borde);
+    font-weight: 500; 
+    font-size: 1.1rem;
+    pointer-events: visible;
+    text-align: right;
+    background-color: var(--celdas-td);
+    text-wrap: pretty;   
+}
+
+.details-table tr:first-child th:first-child { /*--celda a1--*/
+    border-radius:8px 0 0 0;    
+}
+.details-table tr:last-child th:first-child {  /*--celda a8--*/
+    border-radius: 0 0 0 8px;
+	border-bottom: none;
+}
+.details-table tr:first-child td:last-child { /*--celda b1--*/
+    border-radius:0 8px 0 0;
+}
+.details-table tr:last-child td:last-child {  /*--celda b8--*/
+    border-radius: 0 0 8px 0;
+	border-bottom: none;
+
+}
+.details-table td:hover {
+	background-color: var(--hover) ;
+
+}
+.details-table td a {
+    color: var(--fuente);
+    text-decoration: none;
+    pointer-events: visible;
+    transition: color 0.3s ease, font-weight 0.3s ease;
+}
+.details-table td a:hover {
+    text-decoration: underline;
+    font-weight: bold;
+    font-size: 1rem;
+}
+.details-table tr:last-child td:last-child a {
+    color: var(--pantone) ;
+}
+
+/* Estilo para la barra de desplazamiento */
+::-webkit-scrollbar {
+    display:none;
+    }
+    
+    /* Color de fondo de la barra */
+    ::-webkit-scrollbar-track {
+      background: transparent; /* Color del fondo del track */
+      border-radius: 10px; /* Opcional: bordes redondeados */
+    }
+    
+    /* Color de la barra deslizante */
+    ::-webkit-scrollbar-thumb {
+    background: var(--pantone);
+    border-radius: 10px; /* Bordes redondeados de la barra */
+    }
+    
+    /* Color de la barra deslizante al pasar el cursor */
+    ::-webkit-scrollbar-thumb:hover {
+        background: var(--principal);
+    }
+    
+/* Footer */
+footer {
+    background-color: var(--pantone17);
+    color: var(--fuente);
+    text-align: center;
+    padding: 10px;
+    margin-top: auto;
+    font-size: 14px;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    position: fixed;
+    font-family: 'Noto Sans HK', sans-serif;
+}
