@@ -69,7 +69,6 @@ main {
 header {
     width: 100%;
     max-width: 1000px;
-    height: clamp(5rem, 8vw, 6rem);
     background-color: var(--header); 
     color: var(--fuente);
     padding: 20px;
@@ -154,7 +153,7 @@ color: red;}
     background-color: var(--hover);
     padding: 15px;
     border-radius: 10px;
-    margin: 0 auto;
+    margin: 20px auto;
 }
 
 .zona-busqueda h2 {
@@ -175,9 +174,10 @@ input[type="text"] {
 
 .zona-busqueda input::placeholder {
     font-family: 'Noto Sans HK', sans-serif;
-    font-size: clamp(0.6em, 1.2vw, .9em) ; 
+    font-size: clamp(0.7em, 1.2vw, 0.9em) ; 
     font-weight: clamp(500, 4vw, 700);  
     color: var(--pantone12);
+    text-align: center;
 
 }   
 background-color: blueviolet;
@@ -185,11 +185,10 @@ background-color: blueviolet;
 
 #main-button-container {
     text-align: center;
-    margin: 20px 0;
+    margin: 20px auto;
 }
 #main-button img {
-    width:  64px;
-    height: 64px;
+    width:  clamp(32px, 4vw, 64px);
     cursor: pointer;
 }
 
