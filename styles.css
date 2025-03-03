@@ -369,7 +369,9 @@ h2 {  /*--TEXTO:Información del Antiinfeccioso. pantalla principal--*/
     pointer-events: visible;
     text-align: right;
     background-color: var(--celdas-td);
-    text-wrap: pretty;   
+    text-wrap: pretty; 
+    vertical-align: middle; /
+  
 }
 
 .details-table tr:first-child th:first-child { /*--celda a1--*/

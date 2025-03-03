@@ -72,7 +72,7 @@ header {
     background-color: var(--header); 
     color: var(--fuente);
     padding: 20px;
-    margin: 10px auto;
+    margin: 5px auto;
     border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     user-select: none;
@@ -86,7 +86,7 @@ header {
 .zona-iniciales {
     width: 100%;
     max-width: 1000px;
-    margin: 20px auto;
+    margin: 5px auto;
     background-color: var(--principal);
     padding: 13px;
     border-radius: 10px;
@@ -94,7 +94,8 @@ header {
     grid-template-rows: minmax(100px auto) minmax(60px auto);
     justify-content: center; 
     align-items: center; 
-
+    font-size: clamp(0.5em, 1.5vw, 1em) ; 
+    font-weight: 700;
 }
 
 #iniciales {
@@ -103,14 +104,14 @@ header {
     flex-wrap: wrap;
     gap: 15px;
     justify-content: center;
-    margin: 10px 20px;
+    margin: 5px auto;
 
 }
 
 #iniciales button {
-    padding: 10px 15px;
-    font-size: clamp(0.7em, 1.5vw, 1em) ; 
-    font-weight: clamp(300, 4vw, 700);
+    padding: 5px 15px;
+    font-size: clamp(0.5em, 1.5vw, 1em) ; 
+    font-weight: 700;
     cursor: pointer;
     background-color: var(--principal);
     border: 1px solid var(--borde);
@@ -120,7 +121,6 @@ header {
     min-width: 36px; /* Asegura un ancho mínimo para cada botón */
     text-align: center; 
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-
 }
 
 #iniciales button:hover {
@@ -151,9 +151,9 @@ color: red;}
     width: 100%;
     max-width: 1000px;
     background-color: var(--hover);
-    padding: 15px;
+    padding: 5px;
     border-radius: 10px;
-    margin: 20px auto;
+    margin: 10px auto;
 }
 
 .zona-busqueda h2 {
@@ -165,11 +165,12 @@ color: red;}
 }
 
 input[type="text"] {
-    padding: 10px;
+    padding: 5px;
     border: 1px solid var(--borde);
     border-radius: 5px;
     background-color: transparent;
-    margin-bottom: 15px;   
+    margin-bottom: 5px; 
+    outline: transparent;  
 }
 
 .zona-busqueda input::placeholder {
@@ -178,14 +179,13 @@ input[type="text"] {
     font-weight: clamp(500, 4vw, 700);  
     color: var(--pantone12);
     text-align: center;
+} 
 
-}   
-background-color: blueviolet;
 /* Zona de botón de vuelta al inicio */
 
 #main-button-container {
     text-align: center;
-    margin: 20px auto;
+    margin: 10px auto;
 }
 #main-button img {
     width:  clamp(32px, 4vw, 64px);
@@ -199,7 +199,8 @@ background-color: blueviolet;
     flex-wrap: wrap;
     justify-content: center;
     gap: 10px;    
-    font-size: 1em;
+    font-size: clamp(0.5em, 1.2vw, 0.9em) ; 
+
 }
 
 #lista-antiinfecciosos {
@@ -212,7 +213,7 @@ background-color: blueviolet;
 
 #lista-antiinfecciosos div {
     background-color: var(--hover);
-    padding: 10px;
+    padding: 5px;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
@@ -224,19 +225,20 @@ background-color: blueviolet;
 
 
 #detalle-antiinfeccioso {
-    margin-top: 20px;
+    margin-top: 10px;
     padding: 10px;
     background-color: var(--principal);
     border-radius: 5px;
     display: block; /* Mostrar por defecto */
     width: 100%;
     max-width: 1000px;
-    margin: 10px auto;
+    margin: 5px auto;
 }
 
 #detalle-antiinfeccioso h2 {
     margin: 10px auto;
-    font-weight: 500;
+    font-weight: 700;
+    font-size: clamp(0.9em, 1.2vw, 1.1em) ; 
 }
 #lista-antiinfecciosos.active,
 #detalle-antiinfeccioso.active {
@@ -251,7 +253,7 @@ background-color: blueviolet;
     width: 100%; 
     border-collapse: collapse;
     table-layout: fixed; 
-    font-size: 1.1em;
+    font-size: clamp(0.7em, 1.2vw, 0.9em) ; 
     user-select: none;
     pointer-events: none;
 }
@@ -273,8 +275,7 @@ background-color: blueviolet;
     width: 100%; /* Asegura que el div ocupe todo el ancho del th */
 }
 .details-table .icon {
-    width:  28px; 
-    height: 28px;
+    width:  clamp(24px, 2vw, 28px); 
     margin-right: 10px; 
     max-width: 100%;
     height: auto;
@@ -296,7 +297,6 @@ background-color: blueviolet;
 
 .details-table th:hover {
 	background-color: var(--hover) ;
-
 }
 
 /*-----------------------*/
@@ -304,11 +304,11 @@ background-color: blueviolet;
     color: var(--fuente); 
     border-left: 1px solid var(--borde);
     font-weight: 500; 
-    font-size: 1.1rem;
     pointer-events: visible;
     text-align: right;
     background-color: var(--celdas-td);
-    text-wrap: pretty;   
+    text-wrap: pretty; 
+    vertical-align: middle; 
 }
 
 .details-table tr:first-child th:first-child { /*--celda a1--*/
@@ -381,3 +381,58 @@ footer {
     position: fixed;
     font-family: 'Noto Sans HK', sans-serif;
 }
+@media (max-width: 768px) {
+    .details {
+        width: 100%; 
+        max-width: none; 
+        padding: .5rem; 
+        margin: .5rem auto;
+    }
+    .details-table {
+        width: 100%; 
+        border-radius: 0;
+        border: none; 
+    }
+    .details-table th, .details-table td {
+        display: block; /* Cada celda ocupa toda la fila */
+        text-align: center; 
+        width: 100%; 
+        border-radius: 0;
+        border: none;
+        padding: 0.5rem 0; 
+    }
+    .details-table th {
+        background-color: var(--celdas-th);
+    }
+    .details-table td {
+        background-color: var(--celdas-td);
+    }
+    .details-table .th-content {
+        margin-left: 40px;
+    }
+    .details-table .icon {
+        margin-right: 70px; 
+        width: 24px;         
+    }
+    /* Asegura que la última celda no tenga borde inferior */
+    .details-table tr:last-child td {
+        border-bottom: none;
+    }
+    .details-table tr:first-child th:first-child { /*--celda a1--*/
+        border-radius:8px 8px 0 0;    
+    }
+    .details-table tr:last-child th:first-child {  /*--celda a8--*/
+        border-radius: 0 0 0 0;
+        border-bottom: none;
+    }
+    .details-table tr:first-child td:last-child { /*--celda b1--*/
+        border-radius:0 0 0 0;
+    }
+    .details-table tr:last-child td:last-child {  /*--celda b8--*/
+        border-radius: 0 0 8px 8px;
+        border-bottom: none;
+    }
+    footer {
+        font-size: 0.6em;
+    }
+    }
