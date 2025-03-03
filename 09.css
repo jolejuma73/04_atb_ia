@@ -1,9 +1,9 @@
 /* Definición de variables de color y fuente */
 
 :root {
-    --font-grande: clamp(1.3rem, 3vw, 2rem);
-    --font-mediano: clamp(0.7rem, 2.5vw, 1.3rem);
-    --font-pequeño: clamp(.6rem, 1.5vw, 1rem);
+    --font-grande: clamp(1.5rem, 3vw, 2.3rem);
+    --font-mediano: clamp(1rem, 2.5vw, 1.5rem);
+    --font-pequeño: clamp(.8rem, 1.5vw, 1.2rem);
 
 
 
@@ -16,7 +16,7 @@
     --borde: #4fa66a;/*pantone 7740c__20--*/
     --celdas-th: var(--pantone37);
     --celdas-td: var(--pantone46);
-    --header: var(--pantone12);
+    --header: var(--pantone16);
     --pantone82:   #5ea565;     /*  pantone con blanco  */
     --pantone73:   #72b179;     /*  pantone con blanco  */
     --pantone64:   #86bc8c;     /*  pantone con blanco  */
@@ -70,6 +70,8 @@ body {
 }
 main {
     flex: 1; /* Hace que el contenido principal ocupe el espacio restante */
+    min-height: 100dvh; 
+      
 }
 
 header {
@@ -84,9 +86,9 @@ header {
     user-select: none;
     pointer-events: none;
     font-size: var(--font-grande);
-color: black;
-}
+    color: black;
 
+}
 /* Zona de iniciales */
 
 .zona-iniciales {
@@ -173,13 +175,31 @@ input[type="text"] {
 
 #main-button-container {
     text-align: center;
-    margin: 10px auto;
+    margin: 0 auto;
+    padding: 10px;
+
+    position: fixed; 
+    top: 30px; 
+    right: 10px; 
+    transform: translateX(-30%);
+    z-index: 10;
+    background-color: transparent;
+    padding: 10px;
+    border: 2px solid var(--borde);
+    border-radius: 50%;
+    box-sizing: border-box;
 }
+
 #main-button img {
     width:  clamp(32px, 2.5vw, 50px);
     cursor: pointer;
 }
 
+#main-button-container:hover {
+    background-color: var(--hover);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+
+}
 /* Zona de antiinfecciosos */
 
 #lista-antiinfecciosos {
@@ -225,8 +245,9 @@ input[type="text"] {
 
 #detalle-antiinfeccioso h2 {
     margin: 10px auto;
-    font-weight: 700;
+    font-weight: 900;
     font-size: var(--font-mediano) ; 
+    color: var(--fuente);
 }
 #lista-antiinfecciosos.active,
 #detalle-antiinfeccioso.active {
@@ -380,7 +401,7 @@ footer {
         width: 100%; 
         border-radius: 0;
         border: none; 
-        margin-bottom: 30px;
+        margin-bottom: 80px;
     }
     .details-table th, .details-table td {
         display: block; /* Cada celda ocupa toda la fila */
