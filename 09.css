@@ -77,8 +77,8 @@ header {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     user-select: none;
     pointer-events: none;
-    font-size: clamp(0.8em, 2.2vw, 1.2em) ; 
-
+    font-size: clamp(0.8em, 2.2vw, 1em) ; 
+color: black;
 }
 
 /* Zona de iniciales */
@@ -94,7 +94,7 @@ header {
     grid-template-rows: minmax(100px auto) minmax(60px auto);
     justify-content: center; 
     align-items: center; 
-    font-size: clamp(0.5em, 1.5vw, 1em) ; 
+    font-size: clamp(0.5em, 1.5vw, .8em) ; 
     font-weight: 700;
 }
 
@@ -127,25 +127,7 @@ header {
     background-color: var(--hover);
 }
 
-/* Estilo para los botones de iniciales */
-/*.inicial-button {
-    padding: 10px 15px;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
-    background-color: var(--principal); 
-    border: 1px solid var(--borde); 
-    border-radius: 5px; 
-    color: var(--fuente); 
-    transition: background-color 0.3s ease; 
-    min-width: 40px;
-    text-align: center; 
-color: red;}
 
-.inicial-button:hover {
-    background-color: var(--hover); 
-    color: red;
-}*/
 /* Zona de búsqueda */
 .zona-busqueda {
     width: 100%;
@@ -188,7 +170,7 @@ input[type="text"] {
     margin: 10px auto;
 }
 #main-button img {
-    width:  clamp(32px, 4vw, 64px);
+    width:  clamp(32px, 2.5vw, 50px);
     cursor: pointer;
 }
 
@@ -383,7 +365,7 @@ footer {
 }
 @media (max-width: 768px) {
     .details {
-        width: 100%; 
+        width: 90%; 
         max-width: none; 
         padding: .5rem; 
         margin: .5rem auto;
@@ -392,6 +374,7 @@ footer {
         width: 100%; 
         border-radius: 0;
         border: none; 
+        margin-bottom: 30px;
     }
     .details-table th, .details-table td {
         display: block; /* Cada celda ocupa toda la fila */
@@ -406,6 +389,7 @@ footer {
     }
     .details-table td {
         background-color: var(--celdas-td);
+        color: #333;
     }
     .details-table .th-content {
         margin-left: 40px;
