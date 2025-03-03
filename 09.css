@@ -1,9 +1,9 @@
 /* Definición de variables de color y fuente */
 
 :root {
-    --font-grande: clamp(1.5rem, 3vw, 2.3rem);
-    --font-mediano: clamp(1rem, 2.5vw, 1.5rem);
-    --font-pequeño: clamp(.8rem, 1.5vw, 1.2rem);
+    --font-grande: clamp(1.5rem, 3vw, 2rem);
+    --font-mediano: clamp(1rem, 2.5vw, 1.3rem);
+    --font-pequeño: clamp(.8rem, 1.5vw, 1rem);
 
 
 
@@ -180,8 +180,8 @@ input[type="text"] {
 
     position: fixed; 
     top: 30px; 
-    right: 10px; 
-    transform: translateX(-30%);
+    right: 30px; 
+    transform: translateX(-50%);
     z-index: 10;
     background-color: transparent;
     padding: 10px;
