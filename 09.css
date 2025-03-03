@@ -245,9 +245,8 @@ input[type="text"] {
 
 #detalle-antiinfeccioso h2 {
     margin: 10px auto;
-    font-weight: 900;
+    font-weight: 700;
     font-size: var(--font-mediano) ; 
-    color: var(--fuente);
 }
 #lista-antiinfecciosos.active,
 #detalle-antiinfeccioso.active {
@@ -262,7 +261,8 @@ input[type="text"] {
     width: 100%; 
     border-collapse: collapse;
     table-layout: fixed; 
-    font-size: var(--font-pequeño) ; 
+    font-size: var(--font-p
+mediano) ; 
     user-select: none;
     pointer-events: none;
 }
