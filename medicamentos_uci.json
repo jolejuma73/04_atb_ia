@@ -1,0 +1,120 @@
+{
+    "A": [
+        {
+            "name": "Adrenalina",
+            "presentation": "Adrenalina 1mgr/ml",
+            "type": "Inotropos y Vasopresores",
+            "dose": "5mgr en 250cc SGdo5%(20μg/ml)",
+            "initial_dose": "0,015-0,2μg/kg/min desde 3ml/h hasta 42ml/h",
+            "maintenance_dose": "",
+            "appearance": "",
+            "administrationTime": "",
+            "indications": "Indicada para shock anafiláctico, paro cardíaco y otras emergencias.",
+            "technicalSheet": "https://cima.aemps.es/cima/dochtml/ft/68552/FT_68552.html"
+        },
+        {
+            "name": "Amiodarona",
+            "presentation": "Trangorex 150mg/3ml",
+            "type": "Antiarritmicos",
+            "dose": "",
+            "initial_dose": "",
+            "maintenance_dose": "",
+            "appearance": "",
+            "administrationTime": "",
+            "indications": "Tratamiento de arritmias graves ventriculares y auriculares.",
+            "technicalSheet": "https://cima.aemps.es/cima/dochtml/ft/54723/FT_54723.html"
+        },
+        {
+            "name": "Atracurio",
+            "presentation": "Tracrium 50mg/5ml(10mg/ml)",
+            "type": "Relajantes Musculares",
+            "dose": "250mgr en 50cc SGdo5%(5mg/ml)",
+            "initial_dose": "Bolo: 0,5mg/kg ≈ 40mg",
+            "maintenance_dose": "0,3-0,6mg/kg/h Desde 4ml/h hasta 8ml/h 20-40mg/h",
+            "appearance": "",
+            "administrationTime": "",
+            "indications": "Relajación muscular durante procedimientos médicos.",
+            "technicalSheet": ""
+        }
+    ],
+    "C": [
+        {
+            "name": "Cisatracurio",
+            "presentation": "Nimbex20mg/10ml(2mg/ml)",
+            "type": "Relajantes Musculares",
+            "dose": "60mg en 50cc SGdo5%(1,2mg/ml/",
+            "initial_dose": "Bolo: 0,2mg/kg ≈ 14mg",
+            "maintenance_dose": "0,06-0,12mg/kg/h Desde 3ml/h hasta 7ml/h 4-8mg/h",
+            "appearance": "",
+            "administrationTime": "",
+            "indications": "Relajación muscular durante cirugías e intubación.",
+            "technicalSheet": "https://cima.aemps.es/cima/dochtml/ft/76000/FT_76000.html"
+        }
+    ],
+    "D": [
+        {
+            "name": "Dobutamina",
+            "presentation": "Dobutamina Hospira 12,5mg/ml",
+            "type": "Inotropos y Vasopresores",
+            "dose": "250mgr en 250cc SGdo5%(1mgr/ml)",
+            "initial_dose": "1-200μg/kg/min desde 4ml/h hasta 84ml/h",
+            "maintenance_dose": "",
+            "appearance": "",
+            "administrationTime": "",
+            "indications": "Soporte circulatorio en casos de insuficiencia cardiaca.",
+            "technicalSheet": "https://cima.aemps.es/cima/dochtml/ft/61952/FT_61952.html"
+        },
+        {
+            "name": "Dopamina",
+            "presentation": "Dopamina Fides 200mgr/5ml",
+            "type": "Inotropos y Vasopresores",
+            "dose": "400mgr en 250cc SGdo5%(1,6mgr/ml)--1gr en 250cc SGdo5%(4mgr/ml)",
+            "initial_dose": "Dosis Dopa:0,5-2μg/kg/min desde 1ml/h hasta 6ml/h/Dosis Beta:2-10μg/kg/min desde 7ml/h hasta 30ml/h",
+            "maintenance_dose": "",
+            "appearance": "",
+            "administrationTime": "",
+            "indications": "Tratamiento de hipotensión y fallo renal agudo.",
+            "technicalSheet": "https://cima.aemps.es/cima/dochtml/ft/55454/FT_55454.html"
+        }
+    ],
+    "E": [
+        {
+            "name": "Esmolol",
+            "presentation": "Blevibloc 100mgr/10ml Blevibloc 2,5gr/10ml",
+            "type": "Antihipertensivos y Vasodilatadores",
+            "dose": "2,5mgr en 50cc SGdo5%(1mgr/ml)",
+            "initial_dose": "Bolo de 0,5mgr/kg en 1 min",
+            "maintenance_dose": "50-200µg/kg/min Desde 2ml/h hasta 16ml/h",
+            "appearance": "",
+            "administrationTime": "",
+            "indications": "Control de taquicardia y hipertensión intraoperatoria.",
+            "technicalSheet": "https://cima.aemps.es/cima/dochtml/ft/72349/FT_72349.html"
+        }
+    ],
+    "F": [
+        {
+            "name": "Fenitoina",
+            "presentation": "Fenitoina 250mg/5ml(50mg/ml)",
+            "type": "Anticomiciales y neurolépticos",
+            "dose": "",
+            "initial_dose": "Dosis de carga:18mg/kg ≈ 1250mg en 250cc SF en 30 min",
+            "maintenance_dose": "Dosis mantenimiento: 4-8mg/kg en 3 dosis ≈ 300-600mg",
+            "appearance": "",
+            "administrationTime": "",
+            "indications": "Tratamiento de crisis epilépticas.",
+            "technicalSheet": "https://cima.aemps.es/cima/dochtml/ft/56245/FT_56245.html"
+        },
+        {
+            "name": "Fentanilo",
+            "presentation": "Fentanest 150µg/3ml",
+            "type": "Analgésicos",
+            "dose": "750µg en 50cc SGdo5%",
+            "initial_dose": "Bolo 1-2µg/kg ≈ 50-100µg",
+            "maintenance_dose": "25-100µg/h Desde 2ml/h hasta 6ml/h (0.5µg/kg/h)",
+            "appearance": "",
+            "administrationTime": "",
+            "indications": "Analgésico potente para cirugía y dolor severo.",
+            "technicalSheet": "https://cima.aemps.es/cima/dochtml/ft/41764/FichaTecnica_41764.html"
+        }
+    ]
+}
