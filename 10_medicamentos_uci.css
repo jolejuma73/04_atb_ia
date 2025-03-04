@@ -8,14 +8,14 @@
 
 
     --fuente: #2e2925;/*--pantone black c--*/
-	--pantone: #368f3f; /*--pantone 7740c____#368f3f--*/
-    --principal: #92c99b;/*pantone 7740c__50--*/
-    --tabla: #cde2d5;
-    --fondo: #ebf5ed;/*--pantone 7740c__10--*/
-    --hover: #d9ebd8;/*pantone 7740c__80--*/
-    --borde: #4fa66a;/*pantone 7740c__20--*/
-    --celdas-th: var(--pantone37);
-    --celdas-td: var(--pantone46);
+	--pantone: #365a8f; /*--pantone 7740c____#368f3f--*/
+    --principal: #1a71a3;/*pantone 7740c__50--*/
+    --tabla: #66e4f5;
+    --fondo: #66b4f5;/*--pantone 7740c__10--*/
+    --hover: #44b4f5;/*pantone 7740c__80--*/
+    --borde: #22b4f5;/*pantone 7740c__20--*/
+    --celdas-th: #00b4f5;
+    --celdas-td: #00c4f5;
     --header: var(--pantone16);
     --pantone82:   #5ea565;     /*  pantone con blanco  */
     --pantone73:   #72b179;     /*  pantone con blanco  */
@@ -77,7 +77,7 @@ main {
 header {
     width: 100%;
     max-width: 1000px;
-    background-color: var(--header); 
+    background-color: #88aed1; 
     color: var(--fuente);
     padding: 20px;
     margin: 5px auto;
@@ -178,16 +178,6 @@ input[type="text"] {
     margin: 0 auto;
     padding: 10px;
 
-    position: fixed; 
-    top: 30px; 
-    right: 30px; 
-    transform: translateX(-50%);
-    z-index: 10;
-    background-color: transparent;
-    padding: 10px;
-    border: 2px solid var(--borde);
-    border-radius: 50%;
-    box-sizing: border-box;
 }
 
 #main-button img {
@@ -378,7 +368,7 @@ mediano) ;
     
 /* Footer */
 footer {
-    background-color: var(--pantone17);
+    background-color: var(--principal);
     color: var(--fuente);
     text-align: center;
     padding: 10px;

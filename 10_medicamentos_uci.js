@@ -4,13 +4,13 @@ document.addEventListener("DOMContentLoaded", async function () {
     const listaAntiinfecciosos = document.getElementById("lista-antiinfecciosos");
     const detalleAntiinfeccioso = document.getElementById("detalle-antiinfeccioso");
     const zonaBusqueda = document.querySelector(".zona-busqueda");
-    const inputBusqueda = document.querySelector("#buscar-input");
+    const inputBusqueda = document.querySelector("#buscar-input");    
 
     // 2. Cargar datos desde el archivo JSON
     let antiinfecciosos = {};
 
     try {
-        const response = await fetch("antiinfecciosos.json");
+        const response = await fetch("medicamentos_uci.json");
         if (!response.ok) {
             throw new Error(`Error al cargar el archivo JSON: ${response.status} ${response.statusText}`);
         }
@@ -104,6 +104,24 @@ document.addEventListener("DOMContentLoaded", async function () {
                 </div>
             </th>
             <td>${antiinfeccioso.dose || "N/A"}</td>
+        </tr>
+        <tr>
+            <th>
+                <div class="th-content">
+                <span>Dosis Inicial</span>
+                <img src="imagenes/ccc.png" alt="Icono de dosis" class="icon">                
+                </div>
+            </th>
+            <td>${antiinfeccioso.initial_dose || "N/A"}</td>
+        </tr>
+        <tr>
+            <th>
+                <div class="th-content">
+                <span>Dosis de mantenimiento</span>
+                <img src="imagenes/ccc.png" alt="Icono de dosis" class="icon">                
+                </div>
+            </th>
+            <td>${antiinfeccioso.maintenance_dose || "N/A"}</td>
         </tr>
         <tr>
             <th>
@@ -220,7 +238,7 @@ document.addEventListener("DOMContentLoaded", async function () {
         mostrarIniciales();
 
         // Opcional: Redirigir al inicio de la página actual
-        window.location.href = "09.html"; // Cambia "#" por la URL deseada si necesitas redirigir a otra página
+        window.location.href = "10.html"; // Cambia "#" por la URL deseada si necesitas redirigir a otra página
     }
 
     // Asignar evento al botón de volver al inicio
