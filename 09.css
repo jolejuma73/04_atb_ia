@@ -178,16 +178,7 @@ input[type="text"] {
     margin: 0 auto;
     padding: 10px;
 
-    position: fixed; 
-    top: 30px; 
-    right: 30px; 
-    transform: translateX(-50%);
-    z-index: 10;
-    background-color: transparent;
-    padding: 10px;
-    border: 2px solid var(--borde);
-    border-radius: 50%;
-    box-sizing: border-box;
+
 }
 
 #main-button img {
